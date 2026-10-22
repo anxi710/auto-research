@@ -72,6 +72,39 @@ The project's saved idea files do not establish recovery from every interrupted 
 Its AI review is not an audit of all raw experimental evidence.
 This workflow does not treat an AI score as scientific confirmation.
 
+## Hermes and Pi
+
+We read the official documentation and selected implementation files at the commits linked below.
+We did not install or run either harness.
+These mechanisms inform [the evolution procedure](evolution.md).
+
+### Hermes
+
+Hermes can turn user input into skills through [`/learn`](https://github.com/NousResearch/hermes-agent/blob/dc0fe3e476a06cfa9c0cb289f3604b0f80bc2734/website/docs/user-guide/features/skills.md).
+Its [background review](https://github.com/NousResearch/hermes-agent/blob/dc0fe3e476a06cfa9c0cb289f3604b0f80bc2734/agent/background_review.py#L390-L516) favors reusable lessons and updates to existing skills.
+Its [memory guide](https://github.com/NousResearch/hermes-agent/blob/dc0fe3e476a06cfa9c0cb289f3604b0f80bc2734/website/docs/user-guide/features/memory.md) separates short facts and preferences from procedures that load when needed.
+Its [skill ledger](https://github.com/NousResearch/hermes-agent/blob/dc0fe3e476a06cfa9c0cb289f3604b0f80bc2734/tools/skill_ledger.py#L569-L633) records changes and supports recovery.
+Its [curator](https://github.com/NousResearch/hermes-agent/blob/dc0fe3e476a06cfa9c0cb289f3604b0f80bc2734/website/docs/user-guide/features/curator.md#L125-L178) also supports recovery from a saved group of changes.
+
+We adopt scoped lessons, small updates, and recoverable change records.
+We permit a review to leave the workflow unchanged.
+The inspected learning path does not require fixed behavioral comparisons before each skill update.
+Our baseline comparison and adoption conditions are additions to that design.
+
+### Pi
+
+The former `badlogic/pi-mono` repository redirects to `earendil-works/pi`.
+Pi's [core design](https://github.com/earendil-works/pi/blob/74f46864025c68504cd10c89eeb626b7e3d64cea/README.md) keeps the harness small and supports extensions.
+Its [skills](https://github.com/earendil-works/pi/blob/74f46864025c68504cd10c89eeb626b7e3d64cea/packages/coding-agent/docs/skills.md) load full instructions when needed.
+Its [extension events](https://github.com/earendil-works/pi/blob/74f46864025c68504cd10c89eeb626b7e3d64cea/packages/coding-agent/docs/extensions.md) expose user input, tool results, and completed turns.
+Its [sessions](https://github.com/earendil-works/pi/blob/74f46864025c68504cd10c89eeb626b7e3d64cea/packages/coding-agent/docs/sessions.md) preserve conversation branches.
+Its [agent loop](https://github.com/earendil-works/pi/blob/74f46864025c68504cd10c89eeb626b7e3d64cea/packages/agent/README.md) supports an explicit decision to continue or finish a turn.
+
+We adopt a small core, optional procedure loading, feedback capture, and bounded trials.
+Conversation branches do not replace file snapshots or patches.
+Fixed evaluation cases, comparisons, and adoption rules belong to this toolkit's design.
+These source mechanisms do not establish reliable self-improvement or better research outcomes.
+
 ## Adaptations and limits
 
 The guide includes local habits and tool-specific tips.

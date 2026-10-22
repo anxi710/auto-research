@@ -39,3 +39,16 @@ Evidence required for that result: Unknown.
 Smallest useful next task: Unknown.
 Reason for this task: Unknown.
 Missing input that blocks this task: Unknown.
+
+## Project conventions
+
+| Convention | Scope | User source | Active since |
+| --- | --- | --- | --- |
+
+Use this section for adopted project preferences.
+Keep temporary task instructions and unadopted ideas out of this table.
+Do not apply these conventions to other projects without that scope.
+
+Standing workflow improvement authority: None recorded.
+Allowed targets and adoption scope: None recorded.
+Round, time, and spending limits: None recorded.

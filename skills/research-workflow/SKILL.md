@@ -1,6 +1,8 @@
 ---
 name: research-workflow
-description: Run a research project through literature study, question selection, experiment design, execution, analysis, writing, and review. Use file records to resume work across AI assistants. Also use for one stage of an existing project.
+description: Run research through literature study, questions, experiments, analysis, writing, and review. Resume from file records across AI assistants. Capture workflow feedback and test scoped improvements when requested.
+metadata:
+  version: "0.1.0"
 ---
 
 # Research workflow
@@ -10,7 +12,8 @@ Evidence is a source or result that supports a claim.
 A stage is one part of the research process.
 
 Use this skill for research work.
-For changes to the workflow package itself, follow the development request.
+For workflow feedback or changes, read [the evolution procedure](references/evolution.md).
+For other changes to the package, follow the development request.
 Do not turn a narrow reading request into a full research project.
 
 ## Start or resume
@@ -30,6 +33,14 @@ Record new project paths relative to the research directory.
 Preserve the documented path convention in existing records.
 Resolve relative Markdown links from the file that contains them.
 If the user selects another location, record that location in `STATE.md`.
+Read adopted project conventions in `BRIEF.md` before selecting the next action.
+If `STATE.md` names an active workflow trial, read its scope and stop condition.
+Treat other change records as proposals or history, not active instructions.
+Use the current user request when it changes an older preference.
+
+Record the package path and version when a project first uses this skill.
+If an older package has no version, record `unversioned` rather than inventing one.
+If the package changes, preserve existing research records and note the new version at the next session boundary.
 
 If the request lacks a topic, ask for the topic or a seed paper.
 A seed paper is a starting source for a literature search.
@@ -129,6 +140,10 @@ If subagents are unavailable, perform the same steps in sequence.
 3. Record active jobs before starting replacement runs.
 4. Update `STATE.md` with one concrete next action.
 5. State the result, evidence, unresolved issues, and next action to the user.
+
+If feedback reveals a reusable procedure change, follow [the evolution procedure](references/evolution.md) to record it.
+Do not require a new rule after every session.
+Do not start a self-improvement run unless the user requests one or standing project authorization covers it.
 
 Stop when the requested work is complete.
 If a blocker requires user input, record the question and finish independent work.

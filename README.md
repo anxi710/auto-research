@@ -7,6 +7,7 @@ The workflow keeps research progress in files so that another harness can contin
 The main source is [Research-Starter-Kit](https://github.com/LAMDA-NeSy/Research-Starter-Kit).
 The package turns its advice into tasks, records, completion conditions, and return paths.
 It also uses selected patterns from `karpathy/autoresearch` and `SakanaAI/AI-Scientist`.
+Its workflow improvement procedure draws from Hermes and Pi.
 
 The current scope is personal research, with detailed support for computational AI and machine learning.
 The workflow covers study, questions, tests, writing, and discussion.
@@ -113,6 +114,72 @@ Browser sessions, credentials, tools, and permissions do not move with these fil
 Each harness supplies its own tools.
 Read the [harness guide](docs/harnesses.md) for entry files, copy instructions, and optional skill discovery.
 
+## Improve the workflow
+
+The research loop produces results and feedback.
+A second loop uses that feedback to improve the procedure.
+RSI means recursive self-improvement, or repeated improvement of the workflow itself.
+
+```mermaid
+flowchart LR
+    A[Research task] --> B[Evidence and feedback]
+    B --> C[Scoped change proposal]
+    C --> D[Baseline and candidate comparison]
+    D --> E{Meets fixed conditions?}
+    E -->|Yes| F[Adopt within authorized scope]
+    E -->|No| G[Keep the result and current rules]
+    F --> A
+    F --> H[Observe the next real task]
+    H --> C
+```
+
+You can give ideas in ordinary language.
+The assistant separates temporary requests, project conventions, and reusable rules.
+These examples define different scopes:
+
+| Request | Effect |
+| --- | --- |
+| Remember this automation idea for later. | Save a proposal without changing active instructions. |
+| Use Chinese notes for this project. | Record an adopted convention in this project's brief. |
+| Try this procedure for the next paper only. | Record a local trial and its stop condition. |
+| Make this procedure the default in this skill copy. | Test the change and update that package within the stated scope. |
+| Review recent failures and improve one procedure. | Run one bounded round with fixed acceptance conditions. |
+
+Use this prompt for a focused improvement round:
+
+```text
+Read skills/research-workflow/SKILL.md and its evolution procedure.
+Use <evidence or change record> to improve <specific behavior>.
+Edit only <package or project path>.
+Try one candidate within <time or spending limit>.
+Compare it with the saved baseline on the same tasks.
+Adopt it in that scope if the fixed conditions and relevant regression cases pass.
+Otherwise, keep the current rules and record the result.
+Preserve research history and save a recovery path.
+```
+
+The [evolution procedure](skills/research-workflow/references/evolution.md) defines capture, comparison, adoption, observation, and rollback.
+A rollback restores procedure text while preserving research history.
+The [change template](skills/research-workflow/templates/CHANGE.md) records the evidence and decision.
+
+Toolkit changes live in `changes/` in this repository.
+Project trials live in `changes/` inside the selected research directory.
+Only adopted conventions and the active trial enter task startup context.
+
+The assistant runs this loop during an authorized session.
+This package supplies no background worker or native Hermes or Pi extension.
+A saved lesson or passing example does not establish general improvement.
+
+## Develop this toolkit
+
+Use Git to preserve small, reviewable changes.
+Use Conventional Commits for commit messages, such as `feat: add a reading procedure` or `fix: preserve active job state`.
+Run the affected behavior cases before committing a procedure change.
+
+Keep research data and local credentials outside toolkit commits.
+Test behavior in temporary directories.
+Use the [test results](tests/RESULTS.md) to distinguish observed behavior from untested claims.
+
 ## Read the package
 
 The root files load one shared procedure.
@@ -126,9 +193,11 @@ Copy its complete directory when you use it in another repository.
 | [GEMINI.md](GEMINI.md) | Import of the shared entry for Gemini CLI. |
 | [SKILL.md](skills/research-workflow/SKILL.md) | Task routing, records, tools, and session rules. |
 | [Stage guide](skills/research-workflow/references/workflow.md) | Procedures for S0 through S7. |
+| [Evolution procedure](skills/research-workflow/references/evolution.md) | Scoped changes, fixed comparisons, adoption, and recovery. |
 | [Templates](skills/research-workflow/templates/) | Starting files for real research records. |
 | [Source map](skills/research-workflow/references/sources.md) | Guide coverage, repository references, and design choices. |
 | [Behavior tests](tests/scenarios.md) | Small tasks for testing another harness. |
+| [Evolution tests](tests/evolution.md) | Tasks that test scope, adoption decisions, and preservation of records. |
 | [Test results](tests/RESULTS.md) | Observed behavior and the limits of the current tests. |
 
 The package uses plain English for portable instructions.

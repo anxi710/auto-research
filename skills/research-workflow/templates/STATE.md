@@ -12,6 +12,8 @@ Requested work: Unknown.
 Current stage: S0.
 Status: Not started.
 Last update: Unknown.
+Workflow package path and version: Not recorded.
+Active workflow trial, scope, and stop condition: None.
 
 Use `active`, `waiting for input`, `blocked`, or `complete` after work starts.
 The status describes the requested work, not the entire research field.

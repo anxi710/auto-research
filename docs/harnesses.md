@@ -85,6 +85,18 @@ Do not treat a missing experiment log as evidence that an experiment ran.
 
 The package transfers the workflow. Saved records transfer research progress. Browser logins, tool connections, permissions, and chat history do not transfer with the files.
 
+The complete package also carries its [evolution procedure](../skills/research-workflow/references/evolution.md).
+Record the package path and version when the project first uses it.
+Each copied package evolves independently until you request an update.
+
+When updating a copy, compare its local changes before merging.
+Keep project conventions, existing layouts, record IDs, and experimental history.
+Missing new template fields do not require a full migration.
+
+Hermes and Pi informed the design of the improvement loop.
+This package does not install their native hooks or test their runtime integration.
+Use an explicit file read when a harness does not discover the skill.
+
 ## Optional automatic skill discovery
 
 Skill discovery lets a harness find available skills. The default method above uses explicit file reads. Use a discovery directory only if you want the native skill menu or automatic selection.
