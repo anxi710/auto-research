@@ -2,7 +2,7 @@
 name: research-workflow
 description: Run research through literature study, questions, experiments, analysis, writing, and review. Resume from file records across AI assistants. Capture workflow feedback and test scoped improvements when requested.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Research workflow
@@ -17,6 +17,9 @@ For other changes to the package, follow the development request.
 Do not turn a narrow reading request into a full research project.
 
 ## Start or resume
+
+Read [the preferences guide](references/preferences.md) for optional local defaults.
+For configurable choices, use the current request, then explicit project conventions, then local defaults.
 
 1. Identify the requested task and the target research repository.
 2. Find its research records before creating new files.
@@ -52,7 +55,7 @@ Do not invent a topic, a resource budget, or a research result.
 | Stage | Use it when | Main record |
 | --- | --- | --- |
 | S0: Scope | The goal or limits are unclear. | `BRIEF.md` |
-| S1: Study | The task needs sources or a better understanding. | `LITERATURE.md`, `papers/<id>.md` |
+| S1: Study | The task needs sources or a better understanding. | `LITERATURE.md`, existing note links or task-specific paper records. |
 | S2: Question | The task needs a research question or explanation. | `questions/<id>.md` |
 | S3: Design | A question needs a test. | `experiments/<id>.md` |
 | S4: Run | A defined test needs implementation or execution. | `experiments/<id>.md`, linked code and logs |
@@ -64,6 +67,9 @@ These stages form a loop.
 Read sources again when a result changes the question.
 Revise the design when the comparison cannot test the claim.
 Use S7 at any stage when discussion can resolve a decision.
+
+For a large collection that uses NotebookLM, read [the bulk literature procedure](references/bulk-literature.md).
+Use it only when the request, explicit project conventions, or selected preferences choose that tool chain.
 
 Completion conditions are evidence tests, not permission requests.
 Continue authorized work when its inputs are ready.

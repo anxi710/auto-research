@@ -37,6 +37,28 @@ If the target uses another record layout, the assistant keeps that layout.
 If a tool or source is unavailable, the assistant records the limit.
 It must not turn an unrun experiment into a reported result.
 
+## Set your preferences
+
+The shared skill contains no personal defaults.
+You can use it without a preferences file.
+The assistant uses your request, project conventions, and supplied evidence.
+
+For local defaults, copy the [preferences template](skills/research-workflow/templates/PREFERENCES.md) to `RESEARCH.local.md`.
+Place this file in your harness workspace root.
+The workspace root is the directory that you open in the harness.
+You can also name another preferences file in your request.
+
+Set choices such as the record language, primary paper library, and selected note location.
+Paths in the preferences file start from that file's directory.
+For configurable choices, the current request takes priority over project conventions, which take priority over local defaults.
+
+This repository ignores `RESEARCH.local.md` in Git.
+Other repositories need their own ignore rule before you save private defaults there.
+Read the [preferences guide](skills/research-workflow/references/preferences.md) for scope and reuse across workspaces.
+
+The [Zotero and Git example](skills/research-workflow/references/zotero-git-example.md) shows one reading setup.
+The assistant applies it only when you select it.
+
 ## Choose the work
 
 These are natural-language requests, not custom shell commands.
@@ -46,8 +68,9 @@ You can enter the workflow at any stage.
 | Request | What the assistant does | Main output |
 | --- | --- | --- |
 | Start a project in this topic. | Define the goal, resources, limits, and next useful task. | Research brief and state. |
-| Read this paper for my question. | Explain the problem, method, evidence, and open questions. | A paper record. |
+| Read this paper for my question. | Explain the problem, method, evidence, and open questions. | An existing note link or task-specific paper record. |
 | Find the closest work. | Search sources and compare assumptions and results. | A literature record. |
+| Analyze this collection with NotebookLM. | Track exports, imports, evidence coverage, and comparisons across batches. | A corpus record and source-linked synthesis. |
 | Turn these observations into a question. | Compare explanations and define a testable hypothesis. | A question record. |
 | Design the smallest useful test. | Fix the comparison, metrics, resources, and stop conditions. | An experiment plan. |
 | Run this experiment within this budget. | Implement the test and preserve commands, code versions, and outputs. | An experiment record. |
@@ -55,6 +78,29 @@ You can enter the workflow at any stage.
 | Draft a paper from these records. | Build an argument that links each claim to evidence. | A draft, figures, and evidence gaps. |
 | Prepare a meeting or response to reviewers. | Organize evidence, questions, responses, and next actions. | A review or discussion record. |
 | Continue the project. | Inspect saved state, outputs, and active jobs before taking the next action. | Updated state and the requested work. |
+
+## Analyze a large collection
+
+The [bulk literature procedure](skills/research-workflow/references/bulk-literature.md) provides an optional Zotero, zpm, rclone, Google Drive, and NotebookLM workflow.
+It supports analysis across dozens or hundreds of selected papers through explicit batches and saved evidence.
+It does not establish that every imported paper contributed to a generated answer.
+
+Use this request after selecting a collection and analysis question:
+
+```text
+Use the research-workflow skill and its bulk literature procedure.
+Analyze <collection> for <question> using NotebookLM.
+The target research repository is <path>.
+Use <export location>, <Drive destination>, and <notebook or notebook plan>.
+Keep an inventory of paper identities, file versions, imports, and evidence coverage.
+Save a synthesis with original-paper citations and unresolved gaps.
+Use <time or usage budget> as the stopping limit.
+```
+
+The assistant first inspects existing records and available tools.
+It preserves Zotero as the library when you choose this example.
+The [corpus template](skills/research-workflow/templates/CORPUS.md) carries progress between harnesses and manual interface steps.
+Other researchers can select their own tools and library conventions.
 
 ## Follow the research loop
 
@@ -134,12 +180,13 @@ flowchart LR
 ```
 
 You can give ideas in ordinary language.
-The assistant separates temporary requests, project conventions, and reusable rules.
+The assistant separates temporary requests, local defaults, project conventions, and reusable rules.
 These examples define different scopes:
 
 | Request | Effect |
 | --- | --- |
 | Remember this automation idea for later. | Save a proposal without changing active instructions. |
+| Use this library for my future reading tasks. | Save a local default without changing the shared skill. |
 | Use Chinese notes for this project. | Record an adopted convention in this project's brief. |
 | Try this procedure for the next paper only. | Record a local trial and its stop condition. |
 | Make this procedure the default in this skill copy. | Test the change and update that package within the stated scope. |
@@ -172,6 +219,9 @@ A saved lesson or passing example does not establish general improvement.
 
 ## Develop this toolkit
 
+Read the [contribution guide](CONTRIBUTING.md) for change scope, test evidence, and review requirements.
+The [repository structure](docs/architecture.md) explains the shared package and local research data.
+
 Use Git to preserve small, reviewable changes.
 Use Conventional Commits for commit messages, such as `feat: add a reading procedure` or `fix: preserve active job state`.
 Run the affected behavior cases before committing a procedure change.
@@ -193,6 +243,7 @@ Copy its complete directory when you use it in another repository.
 | [GEMINI.md](GEMINI.md) | Import of the shared entry for Gemini CLI. |
 | [SKILL.md](skills/research-workflow/SKILL.md) | Task routing, records, tools, and session rules. |
 | [Stage guide](skills/research-workflow/references/workflow.md) | Procedures for S0 through S7. |
+| [Preferences guide](skills/research-workflow/references/preferences.md) | Optional local defaults and their scope. |
 | [Evolution procedure](skills/research-workflow/references/evolution.md) | Scoped changes, fixed comparisons, adoption, and recovery. |
 | [Templates](skills/research-workflow/templates/) | Starting files for real research records. |
 | [Source map](skills/research-workflow/references/sources.md) | Guide coverage, repository references, and design choices. |
@@ -203,3 +254,9 @@ Copy its complete directory when you use it in another repository.
 The package uses plain English for portable instructions.
 The assistant uses your requested language for research records and conversation.
 The source map distinguishes source advice from this package's added procedures.
+
+## License
+
+This toolkit uses the [MIT license](LICENSE).
+The complete skill package includes its own [license copy](skills/research-workflow/LICENSE).
+External tools and research sources retain their own licenses and terms.

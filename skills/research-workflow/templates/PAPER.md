@@ -3,16 +3,21 @@
 Read the source before filling its findings.
 Use source locations for claims.
 Keep your interpretation separate from the authors' statements.
+Link existing notes before adding task-specific analysis.
+Use the primary library for metadata maintenance.
 
 ## Source
 
 ID: Unknown.
 Title and authors: Unknown.
 URL or DOI: Unknown.
+Primary library entry or citation key: Not linked.
+Existing selected note: None linked.
 Version and access date: Unknown.
 Reading depth and unread sections: Unknown.
 Code and data links: None recorded.
 Reason to read: Unknown.
+Reason to keep as a selected note, if selected: Not selected.
 
 ## Problem and prior work
 

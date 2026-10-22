@@ -21,6 +21,10 @@ Existing data and access conditions: None recorded.
 Existing results and result paths: None recorded.
 Closest known work: Unknown.
 
+Primary literature library and access status: Not recorded.
+Selected-note repository or location: Not resolved.
+Existing paper notes and topic summaries: None linked.
+
 ## Resources and authorization
 
 Available harness and tools: Unknown.

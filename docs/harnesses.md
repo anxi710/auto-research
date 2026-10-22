@@ -86,6 +86,8 @@ Do not treat a missing experiment log as evidence that an experiment ran.
 The package transfers the workflow. Saved records transfer research progress. Browser logins, tool connections, permissions, and chat history do not transfer with the files.
 
 The complete package also carries its [evolution procedure](../skills/research-workflow/references/evolution.md).
+It carries the [preferences guide](../skills/research-workflow/references/preferences.md) and a blank [preferences template](../skills/research-workflow/templates/PREFERENCES.md).
+Personal preferences stay separate from the shared package.
 Record the package path and version when the project first uses it.
 Each copied package evolves independently until you request an update.
 
@@ -96,6 +98,24 @@ Missing new template fields do not require a full migration.
 Hermes and Pi informed the design of the improvement loop.
 This package does not install their native hooks or test their runtime integration.
 Use an explicit file read when a harness does not discover the skill.
+
+## Reuse your preferences
+
+The skill reads an optional `RESEARCH.local.md` from the harness workspace root.
+This root is the directory that you open in the harness.
+The target research repository can be elsewhere.
+
+You can copy the preferences template into that local file.
+You can also name another preferences file in your request.
+Paths in the file start from its directory.
+
+For configurable choices, the current request takes priority over project conventions, which take priority over local defaults.
+Without a preferences file, the assistant proceeds from your request and available evidence.
+The workflow does not require a paper library connection for reading supplied material.
+
+This repository ignores `RESEARCH.local.md` in Git.
+Add an ignore rule before you create private preferences in another repository.
+To reuse preferences elsewhere, copy the local file or name its existing path in your request.
 
 ## Optional automatic skill discovery
 

@@ -69,6 +69,66 @@ The versioned package passed the skill format validator and local link inspectio
 The three longest scanned prose sentences contained 19, 18, and 18 words.
 The scan excluded code, tables, headings, metadata, and raw test outputs.
 
+## Unreleased personal-default candidate
+
+Test date: 2026-10-23.
+Four fresh Codex assistant sessions ran the [reading tasks](reading.md) with local synthetic inputs.
+The paired task used identical inputs, tools, and a 15-call limit.
+These tests cover W003's rejected candidate, not the replacement generic preferences procedure.
+The user corrected the shared scope after these runs.
+
+| Case | Observed result | Decision |
+| --- | --- | --- |
+| Existing-note reuse, baseline | Linked the existing identity and note. Preserved the reading limit and historical result. | Shared protections passed. |
+| Existing-note reuse, candidate | Preserved the same behavior. Also recorded Zotero and the resolved selected-note location in the brief. | Approved default and shared protections passed. |
+| Explicit project convention | Preserved the BibTeX library, wiki note, brief, and P020 identity. | Passed. No switch to the personal default. |
+| Standalone abstract task | Added only the requested answer. Kept methods and results unread. | Passed. No library setup or project scaffold. |
+
+Both paired sessions reported five local tool calls.
+These results show the requested behavior in the supplied cases, without establishing a research performance gain.
+No source snapshot, selected note, or package file changed during the exercises.
+
+The [evidence file](evidence/W003.json) preserves inputs, changed outputs, hashes, and run reports.
+The [change record](../changes/W003.md) preserves the passing results and the later scope rejection.
+The candidate package passed the format validator, local link inspection, and plain-English scan.
+
+The user's personal reading choices remain approved.
+[W004](../changes/W004.md) moves them into local preferences and keeps a shared optional example.
+
+The tests used explicit skill reads in the current Codex environment.
+They did not exercise live Zotero tools, library writes, or native discovery in another harness.
+Action counts came from the assistants' reports rather than separate runtime telemetry.
+
+## Optional preferences and bulk literature, version 0.1.1
+
+Test date: 2026-10-23.
+Five fresh sessions exercised the generic package with synthetic local files.
+The bulk baseline and candidate received identical inputs and a 15-call limit.
+The three preference cases used the same limit.
+
+| Case | Observed result | Decision |
+| --- | --- | --- |
+| Local preferences | Selected Library Alpha and resolved the relative note path. Preserved abstract-only depth, P007, and the old result. | Passed. |
+| Project precedence | Selected Library Beta and the project's wiki over local Library Alpha. Preserved the brief and P020. | Passed. |
+| No preferences | Added only the requested answer. Kept the abstract claim unresolved without library setup. | Passed. |
+| Bulk baseline | Preserved duplicates, failed import, missing evidence, stale source, and the contradictory source excerpt. | Passed. |
+| Bulk candidate | Preserved the same conditions and saved a corpus record with separate coverage counts and notebook handoffs. | Passed. |
+
+Preference sessions reported six, four, and four local calls.
+Both bulk sessions reported five local calls.
+The tests show no measured gain in research quality or tool use.
+All protected source files, historical results, and supplied skill copies retained their original hashes.
+
+An independent review inspected the outputs against the fixed conditions.
+It identified a routing sentence that omitted explicit project conventions.
+The final sentence includes that choice, with a focused inspection after the edit.
+Current-request precedence over a project convention and project-only bulk routing were not run as separate behavior cases.
+
+[W004 evidence](evidence/W004.json) and [W005 evidence](evidence/W005.json) preserve the fixtures, outputs, hashes, and reports.
+The final package passed metadata validation, local link inspection, and the plain-English scan.
+Git ignores the actual local preferences file and does not track it.
+No real corpus was exported, uploaded, imported, or analyzed through NotebookLM.
+
 ## Limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.

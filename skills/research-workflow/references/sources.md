@@ -105,7 +105,44 @@ Conversation branches do not replace file snapshots or patches.
 Fixed evaluation cases, comparisons, and adoption rules belong to this toolkit's design.
 These source mechanisms do not establish reliable self-improvement or better research outcomes.
 
+## Bulk literature tools
+
+Source review date: 2026-10-23.
+The user supplied the Zotero, zpm, rclone, Google Drive, and NotebookLM pattern as an optional example.
+We inspected installed command help and selected source files without running exports or cloud operations.
+The source code confirmed zpm 1.3.1 and the local command reported rclone 1.75.2.
+
+[Zotero Project Manager](https://github.com/sbilmis/zotero-project-manager) exports ordinary collection workspaces.
+Its installed `cli.py`, `exporter.py`, `metadata.py`, and package documentation define the flags and metadata used here.
+Exports include attachment identities, collection memberships, destination paths, states, and hashes.
+Repeated exports can update files, and collection membership can produce duplicate attachments.
+The workflow therefore records dated exports and an explicit upload selection.
+This is a procedure design, not evidence of a completed large-library run.
+
+The [rclone copy guide](https://rclone.org/commands/rclone_copy/) states that copies preserve destination-only files.
+The [sync guide](https://rclone.org/commands/rclone_sync/) documents destination deletion.
+The [check guide](https://rclone.org/commands/rclone_check/) describes file comparison and `--one-way`.
+We use selected copies and comparisons for each new transfer destination.
+
+NotebookLM's [limits](https://support.google.com/notebooklm/answer/16213268?hl=en) vary by plan.
+Its [FAQ](https://support.google.com/notebooklm/answer/16269187?hl=en) describes source limits and retrieval from large source sets.
+The [source guide](https://support.google.com/notebooklm/answer/16215270?hl=en) describes bulk Drive import and current source update controls.
+Google's current help redirects to Gemini Notebook pages and describes automatic Drive updates with manual sync controls.
+The procedure requires inspecting the actual imported version because account behavior and supported source types can differ.
+
+The [chat guide](https://support.google.com/notebooklm/answer/16179559?hl=en) explains source selection and clickable citations.
+The [notebook guide](https://support.google.com/notebooklm/answer/16206563?hl=en) describes separate notebooks and exported reports or tables.
+One notebook cannot jointly query another notebook's sources.
+The workflow combines saved evidence across notebooks and inspects original passages before using findings in research claims.
+These source capabilities do not guarantee exhaustive coverage or accurate extraction of every scan, equation, or table.
+
 ## Adaptations and limits
+
+The user approved the literature division from the local `paper-I-love/WORKFLOW.md` as their personal default on 2026-10-23.
+The source defines Zotero as the primary library and Git as the home for selected notes and summaries.
+The [optional example](zotero-git-example.md) shares that convention without activating it for every user.
+[Local preferences](preferences.md) keep each user's choices separate from shared instructions.
+This is a user-approved convention, without a measured claim of better research outcomes.
 
 The guide includes local habits and tool-specific tips.
 We retain their purpose without requiring one schedule, writing formula, tool, or harness command.

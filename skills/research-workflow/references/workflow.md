@@ -20,6 +20,10 @@ Ask for missing information only when it changes that task.
 Keep unknown values explicit.
 Do not turn a publication goal into a promise of acceptance.
 
+For literature work, record the chosen primary library and selected-note location in `BRIEF.md`.
+Use local preferences only when the current request and project do not specify the choice.
+Keep access status separate from the chosen library.
+
 Complete this stage when the next task and its limits are clear.
 If the question is unknown, continue to S1 to learn enough to propose one.
 If the topic is unknown, ask for a topic or seed paper.
@@ -27,9 +31,16 @@ If the topic is unknown, ask for a topic or seed paper.
 ## S1: Find and understand the literature
 
 Input: A topic, question, or seed paper.
-Output: `LITERATURE.md` and paper records for close reading.
+Output: `LITERATURE.md`, existing note links, or task-specific paper records.
 A baseline is a reference method for comparison.
 A benchmark is a shared task and evaluation procedure.
+
+Inspect available library entries and existing notes before creating another record.
+If access is unavailable, use supplied evidence and record the lookup limit.
+Do not require library setup for a narrow reading task.
+
+If the task selects NotebookLM for a large collection, use [the bulk literature procedure](bulk-literature.md).
+Keep its corpus record linked from the project's literature record when one exists.
 
 1. Start from sources that directly address the topic.
 2. Expand through references, later citations, related methods, and benchmark results.
@@ -42,6 +53,17 @@ Do not use venue rank or citation count as the sole inclusion rule.
 Do not invent a fixed paper quota.
 Stop the search when the decision has enough relevant coverage within the task budget.
 Record what the search did not cover.
+
+Reuse stable library identities and links to existing notes.
+Add only the analysis that the current task needs.
+Use a local paper record when no existing note fits or the task needs separate analysis.
+Keep a selection reason with each selected note.
+Store comparisons and research judgments across papers in a topic summary.
+An existing `LITERATURE.md` comparison can serve as that summary.
+
+Keep metadata maintenance in the chosen primary library.
+Use links or a dated export for metadata in project records.
+Record actual reading depth and source locations independently of library tags.
 
 For each close reading, follow these steps:
 
