@@ -102,6 +102,11 @@ It preserves Zotero as the library when you choose this example.
 The [corpus template](skills/research-workflow/templates/CORPUS.md) carries progress between harnesses and manual interface steps.
 Other researchers can select their own tools and library conventions.
 
+For terminal execution, use the [scripted pipeline guide](skills/research-workflow/references/scripted-bulk-literature.md).
+The optional script uses the third-party `notebooklm-py` client and saves progress across runs.
+It produces batch answers and citation records for source inspection.
+It does not establish full reading or complete evidence coverage from generated answers alone.
+
 ## Follow the research loop
 
 ```text

@@ -5,6 +5,9 @@ Use this optional procedure when the task selects NotebookLM for a large corpus.
 It extends S1 and keeps the user's chosen library and project layout.
 It does not require this tool chain for ordinary reading.
 
+For command-line execution, use [the scripted procedure](scripted-bulk-literature.md).
+Keep this guide's coverage and evidence conditions when the script performs the transfer and query steps.
+
 This example uses Zotero, zpm, rclone, Google Drive, and NotebookLM.
 Zotero owns the library records.
 Exports and cloud copies support analysis of a dated selection.

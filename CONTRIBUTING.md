@@ -37,6 +37,12 @@ If you change a script, test its affected behavior without live accounts when po
 Record any live integration that you did not test.
 Do not report a proposed test as a passing result.
 
+Run the offline script tests from the repository root:
+
+```bash
+python3 -m unittest discover -s tests -p 'test_*.py' -v
+```
+
 ## Submit the change
 
 Use Conventional Commits, such as `feat: add a corpus inventory` or `fix: preserve source identifiers`.

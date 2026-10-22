@@ -129,6 +129,30 @@ The final package passed metadata validation, local link inspection, and the pla
 Git ignores the actual local preferences file and does not track it.
 No real corpus was exported, uploaded, imported, or analyzed through NotebookLM.
 
+## Scripted bulk literature, version 0.1.2
+
+Test date: 2026-10-23.
+Sixteen [unit tests](test_bulk_literature.py) passed with temporary files and fake command responses.
+No account login, export from a real library, or cloud operation ran.
+The tests exercise the pipeline through its process boundary without installing the NotebookLM client.
+
+The cases cover planning without effects, complete execution, source deduplication, saved citations, and repeated execution without duplicate writes.
+They also cover unknown write outcomes, malformed JSON, source timeouts, degraded Drive access, query limits, and source changes.
+Path traversal, symbolic links, changed configuration, unsupported client versions, and invalid saved state fail before unsafe continuation.
+
+An independent code review found two recovery gaps that the implementation corrected.
+Regression tests cover response files saved before checkpoints and changed remote content under an existing Drive ID.
+The final tests also cover saved answers before checkpoints and budget rejection before remote writes.
+
+A separate subprocess smoke test ran the default CLI with a temporary configuration.
+It returned a plan and created no run directory or additional file.
+The final skill passed metadata validation, local link inspection, and whitespace inspection.
+
+[W006 evidence](evidence/W006.json) records the tested files and commands.
+The source review used NotebookLM client `0.8.5` and zpm `1.3.1` contracts.
+Live Google responses, account quotas, real PDF extraction, macOS, and Windows execution were not tested.
+The script supports Linux and macOS locking and explicitly rejects Windows execution.
+
 ## Limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.

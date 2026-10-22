@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-23",
+  "package_version": "0.1.2",
+  "kind": "Offline script tests and a CLI plan smoke test. No account operations.",
+  "command": "python3 -m unittest discover -s tests -p 'test_*.py' -v",
+  "exit_code": 0,
+  "test_output": "test_auth_or_version_failure_has_no_local_or_remote_mutation (test_bulk_literature.PipelineTests.test_auth_or_version_failure_has_no_local_or_remote_mutation) ... ok\ntest_changed_config_or_snapshot_rejected (test_bulk_literature.PipelineTests.test_changed_config_or_snapshot_rejected) ... ok\ntest_changed_remote_bytes_stop_resume_before_more_imports (test_bulk_literature.PipelineTests.test_changed_remote_bytes_stop_resume_before_more_imports) ... ok\ntest_degraded_drive_blocks_question (test_bulk_literature.PipelineTests.test_degraded_drive_blocks_question) ... ok\ntest_duplicate_drive_path_rejected (test_bulk_literature.PipelineTests.test_duplicate_drive_path_rejected) ... ok\ntest_plan_has_zero_effects (test_bulk_literature.PipelineTests.test_plan_has_zero_effects) ... ok\ntest_response_file_crash_resumes_without_repeating_write_or_query (test_bulk_literature.PipelineTests.test_response_file_crash_resumes_without_repeating_write_or_query) ... ok\ntest_run_and_resume_preserve_identity_and_citations (test_bulk_literature.PipelineTests.test_run_and_resume_preserve_identity_and_citations) ... ok\ntest_run_cannot_write_into_portable_skill (test_bulk_literature.PipelineTests.test_run_cannot_write_into_portable_skill) ... ok\ntest_small_query_budget_stops_before_remote_writes (test_bulk_literature.PipelineTests.test_small_query_budget_stops_before_remote_writes) ... ok\ntest_timeout_blocks_question_then_resumes (test_bulk_literature.PipelineTests.test_timeout_blocks_question_then_resumes) ... ok\ntest_traversal_and_symlink_rejected (test_bulk_literature.PipelineTests.test_traversal_and_symlink_rejected) ... ok\ntest_unknown_create_and_import_reconcile (test_bulk_literature.PipelineTests.test_unknown_create_and_import_reconcile) ... ok\ntest_unknown_query_is_counted_and_not_repeated (test_bulk_literature.PipelineTests.test_unknown_query_is_counted_and_not_repeated) ... ok\ntest_unknown_saved_state_shape_stops (test_bulk_literature.PipelineTests.test_unknown_saved_state_shape_stops) ... ok\ntest_unknown_write_without_match_never_retries (test_bulk_literature.PipelineTests.test_unknown_write_without_match_never_retries) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.032s\n\nOK\n",
+  "smoke_test": {
+    "command": "python3 skills/research-workflow/scripts/bulk_literature.py <temporary configuration>",
+    "result": "Returned JSON mode=plan with the configured question and collection, seven steps, and no new files or run directory.",
+    "notebooklm_installed": false
+  },
+  "contract_sources": {
+    "notebooklm_py": "0.8.5, commit 50493ddf9f9eb9230de998d3dff8565243383078",
+    "zpm": "1.3.1, installed source and command help",
+    "rclone": "Installed 1.75.2 help and official command documentation"
+  },
+  "review": {
+    "scope": "Independent inspection of recovery, state changes, and pinned NotebookLM CLI contracts.",
+    "findings": [
+      "Saved source text before its checkpoint blocked recovery.",
+      "A completed transfer skipped remote content comparison on resume."
+    ],
+    "corrections": [
+      "Reuse and validate saved text or answer responses before requesting them again.",
+      "Compare remote content before using sources on every execution or resume."
+    ],
+    "regressions": "Both corrections have passing tests.",
+    "final_confirmation": "# Final focused recovery review\n\nStatus: closed. No unresolved finding within this review scope.\n\nInspected the frozen `skills/research-workflow/scripts/bulk_literature.py` and the pinned NotebookLM 0.8.5 source contracts. No tests or account operations were run by this reviewer.\n\n- Closed: interrupted indexed-text checkpoint. Lines 360\u2013369 reuse an existing JSON response, validate its source ID and nonempty content, compute its hash, and checkpoint it. A complete saved response no longer triggers a repeated exclusive write.\n- Closed: changed remote content on resume. Line 277 now runs `rclone check --download` unconditionally before Drive identity reconciliation. The copy remains conditional, so resume verifies bytes without repeating a completed upload.\n- Confirmed: saved-answer checkpoint recovery. Lines 384\u2013390 validate an existing answer against the selected source IDs, record its hash, and clear the pending flag without another query. An unknown request with no saved answer still stops at line 391. The already charged query attempt is retained.\n- Confirmed: Drive status contract. Line 357 requires source status `ready`, matching Drive identity, `is_drive_degraded is False`, and `drive_status == \"active\"`. The pinned `_types/enums.py` maps ACTIVE to exactly `active`, and `cli/services/source_serializers.py` emits that label under `drive_status`. Unknown, null, syncing, inaccessible, deleted, and access-denied states do not pass.\n\nThe root reports all 16 final tests passing, including the added recovery regressions. This review confirms the code fixes by inspection and does not claim an independent test rerun.\n\nSkipped expanded review and live services as requested.\nRisk: real account behavior remains untested; the reviewed recovery findings are closed.\n"
+  },
+  "limits": [
+    "All subprocess responses in unit tests are fake.",
+    "No real Zotero export, Google Drive upload, NotebookLM import, or generated literature answer ran.",
+    "No native cross-harness integration or macOS run was tested. Windows is unsupported.",
+    "Default plan was tested through the real Python CLI with NotebookLM unavailable.",
+    "Each remote content comparison downloads the selected files.",
+    "An unresolved question write stops rather than automatically consuming another query."
+  ],
+  "sha256": {
+    "skills/research-workflow/scripts/bulk_literature.py": "d5cb72f6de655f0b3cb0eeb7a90c52755766d28d5835175ecc3f4c94f3735989",
+    "tests/test_bulk_literature.py": "09bf562e65412ffd5cde1ab69f369456f91e2489fc98c46882b95cf4fa596010",
+    "skills/research-workflow/templates/bulk-literature.example.json": "9793fb82b0373cf0dbfaef19e8d514d9bc9da0f92d70ad5bd6c707e54cd13997"
+  }
+}

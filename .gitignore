@@ -5,3 +5,5 @@ __pycache__/
 *.py[cod]
 .DS_Store
 /RESEARCH.local.md
+/bulk-literature.local.json
+/runs/

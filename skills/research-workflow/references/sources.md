@@ -136,6 +136,22 @@ One notebook cannot jointly query another notebook's sources.
 The workflow combines saved evidence across notebooks and inspects original passages before using findings in research claims.
 These source capabilities do not guarantee exhaustive coverage or accurate extraction of every scan, equation, or table.
 
+### NotebookLM command-line adapter
+
+The scripted procedure uses [notebooklm-py v0.8.5](https://github.com/teng-lin/notebooklm-py/releases/tag/v0.8.5).
+It is a third-party client built on undocumented interfaces.
+The inspected source commit is `50493ddf9f9eb9230de998d3dff8565243383078`.
+We did not identify an official consumer CLI in the reviewed documentation.
+
+The [command reference](https://github.com/teng-lin/notebooklm-py/blob/v0.8.5/docs/cli-reference.md) defines notebook creation, Drive imports, source waits, and JSON answers.
+The [exit-code contract](https://github.com/teng-lin/notebooklm-py/blob/v0.8.5/docs/cli-exit-codes.md) distinguishes source wait timeouts from failed or uncertain writes.
+We inspected the corresponding command renderers, source serializers, error handlers, and chat types.
+The script retains source IDs and returned citation text instead of treating citation offsets as plain-text positions.
+
+Google's [Enterprise notebook API](https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-notebooks) requires separate Enterprise configuration.
+It is not a drop-in API for the selected personal-account workflow.
+The adapter's local tests use fake command results and do not establish live service compatibility.
+
 ## Adaptations and limits
 
 The user approved the literature division from the local `paper-I-love/WORKFLOW.md` as their personal default on 2026-10-23.

@@ -1,0 +1,12 @@
+{
+  "collection_key": "ABCD1234",
+  "question": "Which methods address the chosen problem, and what evidence supports their limits?",
+  "remote": "gdrive:research-literature",
+  "run_dir": "./runs/literature-example",
+  "source_limit": 20,
+  "batch_size": 10,
+  "max_queries": 5,
+  "recursive": true,
+  "command_timeout": 300,
+  "wait_timeout": 600
+}
