@@ -174,6 +174,17 @@ No new assistant research exercise or live account integration ran in this round
 These results establish the tested file behavior, not improved research quality or current service compatibility.
 Earlier version results remain historical evidence for their tested packages.
 
+## README badges and Chinese translation
+
+Test date: 2026-10-23.
+The two README files, contribution guide, and scripted guide passed inspection of 57 local links and anchors.
+Both README files use the same six badge images.
+The version and license badges match the skill metadata and license file.
+The pinned CLI packages' metadata supplied their Python requirements.
+The English prose scan and whitespace inspection passed.
+Shields.io returned HTTP 403 in this environment, so live badge rendering remains unverified.
+No script code changed, and runtime tests were not repeated.
+
 ## Limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.

@@ -10,8 +10,12 @@ This script targets client version `0.8.5` and zpm version `1.3.1`.
 
 ## Prepare the tools
 
-Use Python 3.9 or later, zpm, rclone, and the pinned NotebookLM client on the execution host.
-The script uses Python's standard library and Linux or macOS file locking.
+Use Python 3.11 or later for the full toolchain on the execution host.
+Zpm 1.3.1 requires Python 3.11 or later.
+NotebookLM client 0.8.5 requires Python 3.10 or later.
+The runner itself needs Python 3.9 or later and uses only the standard library.
+Install zpm, rclone, and the pinned NotebookLM client separately.
+The script uses Linux or macOS file locking.
 Windows execution is unsupported.
 
 Configure zpm for the selected Zotero library.

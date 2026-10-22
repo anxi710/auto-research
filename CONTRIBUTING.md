@@ -9,6 +9,8 @@ Preserve existing research records and history.
 Write toolkit documentation in plain English.
 Use one instruction per sentence.
 Keep each active rule in one location.
+Keep [README.md](README.md) and [README.zh-CN.md](README.zh-CN.md) consistent.
+If the package version or requirements change, update both README files and their badges.
 
 ## Test the change
 

@@ -1,5 +1,14 @@
 # A portable research workflow
 
+[![Version 0.1.3](https://img.shields.io/badge/version-0.1.3-blue)](skills/research-workflow/SKILL.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Python 3.11+ for bulk tools](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#requirements)
+[![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
+[![notebooklm-py 0.8.5](https://img.shields.io/badge/notebooklm--py-0.8.5-4285F4)](skills/research-workflow/references/scripted-bulk-literature.md)
+[![rclone CLI](https://img.shields.io/badge/rclone-CLI-3F79AD)](skills/research-workflow/references/scripted-bulk-literature.md)
+
+English | [简体中文](README.zh-CN.md)
+
 This toolkit gives AI assistants a shared procedure for study, questions, experiments, analysis, writing, and review.
 A harness is the application that runs an assistant and its tools.
 Research progress stays in files so that another harness can continue the work.
@@ -8,6 +17,23 @@ The main source is [Research-Starter-Kit](https://github.com/LAMDA-NeSy/Research
 The [source map](skills/research-workflow/references/sources.md) explains its coverage and other influences, including autoresearch, AI-Scientist, Hermes, and Pi.
 The workflow has detailed support for computational AI and machine learning.
 It does not include an experiment scheduler or model training framework.
+
+## Requirements
+
+The workflow needs an assistant with file access.
+The Python and tool badges apply to the optional bulk literature pipeline.
+
+| Use | Required tools |
+| --- | --- |
+| Full bulk toolchain | Python 3.11+ on Linux or macOS. |
+| Library export | Zotero and zpm 1.3.1. |
+| Cloud transfer | rclone and a Google Drive account. |
+| Literature queries | NotebookLM access and notebooklm-py 0.8.5. |
+
+The runner itself supports Python 3.9+ and uses only the standard library.
+The external tools have their own dependencies.
+Install them separately with the [scripted pipeline guide](skills/research-workflow/references/scripted-bulk-literature.md#prepare-the-tools).
+This repository does not need a `requirements.txt` file.
 
 ## Start or resume research
 
