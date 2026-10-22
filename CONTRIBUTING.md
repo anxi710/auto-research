@@ -1,41 +1,30 @@
 # Contribute to the research workflow
 
-Contributions can improve research procedures, tool support, examples, or documentation.
-Keep each change focused on a specific user need.
+Keep each change focused on a user need.
 Read [AGENTS.md](AGENTS.md) and the [repository structure](docs/architecture.md) before editing.
-
-## Prepare a change
-
-For a procedure change, follow the [evolution procedure](skills/research-workflow/references/evolution.md).
-Record the intended scope and acceptance conditions before changing behavior.
-Keep personal preferences in local configuration.
-
-Explain which task fails or needs improvement.
-Preserve existing record layouts, identifiers, and research history.
-Keep external lessons as proposals until the user validates their intended scope.
+For behavior changes, follow the [evolution procedure](skills/research-workflow/references/evolution.md).
+Keep lessons from sibling repositories as proposals until the user validates their intended scope.
+Preserve existing research records and history.
 
 Write toolkit documentation in plain English.
 Use one instruction per sentence.
 Keep each active rule in one location.
 
-## Test the affected behavior
+## Test the change
 
-Use temporary directories for behavior tests.
-Run the cases affected by your change.
-Save the actual result and its limits in [tests/RESULTS.md](tests/RESULTS.md).
+Use temporary directories and synthetic or explicitly publishable fixtures.
+Run the affected cases.
+Record actual results and limits in [tests/RESULTS.md](tests/RESULTS.md).
+Proposed tests are not passing results.
 
-| Change | Relevant evidence |
+| Change | Relevant cases |
 | --- | --- |
-| Research stage or saved state | [Research scenarios](tests/scenarios.md) |
+| Research stages or saved state | [Research scenarios](tests/scenarios.md) |
 | Workflow improvement | [Evolution scenarios](tests/evolution.md) |
 | User preferences | [Preference scenarios](tests/preferences.md) |
 | Batch literature analysis | [Bulk literature scenarios](tests/bulk-literature.md) |
-| A command or script | A focused test of its changed behavior and failure handling. |
-| Documentation only | Existing paths, accurate examples, and working local links. |
-
-If you change a script, test its affected behavior without live accounts when possible.
-Record any live integration that you did not test.
-Do not report a proposed test as a passing result.
+| Scripts | Changed behavior and failure handling, without live accounts when possible. |
+| Documentation | Existing paths, accurate examples, and local links. |
 
 Run the offline script tests from the repository root:
 
@@ -43,16 +32,16 @@ Run the offline script tests from the repository root:
 python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
+Record any live integration that you did not test.
+Review the complete diff before submission.
+
 ## Submit the change
 
 Use Conventional Commits, such as `feat: add a corpus inventory` or `fix: preserve source identifiers`.
-Describe the problem, resulting behavior, and evidence in the pull request.
-Review the complete diff before submitting it.
-
+Describe the problem, resulting behavior, and test evidence in the pull request.
 Keep private papers, local preferences, credentials, and browser sessions out of commits.
-Use synthetic or explicitly publishable data in test fixtures and examples.
-Keep the root and skill package copies of [LICENSE](LICENSE) identical.
 
 This toolkit uses the MIT license.
-Keep required notices when you reuse third-party material.
-State its source and license in the affected documentation.
+Keep the root and skill package copies of [LICENSE](LICENSE) identical.
+Keep required third-party notices.
+State their source and license in the affected documentation.

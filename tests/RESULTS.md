@@ -153,6 +153,27 @@ The source review used NotebookLM client `0.8.5` and zpm `1.3.1` contracts.
 Live Google responses, account quotas, real PDF extraction, macOS, and Windows execution were not tested.
 The script supports Linux and macOS locking and explicitly rejects Windows execution.
 
+## Audit and reduction, version 0.1.3
+
+Test date: 2026-10-23.
+All 18 offline unit tests passed with temporary files and fake command responses.
+The two new tests failed before the fixes and passed afterward.
+
+Completed-run cases delete or corrupt saved indexed text and answers.
+Resuming stops without repeating external writes or questions.
+Coverage counts only intact outputs, and the report preserves the failure without parsing damaged answers.
+The blank-answer case stops after one query and preserves its pending state on resume.
+Meaningful answers without citations remain accepted as generated output.
+
+Independent agents inspected the code diff and compared the shortened instructions with the baseline.
+The wording review restored the requirement to record both passed and open stage conditions.
+The package passed metadata validation, local link inspection, whitespace inspection, and the plain-English scan.
+[W007](../changes/W007.md) records the documentation reduction and recovery scope.
+
+No new assistant research exercise or live account integration ran in this round.
+These results establish the tested file behavior, not improved research quality or current service compatibility.
+Earlier version results remain historical evidence for their tested packages.
+
 ## Limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.

@@ -3,7 +3,6 @@
 Use this record for one selected collection analysis.
 Link existing inventories and tables instead of duplicating them.
 For large inventories, use CSV files with the fields below.
-Keep library metadata in its primary library.
 
 ## Scope and configuration
 
@@ -21,18 +20,16 @@ Existing authorization for data and destinations: Unknown.
 
 ## Paper selection
 
-Use one row per distinct paper in this analysis.
-Retain excluded or unavailable papers with reasons.
-Keep reading depth independent of imported or generated content.
+Use one row per distinct paper, including excluded or unavailable papers.
+Keep library metadata in its primary library.
 
 | Paper ID | Library and item key | DOI or stable source | Version | Collection memberships | Include or exclude, with reason | Reading depth | Existing note |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
 ## File inventory
 
-Use one row per exported attachment or missing attachment.
-Preserve duplicate mappings without importing every duplicate.
-Use a content hash such as SHA-256 to identify the snapshot.
+Use one row per exported or missing attachment.
+Preserve duplicate mappings and content hashes.
 
 | Paper ID | Attachment key | Exported path and hash | Duplicate of or selected copy | Transfer status and log | Drive file ID or link | Notebook and source ID | Import status and inspected version |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -41,7 +38,6 @@ Use a content hash such as SHA-256 to identify the snapshot.
 
 Record selected source IDs with each saved prompt and answer.
 Match every planned paper to a returned row or an explicit gap.
-Keep each batch's original response linked for later inspection.
 
 | Batch ID | Notebook | Planned paper and source IDs | Prompt and raw answer paths | Evidence table | Missing or unreadable papers | Next action |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -49,7 +45,7 @@ Keep each batch's original response linked for later inspection.
 ## Evidence coverage
 
 Extraction means a returned row contains relevant source evidence.
-It does not mean a full paper was read.
+Import, extraction, and generated answers do not establish full reading.
 Use multiple rows when one paper supports several findings.
 
 | Paper ID and version | Extraction status | Finding or unresolved question | Notebook citation | Original page, section, or table | Original passage inspected and outcome | Synthesis claim |

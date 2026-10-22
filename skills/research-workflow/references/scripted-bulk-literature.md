@@ -2,20 +2,17 @@
 
 Use this optional script after selecting the [bulk literature procedure](bulk-literature.md).
 It runs exports, transfers, imports, and batch questions from one configuration file.
-It saves progress so that another harness can continue the same run.
+Another harness can resume from its saved files.
 
 The NotebookLM client is the third-party [notebooklm-py](https://github.com/teng-lin/notebooklm-py), not an official Google CLI.
 It uses undocumented service interfaces that can change.
 This script targets client version `0.8.5` and zpm version `1.3.1`.
-Authentication can expire and require another login.
 
 ## Prepare the tools
 
 Use Python 3.9 or later, zpm, rclone, and the pinned NotebookLM client on the execution host.
-The script uses only Python's standard library.
-Its run lock supports Linux and macOS.
-The local tests ran on Linux without live accounts.
-Windows execution is unsupported in this version.
+The script uses Python's standard library and Linux or macOS file locking.
+Windows execution is unsupported.
 
 Configure zpm for the selected Zotero library.
 Configure an rclone remote for the intended Google Drive account.
@@ -28,8 +25,7 @@ uv tool install 'notebooklm-py[cookies]==0.8.5'
 notebooklm --version
 ```
 
-The client can use an existing Chrome login through its documented cookie login command.
-Run authentication yourself on the host with that browser profile.
+For an existing Chrome login, run authentication yourself on the host with that browser profile.
 The pipeline does not extract browser cookies or create credentials.
 
 ```bash
@@ -38,14 +34,13 @@ notebooklm auth check --test --passive --json
 ```
 
 Read the client's [installation guide](https://github.com/teng-lin/notebooklm-py/blob/v0.8.5/docs/installation.md) for other login methods.
-The pipeline requires a successful network authentication check before external mutations.
-It keeps returned account details out of saved run records.
+The pipeline tests authentication before external writes and keeps account details out of saved run records.
 
 ## Set the run configuration
 
 Copy [the configuration example](../templates/bulk-literature.example.json) into the chosen research project.
 Name the copy `bulk-literature.local.json`.
-Replace its example values with the selected collection, destination, question, and limits.
+Replace its example values using the fields below.
 Do not execute the template against its fictional collection key.
 
 | Field | Meaning |
@@ -61,8 +56,8 @@ Do not execute the template against its fictional collection key.
 | `command_timeout` | Maximum seconds for an ordinary command. |
 | `wait_timeout` | Maximum seconds for a source-processing wait. |
 
-The example numbers illustrate configuration, not service limits or recommended paper quotas.
-The query budget does not measure the client's internal network retries or the account's remaining quota.
+Use the account's observed limits rather than the example numbers.
+The query budget counts commands, not internal network retries or the account's remaining quota.
 Keep the run directory outside the portable skill package.
 Keep the configuration and run data out of Git.
 This repository ignores its root `bulk-literature.local.json` and `runs/` directory.
@@ -86,15 +81,13 @@ This command writes to Google Drive and NotebookLM.
 python3 skills/research-workflow/scripts/bulk_literature.py /path/to/project/bulk-literature.local.json --execute
 ```
 
-Use the same command to resume an interrupted run.
+Use the same command to resume, subject to the recovery limits below.
 Keep its configuration and saved state together.
-Use a new run directory for changed source content or configuration.
 Do not edit saved IDs to force a retry.
 
 The script saves external IDs before continuing to dependent operations.
-It uses a separate Drive destination and distinct notebook titles for each run.
-It reconciles unknown creation outcomes before sending another write.
-If the outcome stays unknown, it stops with pending work.
+Each run uses a separate Drive destination and distinct notebook titles.
+Unknown creation outcomes stop the run until remote reconciliation finds the created object.
 
 The transfer uses `rclone copy --immutable` and a content comparison with `rclone check --download --one-way`.
 The comparison downloads remote content, which adds bandwidth use.
@@ -102,40 +95,41 @@ Resuming a transfer rechecks the selected remote files before using them.
 
 ## Inspect the output
 
-The run retains `manifest.json`, `state.json`, `coverage.json`, and `REPORT.md`.
-It also saves transfer progress, notebook IDs, source IDs, prompts, and raw answers.
-It saves imported text and citation data separately from generated answers.
-Its combined report preserves batch boundaries and unresolved work.
+| File | Content |
+| --- | --- |
+| `manifest.json` | Frozen file hashes, item identities, collection memberships, and excluded attachment records. |
+| `state.json` | Transfer progress, external IDs, pending operations, and attempted query count. |
+| `coverage.json` | Counts and unresolved coverage limits. |
+| `outputs/F*.text.json` | Imported text from each source. |
+| `outputs/batch-*.prompt.txt` | Saved batch questions. |
+| `outputs/batch-*.answer.json` | Generated answers and their citation data. |
+| `REPORT.md` | Answers by batch and remaining work. |
 
-The manifest deduplicates selected attachment content across collections.
-It retains the original item identities and collection memberships.
-Attachment metadata alone cannot establish the number of library items without PDFs.
-Record that coverage limit until the complete collection selection is available.
+The script deduplicates attachment content and batches files in inventory order.
+It does not group papers by topic.
+Its `F` IDs identify files rather than distinct papers.
+Library items without PDFs remain unknown until reconciled with the complete library selection.
+Citation offsets do not refer to positions in the saved plain text.
 
-An answered batch is not proof that every paper contributed relevant evidence.
-The report contains generated findings that require original-paper inspection.
-Use the coverage procedure before turning those findings into research conclusions.
-The script does not label imported or summarized papers as fully read.
-
-Link the run and its evidence from the project's corpus record.
-Use the assistant to inspect coverage and synthesize findings across batches.
-The script does not perform an independently checked scientific review.
+Link the run from the project's corpus record.
+Apply the bulk procedure's coverage review and original-paper inspection before synthesizing research conclusions.
+Generated answers do not establish complete coverage or full reading.
 
 ## Handle incomplete runs
 
 If authentication expires, complete login before resuming.
 If source processing times out, resume the same run to inspect its status again.
-If a write outcome is unknown, keep its pending record until remote reconciliation resolves it.
+If a creation outcome stays unknown, preserve its pending record.
+The script does not repeat that write.
+If a question's outcome is unknown, inspect the notebook history manually.
+The script does not replay that question.
 
-If a local export is interrupted, preserve its files and use a new run directory.
-The script does not replay a question with an unknown outcome.
-Inspect that notebook's server answer manually before deciding whether another query is needed.
-
-If the selection exceeds the query budget, reduce the selection or use a new run with a larger explicit budget.
-If a query result is unknown, inspect its saved pending state before any further question.
-If a snapshot or configuration changes, start a new run rather than mixing evidence versions.
+Use a new run directory after an interrupted export or a snapshot or configuration change.
+Preserve the earlier run as evidence.
+If the selection exceeds the query budget, use a new run with a smaller selection or larger explicit budget.
 If the client changes its JSON contract, stop and update the adapter with tests.
 
 The script never uses `ask --new`, which deletes the notebook's server conversation in this client version.
 It never uses `rclone sync` to delete destination files.
-Local tests cannot establish current account access, real import behavior, or the quality of generated analysis.
+Tests ran offline on Linux.
+They cannot establish current account access, real import behavior, or analysis quality.

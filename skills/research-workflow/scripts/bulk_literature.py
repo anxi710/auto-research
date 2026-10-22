@@ -37,6 +37,10 @@ def digest(path):
     return result.hexdigest()
 
 
+def matches_hash(path, expected):
+    return bool(expected) and path.is_file() and digest(path) == expected
+
+
 def read_json(path):
     try:
         return json.loads(path.read_text(encoding="utf-8"))
@@ -239,7 +243,7 @@ class Pipeline:
     def export(self):
         manifest_path = self.root / "manifest.json"
         if self.state.get("manifest_sha256"):
-            require(manifest_path.exists() and digest(manifest_path) == self.state["manifest_sha256"], "Frozen manifest changed. Use a new run.")
+            require(matches_hash(manifest_path, self.state["manifest_sha256"]), "Frozen manifest changed. Use a new run.")
             self.manifest = read_json(manifest_path)
             require(isinstance(self.manifest, dict), "Unsupported frozen manifest.")
             current = inventory(self.root / "export", self.settings["collection_key"])
@@ -307,7 +311,7 @@ class Pipeline:
         if batch.get("notebook_id"):
             require(valid_id(batch["notebook_id"]), "Invalid saved notebook ID.")
             return batch["notebook_id"]
-        matches = [row for row in self.notebooks() if isinstance(row, dict) and row.get("title") == batch["title"]]
+        matches = [row for row in self.notebooks() if row["title"] == batch["title"]]
         require(len(matches) <= 1, "Several notebooks match the run title. Resolve the conflict before resuming.")
         if matches:
             require(batch.get("create_pending"), "A notebook already uses this run title. Use a new run directory.")
@@ -365,8 +369,7 @@ class Pipeline:
                 save_json(text_path, text, exclusive=True)
             state["text_sha256"] = digest(text_path)
         else:
-            require(text_path.exists() and digest(text_path) == state["text_sha256"], "Saved indexed text changed.")
-        state["ready"] = True
+            require(matches_hash(text_path, state["text_sha256"]), "Saved indexed text changed.")
         self.checkpoint()
         return source_id
 
@@ -377,7 +380,10 @@ class Pipeline:
         for number, batch in enumerate(self.state["batches"], 1):
             answer_path = output / f"batch-{number:03d}.answer.json"
             if batch.get("answer_sha256"):
-                require(answer_path.exists() and digest(answer_path) == batch["answer_sha256"], "Saved answer changed.")
+                require(matches_hash(answer_path, batch["answer_sha256"]), "Saved answer changed.")
+                for file_id in batch["file_ids"]:
+                    expected = batch["sources"].get(file_id, {}).get("text_sha256")
+                    require(matches_hash(output / f"{file_id}.text.json", expected), "Saved indexed text changed.")
                 continue
             self.notebook(batch)
             ids = [self.source(batch, files[file_id]) for file_id in batch["file_ids"]]
@@ -412,20 +418,25 @@ class Pipeline:
 
     @staticmethod
     def validate_answer(answer, source_ids):
-        require(isinstance(answer, dict) and isinstance(answer.get("answer"), str) and isinstance(answer.get("references"), list), "Unknown answer shape.")
+        require(isinstance(answer, dict) and isinstance(answer.get("answer"), str) and answer["answer"].strip() and isinstance(answer.get("references"), list), "Unknown or empty answer.")
         require(all(isinstance(ref, dict) and ref.get("source_id") in source_ids for ref in answer["references"]), "An answer cites a source outside the selected batch.")
 
     def report(self):
         files = self.manifest["files"]
         batches = self.state["batches"]
         sources = [s for b in batches for s in b["sources"].values()]
+        output = self.root / "outputs"
+        saved_texts = sum(matches_hash(output / f"{fid}.text.json", source.get("text_sha256"))
+                          for batch in batches for fid, source in batch["sources"].items())
+        saved_answers = [matches_hash(output / f"batch-{number:03d}.answer.json", batch.get("answer_sha256"))
+                         for number, batch in enumerate(batches, 1)]
         coverage = {"selected_item_records": len({m["item_key"] for f in files for m in f["members"]}),
                     "active_export_records": sum(len(f["members"]) for f in files), "unique_files": len(files),
                     "excluded_attachment_records": len(self.manifest["excluded"]),
                     "transferred_files": len(self.state.get("drive_ids", {})),
                     "imported_sources": sum("source_id" in s for s in sources),
-                    "indexed_sources_saved": sum("text_sha256" in s for s in sources),
-                    "batch_answers_saved": sum("answer_sha256" in b for b in batches),
+                    "indexed_sources_saved": saved_texts,
+                    "batch_answers_saved": sum(saved_answers),
                     "queries_attempted": self.state["queries_attempted"],
                     "papers_fully_read": 0, "claims_inspected_in_originals": 0,
                     "extracted_paper_rows": "unverified", "items_without_attachments": "unknown"}
@@ -435,11 +446,11 @@ class Pipeline:
             lines.extend(["", f"## Batch {number}", "", "Files: " + ", ".join(batch["file_ids"])])
             if batch.get("notebook_id"):
                 lines.append(f"Notebook: https://notebooklm.google.com/notebook/{batch['notebook_id']}")
-            if batch.get("answer_sha256"):
+            if saved_answers[number - 1]:
                 answer = read_json(self.root / "outputs" / f"batch-{number:03d}.answer.json")
                 lines.extend(["", answer["answer"], "", f"Raw answer and citations: [batch-{number:03d}.answer.json](outputs/batch-{number:03d}.answer.json)"])
             else:
-                lines.extend(["", "Answer: pending."])
+                lines.extend(["", "Answer: missing or changed." if batch.get("answer_sha256") else "Answer: pending."])
         lines.extend(["", "## Next actions", "", self.state.get("stop_reason", "Inspect citations in the original PDFs before using any claim."), "Reconcile generated rows with every file and item in manifest.json.", "Keep unresolved rows and extraction failures visible.", "Compare batches with compatible data and methods in the research harness.", "Global scientific synthesis and original-source review remain unfinished.", ""])
         (self.root / "REPORT.md").write_text("\n".join(lines), encoding="utf-8")
 

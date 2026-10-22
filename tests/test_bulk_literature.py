@@ -163,6 +163,49 @@ class PipelineTests(unittest.TestCase):
                 self.assertEqual(len(tools.notebooks), 2)
                 self.assertEqual(sum(len(s) for s in tools.sources.values()), 2)
 
+    def test_completed_outputs_must_still_match_saved_hashes(self):
+        for filename, count_field in (("F0001.text.json", "indexed_sources_saved"),
+                                      ("batch-001.answer.json", "batch_answers_saved")):
+            for change in ("delete", "corrupt"):
+                with self.subTest(filename=filename, change=change), tempfile.TemporaryDirectory() as directory:
+                    settings = bulk.load_config(self.settings_file)
+                    settings["run_dir"] = str(Path(directory) / "run")
+                    tools = FakeTools()
+                    pipeline = bulk.Pipeline(settings, tools)
+                    pipeline.run()
+                    path = pipeline.root / "outputs" / filename
+                    if change == "delete":
+                        path.unlink()
+                    else:
+                        path.write_text("invalid JSON")
+                    calls = len(tools.calls)
+                    with self.assertRaisesRegex(bulk.Stop, "Saved .* changed"):
+                        bulk.Pipeline(settings, tools).run()
+                    self.assertFalse(any(args[1] in ("create", "ask") or args[1:3] == ["source", "add-drive"]
+                                         for args in tools.calls[calls:]))
+                    self.assertEqual(bulk.read_json(pipeline.root / "coverage.json")[count_field], 1)
+                    self.assertIn("Run state: stopped", (pipeline.root / "REPORT.md").read_text())
+                    if change == "delete":
+                        self.assertFalse(path.exists())
+                    else:
+                        self.assertEqual(path.read_text(), "invalid JSON")
+
+    def test_blank_answer_stops_without_repeating_query(self):
+        def runner(args, **kwargs):
+            result = self.tools(args, **kwargs)
+            if args[1] == "ask":
+                return self.tools.reply(args, {"answer": " \n\t", "references": []})
+            return result
+        settings = bulk.load_config(self.settings_file)
+        with self.assertRaisesRegex(bulk.Stop, "answer"):
+            bulk.Pipeline(settings, runner).run()
+        self.assertEqual(self.count("notebooklm", "ask"), 1)
+        self.assertEqual(bulk.read_json(self.pipeline().root / "state.json")["status"], "stopped")
+        with self.assertRaisesRegex(bulk.Stop, "unconfirmed"):
+            bulk.Pipeline(settings, runner).run()
+        self.assertEqual(self.count("notebooklm", "ask"), 1)
+        bulk.Pipeline.validate_answer({"answer": "No relevant evidence was found.", "references": []}, [])
+
     def test_unknown_write_without_match_never_retries(self):
         self.tools.fail = "create"
         pipeline = self.pipeline()
