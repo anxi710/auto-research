@@ -1,0 +1,236 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Shanghai",
+  "status": "captured",
+  "user_validation": "pending for every lesson",
+  "path_base": "parent directory of the auto-research repository",
+  "scope": "Selected local source files. No experiments or source scripts were executed.",
+  "limits": "Source reports and implemented code do not establish measured workflow improvement. Raw experiment outputs were not reproduced.",
+  "sources": [
+    {
+      "path": "long-horizon-optimization/site/docs/reading-workflow.md",
+      "revision": "782557696774b13ef9bf0adfbba17bd088627f68",
+      "sha256": "f8f7c7db8dab7941ce161b43007cdab0200bae37c58c83a44d3266fdcb2d34da",
+      "lessons": [],
+      "lines": [
+        "38-70",
+        "149-157"
+      ],
+      "role": "Earlier reading source, superseded for L1 by the user-selected paper-I-love workflow."
+    },
+    {
+      "path": "long-horizon-optimization/site/docs/papers/execution/planner-executor-coordination/from-plan-to-action/index.md",
+      "revision": "782557696774b13ef9bf0adfbba17bd088627f68",
+      "sha256": "4443d5091abb0b5fd0177505acf322bf1953810f42fc85cb1f366f33590951da",
+      "lessons": [],
+      "lines": [
+        "31-36",
+        "118-122"
+      ],
+      "role": "Earlier reading source, superseded for L1 by the user-selected paper-I-love workflow."
+    },
+    {
+      "path": "long-horizon-optimization/src/planner-eval/experiments/planner-annotation-pilot/README.md",
+      "revision": "b03ff72a18156f0672c68e472540f87a4b96c6c4",
+      "sha256": "7ed3479f09399c2d919b02b1753f83bb4f3d5cbf5abc33814de3941fec9b6052",
+      "lessons": [
+        "L2"
+      ],
+      "lines": [
+        "17-23",
+        "40-46"
+      ]
+    },
+    {
+      "path": "long-horizon-optimization/src/planner-eval/experiments/planner-annotation-pilot/prepare_judge_inputs.py",
+      "revision": "b03ff72a18156f0672c68e472540f87a4b96c6c4",
+      "sha256": "aba44d3752d216bbdb0cc8ce30f9c7dd4d70e4f87fa740ba3ac81132e759de67",
+      "lessons": [
+        "L2"
+      ],
+      "lines": [
+        "30-55",
+        "94-128"
+      ]
+    },
+    {
+      "path": "long-horizon-optimization/src/planner-eval/experiments/planner-annotation-pilot/run_judge.py",
+      "revision": "b03ff72a18156f0672c68e472540f87a4b96c6c4",
+      "sha256": "649e31d1b7ce4ee0186efd887561ac9c9016bbe85583fcee28eeea0b277a8886",
+      "lessons": [
+        "L2"
+      ],
+      "lines": [
+        "20-38",
+        "80-90"
+      ]
+    },
+    {
+      "path": "experience-applicability-learning/docs/02-experiment-zero.md",
+      "revision": null,
+      "sha256": "2ba6b616f17dff34895762ec898d5a9c7ebcb55d44fa5a2a12f6198e3ec9f1f0",
+      "lessons": [
+        "L3"
+      ],
+      "lines": [
+        "3"
+      ]
+    },
+    {
+      "path": "experience-applicability-learning/docs/06-pilot-preregistration.md",
+      "revision": null,
+      "sha256": "627996a83f4099eb72f6666821c52bf804ec1acd78cf19b1a0b3c60731517358",
+      "lessons": [
+        "L3"
+      ],
+      "lines": [
+        "3"
+      ]
+    },
+    {
+      "path": "experience-applicability-learning/README.md",
+      "revision": null,
+      "sha256": "b75afdfb73b93f83749e740d805e3e4e9b471e25fc2eb79ca54b83dc0ea42da4",
+      "lessons": [
+        "L3"
+      ],
+      "lines": [
+        "73-79"
+      ]
+    },
+    {
+      "path": "experience-applicability-learning/notes/research-log.md",
+      "revision": null,
+      "sha256": "f1bcfc01c0eee4fa5a0e0f2b10b23f8a7e27112cc6a886ebf49f1392b472da32",
+      "lessons": [
+        "L3"
+      ],
+      "lines": [
+        "303-313"
+      ]
+    },
+    {
+      "path": "long-horizon-optimization/docs/RESEARCH_STATE.md",
+      "revision": "782557696774b13ef9bf0adfbba17bd088627f68",
+      "sha256": "a929a2f0d6039f08e89e9a1bf87d043fccdb39b1c5ff3a9b58938dfa21789729",
+      "lessons": [
+        "L3"
+      ],
+      "lines": [
+        "13-19"
+      ]
+    },
+    {
+      "path": "long-horizon-optimization/archive/stopped-experiments/2026-10-03/STATUS.md",
+      "revision": "782557696774b13ef9bf0adfbba17bd088627f68",
+      "sha256": "ac771108aa23aea62a42d4198868a5912d9a1a75bda6e207c9211e8903a0df85",
+      "lessons": [
+        "L3"
+      ],
+      "lines": [
+        "3-11"
+      ]
+    },
+    {
+      "path": "long-horizon planning/pasta/baselines.py",
+      "revision": "89d65f2cdb3e20f2452abd05dbed618e5350d0f1",
+      "sha256": "b20a22a91b5347614fec03efa6c04c99a7a2e75b7628e885c6fff457236962be",
+      "lessons": [
+        "L4"
+      ],
+      "lines": [
+        "123-147"
+      ]
+    },
+    {
+      "path": "long-horizon planning/pasta/pattern_library/retriever.py",
+      "revision": "89d65f2cdb3e20f2452abd05dbed618e5350d0f1",
+      "sha256": "453bdbc498d4e038ebb8a48bd5615c7e1f84b71bc758b886f0cae7c9ac0cf16c",
+      "lessons": [
+        "L4"
+      ],
+      "lines": [
+        "146-169"
+      ]
+    },
+    {
+      "path": "long-horizon planning/pasta/README.md",
+      "revision": "89d65f2cdb3e20f2452abd05dbed618e5350d0f1",
+      "sha256": "42e52d5efba354e1c1289e53bce786251a6b9578533f2109e613e8e990524733",
+      "lessons": [
+        "L4"
+      ],
+      "lines": [
+        "125-137"
+      ]
+    },
+    {
+      "path": "long-horizon planning/pasta/tests/test_pipeline.py",
+      "revision": "89d65f2cdb3e20f2452abd05dbed618e5350d0f1",
+      "sha256": "db76d870781dc41690c7e5f1634071bc12c7847746c28a02f4ff0a555d363b83",
+      "lessons": [
+        "L4"
+      ],
+      "lines": [
+        "1-10"
+      ]
+    },
+    {
+      "path": "long-horizon planning/website/docs/review/index.mdx",
+      "revision": null,
+      "sha256": "b958c9c5344ae676a7478c9649ef06c9e369b463c2d0bd6ac0fe62015a9a47a0",
+      "lessons": [
+        "L4"
+      ],
+      "lines": [
+        "132-141"
+      ]
+    },
+    {
+      "path": "paper-I-love/WORKFLOW.md",
+      "revision": null,
+      "head_before_local_changes": "cbc344f46392cd5d542735fd22be67674ccefcb4",
+      "working_state": "untracked",
+      "sha256": "9440d1913be06277a02dd9b39208dbcbc6332cfed273df73d5b08658fa5e571a",
+      "lessons": [
+        "L1"
+      ],
+      "lines": [
+        "3-13",
+        "27-34",
+        "48",
+        "51-53"
+      ]
+    },
+    {
+      "path": "paper-I-love/README.md",
+      "revision": null,
+      "head_before_local_changes": "cbc344f46392cd5d542735fd22be67674ccefcb4",
+      "working_state": "modified",
+      "sha256": "620ef0dd203a800b02b49fa9af0e75a568caf0ea9920f80079794bee8d258f2f",
+      "lessons": [
+        "L1"
+      ],
+      "lines": [
+        "5"
+      ]
+    }
+  ],
+  "package_sha256": {
+    "skills/research-workflow/SKILL.md": "720c02f793d8d8923e250e545aaf8e53dba7e94b73f4019b164c4a6de1060856",
+    "skills/research-workflow/references/evolution.md": "9d45bc4449167520552167ba328b4098a17133854ba9f32dfb5dc02890bafb2a",
+    "skills/research-workflow/references/sources.md": "28aefbeb6248e05fe6c3533285e4587b22bfe1dd96832dc0153a5f2de86f14f0",
+    "skills/research-workflow/references/workflow.md": "b865782ec053d9165b570ad82f6c59e3ebd9142e60fbc5bca5e6895fe1f3add3",
+    "skills/research-workflow/templates/BRIEF.md": "57b2b5d0ae3b68de8c520bcdae051bc8767f9fea6e0606513d710674a71cc522",
+    "skills/research-workflow/templates/CHANGE.md": "9503e109f1290910fcaede1f1b29f1dbcefa9218cc97410eb7a2588cf76277b9",
+    "skills/research-workflow/templates/CLAIMS.md": "c296a146ed1826b26854b7e2e886200549d33050326222e62135534efb67143c",
+    "skills/research-workflow/templates/EXPERIMENT.md": "3e23eb525c28b16faa11728d2e1dba08f2dd1d4703fa96c34639cd1635fd6a3c",
+    "skills/research-workflow/templates/LITERATURE.md": "e8a68681c68218dbac4b3e80201061241dd0c0eecdbf382f69870c5642540a07",
+    "skills/research-workflow/templates/MANUSCRIPT.md": "ec70de198b3c9e8147471394629bfe0dd5bde9e868cf7bc5f561f7b9cc28ac0c",
+    "skills/research-workflow/templates/PAPER.md": "ea6d1df2b82b79e2935914bbc2e4dc8fd5d3afc8a9ba53ac4624a5fd2fa7bcb8",
+    "skills/research-workflow/templates/QUESTION.md": "b3a506466f0f7758b9046353e2e11d5a1e645fd6257c7e19d67832e235a52db7",
+    "skills/research-workflow/templates/REVIEW.md": "8a9f3fc3d8793e4f10d45e93e1084b0072b1e5881867eadd33a02e1c9da0fe92",
+    "skills/research-workflow/templates/STATE.md": "1d0c9940b4eaafa6fb78a69a44c7958b5326a5f18af887c8b711172d4004c58c"
+  },
+  "source_selection_update": "The user selected paper-I-love as the newer reading workflow. L1 uses its local WORKFLOW.md. Earlier optimization reading files are retained only as historical inspection evidence."
+}

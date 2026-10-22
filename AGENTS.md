@@ -10,6 +10,7 @@ Use the research directory that the user selects.
 
 For changes to this toolkit, work on the toolkit itself.
 For workflow ideas or behavior changes, read [the evolution procedure](skills/research-workflow/references/evolution.md).
+New lessons from sibling repositories remain proposals until the user validates them for the intended scope.
 Do not start a research project to test a documentation change.
 Use temporary directories for behavior tests.
 Use Conventional Commits for commit messages, such as `feat: add workflow evaluation`.
