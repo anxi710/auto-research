@@ -1,0 +1,12 @@
+{
+  "task_id": "T001",
+  "revision": 1,
+  "goal": null,
+  "owner": null,
+  "inputs": [{"path": null, "sha256": null}],
+  "dependencies": [],
+  "write_paths": ["tasks/T001/attempts/A001/"],
+  "budget_ref": "BRIEF.md",
+  "acceptance": [],
+  "stop_condition": null
+}

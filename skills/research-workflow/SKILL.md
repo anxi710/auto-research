@@ -2,7 +2,7 @@
 name: research-workflow
 description: Run research through literature study, questions, experiments, analysis, writing, and review. Resume from file records across AI assistants. Capture workflow feedback and test scoped improvements when requested.
 metadata:
-  version: "0.1.4"
+  version: "0.1.5"
 ---
 
 # Research workflow
@@ -116,9 +116,9 @@ Respect the recorded time, compute, and spending limits.
 If a costly run lacks a budget, ask before launching it.
 Do not change account access or submit work without authorization for that action.
 
-If independent tasks justify parallel work, use available subagents within the user's limits.
-Assign separate output files and one owner for shared state.
-If subagents are unavailable, perform the same steps in sequence.
+Use the [collaboration procedure](references/collaboration.md) when delegated work needs saved ownership, separate outputs, or an independent review.
+Read it when resuming a task that already uses those records.
+Keep simple standalone work in one context when that meets the request.
 
 ## Finish a work session
 

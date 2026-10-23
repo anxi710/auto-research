@@ -1,0 +1,12 @@
+{
+  "task_id": "T001",
+  "task_revision": 1,
+  "attempt_id": "A001",
+  "task_path": "tasks/T001/attempts/A001/task.json",
+  "task_sha256": null,
+  "execution_status": null,
+  "artifacts": [],
+  "unresolved": [],
+  "resource_usage": {"tokens": null, "measurement": "unavailable"},
+  "next_action": null
+}

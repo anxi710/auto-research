@@ -42,3 +42,32 @@ Remaining disagreements: None recorded.
 Actions, owners, and agreed dates: None recorded.
 Changes to research state: None yet.
 Next action: Unknown.
+
+## Task acceptance (optional)
+
+Use this block only for a task under the [collaboration procedure](../references/collaboration.md).
+Replace template links with project links before saving this record.
+Remove this section from ordinary discussions.
+Fill every required field from the inspected files and actual decision.
+Keep these fields in this block only.
+
+```json
+{
+  "review_id": "R001",
+  "task_id": "T001",
+  "task_revision": 1,
+  "attempt_id": "A001",
+  "result_path": "tasks/T001/attempts/A001/result.json",
+  "result_sha256": null,
+  "reviewer": null,
+  "decision_owner": null,
+  "decision": null,
+  "basis": [],
+  "unresolved": [],
+  "supersedes": null
+}
+```
+
+Use `basis` for evidence paths, source locations, and observed checks.
+Use `supersedes` with `path` and `sha256` only when this decision replaces a review of the same result.
+The procedure defines valid decisions and the effect of later changes.

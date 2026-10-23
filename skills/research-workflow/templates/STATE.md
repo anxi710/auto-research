@@ -25,6 +25,11 @@ Record the reason for any pause.
 | --- | --- | --- |
 | Project scope | `BRIEF.md` | Not established. |
 
+If the project uses collaboration records, link each current contract, submitted result, and acceptance review in this table.
+Keep the acceptance fields in their review record.
+Record the coordinator, execution mode, and reason beside those links.
+Omit these entries when the task does not need them.
+
 ## Stage decision
 
 Completed condition: None yet.

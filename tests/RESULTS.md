@@ -208,6 +208,38 @@ The [evidence record](evidence/W008.json) contains the comparison, file hashes, 
 No live account, macOS, power-loss, or cross-harness test ran.
 These results describe local file behavior, not research quality or current service compatibility.
 
+## Optional collaboration records, version 0.1.5
+
+Test date: 2026-10-23.
+Three synthetic tasks ran once with baseline 0.1.4 and once with candidate 0.1.5 in fresh Codex subagent contexts.
+They covered two reading assignments, review after interruption, and standalone abstract reading.
+A separate candidate case covered a withdrawn upstream acceptance with unchanged artifact bytes.
+Each task allowed ten local tool calls and five minutes.
+
+An independent evaluator inspected the saved files against fixed criteria.
+The result was 40 pass, zero fail, and 11 uncertain across seven executions.
+All 40 protected-file comparisons passed.
+All supplied skill files remained unchanged during the exercises.
+Both versions met the requirements that file evidence can establish.
+The separate case correctly withheld downstream acceptance and kept the earlier artifacts and reviews.
+
+The uncertain criteria prohibit actions that file snapshots cannot rule out.
+Execution reports stated three or four local tool calls and no external actions per case.
+Those reports lack an independent action trace and do not establish hard permission or timing limits.
+Token use and cost remain unknown.
+The assignment case produced three output files with the baseline and seven with the candidate.
+The review case produced three with the baseline and four with the candidate.
+Both standalone runs created only answer.md.
+No general quality, speed, or cost improvement follows from these cases.
+
+The new JSON templates and optional review block parsed successfully.
+Inspection covered 72 local links and anchors, skill metadata, and matching version badges.
+The stage guide, claim states, evolution procedure, N7 script, and its tests remained unchanged.
+[W009](../changes/W009.md) records adoption of the requested optional format and its limits.
+The [evidence record](evidence/W009.json) preserves task inputs, outputs, review decisions, file hashes, and the implementation patch.
+No real account, second harness, runtime adapter, or operating-system isolation test ran.
+The N7 unit tests were not repeated because their script and test bytes did not change.
+
 ## Limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.
