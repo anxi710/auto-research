@@ -128,6 +128,28 @@ The script does not repeat that write.
 If a question's outcome is unknown, inspect the notebook history manually.
 The script does not replay that question.
 
+The script writes JSON to a `.tmp` file before it publishes the final file.
+For frozen records, publication uses a hard link, another name for the same file.
+This operation fails if the final file exists or the filesystem cannot create hard links.
+An existing `.tmp` file also stops a save of a frozen record.
+The script keeps that file for inspection.
+An interrupted write leaves the final file absent or unchanged.
+This protects against process interruptions, not data loss after a power failure.
+
+If a requested answer is damaged or missing, preserve the run directory and its `.tmp` files.
+Do not clear `ask_pending` or reduce `queries_attempted` in `state.json`.
+These fields prevent a repeated request and preserve the query count.
+Use the notebook ID and answer filename in the error message to find the affected batch.
+Compare the notebook history with that batch's saved prompt and source IDs in `state.json`.
+A `.tmp` file is recovery material, not an accepted answer.
+Do not edit a remaining `.tmp` file in place.
+It can share its contents with the final file.
+Make sure that any recovered response is complete and matches the batch before restoring the answer file.
+Keep a separate copy of each damaged file before any repair.
+Do not invent missing response fields.
+If the original response is unavailable, leave the request pending.
+A new query needs separate approval and a new run.
+
 Use a new run directory after an interrupted export or a snapshot or configuration change.
 Preserve the earlier run as evidence.
 If the selection exceeds the query budget, use a new run with a smaller selection or larger explicit budget.

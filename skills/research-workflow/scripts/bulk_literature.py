@@ -6,6 +6,7 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 import hashlib
 import json
+import os
 from pathlib import Path, PurePosixPath
 import re
 import subprocess
@@ -49,12 +50,14 @@ def read_json(path):
 
 
 def save_json(path, value, exclusive=False):
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    with temporary.open("x" if exclusive else "w", encoding="utf-8") as stream:
+        stream.write(encoded(value))
     if exclusive:
-        with path.open("x", encoding="utf-8") as stream:
-            stream.write(encoded(value))
+        # A hard link publishes the complete file without replacing existing evidence.
+        os.link(temporary, path)
+        temporary.unlink()
     else:
-        temporary = path.with_suffix(path.suffix + ".tmp")
-        temporary.write_text(encoded(value), encoding="utf-8")
         temporary.replace(path)
 
 
@@ -387,14 +390,20 @@ class Pipeline:
                 continue
             self.notebook(batch)
             ids = [self.source(batch, files[file_id]) for file_id in batch["file_ids"]]
+            recovery = (f"Inspect notebook {batch['notebook_id']} history and {answer_path.name}. "
+                        "Preserve this run. Do not clear ask_pending or reduce queries_attempted. "
+                        "This run will not repeat the request.")
             if batch.get("ask_pending") and answer_path.exists():
-                answer = read_json(answer_path)
-                self.validate_answer(answer, ids)
+                try:
+                    answer = read_json(answer_path)
+                    self.validate_answer(answer, ids)
+                except Stop as exc:
+                    raise Stop(f"{exc} {recovery}") from exc
                 batch["answer_sha256"] = digest(answer_path)
                 batch.pop("ask_pending")
                 self.checkpoint()
                 continue
-            require(not batch.get("ask_pending"), "An answer request is unconfirmed. Inspect the notebook history. This run will not repeat the request.")
+            require(not batch.get("ask_pending"), f"An answer request is unconfirmed. {recovery}")
             require(self.state["queries_attempted"] < self.settings["max_queries"], "The query budget is exhausted.")
             prompt_path = output / f"batch-{number:03d}.prompt.txt"
             prompt = (f"Question: {self.settings['question']}\n\nUse only the selected sources.\n"
@@ -411,7 +420,10 @@ class Pipeline:
                 args.extend(["-s", source_id])
             answer = self.call(args, True)
             self.validate_answer(answer, ids)
-            save_json(answer_path, answer, exclusive=True)
+            try:
+                save_json(answer_path, answer, exclusive=True)
+            except OSError as exc:
+                raise Stop(f"Cannot save {answer_path.name}: {exc}. {recovery}") from exc
             batch["answer_sha256"] = digest(answer_path)
             batch.pop("ask_pending", None)
             self.checkpoint()

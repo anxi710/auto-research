@@ -1,6 +1,8 @@
 """Offline behavior tests. No accounts or external processes are used."""
+from contextlib import contextmanager
 import importlib.util
 import json
+import os
 from pathlib import Path
 import subprocess
 import tempfile
@@ -244,6 +246,59 @@ class PipelineTests(unittest.TestCase):
                 self.assertEqual(sum(args[1] == "ask" for args in tools.calls), 2)
                 self.assertEqual(sum(args[1:3] == ["source", "fulltext"] for args in tools.calls), 2)
 
+    def test_answer_publish_failure_preserves_pending_query(self):
+        for failure in (KeyboardInterrupt, OSError):
+            with self.subTest(failure=failure), tempfile.TemporaryDirectory() as directory:
+                settings = bulk.load_config(self.settings_file)
+                settings["run_dir"] = str(Path(directory) / "run")
+                tools = FakeTools()
+                pipeline = bulk.Pipeline(settings, tools)
+                original_link = os.link
+                def interrupted_link(source, destination, *args, **kwargs):
+                    if Path(destination).name == "batch-001.answer.json":
+                        raise failure("Simulated failure before answer publication")
+                    return original_link(source, destination, *args, **kwargs)
+                with patch("os.link", interrupted_link):
+                    with self.assertRaises(KeyboardInterrupt if failure is KeyboardInterrupt else bulk.Stop):
+                        pipeline.run()
+                answer_path = pipeline.root / "outputs/batch-001.answer.json"
+                temporary = answer_path.with_suffix(".json.tmp")
+                self.assertFalse(answer_path.exists())
+                self.assertEqual(bulk.read_json(temporary)["answer"], "Generated finding [1].")
+                saved = bulk.read_json(pipeline.root / "state.json")
+                self.assertTrue(saved["batches"][0]["ask_pending"])
+                self.assertEqual(saved["queries_attempted"], 1)
+                for _ in range(2):
+                    with self.assertRaises(bulk.Stop) as stopped:
+                        bulk.Pipeline(settings, tools).run()
+                    for fragment in ("unconfirmed", "batch-001.answer.json", "nb-0", "history", "not repeat"):
+                        self.assertIn(fragment, str(stopped.exception))
+                    resumed = bulk.read_json(pipeline.root / "state.json")
+                    self.assertEqual(resumed["batches"], saved["batches"])
+                    self.assertEqual(resumed["queries_attempted"], 1)
+                    self.assertEqual(sum(args[1] == "ask" for args in tools.calls), 1)
+                    self.assertFalse(answer_path.exists())
+                    self.assertEqual(bulk.read_json(temporary)["answer"], "Generated finding [1].")
+
+    def test_legacy_partial_answer_is_kept_without_repeating_query(self):
+        self.tools.fail = "ask"
+        pipeline = self.pipeline()
+        with self.assertRaises(bulk.Stop):
+            pipeline.run()
+        answer_path = pipeline.root / "outputs/batch-001.answer.json"
+        answer_path.write_text('{"answer')
+        saved = bulk.read_json(pipeline.root / "state.json")
+        for _ in range(2):
+            with self.assertRaises(bulk.Stop) as stopped:
+                self.pipeline().run()
+            for fragment in ("Cannot read JSON", "batch-001.answer.json", "nb-0", "history", "not repeat"):
+                self.assertIn(fragment, str(stopped.exception))
+            self.assertEqual(answer_path.read_text(), '{"answer')
+            resumed = bulk.read_json(pipeline.root / "state.json")
+            self.assertEqual(resumed["batches"], saved["batches"])
+            self.assertEqual(resumed["queries_attempted"], 1)
+            self.assertEqual(self.count("notebooklm", "ask"), 1)
+
     def test_changed_remote_bytes_stop_resume_before_more_imports(self):
         self.tools.wait_timeout = True
         with self.assertRaises(bulk.Stop):
@@ -336,6 +391,69 @@ class PipelineTests(unittest.TestCase):
         self.settings_file.write_text(json.dumps(self.settings))
         with self.assertRaisesRegex(bulk.Stop, "outside"):
             bulk.load_config(self.settings_file)
+
+
+class SaveJsonTests(unittest.TestCase):
+    def test_partial_write_never_publishes_or_replaces_final_file(self):
+        value = {"answer": "Complete response"}
+        original_open = Path.open
+        @contextmanager
+        def interrupted_open(path, *args, **kwargs):
+            with original_open(path, *args, **kwargs) as stream:
+                class PartialWriter:
+                    def write(self, content):
+                        stream.write(content[:8])
+                        stream.flush()
+                        raise KeyboardInterrupt("Simulated crash after eight bytes")
+                yield PartialWriter()
+        for exclusive in (True, False):
+            with self.subTest(exclusive=exclusive), tempfile.TemporaryDirectory() as directory:
+                path = Path(directory) / ("answer.json" if exclusive else "state.json")
+                if not exclusive:
+                    path.write_text('{"previous": true}\n')
+                with patch.object(Path, "open", interrupted_open):
+                    with self.assertRaises(KeyboardInterrupt):
+                        bulk.save_json(path, value, exclusive=exclusive)
+                if exclusive:
+                    self.assertFalse(path.exists())
+                else:
+                    self.assertEqual(path.read_text(), '{"previous": true}\n')
+                self.assertEqual(path.with_suffix(".json.tmp").read_text(), bulk.encoded(value)[:8])
+
+    def test_exclusive_save_does_not_overwrite_existing_file(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "answer.json"
+            bulk.save_json(path, {"answer": "First response"}, exclusive=True)
+            self.assertFalse(path.with_suffix(".json.tmp").exists())
+            with self.assertRaises(FileExistsError):
+                bulk.save_json(path, {"answer": "Second response"}, exclusive=True)
+            self.assertEqual(bulk.read_json(path), {"answer": "First response"})
+
+    def test_exclusive_retry_keeps_interrupted_temporary_file(self):
+        for published in (False, True):
+            with self.subTest(published=published), tempfile.TemporaryDirectory() as directory:
+                path = Path(directory) / "answer.json"
+                temporary = path.with_suffix(".json.tmp")
+                if published:
+                    original_unlink = Path.unlink
+                    def interrupted_unlink(target, *args, **kwargs):
+                        if target == temporary:
+                            raise KeyboardInterrupt("Simulated crash before temporary file cleanup")
+                        return original_unlink(target, *args, **kwargs)
+                    with patch.object(Path, "unlink", interrupted_unlink):
+                        with self.assertRaises(KeyboardInterrupt):
+                            bulk.save_json(path, {"answer": "First response"}, exclusive=True)
+                    self.assertEqual(path.read_bytes(), temporary.read_bytes())
+                else:
+                    temporary.write_bytes(b'{"answer')
+                saved = temporary.read_bytes()
+                with self.assertRaises(FileExistsError):
+                    bulk.save_json(path, {"answer": "Second response"}, exclusive=True)
+                self.assertEqual(temporary.read_bytes(), saved)
+                if published:
+                    self.assertEqual(path.read_bytes(), saved)
+                else:
+                    self.assertFalse(path.exists())
 
 
 if __name__ == "__main__":

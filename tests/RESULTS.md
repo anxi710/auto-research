@@ -185,6 +185,29 @@ The English prose scan and whitespace inspection passed.
 Shields.io returned HTTP 403 in this environment, so live badge rendering remains unverified.
 No script code changed, and runtime tests were not repeated.
 
+## Atomic JSON publication, version 0.1.4
+
+Test date: 2026-10-23.
+The baseline and candidate used Python 3.14.8 on Linux with the same 23 offline tests.
+The candidate passed all 23 tests in 0.061 seconds.
+The baseline produced six failing subcases.
+Two exposed a partial final JSON file and missing recovery guidance.
+Four covered the new publication procedure and do not establish additional defects in the old pipeline.
+
+The new cases cover partial writes, existing outputs, remaining temporary files, publication failures, and damaged legacy answers.
+Two resume attempts after a failed answer save kept the query count at one.
+The pending request and original response files remained unchanged.
+Existing tests still cover complete responses saved before state updates.
+An independent review found and confirmed the fix for a temporary hard link left after publication.
+The final review found no further required changes.
+The changed documents passed inspection of 68 local links and anchors.
+Skill metadata, version badges, license copies, and the changed English prose passed inspection.
+
+[W008](../changes/W008.md) records the scope and recovery path.
+The [evidence record](evidence/W008.json) contains the comparison, file hashes, and implementation patch.
+No live account, macOS, power-loss, or cross-harness test ran.
+These results describe local file behavior, not research quality or current service compatibility.
+
 ## Limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.
