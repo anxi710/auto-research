@@ -240,6 +240,45 @@ The [evidence record](evidence/W009.json) preserves task inputs, outputs, review
 No real account, second harness, runtime adapter, or operating-system isolation test ran.
 The N7 unit tests were not repeated because their script and test bytes did not change.
 
+## Read-only collaboration checks, version 0.1.6
+
+Test date: 2026-10-23.
+The baseline 0.1.5 and candidate 0.1.6 used Python 3.14.8 on Linux.
+Both used this offline command from their repository roots:
+
+```bash
+python3 -B -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+The baseline passed its 23 tests in 0.063 seconds.
+The candidate passed all 61 tests in 6.562 seconds, including 38 checker tests.
+Each checker test invocation compared input file bytes, inventories, and modes.
+Coverage includes custom layouts, required fields, missing files, hashes, versions, dependencies, review replacement, unsafe paths, cycles, and deterministic diagnostics.
+Ordinary discussion reviews and unselected legacy records remained valid.
+
+Two fixed command cases covered a valid custom layout and a withdrawn upstream acceptance.
+Both candidate outcomes matched their declared conditions without changing research files.
+The baseline lacked the checker, so these commands reported a missing script.
+This comparison establishes a new local checking capability, not better scientific judgments.
+
+The independent case passed three states for a replacement that accepted the same upstream result.
+The old dependency pin failed after replacement.
+A new downstream revision with the new pin passed while reusing the unchanged artifact.
+All record bytes and inventories remained unchanged.
+
+Review caught JSON exponent overflow and unsafe diagnostic paths for rejected CLI selections.
+The final implementation and regression checks cover both findings.
+Focused probes also covered a hardlink alias, invalid UTF-8, and an escaping symbolic link in a future output path.
+The new scripts passed Python 3.9 grammar inspection.
+That inspection did not execute Python 3.9.
+Local links, metadata, version badges, license copies, and changed English prose passed inspection.
+
+[W010](../changes/W010.md) records adoption and the recovery path.
+The [evidence record](evidence/W010.json) preserves the comparison, independent review, fixtures, outputs, file hashes, and implementation patch.
+No live account, CI service, other operating system, or real research project was tested.
+The command cannot prove complete review history, scientific truth, actual authority, or live job state.
+Concurrent writers remain outside the tested read-only snapshot.
+
 ## Limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.

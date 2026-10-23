@@ -1,6 +1,6 @@
 # A portable research workflow
 
-[![Version 0.1.5](https://img.shields.io/badge/version-0.1.5-blue)](skills/research-workflow/SKILL.md)
+[![Version 0.1.6](https://img.shields.io/badge/version-0.1.6-blue)](skills/research-workflow/SKILL.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Python 3.11+ for bulk tools](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#requirements)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
@@ -34,6 +34,7 @@ The runner itself supports Python 3.9+ and uses only the standard library.
 The external tools have their own dependencies.
 Install them separately with the [scripted pipeline guide](skills/research-workflow/references/scripted-bulk-literature.md#prepare-the-tools).
 This repository does not need a `requirements.txt` file.
+The optional [record checker](skills/research-workflow/references/collaboration.md#inspect-saved-records) uses Python 3.9+ and the standard library.
 
 ## Start or resume research
 

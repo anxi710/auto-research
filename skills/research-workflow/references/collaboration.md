@@ -181,3 +181,61 @@ Do not treat the total budget as a separate allowance for each worker.
 If usage cannot be measured, record it as unknown.
 Stop new assignments when the known remaining budget cannot cover them.
 Preserve partial results and record any budget decision that requires the user.
+
+## Inspect saved records
+
+The [record checker](../scripts/lint_records.py) reads selected records and their file references.
+It uses Python 3.9+ and the standard library.
+It does not change research files or contact external services.
+
+Run this command from the toolkit repository root.
+Replace the research directory and record paths with your paths.
+Repeat each record flag when you need more files.
+
+```bash
+python3 skills/research-workflow/scripts/lint_records.py \
+  --root /path/to/research \
+  --task tasks/T001/task.json \
+  --result tasks/T001/attempts/A001/result.json \
+  --review reviews/R001.md \
+  --review reviews/R002.md
+```
+
+Use `--task` for a current contract, not an attempt's fixed copy.
+Supply the current contract for each selected result.
+Supply later reviews explicitly, including decisions that replace earlier acceptance.
+The command follows record references but does not search the project for other reviews.
+Ordinary review files without a task acceptance section remain outside the task schema.
+Unselected old records need no migration.
+
+All supplied paths use the selected research directory as their root.
+Use plain file paths in `budget_ref` and JSON path fields, not Markdown links or section references.
+Custom directory layouts remain valid.
+File references must stay inside that root, including symbolic link targets.
+Input files, artifacts, budgets, and linked records must exist.
+Output directories in `write_paths` can be absent before execution.
+
+The command prints JSON diagnostics with a code, record path, and message.
+The path `.` marks an error in the initial file selection.
+Exit code `0` means no issue was found in the supplied scope.
+Exit code `1` means a record issue or missing context needs attention.
+Exit code `2` means the command arguments are invalid.
+
+| Diagnostic code | Meaning |
+| --- | --- |
+| `SCHEMA` | A required field, value, or JSON structure is invalid. |
+| `PATH` | A path is unsafe or leaves the research directory. |
+| `READ` | A required regular file is missing or unreadable. |
+| `HASH` | A file differs from its recorded SHA256 digest. |
+| `BINDING` | A result or review does not match its linked record. |
+| `DUPLICATE_ID` | Different records claim the same identity. |
+| `CURRENT` | A result lacks its current contract. |
+| `STALE` | A historical result differs from the current contract. |
+| `REVIEW_HISTORY` | Supplied review history has a conflict or invalid replacement. |
+| `DEPENDENCY` | A required upstream result lacks valid current acceptance. |
+
+Keep sealed files when a result is stale.
+Follow the review rules above before using it for current work.
+A clean report does not prove that review history is complete or a scientific claim is true.
+The command cannot establish decision authority, live job status, or actual resource use.
+Run it while writers are idle because it does not lock the files.

@@ -2,7 +2,7 @@
 name: research-workflow
 description: Run research through literature study, questions, experiments, analysis, writing, and review. Resume from file records across AI assistants. Capture workflow feedback and test scoped improvements when requested.
 metadata:
-  version: "0.1.5"
+  version: "0.1.6"
 ---
 
 # Research workflow

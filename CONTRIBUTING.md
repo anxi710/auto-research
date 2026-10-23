@@ -22,7 +22,7 @@ Proposed tests are not passing results.
 | Change | Relevant cases |
 | --- | --- |
 | Research stages or saved state | [Research scenarios](tests/scenarios.md) |
-| Collaboration records and handoffs | [Collaboration scenarios](tests/collaboration.md) |
+| Collaboration records and handoffs | [Collaboration scenarios](tests/collaboration.md) and [record checker tests](tests/test_lint_records.py). |
 | Workflow improvement | [Evolution scenarios](tests/evolution.md) |
 | User preferences | [Preference scenarios](tests/preferences.md) |
 | Batch literature analysis | [Bulk literature scenarios](tests/bulk-literature.md) |
