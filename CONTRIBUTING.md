@@ -27,13 +27,27 @@ Proposed tests are not passing results.
 | User preferences | [Preference scenarios](tests/preferences.md) |
 | Batch literature analysis | [Bulk literature scenarios](tests/bulk-literature.md) |
 | Scripts | Changed behavior and failure handling, without live accounts when possible. |
-| Documentation | Existing paths, accurate examples, and local links. |
+| Documentation and package metadata | [Package checks](tests/test_package.py), accurate examples, and local links. |
 
-Run the offline script tests from the repository root:
+Run all offline tests from the repository root:
 
 ```bash
-python3 -m unittest discover -s tests -p 'test_*.py' -v
+python3 -B -m unittest discover -s tests -p 'test_*.py' -v
 ```
+
+The suite includes script behavior and package consistency checks.
+Package checks cover local inline links, Markdown heading anchors, entry files, skill metadata, version badges, and license copies.
+They support the Markdown and frontmatter forms used in this repository.
+They skip code examples and do not request external URLs.
+Personal files and the research report stay outside the package checks.
+The package checks do not establish native skill loading in a harness.
+
+The [CI workflow](.github/workflows/tests.yml) runs the same command for pushes and pull requests.
+It uses Ubuntu with Python 3.9 and 3.14.
+The test steps need no installed dependencies, research accounts, or external research tools.
+Runner setup can download GitHub Actions and Python.
+The workflow uses read-only repository permissions and does not retain checkout credentials.
+A local pass does not establish that GitHub ran the workflow.
 
 Record any live integration that you did not test.
 Review the complete diff before submission.

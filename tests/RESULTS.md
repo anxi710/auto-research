@@ -279,6 +279,47 @@ No live account, CI service, other operating system, or real research project wa
 The command cannot prove complete review history, scientific truth, actual authority, or live job state.
 Concurrent writers remain outside the tested read-only snapshot.
 
+## Offline CI and package checks
+
+Test date: 2026-10-23.
+Package version: `0.1.6`, unchanged.
+This change adds repository checks and CI without changing the portable skill.
+uv 0.13.5 created temporary environments for Python 3.9.25 and 3.14.8 on Linux.
+Both environments had no installed third-party packages.
+The Python 3.9 runtime download occurred before the offline tests.
+
+Each environment ran this command on the baseline and candidate copies:
+
+```bash
+python3 -B -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+The baseline passed its 61 tests on both Python versions.
+The candidate passed 69 tests on both versions, including eight package tests.
+The new tests cover local links, heading anchors, root entries, simple metadata, version badges, and matching license files.
+Temporary examples cover invalid inputs, valid syntax, scope exclusions, and unchanged inspected bytes.
+
+Two fixed faults exposed gaps in the baseline suite.
+A missing local target and a changed badge image passed the baseline and failed the candidate.
+The candidate reported the expected package errors and preserved file contents and inventories.
+An independent reviewer fixed five additional cases before inspecting the implementation.
+All ten baseline and candidate runs matched the expected outcomes.
+The candidate accepted valid composed Markdown and detected four faults that the baseline missed.
+Those runs preserved file hashes, modes, and directory membership.
+All 61 existing behavior tests passed in every independent run.
+
+Local YAML inspection and independent review found no remaining issue within the declared scope.
+The workflow uses Ubuntu 24.04 with Python 3.9 and 3.14, read-only repository permissions, and fixed action commits.
+Its test step runs the same command without dependency installation or research services.
+Runner setup can download GitHub Actions and Python.
+No hosted workflow run occurred, so Ubuntu runner behavior remains unverified.
+
+[W011](../changes/W011.md) records adoption, official action sources, and the recovery path.
+The [evidence record](evidence/W011.json) preserves environment details, test outputs, fault comparisons, independent review, hashes, and the exact patch.
+The package checks support the repository's current Markdown and frontmatter forms.
+They do not establish full parser conformance, native skill loading, or external link availability.
+No real research, remote job recovery, or additional operating system was tested.
+
 ## Limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.
