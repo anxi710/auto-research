@@ -320,6 +320,19 @@ The package checks support the repository's current Markdown and frontmatter for
 They do not establish full parser conformance, native skill loading, or external link availability.
 No real research, remote job recovery, or additional operating system was tested.
 
+## Hosted CI follow-up
+
+Test date: 2026-10-23.
+The user authorized a push after the local N5 round.
+The [first hosted run](https://github.com/anxi710/auto-research/actions/runs/39963595136) passed for commit `57a9dd309bb8e8d914c439cffb12998f6fd731d1`.
+Python 3.9.25 passed 69 tests in 8.016 seconds.
+Python 3.14.8 passed 69 tests in 10.557 seconds.
+Both jobs used Ubuntu 24.04 and completed every workflow step successfully.
+Runner setup downloaded Python 3.9 and upgraded pip before the offline test command.
+The [hosted evidence](evidence/W011-hosted-ci.json) preserves job identities, results, and log excerpts.
+This run tested the push event, not the pull request event.
+It did not test real research services or other operating systems.
+
 ## Limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.
