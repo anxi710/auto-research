@@ -4,6 +4,8 @@ Use this procedure when delegated work needs saved ownership, separate outputs, 
 Keep a small standalone task in one context when that meets the request.
 Use the existing [stages](workflow.md) to decide what evidence the research needs.
 This procedure adds records, not a scheduler or tool permissions.
+Apply the [human review procedure](human-review.md) to every delegated output and AI assessment.
+Technical task acceptance does not authorize dependent research without human approval or a matching waiver.
 
 ## Choose responsibilities
 
@@ -21,10 +23,12 @@ If the same assistant performs both roles, record that limit.
 
 If workers share writable files without workspace isolation, run their tasks in sequence.
 If subagents are unavailable, perform the roles in sequence.
-The coordinator records the final acceptance decision after inspecting the review evidence.
+The coordinator records technical task acceptance after inspecting the review evidence.
 The coordinator can delegate that decision to one named reviewer in the task's acceptance conditions.
 The decision owner alone writes the final review record.
 Do not treat a worker message or a runtime task status as an acceptance decision.
+Present the output and AI assessment to the researcher before dependent research proceeds.
+Delegating technical acceptance does not delegate the researcher's authority.
 
 ## Select records and paths
 
@@ -55,7 +59,8 @@ reviews/R001.md
 | Current `task.json` | Current goal, owner, fixed inputs, output scope, limits, and required dependencies. |
 | Attempt's `task.json` | Exact copy of the contract used for that attempt. |
 | `result.json` | Submitted execution status and file versions, not acceptance. |
-| Review's task acceptance block | Decision about one exact result version. |
+| Review's task acceptance block | Technical decision about one exact result version. |
+| Human decision or review waiver | Researcher's authority for stated versions and next actions. |
 | `STATE.md` | Existing project state and an index of collaboration records. |
 | `HANDOFF.md` | Current navigation derived from linked records. |
 
@@ -77,6 +82,10 @@ Template values do not establish authorization or completed work.
 6. State when the worker must stop.
 7. Save the current contract and copy its exact bytes to the attempt's `task.json` before dispatch.
 
+Include the required human review in `acceptance` and `stop_condition`, unless a matching waiver applies.
+Link the actual human decision or waiver in the contract's acceptance conditions when one already permits the task.
+Keep its authority and limits in the linked record rather than copying them into several contracts.
+
 The coordinator makes the contract copy before the worker starts.
 The worker must not edit either contract file.
 Increase `revision` whenever any contract field changes, including owner, output scope, budget reference, or acceptance conditions.
@@ -91,6 +100,7 @@ Each entry contains `task_path`, `task_revision`, `result_path`, `result_sha256`
 `task_path` identifies the upstream current contract, so later revisions remain visible.
 The result identifies its own fixed contract copy.
 The review must accept that exact result and remain valid under the rules below.
+Before dependent dispatch, also establish the required human approval or matching waiver for its inputs and next action.
 Keep optional background sources in `inputs` instead of treating an unfinished branch as accepted work.
 
 ## Submit an attempt
@@ -122,7 +132,8 @@ They do not provide file locks or transactions across several files.
 
 Use the optional task acceptance block in [REVIEW.md](../templates/REVIEW.md).
 Keep ordinary S7 discussions in that template's existing prose sections.
-The acceptance block is the only authority for the task decision.
+The acceptance block is the authority for technical task acceptance.
+Record the human decision separately under the [human review procedure](human-review.md#record-the-human-decision).
 
 1. Open the current contract, fixed contract copy, result, and actual artifacts.
 2. Make sure that their IDs, revisions, and SHA256 digests agree.
@@ -133,6 +144,7 @@ The acceptance block is the only authority for the task decision.
 7. As the decision owner, save `accepted`, `rework`, or `blocked` in a new review record.
 
 `accepted` means that this result meets its contract.
+An AI `accepted` decision alone does not authorize the next research task.
 `rework` means that the result needs correction.
 `blocked` means that required evidence or access is missing.
 If a required input is unavailable, record the limit and withhold acceptance.
@@ -170,6 +182,9 @@ If it disagrees with those records, rebuild the summary from them.
 3. Review completed but unreviewed work before starting a replacement.
 4. Apply the existing [job recovery rules](workflow.md#s4-implement-and-run) to active or unknown jobs.
 5. Update the shared index and one next action after the decision.
+
+Restore human review requests, their exact output versions, and any active waiver before scheduling dependent work.
+If a waiver ended or was revoked, restore the required human review.
 
 Use task ID, revision, and attempt ID to recognize duplicate completion messages.
 Message delivery does not prove that a result was saved or accepted.
@@ -238,4 +253,5 @@ Keep sealed files when a result is stale.
 Follow the review rules above before using it for current work.
 A clean report does not prove that review history is complete or a scientific claim is true.
 The command cannot establish decision authority, live job status, or actual resource use.
+It does not inspect human decision prose or enforce permission to start dependent research.
 Run it while writers are idle because it does not lock the files.

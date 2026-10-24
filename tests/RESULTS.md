@@ -398,6 +398,38 @@ No new hosted CI run, DSH team, interruption, or cross-harness recovery test ran
 This synthetic AI review does not establish human endorsement, research novelty, general superiority, or a multi-agent benefit.
 Assistant token and cost use remain unknown.
 
+## Human review, version 0.1.7
+
+Test date: 2026-10-23.
+The active repository package remained `0.1.6` during the isolated trial.
+The user approved the reviewed `0.1.7` candidate after the trial.
+The [W014 record](../changes/W014.md) states the adopted scope and actual approval.
+The [evidence record](evidence/W014.json) preserves actual artifacts, fixed criteria, independent assessments, logs, and the candidate patch.
+
+The ten fixed worked cases produced five passes, three partial results, and two failures on the baseline.
+The first candidate produced nine passes and one partial result.
+Both versions passed all ten criteria in the separate H01 case.
+H01 supports preservation of existing behavior, not a measured candidate advantage.
+Each version used one fresh context for its worked cases and another fresh context for H01.
+
+The partial candidate result waited for human review but created unnecessary project records.
+A routing clarification kept standalone outputs and decision fields in the requested location.
+Three focused replays passed the unchanged idea, existing-approval, and standalone-reading criteria.
+Twenty input and artifact integrity assertions passed independent review.
+The other seven cases and H01 were not rerun after the clarification.
+Original outputs and the partial result remain preserved.
+
+The baseline passed all 72 offline tests on Python 3.14.8.
+The candidate passed all 72 on Python 3.9.25 and 3.14.8 before the wording clarification.
+Final package checks cover the completed documentation and links.
+The scripts, task and result schemas, CI configuration, and sealed P1 records remain unchanged.
+All researcher messages in the behavior cases are synthetic fixtures.
+No real approval capture, mandatory execution gate, long-context trial, hosted CI run, or complete research cycle ran.
+The adopted procedure specifies cooperative behavior and does not technically prevent an assistant from bypassing review.
+After user approval, the adopted package passed all eight package checks on Python 3.14.8.
+The adoption checks also matched every runtime instruction and behavior case to its reviewed candidate digest.
+They preserved unrelated local work and earlier evidence.
+
 ## Limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.

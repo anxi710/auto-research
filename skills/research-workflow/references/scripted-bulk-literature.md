@@ -3,6 +3,10 @@
 Use this optional script after selecting the [bulk literature procedure](bulk-literature.md).
 It runs exports, transfers, imports, and batch questions from one configuration file.
 Another harness can resume from its saved files.
+The runner does not pause for human review of intermediate research outputs.
+It does not enforce the [human review rule](human-review.md).
+An uninterrupted run requires an explicit waiver for research outputs that it consumes before review.
+Without that waiver, use the reviewed steps in the manual bulk procedure.
 
 The NotebookLM client is the third-party [notebooklm-py](https://github.com/teng-lin/notebooklm-py), not an official Google CLI.
 It uses undocumented service interfaces that can change.
@@ -78,14 +82,20 @@ python3 skills/research-workflow/scripts/bulk_literature.py /path/to/project/bul
 ```
 
 Inspect the collection, destination, limits, and output paths in that plan.
-Use `--execute` when the selected data and destination are authorized for this run.
+Before execution, link the waiver's source, covered outputs and actions, limits, and end condition.
+Make sure that the waiver covers this run's intermediate research outputs and dependent steps.
+Use `--execute` when that waiver and the selected data and destination authorization cover this run.
 This command writes to Google Drive and NotebookLM.
 
 ```bash
 python3 skills/research-workflow/scripts/bulk_literature.py /path/to/project/bulk-literature.local.json --execute
 ```
 
-Use the same command to resume, subject to the recovery limits below.
+Before resuming, restore the human decision and waiver records.
+If the waiver ended or was revoked, use reviewed manual steps for further dependent research.
+Inspect active or unknown jobs before changing execution.
+Do not silently cancel them when restoring review.
+Use the same command to resume only within a valid waiver and the recovery limits below.
 Keep its configuration and saved state together.
 Do not edit saved IDs to force a retry.
 

@@ -21,6 +21,10 @@ Resolve paths in preferences from the directory that contains that file.
 Record relevant choices and their source when the project first uses them.
 Do not replace an existing project convention with a local default.
 Preferences do not grant new account access or permission for external actions.
+Apply [human review](human-review.md) independently of reusable preferences.
+A review waiver needs an explicit user source, scope, limits, and end condition.
+Link its authoritative record instead of inferring a waiver from a general autonomy preference.
+Restore review when that waiver ends or the researcher revokes it.
 
 If no preferences file exists, continue with the request, project conventions, and supplied evidence.
 Do not require preference setup for a reading task.

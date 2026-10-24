@@ -5,6 +5,9 @@ Use this optional procedure when the task selects NotebookLM for a large corpus.
 It extends S1 and keeps the user's chosen library and project layout.
 For command-line execution, use [the scripted procedure](scripted-bulk-literature.md).
 Its outputs still need the coverage and evidence review below.
+Apply [human review](human-review.md) before dependent research uses the selection, batch plan, evidence tables, or synthesis.
+Present each output's version and the proposed next actions.
+Without a matching review waiver, use this manual procedure with those review points.
 
 This example keeps library records in Zotero.
 NotebookLM retrieves passages within each notebook.
@@ -162,6 +165,9 @@ If coverage remains incomplete, return a bounded synthesis and its gaps.
 ## Resume or hand off
 
 Read the corpus record and existing batch outputs before repeating an operation.
+Restore the linked human decisions and any review waiver before resuming dependent research.
+Keep a pending decision pending until an actual approval or valid waiver covers the next action.
+Inspect active or unknown jobs without silently cancelling them when review becomes pending.
 Reconcile unknown transfer and import states against their destinations before retrying.
 Continue from missing or changed items rather than exporting the whole library again.
 

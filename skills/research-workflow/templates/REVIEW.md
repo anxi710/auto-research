@@ -3,6 +3,10 @@
 Use this file for review, meeting preparation, a talk, or a response to reviewers.
 Keep plans separate from events that occurred.
 Record AI review as simulation.
+Use only the sections that the requested task needs.
+For standalone work, put needed human decision fields in the requested output or response.
+Follow [human review](../references/human-review.md) for the decision and waiver records below.
+Replace template links with project links before saving this record.
 
 ## Purpose
 
@@ -43,6 +47,38 @@ Actions, owners, and agreed dates: None recorded.
 Changes to research state: None yet.
 Next action: Unknown.
 
+## Human decision
+
+Decision ID and date: Not recorded.
+Presented output paths and exact revisions or SHA256 digests: Not recorded.
+Evidence, uncertainties, and alternatives: Not recorded.
+Requested next actions: Not recorded.
+Decision status: Pending.
+Researcher and decision source: Not recorded.
+Approved next actions and limits: None.
+Reasons or requested revisions: None recorded.
+Superseded decision record: None.
+
+Use `pending`, `approved`, or `rejected` for the decision status.
+Record the actual researcher message or its stable reference as the source.
+Preserve earlier output versions and decisions when a revision needs another review.
+An AI recommendation or successful test does not fill in human approval.
+
+## Review waiver (optional)
+
+Waiver ID and date: Not recorded.
+Researcher and instruction source: Not recorded.
+Covered outputs, stages, and next actions: Not recorded.
+Limits: Not recorded.
+End condition: Not recorded.
+Waiver status: Not granted.
+End or revocation source: None recorded.
+
+Use this section only for an explicit waiver under the shared human review rule.
+Use `active`, `ended`, or `revoked` after the researcher grants the waiver.
+Retain the original scope and source after the waiver ends.
+Link this record from project navigation instead of copying its fields.
+
 ## Task acceptance (optional)
 
 Use this block only for a task under the [collaboration procedure](../references/collaboration.md).
@@ -71,3 +107,5 @@ Keep these fields in this block only.
 Use `basis` for evidence paths, source locations, and observed checks.
 Use `supersedes` with `path` and `sha256` only when this decision replaces a review of the same result.
 The procedure defines valid decisions and the effect of later changes.
+This technical task decision remains separate from human permission above.
+The record checker does not establish human approval.

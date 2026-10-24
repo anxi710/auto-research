@@ -38,6 +38,12 @@ The assistant must produce only the requested answer outside the supplied skill.
 It must distinguish reported claims from unread methods and results.
 It must not select Zotero, a note repository, or an optional example automatically.
 It must finish without a preferences file or library setup.
+Delivery does not mark the answer as human-approved.
+No unrelated next action or review request is required to finish this standalone task.
+
+Review waivers follow the [human review cases](human-review.md).
+Tool selections, budgets, and broad autonomy preferences do not establish a waiver.
+An explicit waiver retains its actual source, scope, limits, and end condition.
 
 ## Inspection and limits
 

@@ -1,6 +1,6 @@
 # 可迁移的科研工作流
 
-[![版本 0.1.6](https://img.shields.io/badge/version-0.1.6-blue)](skills/research-workflow/SKILL.md)
+[![版本 0.1.7](https://img.shields.io/badge/version-0.1.7-blue)](skills/research-workflow/SKILL.md)
 [![许可证：MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![批量工具所需 Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#环境要求)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
@@ -55,6 +55,11 @@ Python 和工具徽章仅适用于可选的批量文献分析流程。
 对于已有项目，助手会保留现有记录结构，并先阅读已保存的证据。
 对于独立任务，助手只创建所需的输出。
 
+默认由研究者审核每个研究中间产出，再继续依赖它的工作。
+[人工审核流程](skills/research-workflow/references/human-review.md)规定产出版本、待决事项和显式限定范围的审核豁免。
+AI 审查通过或执行完成均不等于人工批准。
+对已经批准的版本和下一步操作，不重复请求相同授权。
+
 [阶段指南](skills/research-workflow/references/workflow.md)定义了研究循环：
 
 ```text
@@ -71,6 +76,7 @@ Python 和工具徽章仅适用于可选的批量文献分析流程。
 阅读 research-workflow skill 和 research/STATE.md。
 阅读下一步操作所需的记录。
 确认记录中的输出和运行中的任务仍然存在。
+继续依赖这些产出的工作前，恢复待处理的人工审核和显式豁免范围。
 在已保存的约束范围内继续当前任务。
 将结果和下一步操作保存到研究记录中。
 ```

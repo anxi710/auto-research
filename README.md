@@ -1,6 +1,6 @@
 # A portable research workflow
 
-[![Version 0.1.6](https://img.shields.io/badge/version-0.1.6-blue)](skills/research-workflow/SKILL.md)
+[![Version 0.1.7](https://img.shields.io/badge/version-0.1.7-blue)](skills/research-workflow/SKILL.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Python 3.11+ for bulk tools](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#requirements)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
@@ -55,6 +55,11 @@ For a new project, the assistant creates `research/STATE.md` and `research/BRIEF
 For an existing project, it keeps the record layout and reads the saved evidence first.
 For a standalone task, it creates only the requested output.
 
+The researcher reviews each intermediate research output before dependent work continues.
+The [human review procedure](skills/research-workflow/references/human-review.md) covers exact versions, unresolved choices, and explicit waivers with limited scope.
+AI assessment and completed execution do not replace human approval.
+An approved next action proceeds without repeated permission requests.
+
 The [stage guide](skills/research-workflow/references/workflow.md) defines the research loop:
 
 ```text
@@ -71,6 +76,7 @@ After switching harnesses, use this prompt:
 Read the research-workflow skill and research/STATE.md.
 Read the records needed for the next action.
 Make sure that recorded outputs and active jobs still exist.
+Restore pending human reviews and any explicit waiver before dependent work.
 Continue the current task within its saved limits.
 Save the result and next action in the research records.
 ```

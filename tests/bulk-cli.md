@@ -7,6 +7,9 @@ Do not use real libraries, authentication, or cloud destinations.
 The default command must print a plan without running tools or writing run files.
 An explicit execution must export, select attachments, transfer, reconcile Drive IDs, import, and save cited answers.
 Saved answers remain generated evidence that needs original-paper inspection.
+These tests inspect the runner's mechanics with fake services.
+They do not establish human authorization or enforce research review.
+The [human review cases](human-review.md) test when the assistant can use an uninterrupted run.
 
 Protect these conditions:
 

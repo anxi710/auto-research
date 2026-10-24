@@ -3,6 +3,8 @@
 Use known project facts.
 Mark missing facts as unknown.
 Do not infer permission from a resource appearing in this file.
+Follow [human review](../references/human-review.md) for research outputs and unresolved research choices.
+Replace template links with project links before saving this record.
 
 ## Goal and scope
 
@@ -33,8 +35,12 @@ Time limit: Unknown.
 Compute and spending limits: Unknown.
 Storage limits: Unknown.
 Existing authorization and its source: None recorded.
+Human decision and review waiver records: None linked.
 Actions that need a user decision: None recorded.
 Publication target and deadline: Unknown.
+
+Keep review decisions and waiver details in their linked authoritative records.
+Do not copy their editable fields into this brief.
 
 ## Success and next step
 

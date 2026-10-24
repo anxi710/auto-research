@@ -11,6 +11,10 @@ Allow ten local file tool calls and five minutes per run.
 Do not allow network access or subagents.
 Compare the saved files after each run.
 
+These cases inspect technical task acceptance and record integrity.
+AI acceptance does not grant human permission for dependent research.
+Use the [human review cases](human-review.md) for pending decisions, explicit waivers, and withdrawal of authority.
+
 ## Prepare two reading assignments
 
 Prepare an existing project with a custom notes directory and two local source excerpts.

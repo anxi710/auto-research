@@ -2,7 +2,13 @@
 
 Use only the stages that the current task needs.
 Treat a completed stage as a supported decision, not a permanent result.
-If new evidence changes that decision, return to the relevant stage.
+If new evidence changes that decision, propose a return to the relevant stage.
+
+Apply [human review](human-review.md) to every research output, including AI review reports.
+A stage's completion conditions describe evidence readiness, not permission for dependent work.
+Present the output version and proposed next actions before crossing that review point.
+Use an existing approval or explicit waiver only within its recorded scope.
+A standalone output can end the requested task without an unrelated next action.
 
 ## S0: Define the scope
 
@@ -16,8 +22,9 @@ Use the matching [templates](../templates/).
 4. Record known restrictions and existing authorization.
 5. Identify the smallest useful next task.
 
-Ask for missing information only when it changes that task.
-Keep unknown values explicit.
+Present unresolved research choices and ask for the researcher's decision.
+Ask for missing context or evidence that the requested task needs.
+Keep unknown facts explicit after the decision.
 Do not turn a publication goal into a promise of acceptance.
 
 For literature work, record the chosen primary library and selected-note location in `BRIEF.md`.
@@ -25,7 +32,7 @@ Use local preferences only when the current request and project do not specify t
 Keep access status separate from the chosen library.
 
 Complete this stage when the next task and its limits are clear.
-If the question is unknown, continue to S1 to learn enough to propose one.
+If the question is unknown, propose S1 to gather evidence for one.
 If the topic is unknown, ask for a topic or seed paper.
 
 ## S1: Find and understand the literature
@@ -194,7 +201,7 @@ Use [CLAIMS.md](../templates/CLAIMS.md) when the project first forms conclusions
 4. Separate observed differences from explanations of those differences.
 5. Examine failures, contradictory results, and resource costs.
 6. State what the evidence supports, opposes, or leaves unresolved.
-7. Choose the next action and record its reason.
+7. Propose the next action and record its reason for human review.
 
 Do not infer causation from a performance difference alone.
 Do not claim statistical significance without the required analysis.
@@ -215,6 +222,7 @@ If the baseline or comparison is invalid, correct that problem before judging th
 Input: The question, method, literature records, claims, and result files.
 Output: `MANUSCRIPT.md`, a draft, figure sources, and references.
 Use [MANUSCRIPT.md](../templates/MANUSCRIPT.md).
+Apply the shared review rule to the outline, draft sections, figures, and complete manuscript.
 
 1. Identify the audience, target format, and intended contribution.
 2. Build an outline from the supported claims.

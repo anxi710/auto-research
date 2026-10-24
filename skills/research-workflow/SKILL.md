@@ -2,7 +2,7 @@
 name: research-workflow
 description: Run research through literature study, questions, experiments, analysis, writing, and review. Resume from file records across AI assistants. Capture workflow feedback and test scoped improvements when requested.
 metadata:
-  version: "0.1.6"
+  version: "0.1.7"
 ---
 
 # Research workflow
@@ -14,6 +14,8 @@ For other changes to the package, follow the development request.
 ## Start or resume
 
 Read [the preferences guide](references/preferences.md) for optional local defaults.
+Read [the human review procedure](references/human-review.md) before research work.
+Apply it to every intermediate output, including delegated work, unless the researcher explicitly waives the relevant review.
 
 1. Identify the requested task and the target research repository.
 2. Find existing research records and preserve their layout.
@@ -21,6 +23,9 @@ Read [the preferences guide](references/preferences.md) for optional local defau
 4. Read existing `STATE.md`, `BRIEF.md`, and evidence for the next action.
 5. Make sure that recorded results and active jobs still exist before continuing.
 6. Select the relevant stage in [the stage guide](references/workflow.md).
+
+Restore pending human decisions and active waiver limits before continuing dependent work.
+Do not infer human approval from a completed task or an AI review.
 
 Resolve skill links relative to this `SKILL.md` file.
 Record new project paths relative to the research directory.
@@ -59,9 +64,10 @@ Use S7 at any stage when discussion can resolve a decision.
 For a large collection that uses NotebookLM, read [the bulk literature procedure](references/bulk-literature.md).
 Use it only when the request, explicit project conventions, or selected preferences choose that tool chain.
 
-Completion conditions are evidence tests, not permission requests.
-Continue authorized work when its inputs are ready.
-Ask the user only for a missing decision, required access, or authorization outside the current scope.
+Completion conditions describe the evidence needed for an output.
+Present that output for human review before dependent work, unless an explicit waiver covers it.
+Continue actions already approved for the current versions without repeating the same permission request.
+Ask for unresolved research choices, missing context, evidence, or required access.
 
 ## Keep persistent records
 
@@ -77,6 +83,9 @@ Use these files to transfer the project between harnesses:
 
 Create `STATE.md` and `BRIEF.md` when the user starts a research project.
 For a standalone task, produce only its requested output.
+A request spanning several stages does not itself start a research project.
+Without an existing project or a request to start one, keep the requested outputs in the task's current location.
+Keep standalone human decision fields in the requested output or response.
 If an existing project uses this workflow, update its state after the task.
 
 Use stable record IDs such as `P001`, `Q001`, `E001`, and `R001`.
@@ -126,6 +135,10 @@ Keep simple standalone work in one context when that meets the request.
 2. Preserve active job records before considering replacement runs.
 3. Update existing `STATE.md` with one concrete next action.
 4. Report the result, evidence, limits, and next action to the user.
+
+Include the current human decision or pending review request with the output version.
+A standalone answer can end after delivery without starting another stage.
+Keep execution completion, AI assessment, and human approval separate.
 
 Use the evolution procedure for reusable feedback.
 Start improvement runs only with a user request or standing authorization.

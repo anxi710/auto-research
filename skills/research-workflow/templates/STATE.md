@@ -3,6 +3,8 @@
 Update this file after each work session.
 Use paths relative to this research directory.
 Keep old decisions in their linked records.
+Follow [human review](../references/human-review.md) when restoring permission for the next action.
+Replace template links with project links before saving this record.
 
 ## Current task
 
@@ -18,6 +20,8 @@ Active workflow trial, scope, and stop condition: None.
 Use `active`, `waiting for input`, `blocked`, or `complete` after work starts.
 The status describes the requested work, not the entire research field.
 Record the reason for any pause.
+Use `waiting for input` when required human review blocks the next action.
+A delivered standalone output can be complete without approval for unrelated work.
 
 ## Records
 
@@ -29,6 +33,9 @@ If the project uses collaboration records, link each current contract, submitted
 Keep the acceptance fields in their review record.
 Record the coordinator, execution mode, and reason beside those links.
 Omit these entries when the task does not need them.
+Link pending human decisions, relevant approvals, and any review waiver in the same table.
+Keep their versions, sources, scope, and status only in their authoritative records.
+Read those records before resuming dependent research.
 
 ## Stage decision
 
