@@ -333,6 +333,30 @@ The [hosted evidence](evidence/W011-hosted-ci.json) preserves job identities, re
 This run tested the push event, not the pull request event.
 It did not test real research services or other operating systems.
 
+## Harness capability map
+
+Inspection date: 2026-10-23.
+Package version: `0.1.6`, unchanged.
+The user approved N6 after the hosted CI follow-up.
+The candidate maps DSH Agent Teams and the Codex Desktop tools exposed in this session.
+DSH evidence comes from installed version `0.2.1-rc.2` and pinned official source.
+Codex evidence separates declared tools from observed reviewer creation, reports, and follow-up work.
+The [change record](../changes/W012.md) states the scope and adoption decision.
+The [evidence record](evidence/W012.json) preserves source identities and actual inspection results.
+Python 3.14.8 passed all eight package tests with the command below.
+
+```bash
+python3 -B -m unittest discover -s tests -p 'test_package.py' -v
+```
+
+Five fixed independent documentation cases passed.
+Seven upstream source digests and fourteen installed file digests matched.
+A draft README source-match flag was corrected after an exact byte comparison.
+No review finding remains open.
+The portable skill and prior evidence files remained unchanged.
+No DSH team, interruption, restart, cross-harness recovery, or real research service was tested.
+The earlier hosted CI runs predate N6 and do not validate this documentation change.
+
 ## Limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.

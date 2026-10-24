@@ -1,0 +1,940 @@
+{
+  "date": "2026-10-23",
+  "package_version": "0.1.6",
+  "version_changed": false,
+  "scope": {
+    "date": "2026-10-23",
+    "head": "2d82ffccedddf1fc809478d1f91bc89200e0571c",
+    "authorization": "The user approved continuing N6.",
+    "scope": "Document the inspected DSH and current Codex collaboration capabilities. No runtime or portable skill changes.",
+    "allowed_files": [
+      "docs/harnesses.md",
+      "changes/W012.md",
+      "tests/RESULTS.md",
+      "tests/evidence/W012.json"
+    ],
+    "candidate_limit": 1,
+    "minutes_limit": 60,
+    "started": 1792763453.054385,
+    "acceptance": [
+      "Cover spawn, message, join, cancel, persistence, isolation, usage, pagination and truncation for both backends.",
+      "Separate source inspection, session observations, tool declarations and untested behavior.",
+      "Describe handling for invalid parameters, partial results, temporary failures, permission refusal and unknown effects.",
+      "Keep one authority for the existing collaboration protocol.",
+      "Preserve the portable skill and package version. Do not launch DSH teams or live research.",
+      "Pass existing package tests and an independent documentation review. Do not claim runtime or research performance improvement."
+    ],
+    "validation": "Documentation-only source review and focused package checks. No new behavior test suite.",
+    "protected_sha256": {
+      ".github/workflows/tests.yml": "56a6895f11cb7fded3e128a9565cd3dedf2d135378b6644a21f38b54bfc87e22",
+      ".gitignore": "88600c8851e286882eb5fb131fa49863f2eb2fc5fc0c8a18170ce3abc54def69",
+      "AGENTS.md": "0c29f64bae49c5100bd07d44b69728896a605bd6e1e43c95016b3aa75f4dc515",
+      "CLAUDE.md": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+      "CONTRIBUTING.md": "d741f24b1ba97fc5956497264e9744dbb996fc097c86b5af54294e6cd3636bd2",
+      "GEMINI.md": "42fbbc9d55ee0d149c90e4bf93abe8b7278a5482b232be6f5bfc59cc0465e694",
+      "LICENSE": "1adc1607d1f493b1f11c5d27ea21b4293e63a49ae5365b78d2b75236ca96655b",
+      "README.md": "fe4a9a139c537afbd7402464f6b0143cdd691eecd700ac044dcd405476f976fd",
+      "README.zh-CN.md": "038bc57c8d21545efa95bb80242cb0b555947281cd857cd39d6e53850dfe8d32",
+      "changes/W001.md": "d8d66fe9568012639cf3558a0dc498ecee6d17063d7ae433af6016f0305782b4",
+      "changes/W002.md": "5c4daa47d72793c066ea2499c726d140e61481b052f9fe72993f0416f6f94a91",
+      "changes/W003.md": "2190308cf69e45f4cf44ed5aaeb2e96a518fb9609616fa572f40a7bab7b85783",
+      "changes/W004.md": "dc7f0b944b1cc9f7644e7c4f04f8b1587cc0a21ad5f5cfbac4d51d153ba8961f",
+      "changes/W005.md": "e4e75828817860fee9c51b05f3261515e5d34f74a696847ebe5751ce8524f3f7",
+      "changes/W006.md": "d38ae4bea978a8e439ed3b35893f128a1bc89863a0a585e7b11041ee9f4a877e",
+      "changes/W007.md": "18112454daaf7b01016378881e7b200fa5bef34efafc95b161aed058cee07ff5",
+      "changes/W008.md": "db5c5e42222fcfb9c59125a01911a53896e1c30a672bee36e28aa206442a298a",
+      "changes/W009.md": "84f18c0c8ac4b48fd59ecee04d0a8250af06dcf35719fa7ea344fddbd15e0f5e",
+      "changes/W010.md": "917cd7daf7a2732abd00487c0599d3fdf3a4c084c599e0cb960ad4aab7e46ba6",
+      "changes/W011.md": "a1ee031684b41bfc1045cc337bd64dc1a712920405013bc9dbead592d2624ca7",
+      "changes/evidence/W002.json": "f7c55bfc64300d0f4737163e8e7570cc09116e023b2da3159c3f7903b6e7d535",
+      "docs/architecture.md": "9bc5daae582e308d3488d70ae4ccd468dffc3c5ce979f74a87de7d9a753937ce",
+      "skills/research-workflow/LICENSE": "1adc1607d1f493b1f11c5d27ea21b4293e63a49ae5365b78d2b75236ca96655b",
+      "skills/research-workflow/SKILL.md": "8f9d466bbf0755d8656a33c33f7474d5476fc5d251e99a933f7f2fd4dcfa73a6",
+      "skills/research-workflow/references/bulk-literature.md": "3513ca2a36cfe5fe4fd109b20bbee84d2fd1cc50f4e15017436d6227cc7c169c",
+      "skills/research-workflow/references/collaboration.md": "281bf570c3503a844543d874822836d75acb8604742e527b24be4739b4824648",
+      "skills/research-workflow/references/evolution.md": "9d45bc4449167520552167ba328b4098a17133854ba9f32dfb5dc02890bafb2a",
+      "skills/research-workflow/references/preferences.md": "aa57e11714c7160c5f13e14b5f6ee000ce2752b2829b69bfd41a3d874fb94ae7",
+      "skills/research-workflow/references/scripted-bulk-literature.md": "10343762058fe2d1e828b0a2fab8dd055ce77f57a2fbe852e52ef0e1645a7d65",
+      "skills/research-workflow/references/sources.md": "95bde7198e1208d6d4ebab568057884112076cc64e1400b18d51a94192bf337e",
+      "skills/research-workflow/references/workflow.md": "13f9ca1a97cab9a9b2dae5199dce528cb1dcb4ed2b79734c52806eb6d3deb222",
+      "skills/research-workflow/references/zotero-git-example.md": "3ad8b4dfdab6c0c726ed1fedb59aeaa82ae6ee7ecae2b1c84a1d12946aa075af",
+      "skills/research-workflow/scripts/bulk_literature.py": "60b90e5160b461b72379a0faebc2e0942b31ce3dacae7bd2621945b5b02129db",
+      "skills/research-workflow/scripts/lint_records.py": "b3255d0fcb38b810451b86ca0ff4d78be773821680775bfc1a1adab47a983ce1",
+      "skills/research-workflow/templates/BRIEF.md": "be0efba2e57b3eadc76e56083ffe75ea4557809c8fef7274bb706560a862a04f",
+      "skills/research-workflow/templates/CHANGE.md": "9503e109f1290910fcaede1f1b29f1dbcefa9218cc97410eb7a2588cf76277b9",
+      "skills/research-workflow/templates/CLAIMS.md": "c296a146ed1826b26854b7e2e886200549d33050326222e62135534efb67143c",
+      "skills/research-workflow/templates/CORPUS.md": "6d10fe421103ae7ca6b54a4c7ef50701b4b23a1700474d8e1edcf2550692f85e",
+      "skills/research-workflow/templates/EXPERIMENT.md": "3e23eb525c28b16faa11728d2e1dba08f2dd1d4703fa96c34639cd1635fd6a3c",
+      "skills/research-workflow/templates/HANDOFF.md": "cd7940769000ce62572b37335c00f2e685ceab9dc5812da1eed7fea6e9194944",
+      "skills/research-workflow/templates/LITERATURE.md": "c599962616618e1b656225f0401c805d1a24202f9344709b23ca4bc6f08701f4",
+      "skills/research-workflow/templates/MANUSCRIPT.md": "ec70de198b3c9e8147471394629bfe0dd5bde9e868cf7bc5f561f7b9cc28ac0c",
+      "skills/research-workflow/templates/PAPER.md": "6e2d860c93e0cadc8387bc4202e5ce64bb45fb3d9c1ae226142c116339d13144",
+      "skills/research-workflow/templates/PREFERENCES.md": "3354c01cd2e5638b97a9778c38c07f4bf3989b9b40c34d0df9aa0da9f4d60a44",
+      "skills/research-workflow/templates/QUESTION.md": "b3a506466f0f7758b9046353e2e11d5a1e645fd6257c7e19d67832e235a52db7",
+      "skills/research-workflow/templates/RESULT.json": "f2b24bb7b8974f012e4636c2162e60a10b860f01519de5a739ce3bce82827edb",
+      "skills/research-workflow/templates/REVIEW.md": "c51855b2d4547a564747c7e42468795a9ecfbc086b8d818c4d4576255a31871e",
+      "skills/research-workflow/templates/STATE.md": "a22a0025f2c50cdafb379db358502922784210a7eb260b4fae3591b8d6e865af",
+      "skills/research-workflow/templates/TASK.json": "a2073d0c29ac5e8c60526e3afd543b1a249d1c120ea76d4dd662819abbe17a6b",
+      "skills/research-workflow/templates/bulk-literature.example.json": "9793fb82b0373cf0dbfaef19e8d514d9bc9da0f92d70ad5bd6c707e54cd13997",
+      "tests/bulk-cli.md": "11b245b0d86dff64f006ddc36e286fdb621a3cc21761017d9f9aaae10a7e410b",
+      "tests/bulk-literature.md": "04e21f2dca93b66040454b47b169248a714295658c1a17b18ceb7ec59a6cdf93",
+      "tests/collaboration.md": "871357c0f4e7c0fd230286b731533925cfee4d0571818c11504f3b18c8ea6269",
+      "tests/evidence/W001.json": "29743b527dbd60338839ebe7f42fb3d1d9f00d579ad91aab56453b0d21d392ed",
+      "tests/evidence/W003.json": "6e376088c3d28dc3f000689be4c8e1d6fc8521041ff2dcaabeb70605bef0a549",
+      "tests/evidence/W004.json": "9a033706593ed5aecc89e8a43f7c3f60a2d959a1e559aaa4f891a148077e7b90",
+      "tests/evidence/W005.json": "0e004cb2b76cbea5af24bb3f081aa8f39fd0677a002e1887bfabf5143a71fa1a",
+      "tests/evidence/W006.json": "a77e0d96fdc2e08585aa2cf4ef401e613e0935dcebfb325d92419cdd3cf84726",
+      "tests/evidence/W008.json": "6a9a74158d5127b5b1596ebefd1b5ff94de5086d987702fd11581753dab9aeb2",
+      "tests/evidence/W009.json": "ae5a21dc12c03df0024f5f0943275c1803ac25983d9465328dadd420e5bd7a2a",
+      "tests/evidence/W010.json": "1f5c23e8cdbff3cec7b50ce1df0d59e9ece3a76e4b94216a2d8158d4de5d2b20",
+      "tests/evidence/W011-hosted-ci.json": "a03cfa072810ce7e06505e6f16365b084093673e326e396e8bba4a8b4232bac1",
+      "tests/evidence/W011.json": "bc62333c6592ab8471d0185831e21c041339c965128118a36bf92c9baca25876",
+      "tests/evolution.md": "667d4d4960893333b1684a84ba72db6978312f689a2f27c4d34f8ebe2633304c",
+      "tests/preferences.md": "61a916d6f3bcad25c6242dfedf717f09506696069298f1edf19ee8f7b2c76079",
+      "tests/reading.md": "c9d4ff6394ad25343c04dbd1a2993e11a19f4dcddbc2426a73c7a8328d94bfe1",
+      "tests/scenarios.md": "a9f4b7f9b4683bd55073c846ded3edaab484d1a1d3359fd8c32fd4bdbc3f0dbc",
+      "tests/test_bulk_literature.py": "1555d33003b6fe89681e1528f65e3632df56a691b04aae131534904968060919",
+      "tests/test_lint_records.py": "753b04a53633df003bac59e8eb98f6697eaa4fed09de2b976f635cd7a711a1e4",
+      "tests/test_package.py": "b9f1b6751847277fe08b0f0452a2b44edcd7a78e652b50ac567815a9972fc327",
+      "auto-research-integrated-report.md": "e0260bf7e6ff5644465d1ddab353baa7b783ef832bb0084d302b6d43d0b997cf",
+      "RESEARCH.local.md": "13447e230dd5aa038bf8f0756ad997b724463e50f2a01393ec85c99cc56d6d1a"
+    }
+  },
+  "evidence_class": "Documentation and source inspection. No new runtime capability or measured research improvement.",
+  "dsh": {
+    "checked_date": "2026-10-23",
+    "evidence_level": "source_inspection_only",
+    "installed_version": "0.2.1-rc.2",
+    "release_tag": "dsh-v0.2.1-rc.2",
+    "source_commit": "687f282e8625c6b8d11ff58211a90524be2e4317",
+    "scope": "Read-only installed package and pinned official source review. No DSH runtime or inference was launched.",
+    "sources": [
+      {
+        "path": "packages/experimental/tool-agent-team/src/index.ts",
+        "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/tool-agent-team/src/index.ts",
+        "git_blob_sha": "bc827c5f8c3c1c06c43609122a6088bea11f71de",
+        "content_sha256": "9a0970ccf12c1b5385a4bff9b8c4a5f81a07a31d6cefb674a6e26548208c8cd8",
+        "installed_byte_match": false,
+        "match_note": "Installed TypeScript source is absent; compiled lib definitions were read."
+      },
+      {
+        "path": "packages/experimental/agent-team/README.md",
+        "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md",
+        "git_blob_sha": "69d602f0794404fbf0dfabee140fb5d45ea9077f",
+        "content_sha256": "c9d79292989602cd14ffd6fb638518e1e9fe569b9c8ff521cf9545be6c62fb94",
+        "installed_byte_match": true,
+        "match_note": "Installed bytes compared with pinned source."
+      },
+      {
+        "path": "packages/experimental/agent-team-profile/cordis.patch.yml",
+        "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team-profile/cordis.patch.yml",
+        "git_blob_sha": "e75aae058ae583ed1a4e92ce81fd513406fa7630",
+        "content_sha256": "b5459c83d2779de164c22bfc43832d8b5ff6672b112df94b76684ec06c96adc4",
+        "installed_byte_match": true,
+        "match_note": "Installed bytes compared with pinned source."
+      },
+      {
+        "path": "packages/experimental/agent-team-profile/README.md",
+        "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team-profile/README.md",
+        "git_blob_sha": "08cde7a032222807efbe6736617948190859b0a0",
+        "content_sha256": "cc2c5bf82126776ef2ef057e85418f511092767e4bce3beb1120dcda07a0027a",
+        "installed_byte_match": true,
+        "match_note": "Installed bytes compared with pinned source."
+      },
+      {
+        "path": "packages/subagent/subagent/README.md",
+        "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/subagent/subagent/README.md",
+        "git_blob_sha": "93c21b5b8824fbf375811019b799652b0fd8b32d",
+        "content_sha256": "ac080c1b7b9224a5b86f43fceee9384f0e86daea73bfe62811891b62608e6d2f",
+        "installed_byte_match": true,
+        "match_note": "The installed README bytes match the pinned official README bytes."
+      },
+      {
+        "path": "packages/subagent/subagent-spawn-in-process/README.md",
+        "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/subagent/subagent-spawn-in-process/README.md",
+        "git_blob_sha": "c828c4f92125296561f599a8c43062dc474bf721",
+        "content_sha256": "9f7befed16a2372898cd8c0b455994e428b4af7b6394160167c9984a4e7cc155",
+        "installed_byte_match": true,
+        "match_note": "Installed bytes compared with pinned source."
+      },
+      {
+        "path": "packages/subagent/subagent-fork-in-process/README.md",
+        "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/subagent/subagent-fork-in-process/README.md",
+        "git_blob_sha": "aad91df47418405a0abb35573a65fafedd1f3f3c",
+        "content_sha256": "0e4651352a90651e39830110b40b3bcb098f4a2a85bc3b3072c2a632a2efd958",
+        "installed_byte_match": true,
+        "match_note": "Installed bytes compared with pinned source."
+      }
+    ],
+    "local_files": [
+      {
+        "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/package.json",
+        "sha256": "6ad87c296b2d313f307a72c2e773ce9cae070a639ce18f7e7f6a51c36b00641f"
+      },
+      {
+        "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/README.md",
+        "sha256": "c9d79292989602cd14ffd6fb638518e1e9fe569b9c8ff521cf9545be6c62fb94"
+      },
+      {
+        "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+        "sha256": "b2d337d10c841773e4e69836475f5c21dce8cd87beb70d73413a7868e9403322"
+      },
+      {
+        "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-tool-agent-team/package.json",
+        "sha256": "8f09d5849a6420e99686da1bdd06033829e07bda72dae09f892f61f22f8ff8e4"
+      },
+      {
+        "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-tool-agent-team/README.md",
+        "sha256": "e821c5c2eb9b494edd008ff853623707280968396f834bcfa4801aecf0f08fdf"
+      },
+      {
+        "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-tool-agent-team/lib/index.js",
+        "sha256": "cac22fe5f83a179056469cf329def58393c7620eae23b018c66f42c37d849f63"
+      },
+      {
+        "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team-profile/package.json",
+        "sha256": "8845f09133a107195672fb9630e35075c339d3cf7917cd483ba755c3b7a2c115"
+      },
+      {
+        "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team-profile/README.md",
+        "sha256": "cc2c5bf82126776ef2ef057e85418f511092767e4bce3beb1120dcda07a0027a"
+      },
+      {
+        "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team-profile/lib/index.js",
+        "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+      },
+      {
+        "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team-profile/cordis.patch.yml",
+        "sha256": "b5459c83d2779de164c22bfc43832d8b5ff6672b112df94b76684ec06c96adc4"
+      },
+      {
+        "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-subagent/README.md",
+        "sha256": "ac080c1b7b9224a5b86f43fceee9384f0e86daea73bfe62811891b62608e6d2f"
+      },
+      {
+        "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-subagent/lib/index.js",
+        "sha256": "9a9572e70fffdb100deb63326167f32bbf63016ce49c0017495dabcb95b44168"
+      },
+      {
+        "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-subagent-spawn-in-process/README.md",
+        "sha256": "9f7befed16a2372898cd8c0b455994e428b4af7b6394160167c9984a4e7cc155"
+      },
+      {
+        "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-subagent-fork-in-process/README.md",
+        "sha256": "0e4651352a90651e39830110b40b3bcb098f4a2a85bc3b3072c2a632a2efd958"
+      }
+    ],
+    "claims": [
+      {
+        "id": "dsh-scope",
+        "claim": "Installed CLI and Team packages report 0.2.1-rc.2. The release tag resolves to the pinned commit. Installation does not prove Desktop version or current Team enablement.",
+        "sources": [
+          {
+            "url": "https://api.github.com/repos/deepseek-ai/deepseek-harness/git/ref/tags/dsh-v0.2.1-rc.2"
+          },
+          {
+            "path": "packages/experimental/agent-team-profile/README.md",
+            "start_line": 12,
+            "end_line": 12,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team-profile/README.md#L12"
+          }
+        ]
+      },
+      {
+        "id": "dsh-enablement",
+        "claim": "Team bundle is experimental and opt-in. It requires dsh-base and durable session storage. It replaces overlapping global Subagent tools. Current user profile was not inspected or changed.",
+        "sources": [
+          {
+            "path": "packages/experimental/agent-team-profile/README.md",
+            "start_line": 26,
+            "end_line": 56,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team-profile/README.md#L26-L56"
+          },
+          {
+            "path": "packages/experimental/agent-team-profile/README.md",
+            "start_line": 99,
+            "end_line": 107,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team-profile/README.md#L99-L107"
+          },
+          {
+            "path": "packages/experimental/agent-team/README.md",
+            "start_line": 24,
+            "end_line": 41,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md#L24-L41"
+          },
+          {
+            "path": "packages/experimental/agent-team-profile/cordis.patch.yml",
+            "start_line": 1,
+            "end_line": 34,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team-profile/cordis.patch.yml#L1-L34"
+          }
+        ]
+      },
+      {
+        "id": "dsh-spawn",
+        "claim": "spawn_teammate accepts name, description, prompt, and optional context fresh/fork. Fresh is default. Only Lead can create. Returns member with addressable target. No cwd, model, or token-budget parameter. Names are permanent, including failed creation.",
+        "sources": [
+          {
+            "path": "packages/experimental/tool-agent-team/src/index.ts",
+            "start_line": 193,
+            "end_line": 218,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/tool-agent-team/src/index.ts#L193-L218"
+          },
+          {
+            "path": "packages/experimental/agent-team/README.md",
+            "start_line": 59,
+            "end_line": 67,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md#L59-L67"
+          },
+          {
+            "path": "packages/experimental/agent-team/README.md",
+            "start_line": 126,
+            "end_line": 126,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md#L126"
+          }
+        ],
+        "local_source": [
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+            "start_line": 1004,
+            "end_line": 1065
+          },
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+            "start_line": 1164,
+            "end_line": 1164
+          }
+        ]
+      },
+      {
+        "id": "dsh-message",
+        "claim": "send_message accepts target and message. It steers running recipients at a step boundary and starts or cold-resumes inactive teammates. Returns sent:true after inbox admission. It does not expose MessageId, confirm processing, or wait for a synchronous storage flush. Explicit resends are not deduplicated. No Team-level send retry guarantee.",
+        "sources": [
+          {
+            "path": "packages/experimental/tool-agent-team/src/index.ts",
+            "start_line": 222,
+            "end_line": 236,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/tool-agent-team/src/index.ts#L222-L236"
+          },
+          {
+            "path": "packages/experimental/agent-team/README.md",
+            "start_line": 69,
+            "end_line": 73,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md#L69-L73"
+          },
+          {
+            "path": "packages/experimental/agent-team/README.md",
+            "start_line": 130,
+            "end_line": 132,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md#L130-L132"
+          }
+        ],
+        "local_source": [
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+            "start_line": 1587,
+            "end_line": 1613
+          }
+        ]
+      },
+      {
+        "id": "dsh-wait",
+        "claim": "wait_agent is an activity wait, not a target-completion join. timeout_ms defaults to 30000 and must be an integer from 10000 through 3600000. It observes changes after registration. It never wakes a member. Without another running or provisioning member, it immediately returns timedOut:false and noProgress.reason=no-active-peer. Re-list after return.",
+        "sources": [
+          {
+            "path": "packages/experimental/tool-agent-team/src/index.ts",
+            "start_line": 250,
+            "end_line": 281,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/tool-agent-team/src/index.ts#L250-L281"
+          },
+          {
+            "path": "packages/experimental/agent-team/README.md",
+            "start_line": 140,
+            "end_line": 140,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md#L140"
+          }
+        ],
+        "local_source": [
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+            "start_line": 47,
+            "end_line": 84
+          }
+        ]
+      },
+      {
+        "id": "dsh-completion",
+        "claim": "Team creation uses delivery:parent. Underlying Subagent service sends a completion notice. Runtime inactive or board completed does not establish toolkit review acceptance.",
+        "sources": [
+          {
+            "path": "packages/subagent/subagent/README.md",
+            "start_line": 61,
+            "end_line": 61,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/subagent/subagent/README.md#L61"
+          }
+        ],
+        "local_source": [
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+            "start_line": 1032,
+            "end_line": 1043
+          }
+        ],
+        "interpretation": "The acceptance distinction follows the toolkit protocol; DSH only supplies runtime and board state."
+      },
+      {
+        "id": "dsh-cancel",
+        "claim": "interrupt_agent accepts target and is Lead-only. It can be disabled in tool configuration. Return value is previousStatus running/inactive. It requests interruption of the current live teammate turn with keepInbox:true. It does not clear pending messages, release task ownership, delete output, or roll back file effects. The result is not a synchronous quiescence receipt.",
+        "sources": [
+          {
+            "path": "packages/experimental/tool-agent-team/src/index.ts",
+            "start_line": 284,
+            "end_line": 295,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/tool-agent-team/src/index.ts#L284-L295"
+          },
+          {
+            "path": "packages/experimental/agent-team/README.md",
+            "start_line": 140,
+            "end_line": 140,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md#L140"
+          },
+          {
+            "path": "packages/subagent/subagent/README.md",
+            "start_line": 73,
+            "end_line": 73,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/subagent/subagent/README.md#L73"
+          },
+          {
+            "path": "packages/subagent/subagent/README.md",
+            "start_line": 208,
+            "end_line": 209,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/subagent/subagent/README.md#L208-L209"
+          }
+        ],
+        "local_source": [
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-tool-agent-team/lib/index.js",
+            "start_line": 16,
+            "end_line": 19
+          },
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+            "start_line": 963,
+            "end_line": 976
+          },
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-subagent/lib/index.js",
+            "start_line": 1258,
+            "end_line": 1275
+          }
+        ]
+      },
+      {
+        "id": "dsh-persistence",
+        "claim": "Roster and task mutations append to the exact live Lead Session and flush before success or waiter notification. Message durability follows the recipient Agent policy. Cold resume needs persistence and Session query. Restart reconciles provisioning against persisted child parent identity, continuation descriptor, and initial user message. Otherwise the member becomes failed.",
+        "sources": [
+          {
+            "path": "packages/experimental/agent-team/README.md",
+            "start_line": 126,
+            "end_line": 126,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md#L126"
+          },
+          {
+            "path": "packages/experimental/agent-team/README.md",
+            "start_line": 144,
+            "end_line": 148,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md#L144-L148"
+          },
+          {
+            "path": "packages/subagent/subagent/README.md",
+            "start_line": 61,
+            "end_line": 61,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/subagent/subagent/README.md#L61"
+          }
+        ],
+        "local_source": [
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+            "start_line": 156,
+            "end_line": 159
+          }
+        ]
+      },
+      {
+        "id": "dsh-restart-limits",
+        "claim": "Team does not retain unaccepted send intent or retry new messages after restart. Accepted prompts that have not reached the child Session log can be lost on crash. Historical queued messages not recorded by the target remain undelivered. Two harness processes must not coordinate through the same Team persistence. Inactivity, interruption, process exit, and failed work do not release task owners.",
+        "sources": [
+          {
+            "path": "packages/experimental/agent-team/README.md",
+            "start_line": 69,
+            "end_line": 73,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md#L69-L73"
+          },
+          {
+            "path": "packages/experimental/agent-team/README.md",
+            "start_line": 146,
+            "end_line": 146,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md#L146"
+          },
+          {
+            "path": "packages/experimental/agent-team/README.md",
+            "start_line": 201,
+            "end_line": 208,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md#L201-L208"
+          },
+          {
+            "path": "packages/subagent/subagent/README.md",
+            "start_line": 207,
+            "end_line": 212,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/subagent/subagent/README.md#L207-L212"
+          }
+        ]
+      },
+      {
+        "id": "dsh-isolation",
+        "claim": "Team members share cwd and filesystem. Team supplies no worktree isolation, merge, or filesystem lock. Write-scope warnings are advisory and never authorize or block writes. Bash and external writers bypass the filesystem version guard.",
+        "sources": [
+          {
+            "path": "packages/experimental/agent-team/README.md",
+            "start_line": 136,
+            "end_line": 136,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md#L136"
+          },
+          {
+            "path": "packages/experimental/agent-team/README.md",
+            "start_line": 201,
+            "end_line": 208,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md#L201-L208"
+          },
+          {
+            "path": "packages/experimental/tool-agent-team/src/index.ts",
+            "start_line": 37,
+            "end_line": 41,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/tool-agent-team/src/index.ts#L37-L41"
+          }
+        ]
+      },
+      {
+        "id": "dsh-limits-usage",
+        "claim": "Team tools expose no token, cost, or cumulative usage counters. Service defaults: maxMembers=16, maxTasks=256, maxMessageBytes=65536, disposalTimeoutMs=5000. Bundle sets maxMembers=8. Member count includes failed names forever. Task cap counts non-deleted tasks. Message bound covers JSON-encoded sender-framed content bytes. These caps do not enforce a toolkit task budget.",
+        "sources": [
+          {
+            "path": "packages/experimental/agent-team-profile/cordis.patch.yml",
+            "start_line": 16,
+            "end_line": 24,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team-profile/cordis.patch.yml#L16-L24"
+          },
+          {
+            "path": "packages/experimental/agent-team/README.md",
+            "start_line": 47,
+            "end_line": 55,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md#L47-L55"
+          }
+        ],
+        "local_source": [
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+            "start_line": 1420,
+            "end_line": 1457
+          },
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+            "start_line": 1023,
+            "end_line": 1024
+          },
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+            "start_line": 1221,
+            "end_line": 1221
+          },
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+            "start_line": 1592,
+            "end_line": 1597
+          },
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-tool-agent-team/lib/index.js",
+            "start_line": 38,
+            "end_line": 203
+          }
+        ]
+      },
+      {
+        "id": "dsh-pagination",
+        "claim": "list_agents returns the entire roster with no pagination. team_task_list filters current tasks then uses an offset cursor, default limit 50, maximum 100, and optional nextCursor. Pagination does not freeze the board. Adapter rendering uses JSON.stringify without truncation. Other host truncation was not checked.",
+        "sources": [
+          {
+            "path": "packages/experimental/tool-agent-team/src/index.ts",
+            "start_line": 150,
+            "end_line": 157,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/tool-agent-team/src/index.ts#L150-L157"
+          },
+          {
+            "path": "packages/experimental/tool-agent-team/src/index.ts",
+            "start_line": 240,
+            "end_line": 246,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/tool-agent-team/src/index.ts#L240-L246"
+          },
+          {
+            "path": "packages/experimental/tool-agent-team/src/index.ts",
+            "start_line": 323,
+            "end_line": 350,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/tool-agent-team/src/index.ts#L323-L350"
+          }
+        ]
+      },
+      {
+        "id": "dsh-errors",
+        "claim": "Team domain failures throw TeamError. The tool adapter does not convert errors into successful receipts. Ordinary errors and AggregateError can also occur. Do not assume every failure exposes a stable Team code or signals no side effects.",
+        "local_source": [
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+            "start_line": 1044,
+            "end_line": 1057
+          },
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+            "start_line": 1277,
+            "end_line": 1289
+          },
+          {
+            "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-tool-agent-team/lib/index.js",
+            "start_line": 435,
+            "end_line": 436
+          }
+        ],
+        "sources": [
+          {
+            "path": "packages/experimental/tool-agent-team/src/index.ts",
+            "start_line": 206,
+            "end_line": 218,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/tool-agent-team/src/index.ts#L206-L218"
+          },
+          {
+            "path": "packages/experimental/tool-agent-team/src/index.ts",
+            "start_line": 229,
+            "end_line": 236,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/tool-agent-team/src/index.ts#L229-L236"
+          }
+        ]
+      }
+    ],
+    "error_semantics": [
+      {
+        "code": "TEAM_TASK_STALE_REVISION",
+        "meaning": "Expected task revision does not match current revision.",
+        "response": "Re-read the task and revise the intended update.",
+        "source": {
+          "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+          "start_line": 1277,
+          "end_line": 1278
+        }
+      },
+      {
+        "code": "TEAM_LEAD_REQUIRED",
+        "meaning": "The caller lacks Lead authority for create, interrupt, or reassign.",
+        "response": "Use the current Lead or stop that operation.",
+        "source": {
+          "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+          "start_line": 965,
+          "end_line": 965
+        }
+      },
+      {
+        "code": "TEAM_TASK_UNAUTHORIZED",
+        "meaning": "Task mutation requires its owner or Lead.",
+        "response": "Resolve ownership before retrying.",
+        "source": {
+          "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+          "start_line": 1282,
+          "end_line": 1283
+        }
+      },
+      {
+        "code": "TEAM_MEMBER_LIMIT",
+        "meaning": "Permanent member roster capacity is exhausted.",
+        "response": "Use existing members or continue sequentially.",
+        "source": {
+          "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+          "start_line": 1024,
+          "end_line": 1024
+        }
+      },
+      {
+        "code": "TEAM_MEMBER_NAME_TAKEN",
+        "meaning": "Name has already been reserved, even if creation failed.",
+        "response": "Inspect the roster before deciding whether a distinct new member is needed.",
+        "source": {
+          "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+          "start_line": 1023,
+          "end_line": 1023
+        }
+      },
+      {
+        "code": "TEAM_MESSAGE_TOO_LARGE",
+        "meaning": "Sender-framed JSON content exceeds byte limit.",
+        "response": "Send a shorter message and refer to bounded shared files.",
+        "source": {
+          "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+          "start_line": 1592,
+          "end_line": 1597
+        }
+      },
+      {
+        "code": "TEAM_INVALID_TIMEOUT",
+        "meaning": "Wait timeout is not a safe integer within 10000 through 3600000.",
+        "response": "Use a supported timeout.",
+        "source": {
+          "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+          "start_line": 48,
+          "end_line": 48
+        }
+      },
+      {
+        "code": "TEAM_WAIT_ABORTED",
+        "meaning": "Wait cancellation carried a non-Error reason; Error reasons are preserved instead.",
+        "response": "Inspect runtime state before waiting or resuming work.",
+        "source": {
+          "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+          "start_line": 68,
+          "end_line": 71
+        }
+      },
+      {
+        "code": "TEAM_PROVISIONING_CONFLICT",
+        "meaning": "Creation and durable child reconciliation disagree or initial prompt acceptance is not durable.",
+        "response": "Inspect the roster and persisted task files before another spawn.",
+        "source": {
+          "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-experimental-agent-team/lib/index.js",
+          "start_line": 1053,
+          "end_line": 1083
+        }
+      },
+      {
+        "code": "FS_STALE_VERSION",
+        "meaning": "A guarded filesystem operation reports a stale observed file version; this is not a Team error code.",
+        "response": "Read current content, rebase the intended edit, and retry. The guard does not cover Bash or external writers.",
+        "sources": [
+          {
+            "path": "packages/experimental/tool-agent-team/src/index.ts",
+            "start_line": 37,
+            "end_line": 41,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/tool-agent-team/src/index.ts#L37-L41"
+          }
+        ]
+      },
+      {
+        "code": "ACTIVATION_LIMIT_REACHED",
+        "meaning": "Underlying Subagent active-child capacity is exhausted. Admission does not queue.",
+        "response": "Wait for an existing child or continue with current agents.",
+        "sources": [
+          {
+            "path": "packages/subagent/subagent/README.md",
+            "start_line": 53,
+            "end_line": 57,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/subagent/subagent/README.md#L53-L57"
+          }
+        ]
+      },
+      {
+        "code": "UNAUTHORIZED",
+        "meaning": "Underlying Subagent API rejects a missing, replaced, or unauthorized live caller. This is separate from sandbox approval and Team role errors.",
+        "response": "Check current caller and lifecycle state. Do not bypass permission checks.",
+        "sources": [
+          {
+            "path": "packages/subagent/subagent/README.md",
+            "start_line": 71,
+            "end_line": 73,
+            "url": "https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/subagent/subagent/README.md#L71-L73"
+          }
+        ],
+        "local_source": {
+          "path": "/usr/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-subagent/lib/index.js",
+          "start_line": 1258,
+          "end_line": 1268
+        }
+      }
+    ],
+    "limits": [
+      "No live DSH Team test.",
+      "No user profile, account, credentials, or Desktop runtime inspected.",
+      "No inference, message delivery, cold restart, cancellation, persistence fault, or usage test.",
+      "No general host output truncation guarantee verified.",
+      "No project or installed package files changed.",
+      "Source code support is not a runtime test result.",
+      "Pinned upstream TypeScript has no installed source file counterpart; compiled adapter definitions were inspected separately."
+    ]
+  },
+  "codex": {
+    "backend": "Codex Desktop in the current session",
+    "date": "2026-10-23",
+    "version_scope": "The installed CLI reports 0.163.0. That is not a version claim about the Desktop app or its collaboration service.",
+    "source": "Tools exposed in the current session. Names and semantics are session-specific, not a universal Codex API.",
+    "capabilities": {
+      "spawn": {
+        "tools": [
+          "collaboration.spawn_agent"
+        ],
+        "declared": "Create a child agent. fork_turns is all or none. Agents share the working directory.",
+        "observed": "n6_scope and n6_dsh_capabilities ran separate read-only source review tasks."
+      },
+      "message": {
+        "tools": [
+          "collaboration.send_message",
+          "collaboration.followup_task"
+        ],
+        "declared": "send_message queues a message without starting an idle agent. followup_task starts an idle agent and delivers to a running agent at a boundary.",
+        "observed": "followup_task reactivated n6_scope for independent review preparation."
+      },
+      "join": {
+        "tools": [
+          "collaboration.wait_agent",
+          "collaboration.list_agents"
+        ],
+        "declared": "wait_agent wakes for mailbox updates, timeout or user input. It reports an update summary, not task acceptance. list_agents reports live agents.",
+        "observed": "Subagent final responses arrived in this session. No separate timeout experiment ran."
+      },
+      "cancel": {
+        "tools": [
+          "collaboration.interrupt_agent"
+        ],
+        "declared": "Interrupt the current agent turn and return its previous status. The agent remains available.",
+        "observed": "Not exercised in N6. Remote process termination is not established."
+      },
+      "persistence": {
+        "declared": "No cross-restart recovery contract for these collaboration handles is exposed.",
+        "observed": "Restart and handoff to a different harness were not tested."
+      },
+      "isolation": {
+        "declared": "Agents share the filesystem and current directory. Separate conversations do not isolate file writes.",
+        "observed": "No worktree isolation experiment ran."
+      },
+      "usage": {
+        "declared": "The collaboration tool results expose no complete per-agent cost or token ledger.",
+        "observed": "No cost or token measurement was recorded. Treat missing measurements as unknown."
+      },
+      "partial_reads": {
+        "declared": "Shell output can be capped by max_output_tokens and report truncation. Codex app read_thread offers cursor, turnLimit, includeOutputs and maxOutputCharsPerItem. Those are thread tools, not child-agent history APIs.",
+        "observed": "A shell read in N6 returned a truncation notice. Narrower reads retrieved the relevant source text."
+      }
+    },
+    "app_read_tool_declarations": [
+      {
+        "name": "codex_app__read_thread",
+        "description": "Tools provided by the Codex app.\n\nRead recent status and turn summaries for one thread or chat without opening it. Use page cursors from earlier responses to read older turns.\n\nexec tool declaration:\n```ts\ndeclare const tools: { codex_app__read_thread(args: {\n  // Optional cursor for older turns.\n  cursor?: string;\n  // Optional host id returned by create_thread or list_threads.\n  hostId?: string;\n  // Whether to include truncated tool or command outputs.\n  includeOutputs?: boolean;\n  // Maximum characters to keep for each included Codex output or chat message.\n  maxOutputCharsPerItem?: number;\n  // Thread id to inspect.\n  threadId: string;\n  // Maximum number of turns to return.\n  turnLimit?: number;\n}): Promise<unknown>; };\n```"
+      },
+      {
+        "name": "codex_app__wait_threads",
+        "description": "Tools provided by the Codex app.\n\nWait for the first of up to eight Codex threads to complete or need attention. New user input ends the wait early. Use timeoutMs: 0 for an immediate snapshot. Commentary never wakes the wait. An up-to-date cursor omits previously delivered final text; a timeout includes compact progress for all targets. Per-target failures are returned in errors.\n\nexec tool declaration:\n```ts\ndeclare const tools: { codex_app__wait_threads(args: {\n  // Threads to wait for. The first target that completes or needs attention wins.\n  targets: Array<{\n  // Optional cursor returned by an earlier wait.\n  afterCursor?: string;\n  // Optional host id returned by create_thread or list_threads.\n  hostId?: string;\n  // Thread id to wait for.\n  threadId: string;\n}>;\n  // Maximum event-wait time in milliseconds. A bounded snapshot fetch for fresh progress may add latency. Defaults to 120000.\n  timeoutMs?: number;\n}): Promise<unknown>; };\n```"
+      }
+    ]
+  },
+  "independent_review": {
+    "status": "passed",
+    "cases_fixed_before_draft": [
+      "N6-Q1: Restart, inactive worker, unknown remote job.",
+      "N6-Q2: Two workers need to write the same shared state file.",
+      "N6-Q3: Completion message without saved result; inactive member after wait.",
+      "N6-Q4: Partial history or output and unknown usage totals.",
+      "N6-Q5: Invalid arguments, temporary read failure, refusal, unknown write outcome."
+    ],
+    "results": {
+      "reviewer": "n6_scope",
+      "review_type": "Independent read-only documentation/source review",
+      "questions_fixed_before_draft": true,
+      "candidate_guide_sha256": "c9eaee9fa964c5c38b6890b0e218995fa2607ef8748a77658f73bfd2d5e98e60",
+      "decision": "pass",
+      "cases": [
+        {
+          "id": "N6-Q1",
+          "result": "pass",
+          "basis": "Guide lines 114 and 120\u2013129 separate stored Team records from unlogged messages, limit interruption, and link record-based recovery before replacement."
+        },
+        {
+          "id": "N6-Q2",
+          "result": "pass",
+          "basis": "Guide lines 115, 120\u2013129 distinguish context from shared writes and link the existing single-writer and sequential fallback procedure."
+        },
+        {
+          "id": "N6-Q3",
+          "result": "pass",
+          "basis": "Guide lines 93, 111\u2013114, and 136 separate inbox admission, runtime activity, and task-board state from the linked research acceptance rules."
+        },
+        {
+          "id": "N6-Q4",
+          "result": "pass",
+          "basis": "Guide lines 116\u2013118 and 129\u2013144 preserve unknown use, identify DSH pagination and Codex app cursors, and limit history and truncation claims to inspected interfaces."
+        },
+        {
+          "id": "N6-Q5",
+          "result": "pass",
+          "basis": "Guide lines 146\u2013164 separate argument correction, bounded read retries, refusal, and unknown effects. Source scope and untested behavior remain explicit."
+        }
+      ],
+      "findings": [
+        {
+          "id": "N6-R1",
+          "severity": "evidence correction",
+          "file": "tests/evidence/W012.json",
+          "location": "dsh.sources[path=packages/subagent/subagent/README.md]",
+          "problem": "installed_byte_match is false and match_note refers to absent TypeScript, but this README exists and exactly matches the pinned source.",
+          "expected": "Set installed_byte_match to true and use the installed-byte comparison note.",
+          "status": "resolved",
+          "resolution": "Reviewer reread the corrected source entry. installed_byte_match is true and the note states the README byte comparison."
+        }
+      ],
+      "source_checks": {
+        "pinned_source_digest_matches": 7,
+        "installed_source_digest_matches": 14,
+        "subagent_readme_exact_byte_match": true,
+        "protected_file_mismatches": []
+      },
+      "limits": [
+        "No DSH execution or live research.",
+        "No restart, cancellation, shared-write race, paging execution, or cross-harness recovery test.",
+        "Codex declarations are session-scoped.",
+        "Package tests were read from the recorded result, not rerun by this reviewer.",
+        "Trial and pending decision wording is expected until the review is adopted."
+      ],
+      "unresolved_findings": [],
+      "recorded_package_tests": {
+        "count": 8,
+        "result": "OK",
+        "python_version": "3.14.8",
+        "reviewer_reran": false
+      }
+    },
+    "report": "The five fixed review cases pass. No finding remains open. The guide keeps capability claims within the inspected source and session evidence. It keeps the existing collaboration procedure as the authority.\n\nThe review found one incorrect source match entry. The author corrected the subagent README match field and note. The reviewer read the correction and confirmed the exact byte match.\n\nThe review checked seven pinned source digests and fourteen installed file digests. All matched. Protected candidate files retained their recorded hashes. The guide did not change during the final review.\n\nThe recorded package run passed all eight tests on Python 3.14.8. This reviewer did not repeat those tests.\n\nNo DSH team or live research ran. Restart, cancellation, paging, shared-write races, and cross-harness recovery remain untested.\n"
+  },
+  "package_tests": {
+    "status": "passed on the final candidate",
+    "command": "python3 -B -m unittest discover -s tests -p 'test_package.py' -v",
+    "python_version": "3.14.8",
+    "platform": "Linux-7.2.11-arch1-1-x86_64-with-glibc2.44",
+    "test_count": 8,
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_each_badge_label_and_image_must_match (test_package.PackageCheckTests.test_each_badge_label_and_image_must_match) ... ok\ntest_entry_imports_and_shared_skill_link_are_required (test_package.PackageCheckTests.test_entry_imports_and_shared_skill_link_are_required) ... ok\ntest_license_bytes_and_required_files (test_package.PackageCheckTests.test_license_bytes_and_required_files) ... ok\ntest_metadata_is_required_and_has_valid_values (test_package.PackageCheckTests.test_metadata_is_required_and_has_valid_values) ... ok\ntest_missing_path_and_bad_fragment (test_package.PackageCheckTests.test_missing_path_and_bad_fragment) ... ok\ntest_paths_cannot_escape_the_package (test_package.PackageCheckTests.test_paths_cannot_escape_the_package) ... ok\ntest_valid_links_unicode_duplicates_images_and_code_examples (test_package.PackageCheckTests.test_valid_links_unicode_duplicates_images_and_code_examples) ... ok\ntest_package (test_package.PackageTests.test_package) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.041s\n\nOK\n",
+    "scope": "Package and local document checks only. No runtime or cross-harness tests."
+  },
+  "limits": [
+    "No DSH team execution or inference.",
+    "No restart, interruption, concurrent-write, or cross-harness handoff test.",
+    "No usage measurement or research-quality comparison.",
+    "No new hosted CI run for N6."
+  ],
+  "decision": "Adopt documentation only. No portable skill behavior change.",
+  "guide_patch": "--- a/docs/harnesses.md\n+++ b/docs/harnesses.md\n@@ -5,8 +5,8 @@\n The plain `skills/` directory does not register it automatically.\n Project entry files tell the assistant to read its `SKILL.md`.\n \n-This guide follows official documentation reviewed on 2026-10-22.\n-Native discovery, permission prompts, and full research cycles remain untested across all four harnesses.\n+The loading instructions below follow official documentation reviewed on 2026-10-22.\n+Native discovery, permission prompts, and full research cycles remain untested across the four harnesses in the loading tables.\n Use the [start prompt](../README.md#start-or-resume-research) with a selected research repository.\n \n ## Load the shared rules\n@@ -84,3 +84,81 @@\n \n If file access fails, resolve the path, permission, or tool problem first.\n Use the skill's initialization rules when research state is absent.\n+\n+## Map collaboration capabilities\n+\n+This section was reviewed on 2026-10-23.\n+It maps DSH Agent Teams and the Codex Desktop tools available in this session.\n+A tool declaration describes an interface, not a completed runtime test.\n+Use the [collaboration procedure](../skills/research-workflow/references/collaboration.md) for ownership, records, acceptance, and recovery.\n+\n+The DSH column uses installed package version `0.2.1-rc.2` and official source commit `687f282e8625c6b8d11ff58211a90524be2e4317`.\n+The [Team tools](https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/tool-agent-team/src/index.ts) define the calls and result fields.\n+The [Team runtime](https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team/README.md) describes persistence, errors, and shared files.\n+The [Team bundle](https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/experimental/agent-team-profile/README.md) is experimental and disabled by default.\n+Package presence does not establish that a running DSH session enables it.\n+No DSH team ran during this inspection.\n+\n+The Codex column uses the current session's tool declarations.\n+This session spawned separate reviewers, received their reports, and used `collaboration.followup_task` to continue a reviewer.\n+Cancellation, restart recovery, and isolated worktrees were not tested.\n+These observations do not establish the interface of another Codex session or release.\n+The installed CLI reports `0.163.0`, which does not identify the Desktop collaboration service version.\n+\n+| Capability | DSH Agent Teams | Codex Desktop in this session |\n+| --- | --- | --- |\n+| Create a worker | Lead-only `spawn_teammate` accepts a unique name, description, prompt, and optional `fresh` or `fork` context. The default is `fresh`. | `collaboration.spawn_agent` creates a child. `fork_turns` selects inherited history or no history. Creation and report delivery were observed. |\n+| Send a message | `send_message` steers a running member or starts an inactive member. `{sent:true}` confirms inbox acceptance only. | `collaboration.send_message` queues a message without starting an idle agent. `collaboration.followup_task` can start an idle agent. |\n+| Wait or join | `wait_agent` waits for new activity. It returns `timedOut` or immediate `noProgress` when no peer can progress. It is not a completion join. | `collaboration.wait_agent` reports mailbox activity, timeout, or user interruption. `collaboration.list_agents` lists live agent status. Neither establishes research acceptance. |\n+| Cancel | Lead-only `interrupt_agent` interrupts a turn. Configuration can disable it. It retains the inbox and task owner. | `collaboration.interrupt_agent` interrupts the current turn and returns the previous status. The agent remains available. This call was not tested here. |\n+| Persist and resume | Team membership and task records use the Lead session store. Stored teammates can resume. Accepted but unlogged messages can be lost after a crash. | The exposed collaboration interface gives no cross-restart recovery guarantee for child handles. Cross-harness recovery was not tested. |\n+| Isolate writes | Members share a directory and filesystem. Write scopes are advisory. Team tools create no worktrees, file locks, or automatic merges. | Child agents share the working directory and filesystem. Separate conversation contexts do not isolate file writes. |\n+| Measure use | Team result schemas expose no complete token or cost ledger. Member, task, and message capacity limits do not enforce research budgets. | Collaboration results expose no complete token or cost ledger. No per-agent usage measurement was recorded. |\n+| Read every page | `team_task_list` returns `nextCursor`. Its default limit is 50 and maximum is 100. `list_agents` returns the roster without paging. | The child-agent tools expose no paged history reader. Separate app task readers use cursors, as described below. |\n+| Detect truncation | The Team adapter renders complete JSON at its own layer. Truncation elsewhere in the harness was not tested. | Shell output can report truncation under `max_output_tokens`. A truncated read occurred here, followed by narrower reads. |\n+\n+DSH `fork` copies completed Lead turns through its [fork provider](https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/subagent/subagent-fork-in-process/README.md).\n+It does not create a separate filesystem.\n+The [subagent service](https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/subagent/subagent/README.md) describes stored child recovery and process-local execution ownership.\n+One Team cannot use concurrent writers in separate processes as a supported recovery strategy.\n+Neither backend's worker interruption establishes that an external experiment stopped or that all later writes are impossible.\n+\n+Use the tools actually exposed in the active session.\n+If worker tools are absent, follow the procedure's [sequential fallback](../skills/research-workflow/references/collaboration.md#choose-responsibilities).\n+Follow its [recovery rules](../skills/research-workflow/references/collaboration.md#resume-within-the-existing-limits) before replacing work with an unknown outcome.\n+The same rules define unknown usage and the total budget across workers.\n+\n+## Handle partial results and tool errors\n+\n+A cursor identifies where a paged read continues.\n+For DSH task lists, follow each returned `nextCursor` until no cursor remains.\n+The pages are not a frozen snapshot, so read the current task revision before an update.\n+The task board remains a runtime view, not the authority for research acceptance.\n+\n+Codex app tasks and child agents use different tools.\n+`codex_app.read_thread` exposes `cursor`, `turnLimit`, `includeOutputs`, and `maxOutputCharsPerItem` for app task history.\n+`codex_app.wait_threads` exposes `afterCursor` for progress notifications.\n+Those declarations do not provide a child-agent history reader.\n+Their paging behavior was not tested in N6.\n+For truncated file output, request the missing range or read the saved file in smaller parts.\n+If required content remains unavailable, state the gap before relying on it.\n+\n+These responses apply the existing collaboration limits to tool failures.\n+They are guidance from inspected interfaces, not results of injected runtime failures.\n+Do not translate every backend failure into one generic retry.\n+\n+| Observation | Next action |\n+| --- | --- |\n+| Invalid arguments or unsupported fields | Read the active tool schema and correct the arguments. DSH Team creation does not accept per-call model, directory, or token-budget fields. |\n+| DSH `TEAM_TASK_STALE_REVISION` | Read the current task and reconcile the change before an update. A runtime revision is separate from the research contract revision. |\n+| DSH `TEAM_MESSAGE_TOO_LARGE` or capacity limits | Shorten the message or reduce new assignments. Repeating the same call does not remove the limit. |\n+| Missing pages or truncated content | Read the supported remaining pages or ranges. Keep unresolved gaps explicit. |\n+| Temporary read failure | Retry within the approved limits when the failure is temporary. A wait timeout does not prove that a worker failed. |\n+| Permission refusal or DSH `TEAM_LEAD_REQUIRED` | Stop dependent work and resolve the required authority. Do not use another tool to bypass the refusal. |\n+| Unknown send, write, or execution outcome | Inspect the saved records and target state before another request. Follow the procedure's recovery rules for external jobs. |\n+\n+DSH Team errors can carry stable codes, but storage and child-service failures can also produce other errors.\n+The Codex collaboration declarations provide no common failure-code catalog.\n+Preserve the actual error and the known scope of its effects.\n+The [N6 evidence](../tests/evidence/W012.json) records source versions, observations, and inspection limits.\n+No runtime adapter, restart guarantee, or measured research improvement follows from this map.\n",
+  "changed_document_sha256": {
+    "docs/harnesses.md": "c9eaee9fa964c5c38b6890b0e218995fa2607ef8748a77658f73bfd2d5e98e60",
+    "changes/W012.md": "0bd66b6169abe06606fcefa31df5a51cc369b25b795d53c81105c0a85f195640",
+    "tests/RESULTS.md": "6e01225fbf6b3821af21c1c0309824e911f04740cbadfed12de53272f67615ba"
+  },
+  "preservation": {
+    "protected_file_count": 72,
+    "protected_files_unchanged": true,
+    "portable_skill_unchanged": true,
+    "baseline_head": "2d82ffccedddf1fc809478d1f91bc89200e0571c"
+  },
+  "elapsed_seconds": 620.441
+}
