@@ -1,0 +1,72 @@
+{
+  "protocol_version": "1",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "tasks/T001/attempts/A001/artifacts/run.py",
+    "tasks/T001/attempts/A001/artifacts/inputs.json"
+  ],
+  "cwd": ".",
+  "started_utc": "2026-10-23T14:19:50.495206+00:00",
+  "ended_utc": "2026-10-23T14:19:50.533637+00:00",
+  "elapsed_wall_seconds": 0.03841960499994457,
+  "exit_code": 0,
+  "timeout_seconds": 30,
+  "timed_out": false,
+  "environment": {
+    "python_version": "3.14.8 (main, Oct  2 2026, 10:23:31) [GCC 16.2.1 20260810]",
+    "python_implementation": "CPython",
+    "python_executable": "/usr/bin/python3",
+    "platform": "Linux-7.2.11-arch1-1-x86_64-with-glibc2.44",
+    "float_info": {
+      "max": 1.7976931348623157e+308,
+      "max_exp": 1024,
+      "max_10_exp": 308,
+      "min": 2.2250738585072014e-308,
+      "min_exp": -1021,
+      "min_10_exp": -307,
+      "dig": 15,
+      "mant_dig": 53,
+      "epsilon": 2.220446049250313e-16,
+      "radix": 2,
+      "rounds": 1
+    }
+  },
+  "hashes_before": {
+    "BRIEF.md": "5cf84a604181ffb5f6d204769120cacae1217693113ef6bfe469e5246ba7571f",
+    "LITERATURE.md": "9c8700c789034ac7d7080c54dd8231fa4e82c94ab8f79ea67470a17f8b64684c",
+    "questions/Q001.md": "daf3467b16a0ecbe522e9fba1f4d2fbe7b62b9f5d58dcc8f500941688710e2a9",
+    "experiments/E001.md": "9e91342ae3034c3977da62f741567f6f54986978aaf65a10cdc149fef1e9e8be",
+    "tasks/T001/attempts/A001/artifacts/inputs.json": "97832832c0f79fc067328417a771f8a1286f4661a6f7c368b49422ca6099c3a1",
+    "tasks/T001/attempts/A001/artifacts/run.py": "88dec0a8aaec614c0e05ea5853f09c7048d94541fb71c937ac2f001d338c47be",
+    "tasks/T001/task.json": "80f8460f37edae38c62096b50ad44efd267872aa99f94c476a0d0da26862905b",
+    "tasks/T001/attempts/A001/task.json": "80f8460f37edae38c62096b50ad44efd267872aa99f94c476a0d0da26862905b"
+  },
+  "hashes_after": {
+    "BRIEF.md": "5cf84a604181ffb5f6d204769120cacae1217693113ef6bfe469e5246ba7571f",
+    "LITERATURE.md": "9c8700c789034ac7d7080c54dd8231fa4e82c94ab8f79ea67470a17f8b64684c",
+    "questions/Q001.md": "daf3467b16a0ecbe522e9fba1f4d2fbe7b62b9f5d58dcc8f500941688710e2a9",
+    "experiments/E001.md": "9e91342ae3034c3977da62f741567f6f54986978aaf65a10cdc149fef1e9e8be",
+    "tasks/T001/attempts/A001/artifacts/inputs.json": "97832832c0f79fc067328417a771f8a1286f4661a6f7c368b49422ca6099c3a1",
+    "tasks/T001/attempts/A001/artifacts/run.py": "88dec0a8aaec614c0e05ea5853f09c7048d94541fb71c937ac2f001d338c47be",
+    "tasks/T001/task.json": "80f8460f37edae38c62096b50ad44efd267872aa99f94c476a0d0da26862905b",
+    "tasks/T001/attempts/A001/task.json": "80f8460f37edae38c62096b50ad44efd267872aa99f94c476a0d0da26862905b"
+  },
+  "stdout": {
+    "path": "tasks/T001/attempts/A001/artifacts/results.json",
+    "bytes": 7798,
+    "sha256": "aa8adf9d8e7ccc8bf0fb4bca0dc2d63a842f3cc1771075a6ebe13dc8b7cba6ba"
+  },
+  "stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "location": "tasks/T001/attempts/A001/artifacts/run.log"
+  },
+  "output_shape": "Passed: 12 declared ordering rows, 24 method outputs, float identities, and rational fields.",
+  "budget": {
+    "measured_run_ordinal": 1,
+    "measured_run_limit": 1,
+    "retries": 0
+  },
+  "issues": []
+}

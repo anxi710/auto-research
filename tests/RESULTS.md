@@ -357,6 +357,47 @@ The portable skill and prior evidence files remained unchanged.
 No DSH team, interruption, restart, cross-harness recovery, or real research service was tested.
 The earlier hosted CI runs predate N6 and do not validate this documentation change.
 
+## Complete synthetic example
+
+Test date: 2026-10-23.
+Package version: `0.1.6`, unchanged.
+The user approved P1 after N6.
+The [example](../examples/summation-order/README.md) contains a fixed plan, actual local outputs, claims, and separate AI acceptance.
+One measured run used CPython 3.14.8 and the standard library on Linux.
+It produced 12 ordering rows and 24 method outputs across two synthetic datasets.
+The methods tied in eight orderings.
+The other four orderings had errors 1 and 0 for the plain loop and `math.fsum` respectively.
+The report retains those ties and the opposed strict-improvement claim.
+
+An independent AI reviewer fixed six criteria before inspecting the new code and output.
+Separate rational calculations checked all 24 outputs and exact errors.
+One clean replay reproduced all 7,798 output bytes.
+All 12 protected example files remained unchanged.
+The existing record checker returned exit code `0` with no diagnostics.
+The [review](../examples/summation-order/reviews/R001.md) accepted the exact submitted result.
+No repair run occurred.
+
+The baseline passed 69 tests on Python 3.14.8.
+The candidate passed 72 tests on Python 3.9.25 and 3.14.8 with the existing offline command:
+
+```bash
+python3 -B -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+Three new tests cover decimal binary references, rejected input, and unchanged saved evidence with valid acceptance.
+They use separate inputs or inspect saved output instead of repeating the measured experiment.
+A supplemental probe found a missing example link that the baseline ignored and the candidate reported.
+An integration review found a possible bytecode write inside the sealed attempt when tests omit `-B`.
+The corrected source loader avoids that write, and the evidence test checks module loading without `-B`.
+Both full suites include that regression check.
+
+[W013](../changes/W013.md) records adoption and the recovery path.
+The [evidence record](evidence/W013.json) preserves scope, actual checks, review references, hashes, and the integration patch.
+The portable skill, CI configuration, and local N6 changes remained unchanged.
+No new hosted CI run, DSH team, interruption, or cross-harness recovery test ran.
+This synthetic AI review does not establish human endorsement, research novelty, general superiority, or a multi-agent benefit.
+Assistant token and cost use remain unknown.
+
 ## Limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.

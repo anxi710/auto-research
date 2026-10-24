@@ -1,0 +1,559 @@
+{
+  "date": "2026-10-23",
+  "package_version": "0.1.6",
+  "version_changed": false,
+  "authorization": "The user approved the concrete P1 proposal in W013 with 可以.",
+  "scope": {
+    "date": "2026-10-23",
+    "started": 1792764936.5344834,
+    "minutes_limit": 60,
+    "candidate_limit": 1,
+    "authorization": "The user approved the W013 P1 topic, paths, and budget by replying 可以.",
+    "baseline_head": "2d82ffccedddf1fc809478d1f91bc89200e0571c",
+    "baseline_includes": "Uncommitted N6 docs and evidence, plus the captured W013 proposal.",
+    "allowed_paths": [
+      "README.md",
+      "README.zh-CN.md",
+      "tests/test_package.py",
+      "tests/RESULTS.md",
+      "changes/W013.md",
+      "examples/summation-order/",
+      "tests/test_summation_example.py",
+      "tests/evidence/W013.json"
+    ],
+    "scope": "One synthetic stdlib summation example, one execution task, independent AI review, clean temporary replay, and existing test integration.",
+    "measured_run_limit": 1,
+    "independent_replay_limit": 1,
+    "repair_cycles": 1,
+    "per_run_timeout_seconds": 30,
+    "excluded": "No new runtime, schema, dependency, skill change, account, paid API, GPU, P2/P3 trial, commit or push.",
+    "protected_sha256": {
+      ".github/workflows/tests.yml": "56a6895f11cb7fded3e128a9565cd3dedf2d135378b6644a21f38b54bfc87e22",
+      ".gitignore": "88600c8851e286882eb5fb131fa49863f2eb2fc5fc0c8a18170ce3abc54def69",
+      "AGENTS.md": "0c29f64bae49c5100bd07d44b69728896a605bd6e1e43c95016b3aa75f4dc515",
+      "CLAUDE.md": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+      "CONTRIBUTING.md": "d741f24b1ba97fc5956497264e9744dbb996fc097c86b5af54294e6cd3636bd2",
+      "GEMINI.md": "42fbbc9d55ee0d149c90e4bf93abe8b7278a5482b232be6f5bfc59cc0465e694",
+      "LICENSE": "1adc1607d1f493b1f11c5d27ea21b4293e63a49ae5365b78d2b75236ca96655b",
+      "changes/W001.md": "d8d66fe9568012639cf3558a0dc498ecee6d17063d7ae433af6016f0305782b4",
+      "changes/W002.md": "5c4daa47d72793c066ea2499c726d140e61481b052f9fe72993f0416f6f94a91",
+      "changes/W003.md": "2190308cf69e45f4cf44ed5aaeb2e96a518fb9609616fa572f40a7bab7b85783",
+      "changes/W004.md": "dc7f0b944b1cc9f7644e7c4f04f8b1587cc0a21ad5f5cfbac4d51d153ba8961f",
+      "changes/W005.md": "e4e75828817860fee9c51b05f3261515e5d34f74a696847ebe5751ce8524f3f7",
+      "changes/W006.md": "d38ae4bea978a8e439ed3b35893f128a1bc89863a0a585e7b11041ee9f4a877e",
+      "changes/W007.md": "18112454daaf7b01016378881e7b200fa5bef34efafc95b161aed058cee07ff5",
+      "changes/W008.md": "db5c5e42222fcfb9c59125a01911a53896e1c30a672bee36e28aa206442a298a",
+      "changes/W009.md": "84f18c0c8ac4b48fd59ecee04d0a8250af06dcf35719fa7ea344fddbd15e0f5e",
+      "changes/W010.md": "917cd7daf7a2732abd00487c0599d3fdf3a4c084c599e0cb960ad4aab7e46ba6",
+      "changes/W011.md": "a1ee031684b41bfc1045cc337bd64dc1a712920405013bc9dbead592d2624ca7",
+      "changes/evidence/W002.json": "f7c55bfc64300d0f4737163e8e7570cc09116e023b2da3159c3f7903b6e7d535",
+      "docs/architecture.md": "9bc5daae582e308d3488d70ae4ccd468dffc3c5ce979f74a87de7d9a753937ce",
+      "docs/harnesses.md": "c9eaee9fa964c5c38b6890b0e218995fa2607ef8748a77658f73bfd2d5e98e60",
+      "skills/research-workflow/LICENSE": "1adc1607d1f493b1f11c5d27ea21b4293e63a49ae5365b78d2b75236ca96655b",
+      "skills/research-workflow/SKILL.md": "8f9d466bbf0755d8656a33c33f7474d5476fc5d251e99a933f7f2fd4dcfa73a6",
+      "skills/research-workflow/references/bulk-literature.md": "3513ca2a36cfe5fe4fd109b20bbee84d2fd1cc50f4e15017436d6227cc7c169c",
+      "skills/research-workflow/references/collaboration.md": "281bf570c3503a844543d874822836d75acb8604742e527b24be4739b4824648",
+      "skills/research-workflow/references/evolution.md": "9d45bc4449167520552167ba328b4098a17133854ba9f32dfb5dc02890bafb2a",
+      "skills/research-workflow/references/preferences.md": "aa57e11714c7160c5f13e14b5f6ee000ce2752b2829b69bfd41a3d874fb94ae7",
+      "skills/research-workflow/references/scripted-bulk-literature.md": "10343762058fe2d1e828b0a2fab8dd055ce77f57a2fbe852e52ef0e1645a7d65",
+      "skills/research-workflow/references/sources.md": "95bde7198e1208d6d4ebab568057884112076cc64e1400b18d51a94192bf337e",
+      "skills/research-workflow/references/workflow.md": "13f9ca1a97cab9a9b2dae5199dce528cb1dcb4ed2b79734c52806eb6d3deb222",
+      "skills/research-workflow/references/zotero-git-example.md": "3ad8b4dfdab6c0c726ed1fedb59aeaa82ae6ee7ecae2b1c84a1d12946aa075af",
+      "skills/research-workflow/scripts/bulk_literature.py": "60b90e5160b461b72379a0faebc2e0942b31ce3dacae7bd2621945b5b02129db",
+      "skills/research-workflow/scripts/lint_records.py": "b3255d0fcb38b810451b86ca0ff4d78be773821680775bfc1a1adab47a983ce1",
+      "skills/research-workflow/templates/BRIEF.md": "be0efba2e57b3eadc76e56083ffe75ea4557809c8fef7274bb706560a862a04f",
+      "skills/research-workflow/templates/CHANGE.md": "9503e109f1290910fcaede1f1b29f1dbcefa9218cc97410eb7a2588cf76277b9",
+      "skills/research-workflow/templates/CLAIMS.md": "c296a146ed1826b26854b7e2e886200549d33050326222e62135534efb67143c",
+      "skills/research-workflow/templates/CORPUS.md": "6d10fe421103ae7ca6b54a4c7ef50701b4b23a1700474d8e1edcf2550692f85e",
+      "skills/research-workflow/templates/EXPERIMENT.md": "3e23eb525c28b16faa11728d2e1dba08f2dd1d4703fa96c34639cd1635fd6a3c",
+      "skills/research-workflow/templates/HANDOFF.md": "cd7940769000ce62572b37335c00f2e685ceab9dc5812da1eed7fea6e9194944",
+      "skills/research-workflow/templates/LITERATURE.md": "c599962616618e1b656225f0401c805d1a24202f9344709b23ca4bc6f08701f4",
+      "skills/research-workflow/templates/MANUSCRIPT.md": "ec70de198b3c9e8147471394629bfe0dd5bde9e868cf7bc5f561f7b9cc28ac0c",
+      "skills/research-workflow/templates/PAPER.md": "6e2d860c93e0cadc8387bc4202e5ce64bb45fb3d9c1ae226142c116339d13144",
+      "skills/research-workflow/templates/PREFERENCES.md": "3354c01cd2e5638b97a9778c38c07f4bf3989b9b40c34d0df9aa0da9f4d60a44",
+      "skills/research-workflow/templates/QUESTION.md": "b3a506466f0f7758b9046353e2e11d5a1e645fd6257c7e19d67832e235a52db7",
+      "skills/research-workflow/templates/RESULT.json": "f2b24bb7b8974f012e4636c2162e60a10b860f01519de5a739ce3bce82827edb",
+      "skills/research-workflow/templates/REVIEW.md": "c51855b2d4547a564747c7e42468795a9ecfbc086b8d818c4d4576255a31871e",
+      "skills/research-workflow/templates/STATE.md": "a22a0025f2c50cdafb379db358502922784210a7eb260b4fae3591b8d6e865af",
+      "skills/research-workflow/templates/TASK.json": "a2073d0c29ac5e8c60526e3afd543b1a249d1c120ea76d4dd662819abbe17a6b",
+      "skills/research-workflow/templates/bulk-literature.example.json": "9793fb82b0373cf0dbfaef19e8d514d9bc9da0f92d70ad5bd6c707e54cd13997",
+      "tests/bulk-cli.md": "11b245b0d86dff64f006ddc36e286fdb621a3cc21761017d9f9aaae10a7e410b",
+      "tests/bulk-literature.md": "04e21f2dca93b66040454b47b169248a714295658c1a17b18ceb7ec59a6cdf93",
+      "tests/collaboration.md": "871357c0f4e7c0fd230286b731533925cfee4d0571818c11504f3b18c8ea6269",
+      "tests/evidence/W001.json": "29743b527dbd60338839ebe7f42fb3d1d9f00d579ad91aab56453b0d21d392ed",
+      "tests/evidence/W003.json": "6e376088c3d28dc3f000689be4c8e1d6fc8521041ff2dcaabeb70605bef0a549",
+      "tests/evidence/W004.json": "9a033706593ed5aecc89e8a43f7c3f60a2d959a1e559aaa4f891a148077e7b90",
+      "tests/evidence/W005.json": "0e004cb2b76cbea5af24bb3f081aa8f39fd0677a002e1887bfabf5143a71fa1a",
+      "tests/evidence/W006.json": "a77e0d96fdc2e08585aa2cf4ef401e613e0935dcebfb325d92419cdd3cf84726",
+      "tests/evidence/W008.json": "6a9a74158d5127b5b1596ebefd1b5ff94de5086d987702fd11581753dab9aeb2",
+      "tests/evidence/W009.json": "ae5a21dc12c03df0024f5f0943275c1803ac25983d9465328dadd420e5bd7a2a",
+      "tests/evidence/W010.json": "1f5c23e8cdbff3cec7b50ce1df0d59e9ece3a76e4b94216a2d8158d4de5d2b20",
+      "tests/evidence/W011-hosted-ci.json": "a03cfa072810ce7e06505e6f16365b084093673e326e396e8bba4a8b4232bac1",
+      "tests/evidence/W011.json": "bc62333c6592ab8471d0185831e21c041339c965128118a36bf92c9baca25876",
+      "tests/evolution.md": "667d4d4960893333b1684a84ba72db6978312f689a2f27c4d34f8ebe2633304c",
+      "tests/preferences.md": "61a916d6f3bcad25c6242dfedf717f09506696069298f1edf19ee8f7b2c76079",
+      "tests/reading.md": "c9d4ff6394ad25343c04dbd1a2993e11a19f4dcddbc2426a73c7a8328d94bfe1",
+      "tests/scenarios.md": "a9f4b7f9b4683bd55073c846ded3edaab484d1a1d3359fd8c32fd4bdbc3f0dbc",
+      "tests/test_bulk_literature.py": "1555d33003b6fe89681e1528f65e3632df56a691b04aae131534904968060919",
+      "tests/test_lint_records.py": "753b04a53633df003bac59e8eb98f6697eaa4fed09de2b976f635cd7a711a1e4",
+      "auto-research-integrated-report.md": "e0260bf7e6ff5644465d1ddab353baa7b783ef832bb0084d302b6d43d0b997cf",
+      "changes/W012.md": "0bd66b6169abe06606fcefa31df5a51cc369b25b795d53c81105c0a85f195640",
+      "tests/evidence/W012.json": "8420b30f18af8df1b4ced247a02b01fe97e035c7759b35f546efbcda705088ae",
+      "RESEARCH.local.md": "13447e230dd5aa038bf8f0756ad997b724463e50f2a01393ec85c99cc56d6d1a"
+    },
+    "candidate_before_sha256": {
+      ".github/workflows/tests.yml": "56a6895f11cb7fded3e128a9565cd3dedf2d135378b6644a21f38b54bfc87e22",
+      ".gitignore": "88600c8851e286882eb5fb131fa49863f2eb2fc5fc0c8a18170ce3abc54def69",
+      "AGENTS.md": "0c29f64bae49c5100bd07d44b69728896a605bd6e1e43c95016b3aa75f4dc515",
+      "CLAUDE.md": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+      "CONTRIBUTING.md": "d741f24b1ba97fc5956497264e9744dbb996fc097c86b5af54294e6cd3636bd2",
+      "GEMINI.md": "42fbbc9d55ee0d149c90e4bf93abe8b7278a5482b232be6f5bfc59cc0465e694",
+      "LICENSE": "1adc1607d1f493b1f11c5d27ea21b4293e63a49ae5365b78d2b75236ca96655b",
+      "README.md": "fe4a9a139c537afbd7402464f6b0143cdd691eecd700ac044dcd405476f976fd",
+      "README.zh-CN.md": "038bc57c8d21545efa95bb80242cb0b555947281cd857cd39d6e53850dfe8d32",
+      "changes/W001.md": "d8d66fe9568012639cf3558a0dc498ecee6d17063d7ae433af6016f0305782b4",
+      "changes/W002.md": "5c4daa47d72793c066ea2499c726d140e61481b052f9fe72993f0416f6f94a91",
+      "changes/W003.md": "2190308cf69e45f4cf44ed5aaeb2e96a518fb9609616fa572f40a7bab7b85783",
+      "changes/W004.md": "dc7f0b944b1cc9f7644e7c4f04f8b1587cc0a21ad5f5cfbac4d51d153ba8961f",
+      "changes/W005.md": "e4e75828817860fee9c51b05f3261515e5d34f74a696847ebe5751ce8524f3f7",
+      "changes/W006.md": "d38ae4bea978a8e439ed3b35893f128a1bc89863a0a585e7b11041ee9f4a877e",
+      "changes/W007.md": "18112454daaf7b01016378881e7b200fa5bef34efafc95b161aed058cee07ff5",
+      "changes/W008.md": "db5c5e42222fcfb9c59125a01911a53896e1c30a672bee36e28aa206442a298a",
+      "changes/W009.md": "84f18c0c8ac4b48fd59ecee04d0a8250af06dcf35719fa7ea344fddbd15e0f5e",
+      "changes/W010.md": "917cd7daf7a2732abd00487c0599d3fdf3a4c084c599e0cb960ad4aab7e46ba6",
+      "changes/W011.md": "a1ee031684b41bfc1045cc337bd64dc1a712920405013bc9dbead592d2624ca7",
+      "changes/evidence/W002.json": "f7c55bfc64300d0f4737163e8e7570cc09116e023b2da3159c3f7903b6e7d535",
+      "docs/architecture.md": "9bc5daae582e308d3488d70ae4ccd468dffc3c5ce979f74a87de7d9a753937ce",
+      "docs/harnesses.md": "c9eaee9fa964c5c38b6890b0e218995fa2607ef8748a77658f73bfd2d5e98e60",
+      "skills/research-workflow/LICENSE": "1adc1607d1f493b1f11c5d27ea21b4293e63a49ae5365b78d2b75236ca96655b",
+      "skills/research-workflow/SKILL.md": "8f9d466bbf0755d8656a33c33f7474d5476fc5d251e99a933f7f2fd4dcfa73a6",
+      "skills/research-workflow/references/bulk-literature.md": "3513ca2a36cfe5fe4fd109b20bbee84d2fd1cc50f4e15017436d6227cc7c169c",
+      "skills/research-workflow/references/collaboration.md": "281bf570c3503a844543d874822836d75acb8604742e527b24be4739b4824648",
+      "skills/research-workflow/references/evolution.md": "9d45bc4449167520552167ba328b4098a17133854ba9f32dfb5dc02890bafb2a",
+      "skills/research-workflow/references/preferences.md": "aa57e11714c7160c5f13e14b5f6ee000ce2752b2829b69bfd41a3d874fb94ae7",
+      "skills/research-workflow/references/scripted-bulk-literature.md": "10343762058fe2d1e828b0a2fab8dd055ce77f57a2fbe852e52ef0e1645a7d65",
+      "skills/research-workflow/references/sources.md": "95bde7198e1208d6d4ebab568057884112076cc64e1400b18d51a94192bf337e",
+      "skills/research-workflow/references/workflow.md": "13f9ca1a97cab9a9b2dae5199dce528cb1dcb4ed2b79734c52806eb6d3deb222",
+      "skills/research-workflow/references/zotero-git-example.md": "3ad8b4dfdab6c0c726ed1fedb59aeaa82ae6ee7ecae2b1c84a1d12946aa075af",
+      "skills/research-workflow/scripts/bulk_literature.py": "60b90e5160b461b72379a0faebc2e0942b31ce3dacae7bd2621945b5b02129db",
+      "skills/research-workflow/scripts/lint_records.py": "b3255d0fcb38b810451b86ca0ff4d78be773821680775bfc1a1adab47a983ce1",
+      "skills/research-workflow/templates/BRIEF.md": "be0efba2e57b3eadc76e56083ffe75ea4557809c8fef7274bb706560a862a04f",
+      "skills/research-workflow/templates/CHANGE.md": "9503e109f1290910fcaede1f1b29f1dbcefa9218cc97410eb7a2588cf76277b9",
+      "skills/research-workflow/templates/CLAIMS.md": "c296a146ed1826b26854b7e2e886200549d33050326222e62135534efb67143c",
+      "skills/research-workflow/templates/CORPUS.md": "6d10fe421103ae7ca6b54a4c7ef50701b4b23a1700474d8e1edcf2550692f85e",
+      "skills/research-workflow/templates/EXPERIMENT.md": "3e23eb525c28b16faa11728d2e1dba08f2dd1d4703fa96c34639cd1635fd6a3c",
+      "skills/research-workflow/templates/HANDOFF.md": "cd7940769000ce62572b37335c00f2e685ceab9dc5812da1eed7fea6e9194944",
+      "skills/research-workflow/templates/LITERATURE.md": "c599962616618e1b656225f0401c805d1a24202f9344709b23ca4bc6f08701f4",
+      "skills/research-workflow/templates/MANUSCRIPT.md": "ec70de198b3c9e8147471394629bfe0dd5bde9e868cf7bc5f561f7b9cc28ac0c",
+      "skills/research-workflow/templates/PAPER.md": "6e2d860c93e0cadc8387bc4202e5ce64bb45fb3d9c1ae226142c116339d13144",
+      "skills/research-workflow/templates/PREFERENCES.md": "3354c01cd2e5638b97a9778c38c07f4bf3989b9b40c34d0df9aa0da9f4d60a44",
+      "skills/research-workflow/templates/QUESTION.md": "b3a506466f0f7758b9046353e2e11d5a1e645fd6257c7e19d67832e235a52db7",
+      "skills/research-workflow/templates/RESULT.json": "f2b24bb7b8974f012e4636c2162e60a10b860f01519de5a739ce3bce82827edb",
+      "skills/research-workflow/templates/REVIEW.md": "c51855b2d4547a564747c7e42468795a9ecfbc086b8d818c4d4576255a31871e",
+      "skills/research-workflow/templates/STATE.md": "a22a0025f2c50cdafb379db358502922784210a7eb260b4fae3591b8d6e865af",
+      "skills/research-workflow/templates/TASK.json": "a2073d0c29ac5e8c60526e3afd543b1a249d1c120ea76d4dd662819abbe17a6b",
+      "skills/research-workflow/templates/bulk-literature.example.json": "9793fb82b0373cf0dbfaef19e8d514d9bc9da0f92d70ad5bd6c707e54cd13997",
+      "tests/RESULTS.md": "6e01225fbf6b3821af21c1c0309824e911f04740cbadfed12de53272f67615ba",
+      "tests/bulk-cli.md": "11b245b0d86dff64f006ddc36e286fdb621a3cc21761017d9f9aaae10a7e410b",
+      "tests/bulk-literature.md": "04e21f2dca93b66040454b47b169248a714295658c1a17b18ceb7ec59a6cdf93",
+      "tests/collaboration.md": "871357c0f4e7c0fd230286b731533925cfee4d0571818c11504f3b18c8ea6269",
+      "tests/evidence/W001.json": "29743b527dbd60338839ebe7f42fb3d1d9f00d579ad91aab56453b0d21d392ed",
+      "tests/evidence/W003.json": "6e376088c3d28dc3f000689be4c8e1d6fc8521041ff2dcaabeb70605bef0a549",
+      "tests/evidence/W004.json": "9a033706593ed5aecc89e8a43f7c3f60a2d959a1e559aaa4f891a148077e7b90",
+      "tests/evidence/W005.json": "0e004cb2b76cbea5af24bb3f081aa8f39fd0677a002e1887bfabf5143a71fa1a",
+      "tests/evidence/W006.json": "a77e0d96fdc2e08585aa2cf4ef401e613e0935dcebfb325d92419cdd3cf84726",
+      "tests/evidence/W008.json": "6a9a74158d5127b5b1596ebefd1b5ff94de5086d987702fd11581753dab9aeb2",
+      "tests/evidence/W009.json": "ae5a21dc12c03df0024f5f0943275c1803ac25983d9465328dadd420e5bd7a2a",
+      "tests/evidence/W010.json": "1f5c23e8cdbff3cec7b50ce1df0d59e9ece3a76e4b94216a2d8158d4de5d2b20",
+      "tests/evidence/W011-hosted-ci.json": "a03cfa072810ce7e06505e6f16365b084093673e326e396e8bba4a8b4232bac1",
+      "tests/evidence/W011.json": "bc62333c6592ab8471d0185831e21c041339c965128118a36bf92c9baca25876",
+      "tests/evolution.md": "667d4d4960893333b1684a84ba72db6978312f689a2f27c4d34f8ebe2633304c",
+      "tests/preferences.md": "61a916d6f3bcad25c6242dfedf717f09506696069298f1edf19ee8f7b2c76079",
+      "tests/reading.md": "c9d4ff6394ad25343c04dbd1a2993e11a19f4dcddbc2426a73c7a8328d94bfe1",
+      "tests/scenarios.md": "a9f4b7f9b4683bd55073c846ded3edaab484d1a1d3359fd8c32fd4bdbc3f0dbc",
+      "tests/test_bulk_literature.py": "1555d33003b6fe89681e1528f65e3632df56a691b04aae131534904968060919",
+      "tests/test_lint_records.py": "753b04a53633df003bac59e8eb98f6697eaa4fed09de2b976f635cd7a711a1e4",
+      "tests/test_package.py": "b9f1b6751847277fe08b0f0452a2b44edcd7a78e652b50ac567815a9972fc327",
+      "changes/W012.md": "0bd66b6169abe06606fcefa31df5a51cc369b25b795d53c81105c0a85f195640",
+      "changes/W013.md": "0b38a17de7178fdde27a1badb80fa266d5e012f9a72838d9b8b0f4b69f34de97",
+      "tests/evidence/W012.json": "8420b30f18af8df1b4ced247a02b01fe97e035c7759b35f546efbcda705088ae"
+    }
+  },
+  "status": "adopted",
+  "source_sections": [
+    {
+      "url": "https://docs.python.org/3.14/library/math.html#math.fsum",
+      "reading": "Complete function entry and rounding caveat."
+    },
+    {
+      "url": "https://docs.python.org/3.14/library/fractions.html#fractions.Fraction.from_float",
+      "reading": "Constructor semantics, examples, and from_float entry."
+    }
+  ],
+  "baseline_tests": {
+    "command": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "python": "3.14.8",
+    "platform": "Linux-7.2.11-arch1-1-x86_64-with-glibc2.44",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_answer_publish_failure_preserves_pending_query (test_bulk_literature.PipelineTests.test_answer_publish_failure_preserves_pending_query) ... ok\ntest_auth_or_version_failure_has_no_local_or_remote_mutation (test_bulk_literature.PipelineTests.test_auth_or_version_failure_has_no_local_or_remote_mutation) ... ok\ntest_blank_answer_stops_without_repeating_query (test_bulk_literature.PipelineTests.test_blank_answer_stops_without_repeating_query) ... ok\ntest_changed_config_or_snapshot_rejected (test_bulk_literature.PipelineTests.test_changed_config_or_snapshot_rejected) ... ok\ntest_changed_remote_bytes_stop_resume_before_more_imports (test_bulk_literature.PipelineTests.test_changed_remote_bytes_stop_resume_before_more_imports) ... ok\ntest_completed_outputs_must_still_match_saved_hashes (test_bulk_literature.PipelineTests.test_completed_outputs_must_still_match_saved_hashes) ... ok\ntest_degraded_drive_blocks_question (test_bulk_literature.PipelineTests.test_degraded_drive_blocks_question) ... ok\ntest_duplicate_drive_path_rejected (test_bulk_literature.PipelineTests.test_duplicate_drive_path_rejected) ... ok\ntest_legacy_partial_answer_is_kept_without_repeating_query (test_bulk_literature.PipelineTests.test_legacy_partial_answer_is_kept_without_repeating_query) ... ok\ntest_plan_has_zero_effects (test_bulk_literature.PipelineTests.test_plan_has_zero_effects) ... ok\ntest_response_file_crash_resumes_without_repeating_write_or_query (test_bulk_literature.PipelineTests.test_response_file_crash_resumes_without_repeating_write_or_query) ... ok\ntest_run_and_resume_preserve_identity_and_citations (test_bulk_literature.PipelineTests.test_run_and_resume_preserve_identity_and_citations) ... ok\ntest_run_cannot_write_into_portable_skill (test_bulk_literature.PipelineTests.test_run_cannot_write_into_portable_skill) ... ok\ntest_small_query_budget_stops_before_remote_writes (test_bulk_literature.PipelineTests.test_small_query_budget_stops_before_remote_writes) ... ok\ntest_timeout_blocks_question_then_resumes (test_bulk_literature.PipelineTests.test_timeout_blocks_question_then_resumes) ... ok\ntest_traversal_and_symlink_rejected (test_bulk_literature.PipelineTests.test_traversal_and_symlink_rejected) ... ok\ntest_unknown_create_and_import_reconcile (test_bulk_literature.PipelineTests.test_unknown_create_and_import_reconcile) ... ok\ntest_unknown_query_is_counted_and_not_repeated (test_bulk_literature.PipelineTests.test_unknown_query_is_counted_and_not_repeated) ... ok\ntest_unknown_saved_state_shape_stops (test_bulk_literature.PipelineTests.test_unknown_saved_state_shape_stops) ... ok\ntest_unknown_write_without_match_never_retries (test_bulk_literature.PipelineTests.test_unknown_write_without_match_never_retries) ... ok\ntest_exclusive_retry_keeps_interrupted_temporary_file (test_bulk_literature.SaveJsonTests.test_exclusive_retry_keeps_interrupted_temporary_file) ... ok\ntest_exclusive_save_does_not_overwrite_existing_file (test_bulk_literature.SaveJsonTests.test_exclusive_save_does_not_overwrite_existing_file) ... ok\ntest_partial_write_never_publishes_or_replaces_final_file (test_bulk_literature.SaveJsonTests.test_partial_write_never_publishes_or_replaces_final_file) ... ok\ntest_acceptance_section_requires_exactly_one_json_object (test_lint_records.RecordTests.test_acceptance_section_requires_exactly_one_json_object) ... ok\ntest_accepted_review_needs_completed_result_artifacts (test_lint_records.RecordTests.test_accepted_review_needs_completed_result_artifacts) ... ok\ntest_broken_json_duplicate_keys_and_nonfinite_numbers (test_lint_records.RecordTests.test_broken_json_duplicate_keys_and_nonfinite_numbers) ... ok\ntest_conflicting_and_branched_reviews (test_lint_records.RecordTests.test_conflicting_and_branched_reviews) ... ok\ntest_custom_layout_reused_artifact_unknown_measurement_and_extra_fields (test_lint_records.RecordTests.test_custom_layout_reused_artifact_unknown_measurement_and_extra_fields) ... ok\ntest_dependency_cycles_and_invalid_upstream_propagation (test_lint_records.RecordTests.test_dependency_cycles_and_invalid_upstream_propagation) ... ok\ntest_dependency_versions_and_identity_must_match (test_lint_records.RecordTests.test_dependency_versions_and_identity_must_match) ... ok\ntest_directory_and_fifo_are_not_read_as_records (test_lint_records.RecordTests.test_directory_and_fifo_are_not_read_as_records) ... ok\ntest_duplicate_record_identities (test_lint_records.RecordTests.test_duplicate_record_identities) ... ok\ntest_each_required_dependency_field (test_lint_records.RecordTests.test_each_required_dependency_field) ... ok\ntest_each_required_result_field (test_lint_records.RecordTests.test_each_required_result_field) ... ok\ntest_each_required_review_field (test_lint_records.RecordTests.test_each_required_review_field) ... ok\ntest_each_required_task_field (test_lint_records.RecordTests.test_each_required_task_field) ... ok\ntest_hash_format (test_lint_records.RecordTests.test_hash_format) ... ok\ntest_hashes_bind_input_artifact_contract_result_and_review (test_lint_records.RecordTests.test_hashes_bind_input_artifact_contract_result_and_review) ... ok\ntest_large_json_exponents_do_not_create_nonfinite_measurements (test_lint_records.RecordTests.test_large_json_exponents_do_not_create_nonfinite_measurements) ... ok\ntest_missing_current_context (test_lint_records.RecordTests.test_missing_current_context) ... ok\ntest_missing_required_files (test_lint_records.RecordTests.test_missing_required_files) ... ok\ntest_new_current_contract_marks_history_stale (test_lint_records.RecordTests.test_new_current_contract_marks_history_stale) ... ok\ntest_ordinary_review_and_unselected_legacy_files (test_lint_records.RecordTests.test_ordinary_review_and_unselected_legacy_files) ... ok\ntest_repeat_output_is_deterministic (test_lint_records.RecordTests.test_repeat_output_is_deterministic) ... ok\ntest_repeated_canonical_aliases_are_not_duplicates (test_lint_records.RecordTests.test_repeated_canonical_aliases_are_not_duplicates) ... ok\ntest_required_accepted_upstream_records_are_followed (test_lint_records.RecordTests.test_required_accepted_upstream_records_are_followed) ... ok\ntest_result_must_match_snapshot (test_lint_records.RecordTests.test_result_must_match_snapshot) ... ok\ntest_result_types_status_and_empty_completed_result (test_lint_records.RecordTests.test_result_types_status_and_empty_completed_result) ... ok\ntest_review_cycles_do_not_recurse_forever (test_lint_records.RecordTests.test_review_cycles_do_not_recurse_forever) ... ok\ntest_review_must_match_result_identity (test_lint_records.RecordTests.test_review_must_match_result_identity) ... ok\ntest_review_types_and_decisions (test_lint_records.RecordTests.test_review_types_and_decisions) ... ok\ntest_snapshot_cannot_be_the_current_file (test_lint_records.RecordTests.test_snapshot_cannot_be_the_current_file) ... ok\ntest_supersedes_must_bind_same_exact_result (test_lint_records.RecordTests.test_supersedes_must_bind_same_exact_result) ... ok\ntest_task_types_ids_revisions_and_empty_text (test_lint_records.RecordTests.test_task_types_ids_revisions_and_empty_text) ... ok\ntest_unaccepted_and_stale_dependencies (test_lint_records.RecordTests.test_unaccepted_and_stale_dependencies) ... ok\ntest_unknown_execution_is_valid_but_cannot_be_accepted (test_lint_records.RecordTests.test_unknown_execution_is_valid_but_cannot_be_accepted) ... ok\ntest_unrelated_json_outside_acceptance_section_is_ignored (test_lint_records.RecordTests.test_unrelated_json_outside_acceptance_section_is_ignored) ... ok\ntest_unsafe_cli_path_and_symlink_escape (test_lint_records.RecordTests.test_unsafe_cli_path_and_symlink_escape) ... ok\ntest_unsafe_reference_paths (test_lint_records.RecordTests.test_unsafe_reference_paths) ... ok\ntest_usage_requires_a_record_and_rejects_unknown_flags (test_lint_records.RecordTests.test_usage_requires_a_record_and_rejects_unknown_flags) ... ok\ntest_withdrawal_invalidates_pinned_acceptance_without_artifact_changes (test_lint_records.RecordTests.test_withdrawal_invalidates_pinned_acceptance_without_artifact_changes) ... ok\ntest_each_badge_label_and_image_must_match (test_package.PackageCheckTests.test_each_badge_label_and_image_must_match) ... ok\ntest_entry_imports_and_shared_skill_link_are_required (test_package.PackageCheckTests.test_entry_imports_and_shared_skill_link_are_required) ... ok\ntest_license_bytes_and_required_files (test_package.PackageCheckTests.test_license_bytes_and_required_files) ... ok\ntest_metadata_is_required_and_has_valid_values (test_package.PackageCheckTests.test_metadata_is_required_and_has_valid_values) ... ok\ntest_missing_path_and_bad_fragment (test_package.PackageCheckTests.test_missing_path_and_bad_fragment) ... ok\ntest_paths_cannot_escape_the_package (test_package.PackageCheckTests.test_paths_cannot_escape_the_package) ... ok\ntest_valid_links_unicode_duplicates_images_and_code_examples (test_package.PackageCheckTests.test_valid_links_unicode_duplicates_images_and_code_examples) ... ok\ntest_package (test_package.PackageTests.test_package) ... ok\n\n----------------------------------------------------------------------\nRan 69 tests in 6.779s\n\nOK\n",
+    "elapsed_seconds": 6.923078806999911
+  },
+  "supplemental_link_probe": {
+    "scope": "Focused supplemental probe of examples directory coverage. No research execution.",
+    "fixture": "examples/probe/README.md links to missing-evidence.md",
+    "results": [
+      {
+        "version": "baseline",
+        "errors": []
+      },
+      {
+        "version": "candidate",
+        "errors": [
+          "examples/probe/README.md:1: 'missing-evidence.md': target does not exist"
+        ]
+      }
+    ]
+  },
+  "independent_review_plan": "# Independent review plan for P1\n\nDate: 2026-10-23.\nReviewer: Codex subagent `p1_independent`.\nThis is an AI review simulation.\nIt does not provide human scientific endorsement.\n\nThe reviewer read the approved scope, W013 proposal, task templates, review template, and collaboration rules before preparing this plan.\nThe reviewer did not inspect the new example code or its outputs before fixing these criteria.\nThe user approved one synthetic example with two fixed datasets.\nThe reviewer can run one independent replay after the coordinator supplies a sealed result.\n\n## Fixed review criteria\n\n1. Make sure that the reference uses exact rational values of the actual binary inputs.\n   Inspect all 24 results for both methods and all six permutations of each dataset.\n   Derive expected values independently from the fixed inputs and binary64 rounding.\n   Preserve float identities and exact errors.\n2. Make sure that the report retains ties and contrary evidence.\n   The exact control has six ties.\n   The cancellation case has two ties and four cases with different errors under ordinary binary64 rounding.\n   Do not require a favorable method result for task acceptance.\n3. Make sure that records distinguish actual execution from plans and API documentation.\n   Inspect the execution command, exit status, actual Python version, elapsed time, and recorded output.\n   Treat unavailable assistant usage as unknown.\n   Do not infer an execution from a plausible output alone.\n4. Make sure that the submitted contract, inputs, result, and artifacts match their recorded SHA256 digests.\n   Run exactly one full replay with a 30-second timeout in a fresh temporary directory.\n   Compare numerical content and measure sealed-file digests before and after replay.\n   Do not edit sealed files or use their output path for replay.\n5. Make sure that source notes identify the sections actually read and their limits.\n   Distinguish official API documentation from a literature review or experiment evidence.\n   Make sure that claims cite actual output rows and retain the platform and input limits.\n   Reject claims of novelty, general superiority, speed, significance, or measured multi-agent benefit.\n6. Make sure that the task has one named acceptance owner and a separate review record.\n   Inspect the current and fixed contracts, review history, task scope, final state, and active-job facts.\n   Run the existing record checker on the complete selected records.\n   Accept only the exact result that satisfies every required condition.\n\n## Independent numerical basis\n\nThe exact control contains the binary integers 1, 2, and 3.\nEvery intermediate sum remains an exactly representable integer, so all 12 outputs equal 6 with zero error.\nThe cancellation inputs are the exactly representable binary integers 10000000000000000, 1, and -10000000000000000.\nTheir exact rational sum equals 1.\nThe spacing around either large magnitude is 2.\nAdding 1 first to either large magnitude rounds to that large value under ties-to-even rounding.\nThose four accumulation orders return 0 with absolute error 1.\nThe two orders that add opposite large values first return 1 with zero error.\nAccurate summation returns 1 for all six cancellation orders on the declared platform.\nThe reviewer will compare these expectations with the actual output and report any difference rather than change the criteria.\n\n## Evidence and limits\n\nSave the replay command, return code, output, duration, numerical comparisons, and file digests under this review directory.\nWrite the final review only after the contract assigns its decision owner.\nKeep the final review separate from the sealed attempt.\nDo not run a new method comparison, P2 recovery test, or P3 collaboration trial.\nThis review does not establish a benefit for real research or cross-harness recovery.\n",
+  "measured_result_path": "examples/summation-order/tasks/T001/attempts/A001/result.json",
+  "measured_result_sha256": "440b180ce9d7dc29317ad0f745c48bb4566512986d114ca075640a4638f2b045",
+  "limits": [
+    "Synthetic practice data only.",
+    "No original research, statistical significance, speed comparison, or multi-agent benefit claim.",
+    "No DSH, restart, cross-harness recovery, or external job test.",
+    "No new hosted CI run.",
+    "No portable skill or package version change."
+  ],
+  "candidate_tests": [
+    {
+      "runtime": "Python 3.9.25",
+      "command": [
+        "/tmp/auto-research-n5-wfi0f2e_/venv-3.9/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "candidate",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_answer_publish_failure_preserves_pending_query (test_bulk_literature.PipelineTests) ... ok\ntest_auth_or_version_failure_has_no_local_or_remote_mutation (test_bulk_literature.PipelineTests) ... ok\ntest_blank_answer_stops_without_repeating_query (test_bulk_literature.PipelineTests) ... ok\ntest_changed_config_or_snapshot_rejected (test_bulk_literature.PipelineTests) ... ok\ntest_changed_remote_bytes_stop_resume_before_more_imports (test_bulk_literature.PipelineTests) ... ok\ntest_completed_outputs_must_still_match_saved_hashes (test_bulk_literature.PipelineTests) ... ok\ntest_degraded_drive_blocks_question (test_bulk_literature.PipelineTests) ... ok\ntest_duplicate_drive_path_rejected (test_bulk_literature.PipelineTests) ... ok\ntest_legacy_partial_answer_is_kept_without_repeating_query (test_bulk_literature.PipelineTests) ... ok\ntest_plan_has_zero_effects (test_bulk_literature.PipelineTests) ... ok\ntest_response_file_crash_resumes_without_repeating_write_or_query (test_bulk_literature.PipelineTests) ... ok\ntest_run_and_resume_preserve_identity_and_citations (test_bulk_literature.PipelineTests) ... ok\ntest_run_cannot_write_into_portable_skill (test_bulk_literature.PipelineTests) ... ok\ntest_small_query_budget_stops_before_remote_writes (test_bulk_literature.PipelineTests) ... ok\ntest_timeout_blocks_question_then_resumes (test_bulk_literature.PipelineTests) ... ok\ntest_traversal_and_symlink_rejected (test_bulk_literature.PipelineTests) ... ok\ntest_unknown_create_and_import_reconcile (test_bulk_literature.PipelineTests) ... ok\ntest_unknown_query_is_counted_and_not_repeated (test_bulk_literature.PipelineTests) ... ok\ntest_unknown_saved_state_shape_stops (test_bulk_literature.PipelineTests) ... ok\ntest_unknown_write_without_match_never_retries (test_bulk_literature.PipelineTests) ... ok\ntest_exclusive_retry_keeps_interrupted_temporary_file (test_bulk_literature.SaveJsonTests) ... ok\ntest_exclusive_save_does_not_overwrite_existing_file (test_bulk_literature.SaveJsonTests) ... ok\ntest_partial_write_never_publishes_or_replaces_final_file (test_bulk_literature.SaveJsonTests) ... ok\ntest_acceptance_section_requires_exactly_one_json_object (test_lint_records.RecordTests) ... ok\ntest_accepted_review_needs_completed_result_artifacts (test_lint_records.RecordTests) ... ok\ntest_broken_json_duplicate_keys_and_nonfinite_numbers (test_lint_records.RecordTests) ... ok\ntest_conflicting_and_branched_reviews (test_lint_records.RecordTests) ... ok\ntest_custom_layout_reused_artifact_unknown_measurement_and_extra_fields (test_lint_records.RecordTests) ... ok\ntest_dependency_cycles_and_invalid_upstream_propagation (test_lint_records.RecordTests) ... ok\ntest_dependency_versions_and_identity_must_match (test_lint_records.RecordTests) ... ok\ntest_directory_and_fifo_are_not_read_as_records (test_lint_records.RecordTests) ... ok\ntest_duplicate_record_identities (test_lint_records.RecordTests) ... ok\ntest_each_required_dependency_field (test_lint_records.RecordTests) ... ok\ntest_each_required_result_field (test_lint_records.RecordTests) ... ok\ntest_each_required_review_field (test_lint_records.RecordTests) ... ok\ntest_each_required_task_field (test_lint_records.RecordTests) ... ok\ntest_hash_format (test_lint_records.RecordTests) ... ok\ntest_hashes_bind_input_artifact_contract_result_and_review (test_lint_records.RecordTests) ... ok\ntest_large_json_exponents_do_not_create_nonfinite_measurements (test_lint_records.RecordTests) ... ok\ntest_missing_current_context (test_lint_records.RecordTests) ... ok\ntest_missing_required_files (test_lint_records.RecordTests) ... ok\ntest_new_current_contract_marks_history_stale (test_lint_records.RecordTests) ... ok\ntest_ordinary_review_and_unselected_legacy_files (test_lint_records.RecordTests) ... ok\ntest_repeat_output_is_deterministic (test_lint_records.RecordTests) ... ok\ntest_repeated_canonical_aliases_are_not_duplicates (test_lint_records.RecordTests) ... ok\ntest_required_accepted_upstream_records_are_followed (test_lint_records.RecordTests) ... ok\ntest_result_must_match_snapshot (test_lint_records.RecordTests) ... ok\ntest_result_types_status_and_empty_completed_result (test_lint_records.RecordTests) ... ok\ntest_review_cycles_do_not_recurse_forever (test_lint_records.RecordTests) ... ok\ntest_review_must_match_result_identity (test_lint_records.RecordTests) ... ok\ntest_review_types_and_decisions (test_lint_records.RecordTests) ... ok\ntest_snapshot_cannot_be_the_current_file (test_lint_records.RecordTests) ... ok\ntest_supersedes_must_bind_same_exact_result (test_lint_records.RecordTests) ... ok\ntest_task_types_ids_revisions_and_empty_text (test_lint_records.RecordTests) ... ok\ntest_unaccepted_and_stale_dependencies (test_lint_records.RecordTests) ... ok\ntest_unknown_execution_is_valid_but_cannot_be_accepted (test_lint_records.RecordTests) ... ok\ntest_unrelated_json_outside_acceptance_section_is_ignored (test_lint_records.RecordTests) ... ok\ntest_unsafe_cli_path_and_symlink_escape (test_lint_records.RecordTests) ... ok\ntest_unsafe_reference_paths (test_lint_records.RecordTests) ... ok\ntest_usage_requires_a_record_and_rejects_unknown_flags (test_lint_records.RecordTests) ... ok\ntest_withdrawal_invalidates_pinned_acceptance_without_artifact_changes (test_lint_records.RecordTests) ... ok\ntest_each_badge_label_and_image_must_match (test_package.PackageCheckTests) ... ok\ntest_entry_imports_and_shared_skill_link_are_required (test_package.PackageCheckTests) ... ok\ntest_license_bytes_and_required_files (test_package.PackageCheckTests) ... ok\ntest_metadata_is_required_and_has_valid_values (test_package.PackageCheckTests) ... ok\ntest_missing_path_and_bad_fragment (test_package.PackageCheckTests) ... ok\ntest_paths_cannot_escape_the_package (test_package.PackageCheckTests) ... ok\ntest_valid_links_unicode_duplicates_images_and_code_examples (test_package.PackageCheckTests) ... ok\ntest_package (test_package.PackageTests) ... ok\ntest_binary_reference_and_all_input_orders (test_summation_example.SummationExampleTests) ... ok\ntest_invalid_input_fails_before_output (test_summation_example.SummationExampleTests) ... ok\ntest_saved_result_and_review_remain_bound (test_summation_example.SummationExampleTests) ... ok\n\n----------------------------------------------------------------------\nRan 72 tests in 4.538s\n\nOK\n",
+      "elapsed_seconds": 4.714964663999126,
+      "recorded_at": "2026-10-23T14:27:09.509189+00:00"
+    },
+    {
+      "runtime": "Python 3.14.8",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "candidate",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_answer_publish_failure_preserves_pending_query (test_bulk_literature.PipelineTests.test_answer_publish_failure_preserves_pending_query) ... ok\ntest_auth_or_version_failure_has_no_local_or_remote_mutation (test_bulk_literature.PipelineTests.test_auth_or_version_failure_has_no_local_or_remote_mutation) ... ok\ntest_blank_answer_stops_without_repeating_query (test_bulk_literature.PipelineTests.test_blank_answer_stops_without_repeating_query) ... ok\ntest_changed_config_or_snapshot_rejected (test_bulk_literature.PipelineTests.test_changed_config_or_snapshot_rejected) ... ok\ntest_changed_remote_bytes_stop_resume_before_more_imports (test_bulk_literature.PipelineTests.test_changed_remote_bytes_stop_resume_before_more_imports) ... ok\ntest_completed_outputs_must_still_match_saved_hashes (test_bulk_literature.PipelineTests.test_completed_outputs_must_still_match_saved_hashes) ... ok\ntest_degraded_drive_blocks_question (test_bulk_literature.PipelineTests.test_degraded_drive_blocks_question) ... ok\ntest_duplicate_drive_path_rejected (test_bulk_literature.PipelineTests.test_duplicate_drive_path_rejected) ... ok\ntest_legacy_partial_answer_is_kept_without_repeating_query (test_bulk_literature.PipelineTests.test_legacy_partial_answer_is_kept_without_repeating_query) ... ok\ntest_plan_has_zero_effects (test_bulk_literature.PipelineTests.test_plan_has_zero_effects) ... ok\ntest_response_file_crash_resumes_without_repeating_write_or_query (test_bulk_literature.PipelineTests.test_response_file_crash_resumes_without_repeating_write_or_query) ... ok\ntest_run_and_resume_preserve_identity_and_citations (test_bulk_literature.PipelineTests.test_run_and_resume_preserve_identity_and_citations) ... ok\ntest_run_cannot_write_into_portable_skill (test_bulk_literature.PipelineTests.test_run_cannot_write_into_portable_skill) ... ok\ntest_small_query_budget_stops_before_remote_writes (test_bulk_literature.PipelineTests.test_small_query_budget_stops_before_remote_writes) ... ok\ntest_timeout_blocks_question_then_resumes (test_bulk_literature.PipelineTests.test_timeout_blocks_question_then_resumes) ... ok\ntest_traversal_and_symlink_rejected (test_bulk_literature.PipelineTests.test_traversal_and_symlink_rejected) ... ok\ntest_unknown_create_and_import_reconcile (test_bulk_literature.PipelineTests.test_unknown_create_and_import_reconcile) ... ok\ntest_unknown_query_is_counted_and_not_repeated (test_bulk_literature.PipelineTests.test_unknown_query_is_counted_and_not_repeated) ... ok\ntest_unknown_saved_state_shape_stops (test_bulk_literature.PipelineTests.test_unknown_saved_state_shape_stops) ... ok\ntest_unknown_write_without_match_never_retries (test_bulk_literature.PipelineTests.test_unknown_write_without_match_never_retries) ... ok\ntest_exclusive_retry_keeps_interrupted_temporary_file (test_bulk_literature.SaveJsonTests.test_exclusive_retry_keeps_interrupted_temporary_file) ... ok\ntest_exclusive_save_does_not_overwrite_existing_file (test_bulk_literature.SaveJsonTests.test_exclusive_save_does_not_overwrite_existing_file) ... ok\ntest_partial_write_never_publishes_or_replaces_final_file (test_bulk_literature.SaveJsonTests.test_partial_write_never_publishes_or_replaces_final_file) ... ok\ntest_acceptance_section_requires_exactly_one_json_object (test_lint_records.RecordTests.test_acceptance_section_requires_exactly_one_json_object) ... ok\ntest_accepted_review_needs_completed_result_artifacts (test_lint_records.RecordTests.test_accepted_review_needs_completed_result_artifacts) ... ok\ntest_broken_json_duplicate_keys_and_nonfinite_numbers (test_lint_records.RecordTests.test_broken_json_duplicate_keys_and_nonfinite_numbers) ... ok\ntest_conflicting_and_branched_reviews (test_lint_records.RecordTests.test_conflicting_and_branched_reviews) ... ok\ntest_custom_layout_reused_artifact_unknown_measurement_and_extra_fields (test_lint_records.RecordTests.test_custom_layout_reused_artifact_unknown_measurement_and_extra_fields) ... ok\ntest_dependency_cycles_and_invalid_upstream_propagation (test_lint_records.RecordTests.test_dependency_cycles_and_invalid_upstream_propagation) ... ok\ntest_dependency_versions_and_identity_must_match (test_lint_records.RecordTests.test_dependency_versions_and_identity_must_match) ... ok\ntest_directory_and_fifo_are_not_read_as_records (test_lint_records.RecordTests.test_directory_and_fifo_are_not_read_as_records) ... ok\ntest_duplicate_record_identities (test_lint_records.RecordTests.test_duplicate_record_identities) ... ok\ntest_each_required_dependency_field (test_lint_records.RecordTests.test_each_required_dependency_field) ... ok\ntest_each_required_result_field (test_lint_records.RecordTests.test_each_required_result_field) ... ok\ntest_each_required_review_field (test_lint_records.RecordTests.test_each_required_review_field) ... ok\ntest_each_required_task_field (test_lint_records.RecordTests.test_each_required_task_field) ... ok\ntest_hash_format (test_lint_records.RecordTests.test_hash_format) ... ok\ntest_hashes_bind_input_artifact_contract_result_and_review (test_lint_records.RecordTests.test_hashes_bind_input_artifact_contract_result_and_review) ... ok\ntest_large_json_exponents_do_not_create_nonfinite_measurements (test_lint_records.RecordTests.test_large_json_exponents_do_not_create_nonfinite_measurements) ... ok\ntest_missing_current_context (test_lint_records.RecordTests.test_missing_current_context) ... ok\ntest_missing_required_files (test_lint_records.RecordTests.test_missing_required_files) ... ok\ntest_new_current_contract_marks_history_stale (test_lint_records.RecordTests.test_new_current_contract_marks_history_stale) ... ok\ntest_ordinary_review_and_unselected_legacy_files (test_lint_records.RecordTests.test_ordinary_review_and_unselected_legacy_files) ... ok\ntest_repeat_output_is_deterministic (test_lint_records.RecordTests.test_repeat_output_is_deterministic) ... ok\ntest_repeated_canonical_aliases_are_not_duplicates (test_lint_records.RecordTests.test_repeated_canonical_aliases_are_not_duplicates) ... ok\ntest_required_accepted_upstream_records_are_followed (test_lint_records.RecordTests.test_required_accepted_upstream_records_are_followed) ... ok\ntest_result_must_match_snapshot (test_lint_records.RecordTests.test_result_must_match_snapshot) ... ok\ntest_result_types_status_and_empty_completed_result (test_lint_records.RecordTests.test_result_types_status_and_empty_completed_result) ... ok\ntest_review_cycles_do_not_recurse_forever (test_lint_records.RecordTests.test_review_cycles_do_not_recurse_forever) ... ok\ntest_review_must_match_result_identity (test_lint_records.RecordTests.test_review_must_match_result_identity) ... ok\ntest_review_types_and_decisions (test_lint_records.RecordTests.test_review_types_and_decisions) ... ok\ntest_snapshot_cannot_be_the_current_file (test_lint_records.RecordTests.test_snapshot_cannot_be_the_current_file) ... ok\ntest_supersedes_must_bind_same_exact_result (test_lint_records.RecordTests.test_supersedes_must_bind_same_exact_result) ... ok\ntest_task_types_ids_revisions_and_empty_text (test_lint_records.RecordTests.test_task_types_ids_revisions_and_empty_text) ... ok\ntest_unaccepted_and_stale_dependencies (test_lint_records.RecordTests.test_unaccepted_and_stale_dependencies) ... ok\ntest_unknown_execution_is_valid_but_cannot_be_accepted (test_lint_records.RecordTests.test_unknown_execution_is_valid_but_cannot_be_accepted) ... ok\ntest_unrelated_json_outside_acceptance_section_is_ignored (test_lint_records.RecordTests.test_unrelated_json_outside_acceptance_section_is_ignored) ... ok\ntest_unsafe_cli_path_and_symlink_escape (test_lint_records.RecordTests.test_unsafe_cli_path_and_symlink_escape) ... ok\ntest_unsafe_reference_paths (test_lint_records.RecordTests.test_unsafe_reference_paths) ... ok\ntest_usage_requires_a_record_and_rejects_unknown_flags (test_lint_records.RecordTests.test_usage_requires_a_record_and_rejects_unknown_flags) ... ok\ntest_withdrawal_invalidates_pinned_acceptance_without_artifact_changes (test_lint_records.RecordTests.test_withdrawal_invalidates_pinned_acceptance_without_artifact_changes) ... ok\ntest_each_badge_label_and_image_must_match (test_package.PackageCheckTests.test_each_badge_label_and_image_must_match) ... ok\ntest_entry_imports_and_shared_skill_link_are_required (test_package.PackageCheckTests.test_entry_imports_and_shared_skill_link_are_required) ... ok\ntest_license_bytes_and_required_files (test_package.PackageCheckTests.test_license_bytes_and_required_files) ... ok\ntest_metadata_is_required_and_has_valid_values (test_package.PackageCheckTests.test_metadata_is_required_and_has_valid_values) ... ok\ntest_missing_path_and_bad_fragment (test_package.PackageCheckTests.test_missing_path_and_bad_fragment) ... ok\ntest_paths_cannot_escape_the_package (test_package.PackageCheckTests.test_paths_cannot_escape_the_package) ... ok\ntest_valid_links_unicode_duplicates_images_and_code_examples (test_package.PackageCheckTests.test_valid_links_unicode_duplicates_images_and_code_examples) ... ok\ntest_package (test_package.PackageTests.test_package) ... ok\ntest_binary_reference_and_all_input_orders (test_summation_example.SummationExampleTests.test_binary_reference_and_all_input_orders) ... ok\ntest_invalid_input_fails_before_output (test_summation_example.SummationExampleTests.test_invalid_input_fails_before_output) ... ok\ntest_saved_result_and_review_remain_bound (test_summation_example.SummationExampleTests.test_saved_result_and_review_remain_bound) ... ok\n\n----------------------------------------------------------------------\nRan 72 tests in 7.012s\n\nOK\n",
+      "elapsed_seconds": 7.12025373600045,
+      "recorded_at": "2026-10-23T14:27:11.924600+00:00"
+    }
+  ],
+  "integration_review": {
+    "reviewer": "p1_execution",
+    "scope": "Read-only toolkit test and README integration review, separate from the numerical acceptance review.",
+    "findings": [
+      {
+        "id": "P1-T1",
+        "problem": "Importlib source loading can write __pycache__ inside the sealed attempt when tests run without -B.",
+        "resolution": "Load the trusted source through compile/exec in a ModuleType. The saved-evidence test also loads the test module in a subprocess without -B and checks that sealed bytes and inventory stay unchanged.",
+        "status": "resolved; both full suites passed"
+      }
+    ],
+    "experiments_run_by_this_review": 0,
+    "followup": "The same reviewer read the fix and confirmed that source loading cannot write bytecode into the sealed attempt. No further actionable issue remained."
+  },
+  "independent_acceptance": {
+    "review_path": "examples/summation-order/reviews/R001.md",
+    "review_sha256": "7af1423aecfd14d825a4fc7d79a59ee74050e6403292b919305f6a8705cb8ff4",
+    "evidence_path": "examples/summation-order/reviews/R001-evidence.json",
+    "evidence_sha256": "8626875f41bd0678e8d21f4003f46585c541286cee0c7b039f826d2aa5b3445e",
+    "decision": "accepted",
+    "fixed_criteria": 6,
+    "outputs_checked": 24,
+    "ties": 8,
+    "smaller_fsum_error": 4,
+    "replays": 1,
+    "replay_exit_code": 0,
+    "replay_output_bytes": 7798,
+    "replay_matched_bytes": true,
+    "sealed_files_unchanged": 12,
+    "record_check": {
+      "command": [
+        "python3",
+        "-B",
+        "skills/research-workflow/scripts/lint_records.py",
+        "--root",
+        "examples/summation-order",
+        "--task",
+        "tasks/T001/task.json",
+        "--result",
+        "tasks/T001/attempts/A001/result.json",
+        "--review",
+        "reviews/R001.md"
+      ],
+      "cwd": "/tmp/auto-research-p1-jmcopwnj/candidate",
+      "exit_code": 0,
+      "stdout": "{\n  \"diagnostics\": []\n}\n",
+      "stderr": "",
+      "source": "Actual preceding exec_command result, chunk 7158a0.",
+      "final_review_sha256": "7af1423aecfd14d825a4fc7d79a59ee74050e6403292b919305f6a8705cb8ff4",
+      "review_evidence_sha256": "8626875f41bd0678e8d21f4003f46585c541286cee0c7b039f826d2aa5b3445e"
+    },
+    "limits": "AI review in the same harness and machine. No human endorsement or cross-harness recovery claim."
+  },
+  "runs": {
+    "candidates": 1,
+    "measured_runs": 1,
+    "independent_replays": 1,
+    "repair_cycles_used": 0,
+    "note": "Regression tests used other inputs or inspected saved evidence. They did not repeat the planned experiment."
+  },
+  "protected_source_check": {
+    "count": 72,
+    "sha256_unchanged": true,
+    "before": "scope.protected_sha256",
+    "after_sha256": {
+      ".github/workflows/tests.yml": "56a6895f11cb7fded3e128a9565cd3dedf2d135378b6644a21f38b54bfc87e22",
+      ".gitignore": "88600c8851e286882eb5fb131fa49863f2eb2fc5fc0c8a18170ce3abc54def69",
+      "AGENTS.md": "0c29f64bae49c5100bd07d44b69728896a605bd6e1e43c95016b3aa75f4dc515",
+      "CLAUDE.md": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+      "CONTRIBUTING.md": "d741f24b1ba97fc5956497264e9744dbb996fc097c86b5af54294e6cd3636bd2",
+      "GEMINI.md": "42fbbc9d55ee0d149c90e4bf93abe8b7278a5482b232be6f5bfc59cc0465e694",
+      "LICENSE": "1adc1607d1f493b1f11c5d27ea21b4293e63a49ae5365b78d2b75236ca96655b",
+      "changes/W001.md": "d8d66fe9568012639cf3558a0dc498ecee6d17063d7ae433af6016f0305782b4",
+      "changes/W002.md": "5c4daa47d72793c066ea2499c726d140e61481b052f9fe72993f0416f6f94a91",
+      "changes/W003.md": "2190308cf69e45f4cf44ed5aaeb2e96a518fb9609616fa572f40a7bab7b85783",
+      "changes/W004.md": "dc7f0b944b1cc9f7644e7c4f04f8b1587cc0a21ad5f5cfbac4d51d153ba8961f",
+      "changes/W005.md": "e4e75828817860fee9c51b05f3261515e5d34f74a696847ebe5751ce8524f3f7",
+      "changes/W006.md": "d38ae4bea978a8e439ed3b35893f128a1bc89863a0a585e7b11041ee9f4a877e",
+      "changes/W007.md": "18112454daaf7b01016378881e7b200fa5bef34efafc95b161aed058cee07ff5",
+      "changes/W008.md": "db5c5e42222fcfb9c59125a01911a53896e1c30a672bee36e28aa206442a298a",
+      "changes/W009.md": "84f18c0c8ac4b48fd59ecee04d0a8250af06dcf35719fa7ea344fddbd15e0f5e",
+      "changes/W010.md": "917cd7daf7a2732abd00487c0599d3fdf3a4c084c599e0cb960ad4aab7e46ba6",
+      "changes/W011.md": "a1ee031684b41bfc1045cc337bd64dc1a712920405013bc9dbead592d2624ca7",
+      "changes/evidence/W002.json": "f7c55bfc64300d0f4737163e8e7570cc09116e023b2da3159c3f7903b6e7d535",
+      "docs/architecture.md": "9bc5daae582e308d3488d70ae4ccd468dffc3c5ce979f74a87de7d9a753937ce",
+      "docs/harnesses.md": "c9eaee9fa964c5c38b6890b0e218995fa2607ef8748a77658f73bfd2d5e98e60",
+      "skills/research-workflow/LICENSE": "1adc1607d1f493b1f11c5d27ea21b4293e63a49ae5365b78d2b75236ca96655b",
+      "skills/research-workflow/SKILL.md": "8f9d466bbf0755d8656a33c33f7474d5476fc5d251e99a933f7f2fd4dcfa73a6",
+      "skills/research-workflow/references/bulk-literature.md": "3513ca2a36cfe5fe4fd109b20bbee84d2fd1cc50f4e15017436d6227cc7c169c",
+      "skills/research-workflow/references/collaboration.md": "281bf570c3503a844543d874822836d75acb8604742e527b24be4739b4824648",
+      "skills/research-workflow/references/evolution.md": "9d45bc4449167520552167ba328b4098a17133854ba9f32dfb5dc02890bafb2a",
+      "skills/research-workflow/references/preferences.md": "aa57e11714c7160c5f13e14b5f6ee000ce2752b2829b69bfd41a3d874fb94ae7",
+      "skills/research-workflow/references/scripted-bulk-literature.md": "10343762058fe2d1e828b0a2fab8dd055ce77f57a2fbe852e52ef0e1645a7d65",
+      "skills/research-workflow/references/sources.md": "95bde7198e1208d6d4ebab568057884112076cc64e1400b18d51a94192bf337e",
+      "skills/research-workflow/references/workflow.md": "13f9ca1a97cab9a9b2dae5199dce528cb1dcb4ed2b79734c52806eb6d3deb222",
+      "skills/research-workflow/references/zotero-git-example.md": "3ad8b4dfdab6c0c726ed1fedb59aeaa82ae6ee7ecae2b1c84a1d12946aa075af",
+      "skills/research-workflow/scripts/bulk_literature.py": "60b90e5160b461b72379a0faebc2e0942b31ce3dacae7bd2621945b5b02129db",
+      "skills/research-workflow/scripts/lint_records.py": "b3255d0fcb38b810451b86ca0ff4d78be773821680775bfc1a1adab47a983ce1",
+      "skills/research-workflow/templates/BRIEF.md": "be0efba2e57b3eadc76e56083ffe75ea4557809c8fef7274bb706560a862a04f",
+      "skills/research-workflow/templates/CHANGE.md": "9503e109f1290910fcaede1f1b29f1dbcefa9218cc97410eb7a2588cf76277b9",
+      "skills/research-workflow/templates/CLAIMS.md": "c296a146ed1826b26854b7e2e886200549d33050326222e62135534efb67143c",
+      "skills/research-workflow/templates/CORPUS.md": "6d10fe421103ae7ca6b54a4c7ef50701b4b23a1700474d8e1edcf2550692f85e",
+      "skills/research-workflow/templates/EXPERIMENT.md": "3e23eb525c28b16faa11728d2e1dba08f2dd1d4703fa96c34639cd1635fd6a3c",
+      "skills/research-workflow/templates/HANDOFF.md": "cd7940769000ce62572b37335c00f2e685ceab9dc5812da1eed7fea6e9194944",
+      "skills/research-workflow/templates/LITERATURE.md": "c599962616618e1b656225f0401c805d1a24202f9344709b23ca4bc6f08701f4",
+      "skills/research-workflow/templates/MANUSCRIPT.md": "ec70de198b3c9e8147471394629bfe0dd5bde9e868cf7bc5f561f7b9cc28ac0c",
+      "skills/research-workflow/templates/PAPER.md": "6e2d860c93e0cadc8387bc4202e5ce64bb45fb3d9c1ae226142c116339d13144",
+      "skills/research-workflow/templates/PREFERENCES.md": "3354c01cd2e5638b97a9778c38c07f4bf3989b9b40c34d0df9aa0da9f4d60a44",
+      "skills/research-workflow/templates/QUESTION.md": "b3a506466f0f7758b9046353e2e11d5a1e645fd6257c7e19d67832e235a52db7",
+      "skills/research-workflow/templates/RESULT.json": "f2b24bb7b8974f012e4636c2162e60a10b860f01519de5a739ce3bce82827edb",
+      "skills/research-workflow/templates/REVIEW.md": "c51855b2d4547a564747c7e42468795a9ecfbc086b8d818c4d4576255a31871e",
+      "skills/research-workflow/templates/STATE.md": "a22a0025f2c50cdafb379db358502922784210a7eb260b4fae3591b8d6e865af",
+      "skills/research-workflow/templates/TASK.json": "a2073d0c29ac5e8c60526e3afd543b1a249d1c120ea76d4dd662819abbe17a6b",
+      "skills/research-workflow/templates/bulk-literature.example.json": "9793fb82b0373cf0dbfaef19e8d514d9bc9da0f92d70ad5bd6c707e54cd13997",
+      "tests/bulk-cli.md": "11b245b0d86dff64f006ddc36e286fdb621a3cc21761017d9f9aaae10a7e410b",
+      "tests/bulk-literature.md": "04e21f2dca93b66040454b47b169248a714295658c1a17b18ceb7ec59a6cdf93",
+      "tests/collaboration.md": "871357c0f4e7c0fd230286b731533925cfee4d0571818c11504f3b18c8ea6269",
+      "tests/evidence/W001.json": "29743b527dbd60338839ebe7f42fb3d1d9f00d579ad91aab56453b0d21d392ed",
+      "tests/evidence/W003.json": "6e376088c3d28dc3f000689be4c8e1d6fc8521041ff2dcaabeb70605bef0a549",
+      "tests/evidence/W004.json": "9a033706593ed5aecc89e8a43f7c3f60a2d959a1e559aaa4f891a148077e7b90",
+      "tests/evidence/W005.json": "0e004cb2b76cbea5af24bb3f081aa8f39fd0677a002e1887bfabf5143a71fa1a",
+      "tests/evidence/W006.json": "a77e0d96fdc2e08585aa2cf4ef401e613e0935dcebfb325d92419cdd3cf84726",
+      "tests/evidence/W008.json": "6a9a74158d5127b5b1596ebefd1b5ff94de5086d987702fd11581753dab9aeb2",
+      "tests/evidence/W009.json": "ae5a21dc12c03df0024f5f0943275c1803ac25983d9465328dadd420e5bd7a2a",
+      "tests/evidence/W010.json": "1f5c23e8cdbff3cec7b50ce1df0d59e9ece3a76e4b94216a2d8158d4de5d2b20",
+      "tests/evidence/W011-hosted-ci.json": "a03cfa072810ce7e06505e6f16365b084093673e326e396e8bba4a8b4232bac1",
+      "tests/evidence/W011.json": "bc62333c6592ab8471d0185831e21c041339c965128118a36bf92c9baca25876",
+      "tests/evolution.md": "667d4d4960893333b1684a84ba72db6978312f689a2f27c4d34f8ebe2633304c",
+      "tests/preferences.md": "61a916d6f3bcad25c6242dfedf717f09506696069298f1edf19ee8f7b2c76079",
+      "tests/reading.md": "c9d4ff6394ad25343c04dbd1a2993e11a19f4dcddbc2426a73c7a8328d94bfe1",
+      "tests/scenarios.md": "a9f4b7f9b4683bd55073c846ded3edaab484d1a1d3359fd8c32fd4bdbc3f0dbc",
+      "tests/test_bulk_literature.py": "1555d33003b6fe89681e1528f65e3632df56a691b04aae131534904968060919",
+      "tests/test_lint_records.py": "753b04a53633df003bac59e8eb98f6697eaa4fed09de2b976f635cd7a711a1e4",
+      "auto-research-integrated-report.md": "e0260bf7e6ff5644465d1ddab353baa7b783ef832bb0084d302b6d43d0b997cf",
+      "changes/W012.md": "0bd66b6169abe06606fcefa31df5a51cc369b25b795d53c81105c0a85f195640",
+      "tests/evidence/W012.json": "8420b30f18af8df1b4ced247a02b01fe97e035c7759b35f546efbcda705088ae",
+      "RESEARCH.local.md": "13447e230dd5aa038bf8f0756ad997b724463e50f2a01393ec85c99cc56d6d1a"
+    }
+  },
+  "baseline_proposal": "# W013: Propose a complete synthetic example\n\nStatus: captured.\nPackage version: `0.1.6`, unchanged.\nDate: 2026-10-23.\n\nThe user asked to continue improvements after N6.\nThe original request requires review and approval for each improvement.\nThis record proposes P1 for approval.\nIt does not authorize implementation or an experiment run.\nNo example directory, measured result, or active research rule exists from this proposal.\n\n## Proposed scope\n\nCreate one synthetic computational practice example in `examples/summation-order/`.\nThe question is how input order affects floating-point summation error on two fixed datasets.\nCompare an explicit accumulation loop with `math.fsum`.\nCalculate the reference sum from `Fraction.from_float` values for the actual binary inputs.\nThe example demonstrates traceable execution and review, with no claim of research novelty or general method superiority.\n\nThe official [math.fsum documentation](https://docs.python.org/3.14/library/math.html#math.fsum) describes accurate summation and platform-dependent rounding limits.\nThe official [Fraction documentation](https://docs.python.org/3.14/library/fractions.html#fractions.Fraction.from_float) distinguishes binary float values from decimal fractions.\nThese sections were inspected on 2026-10-23.\nThey are API documentation, not a literature review or evidence of an executed experiment.\nThe implementation must record its actual Python version separately from the documentation version.\n\nUse one execution task and a separate AI review.\nThe coordinator alone writes shared state and the current task contract.\nThe worker owns only the assigned attempt outputs.\nThe existing collaboration procedure remains the authority for acceptance.\nLabel the review as AI simulation.\n\n## Fixed candidate protocol\n\nUse these two synthetic datasets:\n\n| Case | Input values | Purpose |\n| --- | --- | --- |\n| Exact control | `[1.0, 2.0, 3.0]` | Retain a case where the methods can tie. |\n| Cancellation | `[1e16, 1.0, -1e16]` | Inspect order effects with unequal magnitudes. |\n\nEvaluate all six permutations of each dataset with both methods.\nUse a plain loop for the baseline, without substituting the built-in `sum` implementation.\nRecord each input order, each method output, and exact absolute error against the binary-input reference.\nStore float identities and rational errors without rounding away differences.\nFreeze the protocol, inputs, and code hashes before the measured run.\nKeep ties, failed attempts, and contradictory results.\nDo not require a favorable result for `math.fsum` to accept an accurate report.\nDo not report speed, statistical significance, or a multi-agent benefit from this example.\n\nThe proposed budget is one candidate within 60 minutes after approval.\nUse the existing local Python environment and the standard library.\nAllow one measured run and one independent replay, each with a 30-second timeout.\nAllow one repair cycle with the same two-run limit, while preserving failed attempts.\nUse temporary directories for execution and replay before saving the approved example artifacts.\nUse no GPU, paid API, account connection, dataset download, or new dependency.\nRecord unavailable assistant usage measurements as unknown.\nStop when the example passes review or reaches these limits.\n\n## Proposed files and acceptance\n\nThe example contains a README report, brief, state, source notes, claims, one question, and one experiment record.\nIt contains one current task contract, its fixed attempt copy, a result record, and one separate review.\nAttempt artifacts contain the script, inputs, actual results, and execution log.\nNew attempts preserve old attempts when repairs are necessary.\nReplay writes to a new temporary path and cannot overwrite the sealed example.\n\nAllowed implementation paths are `examples/summation-order/`, both root README files, and `tests/test_package.py`.\nAlso allow one focused example test at `tests/test_summation_example.py`.\nRecord the decision in this file, `tests/RESULTS.md`, and `tests/evidence/W013.json`.\nAdd `examples` to the existing package link checks because they currently omit that directory.\nKeep the portable skill, record schemas, dependencies, CI workflow, and N6 changes unchanged.\n\nAcceptance requires actual output for every declared case and method.\nEach reported observation must link to its output rows.\nA separate reviewer must inspect the protocol, code, outputs, and claims.\nThe record checker must accept the selected contract, result, and completed review.\nA clean replay must reproduce the numerical results without changing sealed files.\nThe focused example test and existing offline suite must pass.\nThe final state must identify current evidence, remaining limits, and no active job after local execution ends.\nFailed execution or unavailable access must remain a recorded limit rather than a fabricated result.\n\n## Decision and recovery\n\nDecision: Awaiting user approval of the example topic, files, and budget.\nAn independent scope review found this example suitable and identified the missing link-check coverage for `examples/`.\nNo numerical experiment, cross-harness recovery test, or collaboration performance comparison ran.\nP2 can later add a frozen handoff and a separately approved recovery test using the saved P1 records.\nP3 can later compare execution strategies under a separate fixed budget.\nP1 does not authorize either trial or a runtime framework change.\nRejecting this proposal leaves the current workflow unchanged.\n",
+  "changed_files": {
+    "README.md": {
+      "before_sha256": "fe4a9a139c537afbd7402464f6b0143cdd691eecd700ac044dcd405476f976fd",
+      "after_sha256": "52ea48166460e19a5077c46ddbdb376f55795d123b1f2371c305aa842884aff7"
+    },
+    "README.zh-CN.md": {
+      "before_sha256": "038bc57c8d21545efa95bb80242cb0b555947281cd857cd39d6e53850dfe8d32",
+      "after_sha256": "0d70cd92cadf145995b9a83f680ee00e4ca27abefb0709d671a69ac6fefebfd9"
+    },
+    "tests/test_package.py": {
+      "before_sha256": "b9f1b6751847277fe08b0f0452a2b44edcd7a78e652b50ac567815a9972fc327",
+      "after_sha256": "8150947d0ec9bd78c788b899e793ad86e1832f659e246342501fb5db6aafc963"
+    },
+    "tests/RESULTS.md": {
+      "before_sha256": "6e01225fbf6b3821af21c1c0309824e911f04740cbadfed12de53272f67615ba",
+      "after_sha256": "fbfb360455de871dc87ce079eed9f6d173b7ad7df4c0da2bb17a4f60a0e9ad2c"
+    },
+    "changes/W013.md": {
+      "before_sha256": "0b38a17de7178fdde27a1badb80fa266d5e012f9a72838d9b8b0f4b69f34de97",
+      "after_sha256": "1b361d862018377b14e621c9b6c1a4fd0b129bac8a84403ef4de8f5836c23ac5"
+    },
+    "tests/test_summation_example.py": {
+      "before_sha256": null,
+      "after_sha256": "83c95202310a709c45e13d91810935b3f03ff676e487fd186f98be075f3e51f0"
+    },
+    "examples/summation-order/BRIEF.md": {
+      "before_sha256": null,
+      "after_sha256": "5cf84a604181ffb5f6d204769120cacae1217693113ef6bfe469e5246ba7571f"
+    },
+    "examples/summation-order/CLAIMS.md": {
+      "before_sha256": null,
+      "after_sha256": "3b4539de47761c083e8d577dff30ce9d31787b0d188b2be990f617210eccc06a"
+    },
+    "examples/summation-order/LITERATURE.md": {
+      "before_sha256": null,
+      "after_sha256": "9c8700c789034ac7d7080c54dd8231fa4e82c94ab8f79ea67470a17f8b64684c"
+    },
+    "examples/summation-order/README.md": {
+      "before_sha256": null,
+      "after_sha256": "24660f5c1be3738cdb4f9309c44efa3f9f41eb6be45dfab1e3322ec0f815798a"
+    },
+    "examples/summation-order/STATE.md": {
+      "before_sha256": null,
+      "after_sha256": "e6bb46778868af3854f4f14c51f3a8198c89b5b08ac6181a4c329732f9e604f9"
+    },
+    "examples/summation-order/experiments/E001.md": {
+      "before_sha256": null,
+      "after_sha256": "9e91342ae3034c3977da62f741567f6f54986978aaf65a10cdc149fef1e9e8be"
+    },
+    "examples/summation-order/questions/Q001.md": {
+      "before_sha256": null,
+      "after_sha256": "daf3467b16a0ecbe522e9fba1f4d2fbe7b62b9f5d58dcc8f500941688710e2a9"
+    },
+    "examples/summation-order/reviews/R001-evidence.json": {
+      "before_sha256": null,
+      "after_sha256": "8626875f41bd0678e8d21f4003f46585c541286cee0c7b039f826d2aa5b3445e"
+    },
+    "examples/summation-order/reviews/R001.md": {
+      "before_sha256": null,
+      "after_sha256": "7af1423aecfd14d825a4fc7d79a59ee74050e6403292b919305f6a8705cb8ff4"
+    },
+    "examples/summation-order/tasks/T001/attempts/A001/artifacts/inputs.json": {
+      "before_sha256": null,
+      "after_sha256": "97832832c0f79fc067328417a771f8a1286f4661a6f7c368b49422ca6099c3a1"
+    },
+    "examples/summation-order/tasks/T001/attempts/A001/artifacts/manifest.json": {
+      "before_sha256": null,
+      "after_sha256": "aa18614dcf88992d7277fb633312a4825acd937382ae6dd908a6a9730b8b24b6"
+    },
+    "examples/summation-order/tasks/T001/attempts/A001/artifacts/results.json": {
+      "before_sha256": null,
+      "after_sha256": "aa8adf9d8e7ccc8bf0fb4bca0dc2d63a842f3cc1771075a6ebe13dc8b7cba6ba"
+    },
+    "examples/summation-order/tasks/T001/attempts/A001/artifacts/run.log": {
+      "before_sha256": null,
+      "after_sha256": "2e52a5e554d97bb27c821073f1833dd4c329e4bba3eae3bdbebf8e8d9a2a42f1"
+    },
+    "examples/summation-order/tasks/T001/attempts/A001/artifacts/run.py": {
+      "before_sha256": null,
+      "after_sha256": "88dec0a8aaec614c0e05ea5853f09c7048d94541fb71c937ac2f001d338c47be"
+    },
+    "examples/summation-order/tasks/T001/attempts/A001/result.json": {
+      "before_sha256": null,
+      "after_sha256": "440b180ce9d7dc29317ad0f745c48bb4566512986d114ca075640a4638f2b045"
+    },
+    "examples/summation-order/tasks/T001/attempts/A001/task.json": {
+      "before_sha256": null,
+      "after_sha256": "80f8460f37edae38c62096b50ad44efd267872aa99f94c476a0d0da26862905b"
+    },
+    "examples/summation-order/tasks/T001/task.json": {
+      "before_sha256": null,
+      "after_sha256": "80f8460f37edae38c62096b50ad44efd267872aa99f94c476a0d0da26862905b"
+    }
+  },
+  "integration_patch": "--- baseline/README.md\n+++ candidate/README.md\n@@ -77,6 +77,7 @@\n \n Each harness supplies its own tools, credentials, and permissions.\n Read the [harness guide](docs/harnesses.md) for entry files, installation, and optional skill discovery.\n+Read the [synthetic summation example](examples/summation-order/README.md) for a fixed plan, actual local outputs, and separate AI review.\n \n ## Choose local preferences and optional procedures\n \n--- baseline/README.zh-CN.md\n+++ candidate/README.zh-CN.md\n@@ -77,6 +77,7 @@\n \n 每个 harness 提供自己的工具、凭据和权限。\n 关于入口文件、安装和可选的 skill 自动发现方式，请阅读 [harness 指南](docs/harnesses.md)。\n+[合成求和示例](examples/summation-order/README.md)展示固定方案、实际本地输出和独立 AI 审查。\n \n ## 选择本地偏好和可选流程\n \n--- baseline/tests/test_package.py\n+++ candidate/tests/test_package.py\n@@ -10,7 +10,7 @@\n ROOT = Path(__file__).resolve().parents[1]\n SKILL = \"skills/research-workflow/SKILL.md\"\n ROOT_DOCS = (\"AGENTS.md\", \"CLAUDE.md\", \"GEMINI.md\", \"CONTRIBUTING.md\", \"README.md\", \"README.zh-CN.md\")\n-DOC_DIRS = (\"docs\", \"skills/research-workflow\", \"tests\", \"changes\")\n+DOC_DIRS = (\"docs\", \"skills/research-workflow\", \"tests\", \"changes\", \"examples\")\n DESTINATION = re.compile(r'\\]\\((<[^>\\n]*>|[^\\s()]*)(?:\\s+(?:\"[^\"\\n]*\"|\\'[^\\'\\n]*\\'))?\\)')\n INLINE_CODE = re.compile(r\"(?<!`)(`+)(?!`)(.*?)\\1(?!`)\", re.DOTALL)\n NUMBER = r\"(?:0|[1-9][0-9]*)\"\n@@ -214,6 +214,8 @@\n         self.write(\"docs/guide.md\", \"# Guide\\n[Missing](absent.md)\\n[Fragment](#absent)\\n![Image](absent.png)\\n\")\n         self.check(\"docs/guide.md:2: 'absent.md': target does not exist\")\n         self.check(\"heading anchor does not exist\")\n+        self.write(\"examples/practice/README.md\", \"[Evidence](missing-evidence.json)\\n\")\n+        self.check(\"examples/practice/README.md:1: 'missing-evidence.json': target does not exist\")\n \n     def test_paths_cannot_escape_the_package(self):\n         self.write(\"docs/guide.md\", \"[Outside](../../outside.md)\\n\")\n--- baseline/tests/test_summation_example.py\n+++ candidate/tests/test_summation_example.py\n@@ -0,0 +1,96 @@\n+\"\"\"Check the synthetic example without replacing its saved experiment outputs.\"\"\"\n+\n+import copy\n+from fractions import Fraction\n+import hashlib\n+from itertools import permutations\n+import json\n+from pathlib import Path\n+import subprocess\n+import sys\n+import tempfile\n+import types\n+import unittest\n+\n+\n+ROOT = Path(__file__).resolve().parents[1]\n+EXAMPLE = ROOT / \"examples/summation-order\"\n+ARTIFACTS = EXAMPLE / \"tasks/T001/attempts/A001/artifacts\"\n+EXPERIMENT = types.ModuleType(\"summation_example\")\n+SCRIPT = ARTIFACTS / \"run.py\"\n+# Keep bytecode caches out of the sealed attempt, including under other test runners.\n+exec(compile(SCRIPT.read_text(encoding=\"utf-8\"), str(SCRIPT), \"exec\"), EXPERIMENT.__dict__)\n+\n+\n+class SummationExampleTests(unittest.TestCase):\n+    def test_binary_reference_and_all_input_orders(self):\n+        values = [0.1, 0.2, 0.3]\n+        data = {\"protocol_version\": \"1\", \"cases\": [{\"id\": \"decimal-control\", \"values\": values}]}\n+        before = copy.deepcopy(data)\n+        rows = EXPERIMENT.evaluate(data)[\"rows\"]\n+        self.assertEqual(data, before)\n+        self.assertEqual(len(rows), 6)\n+        self.assertEqual({tuple(row[\"input_hex\"]) for row in rows},\n+                         {tuple(value.hex() for value in order) for order in permutations(values)})\n+        reference = Fraction(0.1) + Fraction(0.2) + Fraction(0.3)\n+        self.assertNotEqual(reference, Fraction(3, 5), \"The reference must use actual binary inputs.\")\n+        for row in rows:\n+            self.assertEqual(Fraction(**row[\"reference\"]), reference)\n+            self.assertEqual(set(row[\"methods\"]), {\"naive\", \"fsum\"})\n+            for output in row[\"methods\"].values():\n+                exact_output = Fraction(float.fromhex(output[\"value_hex\"]))\n+                self.assertEqual(Fraction(**output[\"absolute_error\"]), abs(exact_output - reference))\n+\n+    def test_invalid_input_fails_before_output(self):\n+        valid = {\"protocol_version\": \"1\", \"cases\": [{\"id\": \"small\", \"values\": [0.25, 0.5, 0.75]}]}\n+        invalid = [None, {**valid, \"protocol_version\": \"2\"}, {**valid, \"cases\": []}]\n+        for values in ([True, 0.5, 0.75], [float(\"nan\"), 0.5, 0.75], [float(\"inf\"), 0.5, 0.75],\n+                       [0.25, 0.25, 0.75], [0.25, 0.5], [\"0.25\", 0.5, 0.75]):\n+            invalid.append({**valid, \"cases\": [{\"id\": \"small\", \"values\": values}]})\n+        invalid.append({**valid, \"cases\": valid[\"cases\"] * 2})\n+        for data in invalid:\n+            with self.subTest(data=data), self.assertRaises(ValueError):\n+                EXPERIMENT.evaluate(data)\n+        with tempfile.TemporaryDirectory() as temp:\n+            path = Path(temp) / \"invalid.json\"\n+            path.write_text('{\"protocol_version\":\"1\",\"cases\":[]}', encoding=\"utf-8\")\n+            result = subprocess.run([sys.executable, \"-B\", str(ARTIFACTS / \"run.py\"), str(path)],\n+                                    capture_output=True, text=True, timeout=5)\n+        self.assertEqual(result.returncode, 1)\n+        self.assertEqual(result.stdout, \"\")\n+        self.assertIn(\"nonempty list\", result.stderr)\n+        self.assertNotIn(\"Traceback\", result.stderr)\n+\n+    def test_saved_result_and_review_remain_bound(self):\n+        before = {str(p.relative_to(EXAMPLE)): hashlib.sha256(p.read_bytes()).hexdigest()\n+                  for p in EXAMPLE.rglob(\"*\") if p.is_file()}\n+        loaded = subprocess.run(\n+            [sys.executable, \"-c\", \"import runpy, sys\\nrunpy.run_path(sys.argv[1], run_name='loader_probe')\", __file__],\n+            capture_output=True, text=True, timeout=10,\n+        )\n+        self.assertEqual(loaded.returncode, 0, loaded.stdout + loaded.stderr)\n+        result = subprocess.run(\n+            [sys.executable, \"-B\", str(ROOT / \"skills/research-workflow/scripts/lint_records.py\"),\n+             \"--root\", str(EXAMPLE), \"--task\", \"tasks/T001/task.json\",\n+             \"--result\", \"tasks/T001/attempts/A001/result.json\", \"--review\", \"reviews/R001.md\"],\n+            capture_output=True, text=True, timeout=10,\n+        )\n+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)\n+        self.assertEqual(json.loads(result.stdout), {\"diagnostics\": []})\n+        after = {str(p.relative_to(EXAMPLE)): hashlib.sha256(p.read_bytes()).hexdigest()\n+                 for p in EXAMPLE.rglob(\"*\") if p.is_file()}\n+        self.assertEqual(after, before)\n+        rows = json.loads((ARTIFACTS / \"results.json\").read_text())[\"rows\"]\n+        self.assertEqual(len(rows), 12)\n+        self.assertEqual({(row[\"case_id\"], row[\"order_index\"]) for row in rows},\n+                         {(case, index) for case in (\"control\", \"cancellation\") for index in range(1, 7)})\n+        ties = 0\n+        for row in rows:\n+            self.assertEqual(set(row[\"methods\"]), {\"naive\", \"fsum\"})\n+            errors = [Fraction(**entry[\"absolute_error\"]) for entry in row[\"methods\"].values()]\n+            ties += errors[0] == errors[1]\n+        self.assertEqual(ties, 8, \"Keep the stored ties as part of the reported result.\")\n+\n+\n+if __name__ == \"__main__\":\n+    unittest.main()\n",
+  "adoption_decision": {
+    "decision": "adopt",
+    "basis": "Actual execution, exact replay, independent acceptance, both full offline suites, package coverage, and protected-file checks passed.",
+    "decided_utc": "2026-10-23T14:28:49.887323+00:00",
+    "elapsed_minutes": 13.222547459602357,
+    "budget_minutes": 60,
+    "scope": "Only the approved P1 example and repository integration. Package version stays 0.1.6."
+  },
+  "final_package_check": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_package.py",
+      "-v"
+    ],
+    "reason": "Final documentation and evidence links after acceptance summaries. No implementation change after the full suites.",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_each_badge_label_and_image_must_match (test_package.PackageCheckTests.test_each_badge_label_and_image_must_match) ... ok\ntest_entry_imports_and_shared_skill_link_are_required (test_package.PackageCheckTests.test_entry_imports_and_shared_skill_link_are_required) ... ok\ntest_license_bytes_and_required_files (test_package.PackageCheckTests.test_license_bytes_and_required_files) ... ok\ntest_metadata_is_required_and_has_valid_values (test_package.PackageCheckTests.test_metadata_is_required_and_has_valid_values) ... ok\ntest_missing_path_and_bad_fragment (test_package.PackageCheckTests.test_missing_path_and_bad_fragment) ... ok\ntest_paths_cannot_escape_the_package (test_package.PackageCheckTests.test_paths_cannot_escape_the_package) ... ok\ntest_valid_links_unicode_duplicates_images_and_code_examples (test_package.PackageCheckTests.test_valid_links_unicode_duplicates_images_and_code_examples) ... ok\ntest_package (test_package.PackageTests.test_package) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.049s\n\nOK\n",
+    "elapsed_seconds": 0.09993329299868492
+  },
+  "independent_summary_check": {
+    "reviewer": "p1_independent",
+    "outcome": "pass",
+    "scope": "Read-only check of final README, STATE, W013, RESULTS, and W013 evidence. No new execution or replay.",
+    "finding": "Coordinator summaries reflect the accepted result, exact hashes, actual checks, and AI review limits. R001 and its evidence remain unchanged."
+  },
+  "adoption_verification": {
+    "finished_utc": "2026-10-23T14:29:44.155494+00:00",
+    "elapsed_minutes": 14.127017013231914,
+    "copied_files": 24,
+    "candidate_and_working_copy_match": true,
+    "protected_files_unchanged": 72,
+    "commit_or_push": false
+  }
+}

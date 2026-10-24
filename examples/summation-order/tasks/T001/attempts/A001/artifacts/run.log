@@ -1,0 +1,15 @@
+Measured execution for protocol 1.
+Measured run ordinal: 1.
+Command: ["/usr/bin/python3", "-B", "tasks/T001/attempts/A001/artifacts/run.py", "tasks/T001/attempts/A001/artifacts/inputs.json"]
+Working directory: . (the example root).
+Started UTC: 2026-10-23T14:19:50.495206+00:00
+Ended UTC: 2026-10-23T14:19:50.533637+00:00
+Elapsed wall seconds: 0.03841960499994457.
+Exit code: 0.
+Timeout seconds: 30. Timed out: False.
+Frozen input and contract hashes match before and after: True.
+Output shape: Passed: 12 declared ordering rows, 24 method outputs, float identities, and rational fields.
+No claim about the measured numerical outcomes was required for this shape check.
+Captured stdout bytes: 7798. Captured stderr bytes: 0.
+Issues: []
+--- Actual stderr begins below ---

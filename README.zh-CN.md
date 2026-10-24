@@ -77,6 +77,7 @@ Python 和工具徽章仅适用于可选的批量文献分析流程。
 
 每个 harness 提供自己的工具、凭据和权限。
 关于入口文件、安装和可选的 skill 自动发现方式，请阅读 [harness 指南](docs/harnesses.md)。
+[合成求和示例](examples/summation-order/README.md)展示固定方案、实际本地输出和独立 AI 审查。
 
 ## 选择本地偏好和可选流程
 

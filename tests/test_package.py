@@ -10,7 +10,7 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = "skills/research-workflow/SKILL.md"
 ROOT_DOCS = ("AGENTS.md", "CLAUDE.md", "GEMINI.md", "CONTRIBUTING.md", "README.md", "README.zh-CN.md")
-DOC_DIRS = ("docs", "skills/research-workflow", "tests", "changes")
+DOC_DIRS = ("docs", "skills/research-workflow", "tests", "changes", "examples")
 DESTINATION = re.compile(r'\]\((<[^>\n]*>|[^\s()]*)(?:\s+(?:"[^"\n]*"|\'[^\'\n]*\'))?\)')
 INLINE_CODE = re.compile(r"(?<!`)(`+)(?!`)(.*?)\1(?!`)", re.DOTALL)
 NUMBER = r"(?:0|[1-9][0-9]*)"
@@ -214,6 +214,8 @@ class PackageCheckTests(unittest.TestCase):
         self.write("docs/guide.md", "# Guide\n[Missing](absent.md)\n[Fragment](#absent)\n![Image](absent.png)\n")
         self.check("docs/guide.md:2: 'absent.md': target does not exist")
         self.check("heading anchor does not exist")
+        self.write("examples/practice/README.md", "[Evidence](missing-evidence.json)\n")
+        self.check("examples/practice/README.md:1: 'missing-evidence.json': target does not exist")
 
     def test_paths_cannot_escape_the_package(self):
         self.write("docs/guide.md", "[Outside](../../outside.md)\n")

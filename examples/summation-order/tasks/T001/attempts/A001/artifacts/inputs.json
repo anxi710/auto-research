@@ -1,0 +1,21 @@
+{
+  "protocol_version": "1",
+  "cases": [
+    {
+      "id": "control",
+      "values": [
+        1.0,
+        2.0,
+        3.0
+      ]
+    },
+    {
+      "id": "cancellation",
+      "values": [
+        1e+16,
+        1.0,
+        -1e+16
+      ]
+    }
+  ]
+}

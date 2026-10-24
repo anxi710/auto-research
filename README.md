@@ -77,6 +77,7 @@ Save the result and next action in the research records.
 
 Each harness supplies its own tools, credentials, and permissions.
 Read the [harness guide](docs/harnesses.md) for entry files, installation, and optional skill discovery.
+Read the [synthetic summation example](examples/summation-order/README.md) for a fixed plan, actual local outputs, and separate AI review.
 
 ## Choose local preferences and optional procedures
 

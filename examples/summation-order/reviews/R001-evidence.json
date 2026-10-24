@@ -1,0 +1,341 @@
+{
+  "review_id": "R001",
+  "reviewer": "p1_independent",
+  "type": "AI review simulation",
+  "result_sha256": "440b180ce9d7dc29317ad0f745c48bb4566512986d114ca075640a4638f2b045",
+  "fixed_plan": "# Independent review plan for P1\n\nDate: 2026-10-23.\nReviewer: Codex subagent `p1_independent`.\nThis is an AI review simulation.\nIt does not provide human scientific endorsement.\n\nThe reviewer read the approved scope, W013 proposal, task templates, review template, and collaboration rules before preparing this plan.\nThe reviewer did not inspect the new example code or its outputs before fixing these criteria.\nThe user approved one synthetic example with two fixed datasets.\nThe reviewer can run one independent replay after the coordinator supplies a sealed result.\n\n## Fixed review criteria\n\n1. Make sure that the reference uses exact rational values of the actual binary inputs.\n   Inspect all 24 results for both methods and all six permutations of each dataset.\n   Derive expected values independently from the fixed inputs and binary64 rounding.\n   Preserve float identities and exact errors.\n2. Make sure that the report retains ties and contrary evidence.\n   The exact control has six ties.\n   The cancellation case has two ties and four cases with different errors under ordinary binary64 rounding.\n   Do not require a favorable method result for task acceptance.\n3. Make sure that records distinguish actual execution from plans and API documentation.\n   Inspect the execution command, exit status, actual Python version, elapsed time, and recorded output.\n   Treat unavailable assistant usage as unknown.\n   Do not infer an execution from a plausible output alone.\n4. Make sure that the submitted contract, inputs, result, and artifacts match their recorded SHA256 digests.\n   Run exactly one full replay with a 30-second timeout in a fresh temporary directory.\n   Compare numerical content and measure sealed-file digests before and after replay.\n   Do not edit sealed files or use their output path for replay.\n5. Make sure that source notes identify the sections actually read and their limits.\n   Distinguish official API documentation from a literature review or experiment evidence.\n   Make sure that claims cite actual output rows and retain the platform and input limits.\n   Reject claims of novelty, general superiority, speed, significance, or measured multi-agent benefit.\n6. Make sure that the task has one named acceptance owner and a separate review record.\n   Inspect the current and fixed contracts, review history, task scope, final state, and active-job facts.\n   Run the existing record checker on the complete selected records.\n   Accept only the exact result that satisfies every required condition.\n\n## Independent numerical basis\n\nThe exact control contains the binary integers 1, 2, and 3.\nEvery intermediate sum remains an exactly representable integer, so all 12 outputs equal 6 with zero error.\nThe cancellation inputs are the exactly representable binary integers 10000000000000000, 1, and -10000000000000000.\nTheir exact rational sum equals 1.\nThe spacing around either large magnitude is 2.\nAdding 1 first to either large magnitude rounds to that large value under ties-to-even rounding.\nThose four accumulation orders return 0 with absolute error 1.\nThe two orders that add opposite large values first return 1 with zero error.\nAccurate summation returns 1 for all six cancellation orders on the declared platform.\nThe reviewer will compare these expectations with the actual output and report any difference rather than change the criteria.\n\n## Evidence and limits\n\nSave the replay command, return code, output, duration, numerical comparisons, and file digests under this review directory.\nWrite the final review only after the contract assigns its decision owner.\nKeep the final review separate from the sealed attempt.\nDo not run a new method comparison, P2 recovery test, or P3 collaboration trial.\nThis review does not establish a benefit for real research or cross-harness recovery.\n",
+  "fixed_plan_sha256": "57b40b6282372d4f1a9ce034802165479e0afb06ccdada52f9504b948bfe4e70",
+  "review_program": "\"\"\"Run the one approved replay and inspect every result with a separate oracle.\"\"\"\n\nfrom datetime import datetime, timezone\nfrom fractions import Fraction\nimport hashlib\nimport json\nfrom pathlib import Path\nimport platform\nimport shutil\nimport subprocess\nimport sys\nimport tempfile\nimport time\n\n\nEXAMPLE = Path('/tmp/auto-research-p1-jmcopwnj/candidate/examples/summation-order')\nREVIEW = Path('/tmp/auto-research-p1-jmcopwnj/review')\nATTEMPT = 'tasks/T001/attempts/A001'\nRESULT = ATTEMPT + '/result.json'\nCONTRACT = 'tasks/T001/task.json'\nEXPECTED_RESULT = '440b180ce9d7dc29317ad0f745c48bb4566512986d114ca075640a4638f2b045'\nEXPECTED_CONTRACT = '80f8460f37edae38c62096b50ad44efd267872aa99f94c476a0d0da26862905b'\n\n\ndef digest(path):\n    return hashlib.sha256(path.read_bytes()).hexdigest()\n\n\ndef hex_rational(text):\n    \"\"\"Read hexadecimal digits and a binary exponent without float arithmetic.\"\"\"\n    significand, exponent = text.lower().split('p')\n    sign = -1 if significand.startswith('-') else 1\n    significand = significand.lstrip('+-')\n    assert significand.startswith('0x')\n    whole, fraction = significand[2:].split('.')\n    digits = int(whole + fraction, 16)\n    return sign * Fraction(digits, 16 ** len(fraction)) * Fraction(2) ** int(exponent)\n\n\ndef rational(record):\n    assert set(record) == {'numerator', 'denominator'}\n    assert type(record['numerator']) is int and type(record['denominator']) is int\n    value = Fraction(record['numerator'], record['denominator'])\n    assert (value.numerator, value.denominator) == (record['numerator'], record['denominator'])\n    return value\n\n\nassert hex_rational('0x1.1c37937e08000p+53') == 10000000000000000\nassert hex_rational('-0x1.1c37937e08000p+53') == -10000000000000000\nassert hex_rational('0x1.8000000000000p+2') == 6\nassert hex_rational('0x0.0p+0') == 0\nassert not (REVIEW / 'replay.json').exists(), 'The one replay already has a record.'\ncontract = json.loads((EXAMPLE / CONTRACT).read_text())\nresult = json.loads((EXAMPLE / RESULT).read_text())\nassert digest(EXAMPLE / CONTRACT) == EXPECTED_CONTRACT\nassert digest(EXAMPLE / RESULT) == EXPECTED_RESULT\nassert digest(EXAMPLE / result['task_path']) == EXPECTED_CONTRACT\nfor entry in contract['inputs'] + result['artifacts']:\n    assert digest(EXAMPLE / entry['path']) == entry['sha256'], entry['path']\nsealed_paths = sorted({\n    CONTRACT,\n    *[entry['path'] for entry in contract['inputs']],\n    *[str(path.relative_to(EXAMPLE)) for path in (EXAMPLE / ATTEMPT).rglob('*') if path.is_file()],\n})\nbefore = {path: digest(EXAMPLE / path) for path in sealed_paths}\nprivate = Path(tempfile.mkdtemp(prefix='replay-', dir=REVIEW))\nfor name in ('run.py', 'inputs.json'):\n    shutil.copyfile(EXAMPLE / ATTEMPT / 'artifacts' / name, private / name)\ncommand = [sys.executable, '-B', 'run.py', 'inputs.json']\nstarted_utc = datetime.now(timezone.utc).isoformat()\nstarted = time.monotonic()\ntry:\n    completed = subprocess.run(command, cwd=private, capture_output=True, timeout=30, check=False)\n    returncode, stdout, stderr, timed_out = completed.returncode, completed.stdout, completed.stderr, False\nexcept subprocess.TimeoutExpired as error:\n    returncode, stdout, stderr, timed_out = None, error.stdout or b'', error.stderr or b'', True\nelapsed = time.monotonic() - started\nended_utc = datetime.now(timezone.utc).isoformat()\n(private / 'results.json').write_bytes(stdout)\n(private / 'stderr.txt').write_bytes(stderr)\nafter = {path: digest(EXAMPLE / path) for path in sealed_paths}\nreplay = {\n    'command': command,\n    'cwd': str(private),\n    'started_utc': started_utc,\n    'ended_utc': ended_utc,\n    'elapsed_wall_seconds': elapsed,\n    'exit_code': returncode,\n    'timeout_seconds': 30,\n    'timed_out': timed_out,\n    'replay_ordinal': 1,\n    'replay_limit': 1,\n    'environment': {\n        'python_version': sys.version,\n        'python_executable': sys.executable,\n        'python_implementation': platform.python_implementation(),\n        'platform': platform.platform(),\n        'float_radix': sys.float_info.radix,\n        'float_mantissa_digits': sys.float_info.mant_dig,\n        'float_rounds': sys.float_info.rounds,\n    },\n    'stdout_text': stdout.decode('utf-8', errors='replace'),\n    'stdout_sha256': hashlib.sha256(stdout).hexdigest(),\n    'stdout_bytes': len(stdout),\n    'stderr_text': stderr.decode('utf-8', errors='replace'),\n    'stderr_sha256': hashlib.sha256(stderr).hexdigest(),\n    'stderr_bytes': len(stderr),\n    'sealed_sha256_before': before,\n    'sealed_sha256_after': after,\n    'sealed_unchanged': before == after,\n    'stdout_matches_saved_bytes': stdout == (EXAMPLE / ATTEMPT / 'artifacts/results.json').read_bytes(),\n}\n(REVIEW / 'replay.json').write_text(json.dumps(replay, indent=2) + '\\n')\nassert returncode == 0 and not timed_out and not stderr\nassert before == after\nassert replay['stdout_matches_saved_bytes']\nassert sys.float_info.radix == 2 and sys.float_info.mant_dig == 53 and sys.float_info.rounds == 1\nraw = json.loads(stdout)\nassert raw['protocol_version'] == '1' and len(raw['rows']) == 12\ncases = {'control': (1, 2, 3), 'cancellation': (10 ** 16, 1, -(10 ** 16))}\norders = ((0, 1, 2), (0, 2, 1), (1, 0, 2), (1, 2, 0), (2, 0, 1), (2, 1, 0))\nseen = set()\ncomparisons = []\nties = 0\nfor row in raw['rows']:\n    key = (row['case_id'], row['order_index'])\n    assert key not in seen\n    seen.add(key)\n    assert key[0] in cases and 1 <= key[1] <= 6\n    expected_order = tuple(cases[key[0]][index] for index in orders[key[1] - 1])\n    actual_order = tuple(hex_rational(value) for value in row['input_hex'])\n    assert actual_order == expected_order, key\n    reference = Fraction(6 if key[0] == 'control' else 1)\n    assert rational(row['reference']) == reference\n    assert sum(actual_order, Fraction()) == reference\n    # The predeclared integer derivation fixes the outputs independently of run.py.\n    naive = 6 if key[0] == 'control' else int(expected_order[0] + expected_order[1] == 0)\n    expected = {'naive': Fraction(naive), 'fsum': reference}\n    assert set(row['methods']) == set(expected)\n    for method, expected_value in expected.items():\n        value = hex_rational(row['methods'][method]['value_hex'])\n        error = rational(row['methods'][method]['absolute_error'])\n        expected_error = abs(expected_value - reference)\n        assert value == expected_value and error == expected_error, (key, method)\n        comparisons.append({\n            'case_id': key[0], 'order_index': key[1], 'method': method,\n            'actual_value': str(value), 'expected_value': str(expected_value),\n            'actual_absolute_error': str(error), 'expected_absolute_error': str(expected_error),\n            'passed': True,\n        })\n    if abs(expected['naive'] - reference) == abs(expected['fsum'] - reference):\n        ties += 1\nassert len(seen) == 12 and len(comparisons) == 24 and ties == 8\nevidence = {\n    'review_id': 'R001',\n    'reviewer': 'p1_independent',\n    'type': 'AI review simulation',\n    'result_sha256': EXPECTED_RESULT,\n    'fixed_plan': (REVIEW / 'plan.md').read_text(),\n    'fixed_plan_sha256': digest(REVIEW / 'plan.md'),\n    'review_program': Path(__file__).read_text(),\n    'review_program_sha256': digest(Path(__file__)),\n    'replay': replay,\n    'independent_numerical_comparisons': comparisons,\n    'numerical_outputs_checked': 24,\n    'ties': 8,\n    'smaller_fsum_error': 4,\n    'oracle_limit': 'Exact hexadecimal rational decoding and predeclared binary64 reasoning for the two approved three-value cases only.',\n    'source_inspection': [\n        {\n            'url': 'https://docs.python.org/3.14/library/math.html#math.fsum',\n            'date': '2026-10-23',\n            'page_version': 'Python 3.14.9',\n            'depth': 'Complete math.fsum entry, including the rounding caveat.',\n            'finding': 'The method tracks partial sums. Accuracy depends on arithmetic and rounding. Some platforms can round an intermediate sum twice.',\n        },\n        {\n            'url': 'https://docs.python.org/3.14/library/fractions.html#fractions.Fraction.from_float',\n            'date': '2026-10-23',\n            'page_version': 'Python 3.14.9',\n            'depth': 'Constructor semantics, float examples, and complete from_float entry.',\n            'finding': 'The Fraction value preserves the binary float value. A decimal rational can differ from that value.',\n        },\n    ],\n    'limitations': [\n        'This is an AI review simulation in the same harness and machine.',\n        'It does not provide human scientific endorsement.',\n        'The first execution is supported by its saved manifest and log. The reviewer directly observed only its own replay.',\n        'The replay does not test another platform, interpreter, harness, remote job, or interrupted recovery.',\n        'Assistant token and cost measurements remain unknown.',\n    ],\n}\n(EXAMPLE / 'reviews').mkdir(exist_ok=True)\nwith (EXAMPLE / 'reviews/R001-evidence.json').open('x') as stream:\n    stream.write(json.dumps(evidence, indent=2) + '\\n')\nprint(json.dumps({\n    'replay_exit_code': returncode,\n    'elapsed_wall_seconds': elapsed,\n    'stdout_matches_saved_bytes': replay['stdout_matches_saved_bytes'],\n    'numerical_outputs_checked': len(comparisons),\n    'ties': ties,\n    'sealed_files_unchanged': len(before),\n    'evidence_sha256': digest(EXAMPLE / 'reviews/R001-evidence.json'),\n}, indent=2))\n",
+  "review_program_sha256": "69eda32d0e5163617bacc8858960f191318e28ca19f471414071d03552b1eb4d",
+  "replay": {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "run.py",
+      "inputs.json"
+    ],
+    "cwd": "/tmp/auto-research-p1-jmcopwnj/review/replay-ihu4rl55",
+    "started_utc": "2026-10-23T14:23:27.627064+00:00",
+    "ended_utc": "2026-10-23T14:23:27.663741+00:00",
+    "elapsed_wall_seconds": 0.03666522999992594,
+    "exit_code": 0,
+    "timeout_seconds": 30,
+    "timed_out": false,
+    "replay_ordinal": 1,
+    "replay_limit": 1,
+    "environment": {
+      "python_version": "3.14.8 (main, Oct  2 2026, 10:23:31) [GCC 16.2.1 20260810]",
+      "python_executable": "/usr/bin/python3",
+      "python_implementation": "CPython",
+      "platform": "Linux-7.2.11-arch1-1-x86_64-with-glibc2.44",
+      "float_radix": 2,
+      "float_mantissa_digits": 53,
+      "float_rounds": 1
+    },
+    "stdout_text": "{\n  \"protocol_version\": \"1\",\n  \"rows\": [\n    {\n      \"case_id\": \"control\",\n      \"order_index\": 1,\n      \"input_hex\": [\n        \"0x1.0000000000000p+0\",\n        \"0x1.0000000000000p+1\",\n        \"0x1.8000000000000p+1\"\n      ],\n      \"reference\": {\n        \"numerator\": 6,\n        \"denominator\": 1\n      },\n      \"methods\": {\n        \"naive\": {\n          \"value_hex\": \"0x1.8000000000000p+2\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        },\n        \"fsum\": {\n          \"value_hex\": \"0x1.8000000000000p+2\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        }\n      }\n    },\n    {\n      \"case_id\": \"control\",\n      \"order_index\": 2,\n      \"input_hex\": [\n        \"0x1.0000000000000p+0\",\n        \"0x1.8000000000000p+1\",\n        \"0x1.0000000000000p+1\"\n      ],\n      \"reference\": {\n        \"numerator\": 6,\n        \"denominator\": 1\n      },\n      \"methods\": {\n        \"naive\": {\n          \"value_hex\": \"0x1.8000000000000p+2\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        },\n        \"fsum\": {\n          \"value_hex\": \"0x1.8000000000000p+2\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        }\n      }\n    },\n    {\n      \"case_id\": \"control\",\n      \"order_index\": 3,\n      \"input_hex\": [\n        \"0x1.0000000000000p+1\",\n        \"0x1.0000000000000p+0\",\n        \"0x1.8000000000000p+1\"\n      ],\n      \"reference\": {\n        \"numerator\": 6,\n        \"denominator\": 1\n      },\n      \"methods\": {\n        \"naive\": {\n          \"value_hex\": \"0x1.8000000000000p+2\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        },\n        \"fsum\": {\n          \"value_hex\": \"0x1.8000000000000p+2\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        }\n      }\n    },\n    {\n      \"case_id\": \"control\",\n      \"order_index\": 4,\n      \"input_hex\": [\n        \"0x1.0000000000000p+1\",\n        \"0x1.8000000000000p+1\",\n        \"0x1.0000000000000p+0\"\n      ],\n      \"reference\": {\n        \"numerator\": 6,\n        \"denominator\": 1\n      },\n      \"methods\": {\n        \"naive\": {\n          \"value_hex\": \"0x1.8000000000000p+2\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        },\n        \"fsum\": {\n          \"value_hex\": \"0x1.8000000000000p+2\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        }\n      }\n    },\n    {\n      \"case_id\": \"control\",\n      \"order_index\": 5,\n      \"input_hex\": [\n        \"0x1.8000000000000p+1\",\n        \"0x1.0000000000000p+0\",\n        \"0x1.0000000000000p+1\"\n      ],\n      \"reference\": {\n        \"numerator\": 6,\n        \"denominator\": 1\n      },\n      \"methods\": {\n        \"naive\": {\n          \"value_hex\": \"0x1.8000000000000p+2\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        },\n        \"fsum\": {\n          \"value_hex\": \"0x1.8000000000000p+2\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        }\n      }\n    },\n    {\n      \"case_id\": \"control\",\n      \"order_index\": 6,\n      \"input_hex\": [\n        \"0x1.8000000000000p+1\",\n        \"0x1.0000000000000p+1\",\n        \"0x1.0000000000000p+0\"\n      ],\n      \"reference\": {\n        \"numerator\": 6,\n        \"denominator\": 1\n      },\n      \"methods\": {\n        \"naive\": {\n          \"value_hex\": \"0x1.8000000000000p+2\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        },\n        \"fsum\": {\n          \"value_hex\": \"0x1.8000000000000p+2\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        }\n      }\n    },\n    {\n      \"case_id\": \"cancellation\",\n      \"order_index\": 1,\n      \"input_hex\": [\n        \"0x1.1c37937e08000p+53\",\n        \"0x1.0000000000000p+0\",\n        \"-0x1.1c37937e08000p+53\"\n      ],\n      \"reference\": {\n        \"numerator\": 1,\n        \"denominator\": 1\n      },\n      \"methods\": {\n        \"naive\": {\n          \"value_hex\": \"0x0.0p+0\",\n          \"absolute_error\": {\n            \"numerator\": 1,\n            \"denominator\": 1\n          }\n        },\n        \"fsum\": {\n          \"value_hex\": \"0x1.0000000000000p+0\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        }\n      }\n    },\n    {\n      \"case_id\": \"cancellation\",\n      \"order_index\": 2,\n      \"input_hex\": [\n        \"0x1.1c37937e08000p+53\",\n        \"-0x1.1c37937e08000p+53\",\n        \"0x1.0000000000000p+0\"\n      ],\n      \"reference\": {\n        \"numerator\": 1,\n        \"denominator\": 1\n      },\n      \"methods\": {\n        \"naive\": {\n          \"value_hex\": \"0x1.0000000000000p+0\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        },\n        \"fsum\": {\n          \"value_hex\": \"0x1.0000000000000p+0\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        }\n      }\n    },\n    {\n      \"case_id\": \"cancellation\",\n      \"order_index\": 3,\n      \"input_hex\": [\n        \"0x1.0000000000000p+0\",\n        \"0x1.1c37937e08000p+53\",\n        \"-0x1.1c37937e08000p+53\"\n      ],\n      \"reference\": {\n        \"numerator\": 1,\n        \"denominator\": 1\n      },\n      \"methods\": {\n        \"naive\": {\n          \"value_hex\": \"0x0.0p+0\",\n          \"absolute_error\": {\n            \"numerator\": 1,\n            \"denominator\": 1\n          }\n        },\n        \"fsum\": {\n          \"value_hex\": \"0x1.0000000000000p+0\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        }\n      }\n    },\n    {\n      \"case_id\": \"cancellation\",\n      \"order_index\": 4,\n      \"input_hex\": [\n        \"0x1.0000000000000p+0\",\n        \"-0x1.1c37937e08000p+53\",\n        \"0x1.1c37937e08000p+53\"\n      ],\n      \"reference\": {\n        \"numerator\": 1,\n        \"denominator\": 1\n      },\n      \"methods\": {\n        \"naive\": {\n          \"value_hex\": \"0x0.0p+0\",\n          \"absolute_error\": {\n            \"numerator\": 1,\n            \"denominator\": 1\n          }\n        },\n        \"fsum\": {\n          \"value_hex\": \"0x1.0000000000000p+0\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        }\n      }\n    },\n    {\n      \"case_id\": \"cancellation\",\n      \"order_index\": 5,\n      \"input_hex\": [\n        \"-0x1.1c37937e08000p+53\",\n        \"0x1.1c37937e08000p+53\",\n        \"0x1.0000000000000p+0\"\n      ],\n      \"reference\": {\n        \"numerator\": 1,\n        \"denominator\": 1\n      },\n      \"methods\": {\n        \"naive\": {\n          \"value_hex\": \"0x1.0000000000000p+0\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        },\n        \"fsum\": {\n          \"value_hex\": \"0x1.0000000000000p+0\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        }\n      }\n    },\n    {\n      \"case_id\": \"cancellation\",\n      \"order_index\": 6,\n      \"input_hex\": [\n        \"-0x1.1c37937e08000p+53\",\n        \"0x1.0000000000000p+0\",\n        \"0x1.1c37937e08000p+53\"\n      ],\n      \"reference\": {\n        \"numerator\": 1,\n        \"denominator\": 1\n      },\n      \"methods\": {\n        \"naive\": {\n          \"value_hex\": \"0x0.0p+0\",\n          \"absolute_error\": {\n            \"numerator\": 1,\n            \"denominator\": 1\n          }\n        },\n        \"fsum\": {\n          \"value_hex\": \"0x1.0000000000000p+0\",\n          \"absolute_error\": {\n            \"numerator\": 0,\n            \"denominator\": 1\n          }\n        }\n      }\n    }\n  ]\n}\n",
+    "stdout_sha256": "aa8adf9d8e7ccc8bf0fb4bca0dc2d63a842f3cc1771075a6ebe13dc8b7cba6ba",
+    "stdout_bytes": 7798,
+    "stderr_text": "",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes": 0,
+    "sealed_sha256_before": {
+      "BRIEF.md": "5cf84a604181ffb5f6d204769120cacae1217693113ef6bfe469e5246ba7571f",
+      "LITERATURE.md": "9c8700c789034ac7d7080c54dd8231fa4e82c94ab8f79ea67470a17f8b64684c",
+      "experiments/E001.md": "9e91342ae3034c3977da62f741567f6f54986978aaf65a10cdc149fef1e9e8be",
+      "questions/Q001.md": "daf3467b16a0ecbe522e9fba1f4d2fbe7b62b9f5d58dcc8f500941688710e2a9",
+      "tasks/T001/attempts/A001/artifacts/inputs.json": "97832832c0f79fc067328417a771f8a1286f4661a6f7c368b49422ca6099c3a1",
+      "tasks/T001/attempts/A001/artifacts/manifest.json": "aa18614dcf88992d7277fb633312a4825acd937382ae6dd908a6a9730b8b24b6",
+      "tasks/T001/attempts/A001/artifacts/results.json": "aa8adf9d8e7ccc8bf0fb4bca0dc2d63a842f3cc1771075a6ebe13dc8b7cba6ba",
+      "tasks/T001/attempts/A001/artifacts/run.log": "2e52a5e554d97bb27c821073f1833dd4c329e4bba3eae3bdbebf8e8d9a2a42f1",
+      "tasks/T001/attempts/A001/artifacts/run.py": "88dec0a8aaec614c0e05ea5853f09c7048d94541fb71c937ac2f001d338c47be",
+      "tasks/T001/attempts/A001/result.json": "440b180ce9d7dc29317ad0f745c48bb4566512986d114ca075640a4638f2b045",
+      "tasks/T001/attempts/A001/task.json": "80f8460f37edae38c62096b50ad44efd267872aa99f94c476a0d0da26862905b",
+      "tasks/T001/task.json": "80f8460f37edae38c62096b50ad44efd267872aa99f94c476a0d0da26862905b"
+    },
+    "sealed_sha256_after": {
+      "BRIEF.md": "5cf84a604181ffb5f6d204769120cacae1217693113ef6bfe469e5246ba7571f",
+      "LITERATURE.md": "9c8700c789034ac7d7080c54dd8231fa4e82c94ab8f79ea67470a17f8b64684c",
+      "experiments/E001.md": "9e91342ae3034c3977da62f741567f6f54986978aaf65a10cdc149fef1e9e8be",
+      "questions/Q001.md": "daf3467b16a0ecbe522e9fba1f4d2fbe7b62b9f5d58dcc8f500941688710e2a9",
+      "tasks/T001/attempts/A001/artifacts/inputs.json": "97832832c0f79fc067328417a771f8a1286f4661a6f7c368b49422ca6099c3a1",
+      "tasks/T001/attempts/A001/artifacts/manifest.json": "aa18614dcf88992d7277fb633312a4825acd937382ae6dd908a6a9730b8b24b6",
+      "tasks/T001/attempts/A001/artifacts/results.json": "aa8adf9d8e7ccc8bf0fb4bca0dc2d63a842f3cc1771075a6ebe13dc8b7cba6ba",
+      "tasks/T001/attempts/A001/artifacts/run.log": "2e52a5e554d97bb27c821073f1833dd4c329e4bba3eae3bdbebf8e8d9a2a42f1",
+      "tasks/T001/attempts/A001/artifacts/run.py": "88dec0a8aaec614c0e05ea5853f09c7048d94541fb71c937ac2f001d338c47be",
+      "tasks/T001/attempts/A001/result.json": "440b180ce9d7dc29317ad0f745c48bb4566512986d114ca075640a4638f2b045",
+      "tasks/T001/attempts/A001/task.json": "80f8460f37edae38c62096b50ad44efd267872aa99f94c476a0d0da26862905b",
+      "tasks/T001/task.json": "80f8460f37edae38c62096b50ad44efd267872aa99f94c476a0d0da26862905b"
+    },
+    "sealed_unchanged": true,
+    "stdout_matches_saved_bytes": true
+  },
+  "independent_numerical_comparisons": [
+    {
+      "case_id": "control",
+      "order_index": 1,
+      "method": "naive",
+      "actual_value": "6",
+      "expected_value": "6",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "control",
+      "order_index": 1,
+      "method": "fsum",
+      "actual_value": "6",
+      "expected_value": "6",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "control",
+      "order_index": 2,
+      "method": "naive",
+      "actual_value": "6",
+      "expected_value": "6",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "control",
+      "order_index": 2,
+      "method": "fsum",
+      "actual_value": "6",
+      "expected_value": "6",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "control",
+      "order_index": 3,
+      "method": "naive",
+      "actual_value": "6",
+      "expected_value": "6",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "control",
+      "order_index": 3,
+      "method": "fsum",
+      "actual_value": "6",
+      "expected_value": "6",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "control",
+      "order_index": 4,
+      "method": "naive",
+      "actual_value": "6",
+      "expected_value": "6",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "control",
+      "order_index": 4,
+      "method": "fsum",
+      "actual_value": "6",
+      "expected_value": "6",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "control",
+      "order_index": 5,
+      "method": "naive",
+      "actual_value": "6",
+      "expected_value": "6",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "control",
+      "order_index": 5,
+      "method": "fsum",
+      "actual_value": "6",
+      "expected_value": "6",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "control",
+      "order_index": 6,
+      "method": "naive",
+      "actual_value": "6",
+      "expected_value": "6",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "control",
+      "order_index": 6,
+      "method": "fsum",
+      "actual_value": "6",
+      "expected_value": "6",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "cancellation",
+      "order_index": 1,
+      "method": "naive",
+      "actual_value": "0",
+      "expected_value": "0",
+      "actual_absolute_error": "1",
+      "expected_absolute_error": "1",
+      "passed": true
+    },
+    {
+      "case_id": "cancellation",
+      "order_index": 1,
+      "method": "fsum",
+      "actual_value": "1",
+      "expected_value": "1",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "cancellation",
+      "order_index": 2,
+      "method": "naive",
+      "actual_value": "1",
+      "expected_value": "1",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "cancellation",
+      "order_index": 2,
+      "method": "fsum",
+      "actual_value": "1",
+      "expected_value": "1",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "cancellation",
+      "order_index": 3,
+      "method": "naive",
+      "actual_value": "0",
+      "expected_value": "0",
+      "actual_absolute_error": "1",
+      "expected_absolute_error": "1",
+      "passed": true
+    },
+    {
+      "case_id": "cancellation",
+      "order_index": 3,
+      "method": "fsum",
+      "actual_value": "1",
+      "expected_value": "1",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "cancellation",
+      "order_index": 4,
+      "method": "naive",
+      "actual_value": "0",
+      "expected_value": "0",
+      "actual_absolute_error": "1",
+      "expected_absolute_error": "1",
+      "passed": true
+    },
+    {
+      "case_id": "cancellation",
+      "order_index": 4,
+      "method": "fsum",
+      "actual_value": "1",
+      "expected_value": "1",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "cancellation",
+      "order_index": 5,
+      "method": "naive",
+      "actual_value": "1",
+      "expected_value": "1",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "cancellation",
+      "order_index": 5,
+      "method": "fsum",
+      "actual_value": "1",
+      "expected_value": "1",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    },
+    {
+      "case_id": "cancellation",
+      "order_index": 6,
+      "method": "naive",
+      "actual_value": "0",
+      "expected_value": "0",
+      "actual_absolute_error": "1",
+      "expected_absolute_error": "1",
+      "passed": true
+    },
+    {
+      "case_id": "cancellation",
+      "order_index": 6,
+      "method": "fsum",
+      "actual_value": "1",
+      "expected_value": "1",
+      "actual_absolute_error": "0",
+      "expected_absolute_error": "0",
+      "passed": true
+    }
+  ],
+  "numerical_outputs_checked": 24,
+  "ties": 8,
+  "smaller_fsum_error": 4,
+  "oracle_limit": "Exact hexadecimal rational decoding and predeclared binary64 reasoning for the two approved three-value cases only.",
+  "source_inspection": [
+    {
+      "url": "https://docs.python.org/3.14/library/math.html#math.fsum",
+      "date": "2026-10-23",
+      "page_version": "Python 3.14.9",
+      "depth": "Complete math.fsum entry, including the rounding caveat.",
+      "finding": "The method tracks partial sums. Accuracy depends on arithmetic and rounding. Some platforms can round an intermediate sum twice."
+    },
+    {
+      "url": "https://docs.python.org/3.14/library/fractions.html#fractions.Fraction.from_float",
+      "date": "2026-10-23",
+      "page_version": "Python 3.14.9",
+      "depth": "Constructor semantics, float examples, and complete from_float entry.",
+      "finding": "The Fraction value preserves the binary float value. A decimal rational can differ from that value."
+    }
+  ],
+  "limitations": [
+    "This is an AI review simulation in the same harness and machine.",
+    "It does not provide human scientific endorsement.",
+    "The first execution is supported by its saved manifest and log. The reviewer directly observed only its own replay.",
+    "The replay does not test another platform, interpreter, harness, remote job, or interrupted recovery.",
+    "Assistant token and cost measurements remain unknown."
+  ]
+}

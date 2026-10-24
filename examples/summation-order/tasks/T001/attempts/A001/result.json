@@ -1,0 +1,41 @@
+{
+  "task_id": "T001",
+  "task_revision": 1,
+  "attempt_id": "A001",
+  "task_path": "tasks/T001/attempts/A001/task.json",
+  "task_sha256": "80f8460f37edae38c62096b50ad44efd267872aa99f94c476a0d0da26862905b",
+  "execution_status": "completed",
+  "artifacts": [
+    {
+      "path": "tasks/T001/attempts/A001/artifacts/run.py",
+      "sha256": "88dec0a8aaec614c0e05ea5853f09c7048d94541fb71c937ac2f001d338c47be"
+    },
+    {
+      "path": "tasks/T001/attempts/A001/artifacts/inputs.json",
+      "sha256": "97832832c0f79fc067328417a771f8a1286f4661a6f7c368b49422ca6099c3a1"
+    },
+    {
+      "path": "tasks/T001/attempts/A001/artifacts/results.json",
+      "sha256": "aa8adf9d8e7ccc8bf0fb4bca0dc2d63a842f3cc1771075a6ebe13dc8b7cba6ba"
+    },
+    {
+      "path": "tasks/T001/attempts/A001/artifacts/run.log",
+      "sha256": "2e52a5e554d97bb27c821073f1833dd4c329e4bba3eae3bdbebf8e8d9a2a42f1"
+    },
+    {
+      "path": "tasks/T001/attempts/A001/artifacts/manifest.json",
+      "sha256": "aa18614dcf88992d7277fb633312a4825acd937382ae6dd908a6a9730b8b24b6"
+    }
+  ],
+  "unresolved": [
+    "Independent review and its acceptance decision are pending.",
+    "Assistant token and cost measurements are unavailable."
+  ],
+  "resource_usage": {
+    "elapsed_wall_seconds": 0.03841960499994457,
+    "tokens": null,
+    "cost": null,
+    "measurement": "Elapsed wall time measures the single subprocess invocation. Assistant token and cost measurements are unavailable."
+  },
+  "next_action": "Request independent AI review and one clean replay."
+}

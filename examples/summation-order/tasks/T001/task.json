@@ -1,0 +1,47 @@
+{
+  "task_id": "T001",
+  "revision": 1,
+  "goal": "Run protocol 1 for both synthetic datasets and save all 24 method outputs with exact binary-input errors and execution evidence.",
+  "owner": "p1_execution",
+  "inputs": [
+    {
+      "path": "BRIEF.md",
+      "sha256": "5cf84a604181ffb5f6d204769120cacae1217693113ef6bfe469e5246ba7571f"
+    },
+    {
+      "path": "LITERATURE.md",
+      "sha256": "9c8700c789034ac7d7080c54dd8231fa4e82c94ab8f79ea67470a17f8b64684c"
+    },
+    {
+      "path": "questions/Q001.md",
+      "sha256": "daf3467b16a0ecbe522e9fba1f4d2fbe7b62b9f5d58dcc8f500941688710e2a9"
+    },
+    {
+      "path": "experiments/E001.md",
+      "sha256": "9e91342ae3034c3977da62f741567f6f54986978aaf65a10cdc149fef1e9e8be"
+    },
+    {
+      "path": "tasks/T001/attempts/A001/artifacts/inputs.json",
+      "sha256": "97832832c0f79fc067328417a771f8a1286f4661a6f7c368b49422ca6099c3a1"
+    },
+    {
+      "path": "tasks/T001/attempts/A001/artifacts/run.py",
+      "sha256": "88dec0a8aaec614c0e05ea5853f09c7048d94541fb71c937ac2f001d338c47be"
+    }
+  ],
+  "dependencies": [],
+  "write_paths": [
+    "tasks/T001/attempts/A001/"
+  ],
+  "budget_ref": "BRIEF.md",
+  "acceptance": [
+    "Preserve all six fixed input files and both task contract files unchanged.",
+    "Run the frozen script once with the frozen inputs under the 30-second timeout and save actual stdout, stderr, exit status, timestamps, environment, and input hashes.",
+    "Include all 12 ordering rows and both method outputs per row, with exact rational reference/error values and float identities.",
+    "Retain ties, failures, limits, and evidence against the planned hypothesis. Do not claim method superiority outside the fixed cases.",
+    "The separate reviewer p1_independent is the sole final acceptance decision owner. It inspects actual artifacts and runs one independent clean replay.",
+    "Completion alone does not establish acceptance. The reviewer saves its decision in reviews/R001.md and binds the exact result hash.",
+    "The saved records must pass the existing record checker and support a report that links each observation to output rows."
+  ],
+  "stop_condition": "Stop after the single measured run or any failure or timeout. Preserve partial evidence and request the coordinator decision before a repair. Stop at the approved 60-minute round limit."
+}
