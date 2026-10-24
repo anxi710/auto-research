@@ -3,6 +3,7 @@
 Update this file after each work session.
 Use paths relative to this research directory.
 Keep old decisions in their linked records.
+Index only the records that the current task needs.
 Follow [human review](../references/human-review.md) when restoring permission for the next action.
 Replace template links with project links before saving this record.
 
@@ -11,7 +12,7 @@ Replace template links with project links before saving this record.
 Project: Unknown.
 Research directory: Unknown.
 Requested work: Unknown.
-Current stage: S0.
+Current stage: Not selected.
 Status: Not started.
 Last update: Unknown.
 Workflow package path and version: Not recorded.
@@ -27,7 +28,7 @@ A delivered standalone output can be complete without approval for unrelated wor
 
 | Purpose | Path | Latest relevant result |
 | --- | --- | --- |
-| Project scope | `BRIEF.md` | Not established. |
+| Current task inputs | Not linked. | Unknown. |
 
 If the project uses collaboration records, link each current contract, submitted result, and acceptance review in this table.
 Keep the acceptance fields in their review record.

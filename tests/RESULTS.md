@@ -430,6 +430,45 @@ After user approval, the adopted package passed all eight package checks on Pyth
 The adoption checks also matched every runtime instruction and behavior case to its reviewed candidate digest.
 They preserved unrelated local work and earlier evidence.
 
+## Stage module adoption
+
+Test date: 2026-10-24.
+Baseline package: `0.1.7`.
+Adopted repository package: `0.1.8`.
+The user authorized the next stage-interface round after reviewing the remaining work.
+The [W016 record](../changes/W016.md) states its scope and the later human adoption decision.
+The [evidence](evidence/W016.json) preserves inputs, actor outputs, independent assessments, source hashes, and the candidate patch.
+
+The eight fixed main cases passed on both the baseline and candidate.
+Each version used one fresh actor context for its eight separate case directories.
+This comparison does not show a success-rate improvement.
+Independent static review found all eight module interfaces complete and the prior completion conditions preserved.
+The candidate removes implicit requirements for earlier records and retains imported materials with their missing history.
+
+Both first H01 runs passed their behavior criteria but used a flattened input path and lower limits than the frozen plan.
+Both versions received those delivery errors.
+The original outcomes remain preserved as limited evidence.
+A recorded correction restores the original paths and limits for a fresh paired H01 replay.
+The corrected result remains separate from those first runs.
+
+Both corrected H01 runs passed all five original criteria under independent review.
+Each version passed eight main cases and one correctly delivered independent case.
+The corrected paths, source bytes, and artifact digests matched.
+Both actual runs stayed within the original limits.
+The candidate RUN records actual use but omits limit fields, which remain in the correction record and actor instruction.
+
+The baseline and candidate each passed eight package checks on Python 3.14.8.
+Final package checks cover the completed documentation and evidence links.
+The scripts, their tests, task and result JSON, human review procedure, and collaboration procedure remain unchanged.
+The full offline suite was not repeated during this documentation round.
+
+All research materials and researcher decisions in these cases are synthetic fixtures.
+No native skill-loading test, full paper cycle, long-context trial, hosted CI run, or cross-harness recovery ran.
+The candidate does not implement execution gates or new agent assignment modes.
+
+The user approved adoption after reviewing the candidate summary and evidence.
+The adoption preserved unrelated local work and earlier evidence.
+
 ## Limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.

@@ -4,6 +4,8 @@ Use this file for review, meeting preparation, a talk, or a response to reviewer
 Keep plans separate from events that occurred.
 Record AI review as simulation.
 Use only the sections that the requested task needs.
+By default, propose changes without editing the reviewed files.
+Present proposed changes for human review before dependent work uses them.
 For standalone work, put needed human decision fields in the requested output or response.
 Follow [human review](../references/human-review.md) for the decision and waiver records below.
 Replace template links with project links before saving this record.
@@ -14,7 +16,8 @@ ID and date: Unknown.
 Type: Unknown.
 Actual reviewer or AI simulation: Unknown.
 Audience and time available: Unknown.
-Files under discussion: Unknown.
+Files and versions under review: Unknown.
+Requested review scope: Unknown.
 Decision needed: Unknown.
 Relevant venue rules: Not assessed.
 

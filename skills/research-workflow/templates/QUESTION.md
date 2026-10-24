@@ -3,6 +3,15 @@
 Define the problem before selecting a method.
 Link the observation that motivates it.
 Keep a possible explanation separate from an established finding.
+If an idea already exists, preserve its wording and source before revising it.
+Keep the revision separate from the original idea.
+
+## Existing idea
+
+Original idea text or preserved copy: Not recorded.
+Source and version or date: Unknown.
+Requested refinement: Unknown.
+Changes from the original idea and reasons: None recorded.
 
 ## Question and value
 

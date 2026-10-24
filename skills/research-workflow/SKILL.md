@@ -2,7 +2,7 @@
 name: research-workflow
 description: Run research through literature study, questions, experiments, analysis, writing, and review. Resume from file records across AI assistants. Capture workflow feedback and test scoped improvements when requested.
 metadata:
-  version: "0.1.7"
+  version: "0.1.8"
 ---
 
 # Research workflow
@@ -22,7 +22,7 @@ Apply it to every intermediate output, including delegated work, unless the rese
 3. For a new project, use `research/` unless the user selects another directory.
 4. Read existing `STATE.md`, `BRIEF.md`, and evidence for the next action.
 5. Make sure that recorded results and active jobs still exist before continuing.
-6. Select the relevant stage in [the stage guide](references/workflow.md).
+6. Match the requested output and available materials to a module in [the stage guide](references/workflow.md#enter-a-module).
 
 Restore pending human decisions and active waiver limits before continuing dependent work.
 Do not infer human approval from a completed task or an AI review.
@@ -39,7 +39,9 @@ Record the package path and version when a project first uses this skill.
 If an older package has no version, record `unversioned` rather than inventing one.
 If the package changes, preserve existing research records and note the new version at the next session boundary.
 
-If the request lacks a topic, ask for the topic or a seed paper.
+Use supplied ideas, questions, plans, results, and drafts as entry materials.
+Ask only for missing information that the current task requires.
+If a new scope or literature task lacks a topic, ask for a topic or seed paper.
 A seed paper is a starting source for a literature search.
 Continue work that does not depend on the answer.
 Do not invent a topic, a resource budget, or a research result.
@@ -48,14 +50,18 @@ Do not invent a topic, a resource budget, or a research result.
 
 | Stage | Use it when | Main record |
 | --- | --- | --- |
-| S0: Scope | The goal or limits are unclear. | `BRIEF.md` |
-| S1: Study | The task needs sources or a better understanding. | `LITERATURE.md`, existing note links or task-specific paper records. |
-| S2: Question | The task needs a research question or explanation. | `questions/<id>.md` |
-| S3: Design | A question needs a test. | `experiments/<id>.md` |
-| S4: Run | A defined test needs implementation or execution. | `experiments/<id>.md`, linked code and logs |
-| S5: Analyze | Results need interpretation. | `experiments/<id>.md`, `CLAIMS.md` |
-| S6: Write | Evidence needs a paper or report. | `MANUSCRIPT.md`, linked draft and figures |
-| S7: Review | Work needs criticism, discussion, or a response. | `reviews/<id>.md` |
+| [S0: Scope](references/workflow.md#s0-define-the-scope) | The goal or limits are unclear. | `BRIEF.md` |
+| [S1: Study](references/workflow.md#s1-find-and-understand-the-literature) | The task needs sources or a better understanding. | `LITERATURE.md`, existing notes, or the requested reading output. |
+| [S2: Question](references/workflow.md#s2-choose-a-question-and-hypothesis) | An existing idea or observation needs a question or explanation. | `questions/<id>.md` |
+| [S3: Design](references/workflow.md#s3-design-the-test) | A supplied question or existing plan needs a test design. | `experiments/<id>.md` |
+| [S4: Run](references/workflow.md#s4-implement-and-run) | An approved test needs execution, or an existing job needs recovery. | `experiments/<id>.md`, linked code and logs |
+| [S5: Analyze](references/workflow.md#s5-analyze-and-decide) | New or imported results need interpretation. | `experiments/<id>.md`, `CLAIMS.md` |
+| [S6: Write](references/workflow.md#s6-write-the-paper-or-report) | Evidence or an existing draft needs writing or editing. | `MANUSCRIPT.md`, linked draft and figures |
+| [S7: Review](references/workflow.md#s7-review-discuss-and-respond) | An existing output needs criticism, discussion, or a response. | `reviews/<id>.md` |
+
+The record paths are project defaults, not prerequisites for entering a module.
+Use equivalent existing records or the requested standalone output.
+Do not reconstruct earlier stages merely because their files are absent.
 
 Read sources again when a result changes the question.
 Revise the design when the comparison cannot test the claim.

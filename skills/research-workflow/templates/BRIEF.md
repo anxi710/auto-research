@@ -17,6 +17,9 @@ Researcher background relevant to this task: Unknown.
 
 ## Starting evidence
 
+Existing ideas and source versions: None recorded.
+Existing plans and paths: None recorded.
+Existing drafts and versions: None recorded.
 Seed papers and reading status: None recorded.
 Existing code and its status: None recorded.
 Existing data and access conditions: None recorded.

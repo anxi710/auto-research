@@ -3,16 +3,19 @@
 Build the draft from supported claims.
 Keep missing evidence visible.
 Use the target venue's actual requirements when they apply.
+For an existing manuscript, edit only the requested scope.
+Do not require earlier stage records for a bounded edit.
 
 ## Purpose and files
 
 Audience and target venue: Unknown.
 Document type and requested completion level: Unknown.
 Author contributions and researcher decisions: Unknown.
-Draft path: None.
+Current draft path and version: Not recorded.
+Requested edits and excluded changes: Unknown.
 Figure source directory: None.
 Reference library path: None.
-Linked claims record: Unknown.
+Linked claims record, if available: None linked.
 
 ## Argument
 
@@ -24,7 +27,7 @@ Method from input to output: Unknown.
 Supporting results: None recorded.
 Limits and failure cases: Unknown.
 
-| Section | Claim IDs | Evidence locations | Draft path or section | Open issue |
+| Section | Claim or claim ID | Evidence locations | Draft path or section | Open issue |
 | --- | --- | --- | --- | --- |
 
 ## Figures and references

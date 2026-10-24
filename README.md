@@ -1,6 +1,6 @@
 # A portable research workflow
 
-[![Version 0.1.7](https://img.shields.io/badge/version-0.1.7-blue)](skills/research-workflow/SKILL.md)
+[![Version 0.1.8](https://img.shields.io/badge/version-0.1.8-blue)](skills/research-workflow/SKILL.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Python 3.11+ for bulk tools](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#requirements)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
@@ -60,13 +60,18 @@ The [human review procedure](skills/research-workflow/references/human-review.md
 AI assessment and completed execution do not replace human approval.
 An approved next action proceeds without repeated permission requests.
 
-The [stage guide](skills/research-workflow/references/workflow.md) defines the research loop:
+The [stage guide](skills/research-workflow/references/workflow.md#enter-a-module) defines modules that can be used separately.
+Each module states its inputs, outputs, human decisions, completion evidence, and next choices.
+One possible sequence is:
 
 ```text
 Scope -> Study -> Question -> Design -> Run -> Analyze -> Write
 ```
 
 Review can run at any stage.
+Start with an existing idea in Question or Design, imported results in Analyze, or a draft in Write or Review.
+Use the supplied materials without recreating unrelated earlier stages.
+Missing original plans remain unknown when existing results enter the workflow.
 New evidence can return the work to an earlier stage.
 Failed runs and negative results stay in the project history.
 

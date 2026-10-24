@@ -1,6 +1,6 @@
 # 可迁移的科研工作流
 
-[![版本 0.1.7](https://img.shields.io/badge/version-0.1.7-blue)](skills/research-workflow/SKILL.md)
+[![版本 0.1.8](https://img.shields.io/badge/version-0.1.8-blue)](skills/research-workflow/SKILL.md)
 [![许可证：MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![批量工具所需 Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#环境要求)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
@@ -60,13 +60,18 @@ Python 和工具徽章仅适用于可选的批量文献分析流程。
 AI 审查通过或执行完成均不等于人工批准。
 对已经批准的版本和下一步操作，不重复请求相同授权。
 
-[阶段指南](skills/research-workflow/references/workflow.md)定义了研究循环：
+[阶段指南](skills/research-workflow/references/workflow.md#enter-a-module)定义了可以独立使用的模块。
+每个模块说明输入、输出、人工决定、完成依据和下一步选项。
+一种可能的顺序是：
 
 ```text
 确定范围 -> 学习 -> 提出问题 -> 设计 -> 运行 -> 分析 -> 写作
 ```
 
 评审可以在任何阶段进行。
+已有 idea 可以直接进入提问或设计，已有结果可以进入分析，已有稿件可以进入写作或评审。
+使用已有材料，无需重建无关的前序阶段。
+导入已有结果时，缺失的原始计划仍保留为未知。
 新证据可以让研究回到先前的阶段。
 失败的运行和负面结果会保留在项目历史中。
 
