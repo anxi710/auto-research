@@ -203,6 +203,7 @@ class Linter:
         found = 0
         fence = None
         capture = None
+        comment = False
         blocks = []
         for line in content.splitlines():
             if fence:
@@ -214,7 +215,41 @@ class Linter:
                     capture.append(line)
                 continue
             opening = re.match(r"^ {0,3}(`{3,}|~{3,})(.*)$", line)
+            if comment or not opening:
+                visible = []
+                offset = 0
+                while offset < len(line):
+                    if comment:
+                        end = line.find("-->", offset)
+                        if end < 0:
+                            break
+                        offset = end + 3
+                        comment = False
+                    else:
+                        token = re.search(r"\\.|`+|<!--", line[offset:])
+                        if token is None:
+                            visible.append(line[offset:])
+                            break
+                        start = offset + token.start()
+                        visible.append(line[offset:start])
+                        marker = token.group()
+                        offset = start + len(marker)
+                        if marker == "<!--":
+                            comment = True
+                        elif marker.startswith("`"):
+                            # Only a matching run closes an inline code span.
+                            closing = re.search(r"(?<!`)" + re.escape(marker) + r"(?!`)", line[offset:])
+                            if closing is not None:
+                                offset += closing.end()
+                            visible.append(line[start:offset])
+                        else:
+                            # Escaped characters are literal; paired backslashes
+                            # leave a later comment marker unescaped.
+                            visible.append(marker)
+                line = "".join(visible)
+                opening = re.match(r"^ {0,3}(`{3,}|~{3,})(.*)$", line)
             if opening:
+                # Fenced content, including JSON strings, keeps literal comment markers.
                 fence = opening.group(1)
                 if section and opening.group(2).strip().lower() == "json":
                     capture = []

@@ -134,6 +134,8 @@ Use the optional task acceptance block in [REVIEW.md](../templates/REVIEW.md).
 Keep ordinary S7 discussions in that template's existing prose sections.
 The acceptance block is the authority for technical task acceptance.
 Record the human decision separately under the [human review procedure](human-review.md#record-the-human-decision).
+HTML comments do not supply active acceptance content.
+Comment markers inside fenced code remain literal data.
 
 1. Open the current contract, fixed contract copy, result, and actual artifacts.
 2. Make sure that their IDs, revisions, and SHA256 digests agree.
