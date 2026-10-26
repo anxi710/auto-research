@@ -1,0 +1,34 @@
+{
+  "task_id": "T001",
+  "task_revision": 1,
+  "attempt_id": "A001",
+  "task_path": "tasks/T001/attempts/A001/task.json",
+  "task_sha256": "d8c3b8f3309e16a30257edce337d6b58397ad122c37bccce233f539079f4956b",
+  "execution_status": "completed",
+  "artifacts": [
+    {
+      "path": "tasks/T001/attempts/A001/artifacts/draft.md",
+      "sha256": "73565f53227681fac88d79fdf4be381d86f49e06bdfaee92986780874ec17ce8"
+    },
+    {
+      "path": "tasks/T001/attempts/A001/artifacts/metrics.json",
+      "sha256": "46f590091043e904a5dcf6e185ba61016fcea3ff89101ef6d2deaeb9331442d1"
+    },
+    {
+      "path": "tasks/T001/attempts/A001/artifacts/evidence-ledger.json",
+      "sha256": "5f72d26f69d8bc4b52b1178560b21fd3fedae53b6ca696c074ac7be04b508993",
+      "kind": "claim_evidence_ledger"
+    }
+  ],
+  "unresolved": [
+    "The fictional literature content is unavailable.",
+    "Independent toolkit review and human review remain pending."
+  ],
+  "resource_usage": {
+    "elapsed_wall_seconds": null,
+    "tokens": null,
+    "cost": null,
+    "measurement": "Authoring usage was not measured; no model or scientific experiment ran."
+  },
+  "next_action": "Present the fixture and its limited same-context assessment for independent review."
+}

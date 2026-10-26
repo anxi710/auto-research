@@ -128,6 +128,11 @@ Use a new attempt for corrections instead of editing the sealed files.
 These rules require cooperative writers and the harness's available controls.
 They do not provide file locks or transactions across several files.
 
+Use the optional [claim-evidence ledger](evidence-ledger.md) to bind selected claims to fixed evidence.
+Declare a required ledger with the task's `evidence_ledger` path.
+List a submitted ledger as a result artifact with `kind: "claim_evidence_ledger"`.
+Keep its support assessments in the existing review.
+
 ## Review the exact result
 
 Use the optional task acceptance block in [REVIEW.md](../templates/REVIEW.md).
@@ -224,6 +229,9 @@ Supply later reviews explicitly, including decisions that replace earlier accept
 The command follows record references but does not search the project for other reviews.
 Ordinary review files without a task acceptance section remain outside the task schema.
 Unselected old records need no migration.
+The checker automatically inspects selected result artifacts tagged as claim-evidence ledgers.
+An explicit contract requirement cannot skip a missing or untyped ledger.
+See the [ledger format and limits](evidence-ledger.md) for claim locations and review scope.
 
 All supplied paths use the selected research directory as their root.
 Use plain file paths in `budget_ref` and JSON path fields, not Markdown links or section references.

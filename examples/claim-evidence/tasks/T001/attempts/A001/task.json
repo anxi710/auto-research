@@ -1,0 +1,27 @@
+{
+  "task_id": "T001",
+  "revision": 1,
+  "goal": "Submit an offline synthetic claim-evidence fixture that preserves limited and unavailable support.",
+  "owner": "offline_example",
+  "inputs": [
+    {
+      "path": "BRIEF.md",
+      "sha256": "e2e5f6659f111933aacbcd732236b0c9f23c904eb3ce3031b3decd1cafd97e87"
+    }
+  ],
+  "dependencies": [],
+  "write_paths": [
+    "tasks/T001/attempts/A001/"
+  ],
+  "budget_ref": "BRIEF.md",
+  "evidence_ledger": "tasks/T001/attempts/A001/artifacts/evidence-ledger.json",
+  "acceptance": [
+    "Preserve the fixed contract and every submitted artifact with its exact SHA256 digest.",
+    "Bind each exact manuscript quote to normalized values and their full declared context.",
+    "Retain narrow, partial, contradicted, and inaccessible claim scopes in the review.",
+    "Record absent fictional literature content without claiming full-text access or fabrication.",
+    "The author offline_example owns the limited same-context fixture assessment; independent toolkit review remains separate.",
+    "Keep human review pending with no approved dependent action or waiver."
+  ],
+  "stop_condition": "Stop after preparing the fixture and local checks for independent review. Do not conduct experiments or advance dependent research."
+}
