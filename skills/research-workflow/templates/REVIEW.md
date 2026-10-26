@@ -112,3 +112,13 @@ Use `supersedes` with `path` and `sha256` only when this decision replaces a rev
 The procedure defines valid decisions and the effect of later changes.
 This technical task decision remains separate from human permission above.
 The record checker does not establish human approval.
+
+For a result with a [claim-evidence ledger](../references/evidence-ledger.md), add `claim_evidence` inside this acceptance object.
+Bind its `ledger` path and SHA256 to the exact artifact listed by the result.
+Record `assessments` with claim ID, verdict, scope, reason, gaps, and follow-up actions.
+List all other ledger claims in `unreviewed_claim_ids`.
+
+Use `yes`, `partial`, `no`, or `unable_to_assess` for each assessment verdict.
+An accepted review of a ledger result requires this explicit review scope.
+Negative or partial scientific support can accompany accurate technical completion.
+Do not add an independent approval status to the ledger.

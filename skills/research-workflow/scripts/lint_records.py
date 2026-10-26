@@ -8,7 +8,12 @@ import math
 from pathlib import Path, PureWindowsPath
 import re
 import stat
+import sys
 import unicodedata
+
+# Keep direct CLI use read-only even when scripts live inside the research root.
+sys.dont_write_bytecode = True
+from evidence_ledger import LedgerValidator
 
 
 def text(value):
@@ -90,6 +95,7 @@ class Linter:
         self.physical = {}
         self.hashes = {}
         self.contents = {}
+        self.ledger_validator = LedgerValidator(self)
 
     def issue(self, code, path, message):
         self.diagnostics.add((path, code, message))
@@ -190,6 +196,15 @@ class Linter:
                       "result_sha256": sha256, "review_path": text, "review_sha256": sha256}
             for index, entry in enumerate(value["dependencies"]):
                 valid = self.object_fields(entry, fields, path, f"dependencies[{index}]") and valid
+        if kind == "task" and "evidence_ledger" in value and not text(value["evidence_ledger"]):
+            self.issue("SCHEMA", path, "task.evidence_ledger must be a research-relative path.")
+            valid = False
+        if kind == "result" and isinstance(value.get("artifacts"), list):
+            ledgers = [entry for entry in value["artifacts"] if isinstance(entry, dict)
+                       and entry.get("kind") == "claim_evidence_ledger"]
+            if len(ledgers) > 1:
+                self.issue("SCHEMA", path, "A result may reference at most one claim_evidence_ledger artifact.")
+                valid = False
         if kind == "review" and isinstance(value.get("supersedes"), dict):
             valid = self.object_fields(value["supersedes"], {"path": text, "sha256": sha256},
                                        path, "supersedes") and valid
@@ -203,6 +218,7 @@ class Linter:
         found = 0
         fence = None
         capture = None
+        comment = False
         blocks = []
         for line in content.splitlines():
             if fence:
@@ -214,7 +230,41 @@ class Linter:
                     capture.append(line)
                 continue
             opening = re.match(r"^ {0,3}(`{3,}|~{3,})(.*)$", line)
+            if comment or not opening:
+                visible = []
+                offset = 0
+                while offset < len(line):
+                    if comment:
+                        end = line.find("-->", offset)
+                        if end < 0:
+                            break
+                        offset = end + 3
+                        comment = False
+                    else:
+                        token = re.search(r"\\.|`+|<!--", line[offset:])
+                        if token is None:
+                            visible.append(line[offset:])
+                            break
+                        start = offset + token.start()
+                        visible.append(line[offset:start])
+                        marker = token.group()
+                        offset = start + len(marker)
+                        if marker == "<!--":
+                            comment = True
+                        elif marker.startswith("`"):
+                            # Only a matching run closes an inline code span.
+                            closing = re.search(r"(?<!`)" + re.escape(marker) + r"(?!`)", line[offset:])
+                            if closing is not None:
+                                offset += closing.end()
+                            visible.append(line[start:offset])
+                        else:
+                            # Escaped characters are literal; paired backslashes
+                            # leave a later comment marker unescaped.
+                            visible.append(marker)
+                line = "".join(visible)
+                opening = re.match(r"^ {0,3}(`{3,}|~{3,})(.*)$", line)
             if opening:
+                # Fenced content, including JSON strings, keeps literal comment markers.
                 fence = opening.group(1)
                 if section and opening.group(2).strip().lower() == "json":
                     capture = []
@@ -260,6 +310,8 @@ class Linter:
             refs = self.refs[kind, path] = {}
             if kind == "task":
                 self.reference(value["budget_ref"], path)
+                if "evidence_ledger" in value:
+                    self.path(value["evidence_ledger"], path, required=False)
                 for entry in value["inputs"]:
                     self.reference(entry["path"], path, entry["sha256"])
                 for target in value["write_paths"]:
@@ -272,8 +324,11 @@ class Linter:
                         "review": self.reference(dep["review_path"], path, dep["review_sha256"], kind="review")})
             elif kind == "result":
                 refs["task"] = self.reference(value["task_path"], path, value["task_sha256"], kind="task")
+                refs["ledger_entries"] = []
                 for artifact in value["artifacts"]:
-                    self.reference(artifact["path"], path, artifact["sha256"])
+                    target = self.reference(artifact["path"], path, artifact["sha256"])
+                    if artifact.get("kind") == "claim_evidence_ledger":
+                        refs["ledger_entries"].append(target)
             else:
                 refs["result"] = self.reference(value["result_path"], path, value["result_sha256"], kind="result")
                 refs["supersedes"] = None
@@ -293,6 +348,22 @@ class Linter:
                     self.issue("DUPLICATE_ID", path, f"Conflicting {kind} identity in: {', '.join(sorted(paths))}.")
         return groups
 
+    def result_ledger(self, path, result, task, refs):
+        entries = refs["ledger_entries"]
+        ledger_path = entries[0] if entries else None
+        required = task.get("evidence_ledger") if task is not None else None
+        required_now = required is not None and result["execution_status"] == "completed"
+        refs["ledger_expected"] = bool(entries) or required_now
+        if required_now:
+            required_path = self.path(required, path)
+            if len(entries) != 1 or ledger_path != required_path:
+                self.issue("BINDING", path, "Completed result must include its required evidence ledger artifact with kind claim_evidence_ledger.")
+            if not entries:
+                ledger_path = required_path
+        refs["ledger_path"] = ledger_path
+        refs["ledger"] = (self.ledger_validator.validate(ledger_path, path, result)
+                          if ledger_path is not None else None)
+
     def check(self):
         tasks, results, reviews = (self.records[kind] for kind in ("task", "result", "review"))
         current = self.identities("task", ["task_id"], self.current)
@@ -307,6 +378,7 @@ class Linter:
             if snapshot is not None:
                 edges[path].add(snapshot)
             task = tasks.get(snapshot)
+            self.result_ledger(path, result, task, refs)
             if task is not None and (result["task_id"], result["task_revision"]) != (task["task_id"], task["revision"]):
                 self.issue("BINDING", path, "Result identity does not match its fixed contract.")
             matches = current.get((result["task_id"],), [])
@@ -339,6 +411,16 @@ class Linter:
                     self.issue("BINDING", path, "Review identity does not match its result.")
                 if review["decision"] == "accepted" and result["execution_status"] != "completed":
                     self.issue("BINDING", path, "An accepted review requires completed execution with artifacts.")
+                result_refs = self.refs["result", result_path]
+                if result_refs.get("ledger_expected"):
+                    if review["decision"] == "accepted" and "claim_evidence" not in review:
+                        self.issue("BINDING", path, "An accepted review of a ledger result requires claim_evidence scope and assessments.")
+                    if result_path in self.bad:
+                        self.issue("BINDING", path, "Review references a result with invalid ledger evidence or bindings.")
+            if "claim_evidence" in review:
+                result_refs = self.refs.get(("result", result_path), {})
+                self.ledger_validator.validate_review(review["claim_evidence"], path, result,
+                                                      result_refs.get("ledger_path"), result_refs.get("ledger"))
             old_path = refs["supersedes"]
             history[path] = {old_path} if old_path else set()
             if old_path:

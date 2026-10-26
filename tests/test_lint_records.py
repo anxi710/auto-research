@@ -255,6 +255,97 @@ class RecordTests(unittest.TestCase):
         self.write(self.base["review"], prefix + content)
         self.lint()
 
+    def test_commented_review_cannot_satisfy_repinned_dependency(self):
+        content = (self.root / self.base["review"]).read_text()
+        for prefix, suffix in (("<!--\n", "-->\n"), ("<!--", "-->"), ("<!--\n", "")):
+            with self.subTest(prefix=prefix, suffix=suffix):
+                self.write(self.base["review"], prefix + content + suffix)
+                dependent = self.record("dependent", [self.dependency(self.base)])
+                output = json.loads(self.lint(self.flags(dependent), "DEPENDENCY"))
+                self.assertNotIn("HASH", {item["code"] for item in output["diagnostics"]})
+
+    def test_active_acceptance_ignores_commented_examples(self):
+        active = (self.root / self.base["review"]).read_text()
+        example = "<!--\n## Task acceptance\n```json\n{example only}\n```\n-->\n"
+        for content in (example + active, active + example):
+            with self.subTest(content=content):
+                self.write(self.base["review"], content)
+                dependent = self.record("dependent", [self.dependency(self.base)])
+                self.lint(self.flags(dependent))
+
+    def test_multiline_comments_ignore_headings_and_fences(self):
+        content = (self.root / self.base["review"]).read_text()
+        comment = "<!-- Example only.\n## Other section\n```json\n{not active JSON}\n-->\n"
+        self.write(self.base["review"], content.replace("```json\n", comment + "```json\n", 1))
+        dependent = self.record("dependent", [self.dependency(self.base)])
+        self.lint(self.flags(dependent))
+
+    def test_inline_comments_preserve_active_heading_and_fence(self):
+        content = (self.root / self.base["review"]).read_text()
+        content = content.replace("## Task acceptance (optional)", "## Task acceptance (optional) <!-- note -->")
+        content = content.replace("```json\n", "<!-- note -->```json\n", 1)
+        self.write(self.base["review"], content)
+        dependent = self.record("dependent", [self.dependency(self.base)])
+        self.lint(self.flags(dependent))
+
+    def test_comment_markers_in_json_strings_are_literal(self):
+        for marker in ("<!-- paired -->", "<!-- opening only", "closing only -->"):
+            with self.subTest(marker=marker):
+                review = copy.deepcopy(self.base["review_data"])
+                review["reviewer"] = marker
+                review["basis"] = [marker]
+                self.review(self.base["review"], review)
+                dependent = self.record("dependent", [self.dependency(self.base)])
+                self.lint(self.flags(dependent))
+
+    def test_comment_markers_in_other_fences_are_literal(self):
+        content = (self.root / self.base["review"]).read_text()
+        for opening, closing in (("```text", "```"), ("~~~~text", "~~~~"), ("```text <!-- literal", "```")):
+            with self.subTest(opening=opening):
+                prefix = opening + "\n<!-- literal data\n## Task acceptance\n" + closing + "\n"
+                self.write(self.base["review"], prefix + content)
+                dependent = self.record("dependent", [self.dependency(self.base)])
+                self.lint(self.flags(dependent))
+
+    def test_review_comment_changes_raw_dependency_hash(self):
+        dependent = self.record("dependent", [self.dependency(self.base)])
+        content = (self.root / self.base["review"]).read_text()
+        self.write(self.base["review"], content + "\n<!-- Explanatory note. -->\n")
+        self.lint(self.flags(dependent), "HASH")
+
+    def test_comment_markers_in_inline_code_and_escapes_are_literal(self):
+        content = (self.root / self.base["review"]).read_text()
+        for marker in ("`<!--`", "`` `<!--` ``", r"\<!--", r"\\\<!--"):
+            with self.subTest(marker=marker):
+                self.write(self.base["review"], "A literal " + marker + " token.\n\n" + content)
+                dependent = self.record("dependent", [self.dependency(self.base)])
+                self.lint(self.flags(dependent))
+
+    def test_real_comments_after_literal_markers_still_hide_examples(self):
+        content = (self.root / self.base["review"]).read_text()
+        for marker in ("`` `<!--` ``", r"\<!--"):
+            with self.subTest(marker=marker):
+                prefix = "A literal " + marker + " followed by <!--\n" + content + "-->\n"
+                self.write(self.base["review"], prefix + content)
+                dependent = self.record("dependent", [self.dependency(self.base)])
+                self.lint(self.flags(dependent))
+
+    def test_unmatched_backtick_does_not_hide_a_real_comment(self):
+        content = (self.root / self.base["review"]).read_text()
+        self.write(self.base["review"], "Unmatched ` before <!--\n" + content + "-->\n")
+        dependent = self.record("dependent", [self.dependency(self.base)])
+        self.lint(self.flags(dependent), "DEPENDENCY")
+
+    def test_even_backslashes_do_not_escape_a_real_comment(self):
+        content = (self.root / self.base["review"]).read_text()
+        self.write(self.base["review"], r"Two backslashes \\<!--" + "\n" + content + "-->\n")
+        dependent = self.record("dependent", [self.dependency(self.base)])
+        self.lint(self.flags(dependent), "DEPENDENCY")
+
+    def test_only_commented_acceptance_is_an_ordinary_review(self):
+        self.write("discussion.md", "# Review\n<!--\n## Task acceptance\n```json\n{example only}\n```\n-->\n")
+        self.lint(["--review", "discussion.md"])
+
     def test_missing_required_files(self):
         for path in ("source.txt", "limits.md", self.base["snapshot"], self.base["artifact"], self.base["result"], self.base["review"]):
             with self.subTest(path=path):

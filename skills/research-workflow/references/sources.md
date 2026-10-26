@@ -152,6 +152,90 @@ Google's [Enterprise notebook API](https://docs.cloud.google.com/gemini/enterpri
 It is not a drop-in API for the selected personal-account workflow.
 The adapter's local tests use fake command results and do not establish live service compatibility.
 
+## Additional reviewed sources and adoption status
+
+Source review date: 2026-10-26.
+These four sources have been analyzed as design references.
+The status below describes package `0.1.9`, including the adopted [claim-evidence ledger](evidence-ledger.md).
+[W017](../../../changes/W017.md) records its original adoption from the `0.1.8` baseline at `512f6d4c4b737d57677c47a562d0a6aef7e3d38e`.
+[W018](../../../changes/W018.md) records integration into the draft pull request.
+Selected ideas are implemented as described below; deferred ideas remain candidates.
+These links do not establish adoption of an entire upstream framework or measured research improvements.
+We inspected the linked source documents without installing or executing the projects.
+The summaries below are original descriptions, not imported third-party code or instructions.
+
+### K-Dense-AI/scientific-agent-skills
+
+The [official repository](https://github.com/K-Dense-AI/scientific-agent-skills) provides scientific skills.
+We reviewed commit `5f2bc0341354fd5590aef76a533ada1e1e5b4e62`.
+Its [citation validation guide](https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/citation-management/references/citation_validation.md) distinguishes registration confirmation, missing records, and inconclusive service responses.
+The candidate lesson is to preserve three citation-check outcomes: exists, does not exist, and unable to confirm.
+A failed request alone cannot establish nonexistence.
+Identifier registration also does not establish that a citation supports a claim.
+
+Its [review workflow](https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/literature-review/references/core_workflow.md) covers search planning and deduplication.
+Its [search guidance](https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/skills/literature-review/references/search_and_citation.md) distinguishes returned hits from complete coverage and links related publication versions.
+DOI verification states, retrieval coverage, and study-level version deduplication remain deferred candidates.
+Version `0.1.9` distinguishes source access, version uncertainty, and declared reading depth in its [literature evidence fields](evidence-ledger.md#preserve-literature-access-limits).
+The [checker](../scripts/evidence_ledger.py) validates those fields and retained content hashes.
+It does not verify DOI registration, contact external services, or establish actual reading depth.
+Those local checks do not implement the deferred mechanisms or adopt the full skill collection.
+The reviewed [license](https://github.com/K-Dense-AI/scientific-agent-skills/blob/5f2bc0341354fd5590aef76a533ada1e1e5b4e62/LICENSE.md) is MIT.
+Any later copying needs to retain the applicable copyright and permission notices.
+
+### ARIS
+
+[Auto-claude-code-research-in-sleep](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) is also called ARIS.
+We rechecked the previously reviewed commit `23745b69a14880b5716d1773e5d20f5f1e6ab1d6`.
+Its [fan-out pattern](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/23745b69a14880b5716d1773e5d20f5f1e6ab1d6/skills/shared-references/fan-out-pattern.md) records planned work and a coverage receipt after collection and fallback.
+Parallel reading with explicit coverage receipts remains a deferred candidate in `0.1.9`.
+A separate later pilot does not make it part of this package.
+Execution coverage does not establish reading quality or scientific validity.
+
+Its [result-to-claim skill](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/23745b69a14880b5716d1773e5d20f5f1e6ab1d6/skills/result-to-claim/SKILL.md) separates locating result evidence from judging claim support.
+Its [ablation planner](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/23745b69a14880b5716d1773e5d20f5f1e6ab1d6/skills/ablation-planner/SKILL.md) connects proposed ablations to specific questions and alternative explanations.
+Version `0.1.9` implements the separation between fixed result evidence and scientific support judgments.
+The [ledger checker](../scripts/evidence_ledger.py) checks declared evidence bindings and explicit review coverage.
+The [review procedure](evidence-ledger.md#assess-support-in-the-existing-review) keeps support scope and `yes`, `partial`, `no`, or `unable_to_assess` judgments in existing reviews.
+The [review template](../templates/REVIEW.md) carries that assessment without treating structural acceptance as scientific confirmation.
+The same procedure asks for the smallest useful experiment addressing an unresolved explanation.
+That is a planning convention, not an implemented ablation runner or ARIS execution loop.
+The reviewed [license](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/23745b69a14880b5716d1773e5d20f5f1e6ab1d6/LICENSE) is MIT.
+Any later copying needs to retain the applicable copyright and permission notices.
+
+### Karpathy's LLM Wiki
+
+The [official gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) describes a knowledge-management design pattern.
+We read [revision `ac46de1`](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f/ac46de1ad27f92b28ac95459c782c07f6b8c964a).
+It separates preserved source material from generated wiki pages and their organizing conventions.
+It also separates a topic index from a chronological change log.
+Separating original sources from a rebuildable knowledge layer is a design reference.
+Version `0.1.9` preserves [fixed evidence artifacts](evidence-ledger.md#keep-one-authority-for-each-decision); it does not implement that knowledge layer.
+A wiki, topic index, and maintenance workflow remain deferred candidates.
+The gist is not an implemented multi-agent engine or evidence of reliable autonomous maintenance.
+We found no explicit license in the reviewed gist.
+This entry records the idea with attribution and copies no gist text or implementation.
+
+### Imbad0202/academic-research-skills
+
+The [official repository](https://github.com/Imbad0202/academic-research-skills) covers academic research, writing, review, and revision.
+We reviewed commit `1ec249df98728682dfbbdfb940a658338bfd6f80`.
+Its [evidence-row protocol](https://github.com/Imbad0202/academic-research-skills/blob/1ec249df98728682dfbbdfb940a658338bfd6f80/shared/references/evidence_row_protocol.md) binds claim and citation identities to inspected source content.
+Its [evidence schema](https://github.com/Imbad0202/academic-research-skills/blob/1ec249df98728682dfbbdfb940a658338bfd6f80/shared/contracts/evidence/evidence_row.schema.json) records manuscript locations, source hashes, and passage anchors.
+Its [revision protocol](https://github.com/Imbad0202/academic-research-skills/blob/1ec249df98728682dfbbdfb940a658338bfd6f80/academic-paper/references/revision_patch_protocol.md) identifies target blocks and checks their old content hashes against a draft baseline.
+Version `0.1.9` implements selected bindings through its own [ledger format](evidence-ledger.md#record-claims-and-locations) and [checker](../scripts/evidence_ledger.py).
+A manuscript hash and unique exact claim quote fix the claim location.
+Source version fields, permitted local snapshot hashes, and literature locators retain evidence context.
+[Access and version states](evidence-ledger.md#preserve-literature-access-limits) distinguish unavailable or uncertain sources without inferring fabrication.
+The checker tests local quote presence; reviewers inspect page and section locators.
+Block IDs and old-content hashes for applying local revisions remain deferred candidates.
+This package does not import the upstream schemas or implement its revision patch protocol.
+
+The current [license](https://github.com/Imbad0202/academic-research-skills/blob/1ec249df98728682dfbbdfb940a658338bfd6f80/LICENSE) remains CC BY-NC 4.0, credited to Cheng-I Wu.
+Its attribution and noncommercial conditions differ from this toolkit's MIT license.
+This entry uses an original design summary only.
+It imports no code, templates, or instruction text from that project.
+
 ## Adaptations and limits
 
 The user approved the literature division from the local `paper-I-love/WORKFLOW.md` as their personal default on 2026-10-23.

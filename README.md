@@ -1,6 +1,6 @@
 # A portable research workflow
 
-[![Version 0.1.8](https://img.shields.io/badge/version-0.1.8-blue)](skills/research-workflow/SKILL.md)
+[![Version 0.1.9](https://img.shields.io/badge/version-0.1.9-blue)](skills/research-workflow/SKILL.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Python 3.11+ for bulk tools](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#requirements)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
@@ -35,6 +35,10 @@ The external tools have their own dependencies.
 Install them separately with the [scripted pipeline guide](skills/research-workflow/references/scripted-bulk-literature.md#prepare-the-tools).
 This repository does not need a `requirements.txt` file.
 The optional [record checker](skills/research-workflow/references/collaboration.md#inspect-saved-records) uses Python 3.9+ and the standard library.
+An optional [claim-evidence ledger](skills/research-workflow/references/evidence-ledger.md) binds selected claims to fixed manuscripts and structured evidence.
+The checker validates references and declared context.
+Support judgments remain in reviews.
+Human approval follows the existing procedure.
 
 ## Start or resume research
 

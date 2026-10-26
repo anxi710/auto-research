@@ -1,0 +1,30 @@
+{
+  "provenance": "Hand-authored synthetic fractions; no experiment or model run occurred.",
+  "runs": [
+    {
+      "dataset": "synthetic-D1",
+      "split": "test-v1",
+      "method": "A",
+      "baseline": "B",
+      "conditions": {
+        "seed": 7,
+        "fixture": true
+      },
+      "value": 0.62,
+      "unit": "fraction"
+    }
+  ],
+  "baselines": [
+    {
+      "dataset": "synthetic-D1",
+      "split": "test-v1",
+      "method": "B",
+      "conditions": {
+        "seed": 7,
+        "fixture": true
+      },
+      "value": 0.6,
+      "unit": "fraction"
+    }
+  ]
+}

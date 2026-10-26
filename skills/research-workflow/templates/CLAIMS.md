@@ -3,6 +3,15 @@
 Use this record to decide what the paper can state.
 Each claim needs a scope and an evidence location.
 Keep opposing evidence visible beside supporting evidence.
+For a [claim-evidence ledger](../references/evidence-ledger.md), keep this file as a summary and linked entry point.
+Link each claim ID to the fixed ledger path and the review that assesses it.
+Keep the formal support verdict in that review rather than maintaining another editable verdict here.
+Use this table for claims that have a ledger.
+
+| Claim ID | Claim and scope | Ledger path and SHA256 | Review path and SHA256 | Limits and next action |
+| --- | --- | --- | --- | --- |
+
+Retain this table for legacy claims that do not use a ledger.
 
 | Claim ID | Claim and scope | Type | Supporting evidence | Opposing evidence | Status | Limits | Next test |
 | --- | --- | --- | --- | --- | --- | --- | --- |
