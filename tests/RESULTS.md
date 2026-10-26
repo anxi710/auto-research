@@ -469,6 +469,19 @@ The candidate does not implement execution gates or new agent assignment modes.
 The user approved adoption after reviewing the candidate summary and evidence.
 The adoption preserved unrelated local work and earlier evidence.
 
+## Additional source documentation
+
+Test date: 2026-10-26.
+Baseline: remote `main` at `512f6d4c4b737d57677c47a562d0a6aef7e3d38e`, package `0.1.8`.
+The source map adds four reviewed candidates with fixed references and license notes.
+All 17 added external links returned HTTP 200.
+The full offline suite passed all 72 tests on Python 3.12.14.
+Final package checks passed all eight tests after this results entry was added.
+The diff passed `git diff --check` and manual scope inspection.
+Only the source map and this required test record changed.
+No third-party project execution, behavior trial, or native harness integration ran.
+Hosted CI results are reported separately on the pull request.
+
 ## Limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.
