@@ -1,0 +1,315 @@
+{
+  "change": "W017",
+  "date": "2026-10-25",
+  "status": "adopted in original cloud worktree; uncommitted",
+  "baseline_head": "512f6d4c4b737d57677c47a562d0a6aef7e3d38e",
+  "baseline_version": "0.1.8",
+  "candidate_version": "0.1.9",
+  "guide": {
+    "library_file_id": "libfile_816f88f2b48081918f80696b11603449",
+    "bytes": 22167,
+    "sha256": "2e4fc164e616cd6395df76c6837ea89a5b482abe297bc5bb76ffbef4b19368bb",
+    "verified_local_path": "/workspace/auto-research-next-stage-guide.md"
+  },
+  "test_command": "python3 -B -m unittest discover -s tests -p 'test_*.py' -v",
+  "runs": [
+    {
+      "scope": "original baseline",
+      "python": "3.12.14",
+      "tests": 72,
+      "seconds": 5.32,
+      "result": "OK",
+      "log": "baseline-tests.log"
+    },
+    {
+      "scope": "Initial Phase0/1 candidate before decimal correction",
+      "python": "3.12.14",
+      "tests": 116,
+      "seconds": 12.814,
+      "result": "OK",
+      "log": "final-python312-tests.log"
+    },
+    {
+      "scope": "Initial Phase0/1 candidate before decimal correction",
+      "python": "3.13.5",
+      "tests": 116,
+      "seconds": 12.597,
+      "result": "OK",
+      "command": "/usr/bin/python3 -B -m unittest discover -s tests -p 'test_*.py' -v",
+      "log": "final-python313-tests.log"
+    },
+    {
+      "scope": "Corrected Phase0/1 candidate",
+      "python": "3.12.14",
+      "tests": 123,
+      "seconds": 14.829,
+      "result": "OK",
+      "log": "numeric-full-python312-tests.log"
+    },
+    {
+      "scope": "Corrected Phase0/1 candidate",
+      "python": "3.13.5",
+      "tests": 123,
+      "seconds": 15.137,
+      "result": "OK",
+      "log": "numeric-full-python313-tests.log"
+    },
+    {
+      "scope": "Adopted original cloud worktree",
+      "python": "3.12.14",
+      "tests": 123,
+      "seconds": 14.842,
+      "result": "OK",
+      "command": "python3 -B -m unittest discover -s tests -p 'test_*.py' -v",
+      "cwd": "/workspace/auto-research",
+      "log": "adoption-full-python312-tests.log"
+    },
+    {
+      "scope": "Adopted original cloud worktree",
+      "python": "3.13.5",
+      "tests": 123,
+      "seconds": 15.093,
+      "result": "OK",
+      "command": "/usr/bin/python3 -B -m unittest discover -s tests -p 'test_*.py' -v",
+      "cwd": "/workspace/auto-research",
+      "log": "adoption-full-python313-tests.log"
+    }
+  ],
+  "candidate_suite_counts": {
+    "bulk": 23,
+    "record_linter": 50,
+    "evidence_ledger": 36,
+    "package": 8,
+    "summation_example": 3,
+    "evidence_example": 3
+  },
+  "independent_review": {
+    "python": "3.12.14",
+    "phase0": {
+      "parser_cases": 14,
+      "dependency_cli_cases": 7,
+      "passed": 21,
+      "report": "independent-phase0-review.md"
+    },
+    "phase1": {
+      "main_cli_cases": 73,
+      "additional_cli_cases": 20,
+      "passed": 93,
+      "report": "independent-phase1-review.md"
+    },
+    "result": "No remaining blocker within the reviewed scope",
+    "input_preservation": "Independent CLI probes retained file bytes and modes with no stderr or tracebacks"
+  },
+  "corrections": [
+    {
+      "phase": 0,
+      "finding": "Inline code and escaped HTML comment openers hid later active acceptance",
+      "action": "Fixed parser and added four regression methods; unchanged independent 21-case matrix passed",
+      "initial_evidence_preserved": true
+    },
+    {
+      "phase": 1,
+      "finding": "Text newline normalization and valid JSON null could weaken exact location or measurement checks; local import could emit bytecode",
+      "action": "Raw UTF-8 decode, unconditional measurement validation, no-bytecode CLI import, and supplementary tests"
+    },
+    {
+      "phase": 1,
+      "finding": "Two independent probe diagnostic-label expectations differed from existing diagnostic design",
+      "action": "Changed expected labels from SCHEMA to BINDING only; same inputs and accept/reject criteria; original output retained"
+    }
+  ],
+  "baseline_comparisons": {
+    "phase0": "38 original tests pass; 8 frozen added tests expose 8 assertions across 5 methods on baseline; final record suite 50 passes",
+    "phase1": "24 frozen tests on old checker report 74 test/subtest failures for unsupported new checks; same 24 pass on candidate; expanded suite has29 tests"
+  },
+  "history": {
+    "checked_files": 49,
+    "changed_historical_files": [],
+    "baseline_head": "512f6d4c4b737d57677c47a562d0a6aef7e3d38e"
+  },
+  "implementation_sha256": {
+    "skills/research-workflow/scripts/lint_records.py": "5fb3818ea922c5eea58663a3bb37ef80b5b8dbb61cf87a0ebe19c195f3ea0cfc",
+    "skills/research-workflow/scripts/evidence_ledger.py": "08a075aa39c4b799c26b92d389585f43c8259d86603f4882d863795ca5acf25f",
+    "tests/test_lint_records.py": "040f313855b10fadcf056b7fcbe82248a9fe1818480d45446d02bf90db5e46f4",
+    "tests/test_evidence_ledger.py": "99b6f206ea303c2c255ef160f1da5f220cd267af736c8ade0e353c5232f1af2c",
+    "tests/test_evidence_example.py": "5add1d9d4836c1e589b5fa8b585ed9da7fd5d91747ed9c5425f0c6084df8b027"
+  },
+  "supporting_evidence_sha256": {
+    "baseline-tests.log": "7aa8a5a054776567cc633e9e572fc58fe02075dd6941cb90adb79d17eaa45afd",
+    "final-python312-tests.log": "82c14279eb3c318b8e845eed14b9c4d36fe73ec1efca6837b1704e2509720a52",
+    "final-python313-tests.log": "9b87190a29bb3ba7563705eb6b44221e216a415077b3124c20e82df716f4e0e6",
+    "independent-phase0-followup-probes.json": "b6b1a44ac0f1418084cad06c38d0d8acd1990ac225c53dc45f4906aaa0292f1b",
+    "independent-phase1-probes-v2.json": "0e5ab9dfdfbc68178182581920973a35ad998cc46e87dac3933a697fb3789aaa",
+    "independent-phase1-followup-probes.json": "d96339c51bb15c87c1c895407716d9d67db527891d452c4ac8e9111f357d819c",
+    "example-validation.json": "02cad08815ecfeec3a10378cc58b3fa2de467b9bd1466dd03a04f60896edbdbf",
+    "numeric-review-baseline-results.json": "a78957f89254bec76ff609bfeb668b48817d948b04afc5c1e23aa3f11cd9a2b9",
+    "numeric-review-candidate-results.json": "c5cd8161f41311c402ad00e86774339060d7272be126f2269f4f080a36c47670",
+    "numeric-review-manifest.json": "858bb850c50708170eb646e860263848e61ba5791afd24369b30fc12d02648ee",
+    "numeric-review-summary.md": "0f1f049e579015ca0dc28aec5ab93b15cd5a0ea2f51cd5d71efd06c15483e511",
+    "numeric-full-python312-tests.log": "dd77e5b33e20fd4bf637ce0cfb5fb6824add535f681937a14206833a55a5258b",
+    "numeric-full-python313-tests.log": "0f3fd865d84a381e0ad8ac5f2c806972dd15753bdf2ac68566ac82e137e2ea43",
+    "numeric-baseline-tests.log": "5708385fdce4e60f8a703dc70e04ab2abd2109dd0d130d93ad705cb34b834b5d",
+    "numeric-candidate-tests.log": "4a83ef1e3994839c9bb29b1efd36eafff7a2cf3b0419f76ea971f0cb3c8eee55",
+    "adoption-full-python312-tests.log": "8962d9ce0d65205b4c8b462698efd497f3a08438af9c2ea39024366a321a7799",
+    "adoption-full-python313-tests.log": "e6e9669bb92752af7fb82ce14b1e13d6dc1465ba165313a307950d759f8edf20",
+    "adoption-independent-numeric-results.json": "3e72182601bfb042055a6c3f4ff06643810e9860bcac287c66cacf95ccef23ac",
+    "adoption-grammar-check.json": "a66da11e806ad422e92d14ee8c6b34f7c1ccb33f7af6a5cdc8b48fc037ffb126"
+  },
+  "compatibility": {
+    "python39_grammar_files": 8,
+    "python39_runtime": "not available; not run",
+    "python314_runtime": "not available; not run",
+    "dependencies": "standard library only",
+    "legacy": "untyped optional records unchanged; all retained tests pass"
+  },
+  "skills": {
+    "repository": "research-workflow and evolution/collaboration/human-review references",
+    "library": "exact guide read and local verification",
+    "plugin_management": "read-only discovery routing; no installation",
+    "public_selected": [
+      {
+        "name": "simple-english",
+        "version": "2.1.1",
+        "mode": "Plain",
+        "source": "https://github.com/AminBlg/SimpleEnglish/blob/main/skills/simple-english/SKILL.md"
+      },
+      {
+        "name": "ponytail",
+        "mode": "Full",
+        "source": "https://github.com/DietrichGebert/ponytail/blob/main/skills/ponytail/SKILL.md"
+      }
+    ],
+    "prior_user_copy_identity": "unknown",
+    "installed_skill_names": "requested names absent; selected public instructions read and applied without installation",
+    "commit_pin": "public skill main branches read on recorded date; GitHub API unavailable"
+  },
+  "execution_configuration": {
+    "worker_model": "gpt-6-astra",
+    "worker_reasoning_effort": "ultra",
+    "speed": "No speed-tier parameter exposed; Fast not independently verified",
+    "provider_tokens_and_cost": "unknown"
+  },
+  "unrun": [
+    "Python3.9/3.14 runtime tests",
+    "hosted CI",
+    "real model or parallel-reading trial",
+    "external scientific services",
+    "GPU or paid experiments",
+    "source authenticity and actual reading-depth verification",
+    "human approval enforcement"
+  ],
+  "adoption": {
+    "performed": true,
+    "scope": "Apply the reviewed Phase 0 / 1 candidate to /workspace/auto-research and verify locally; no commit, push, PR, merge, publication, or research-output approval",
+    "source": {
+      "parent_thread_id": "01a1574f-9889-75df-af16-1696d9106013",
+      "user_message_id": "Sentinel_6150cd721454819190b492929b3582cd",
+      "user_message_time_utc": "2026-10-25T05:28:00Z",
+      "user_reply": "批准",
+      "approval_question": "是否批准将这份 0.1.9 候选应用到云端仓库工作区？这一步只采纳修改并复核，不推送、不合并、不发布。",
+      "received_via": "Parent delegation containing trusted transcript evidence"
+    },
+    "approved_candidate": {
+      "library_file_id": "libfile_742990423cf48191bf128045570867aa",
+      "library_version": 2,
+      "packet_sha256": "7043be568893ccfebe7957710ba7cfe3dd0aff5cb090f60cf5460af4eb9b20c6",
+      "patch_sha256": "92f8fa3e1bd066e05f25ac33eedd9be531209979a2a436dbf622dd65fc74ae4b",
+      "files": 25
+    },
+    "preflight": {
+      "head": "512f6d4c4b737d57677c47a562d0a6aef7e3d38e",
+      "original_worktree": "clean",
+      "intervening_edits": [],
+      "candidate_manifest": "all 25 files match",
+      "git_apply_check": "passed",
+      "report": "adoption-preflight.json"
+    },
+    "applied_at_utc": "2026-10-25T05:30:41Z",
+    "post_application_changes": [
+      "changes/W017.md",
+      "tests/evidence/W017.json",
+      "tests/RESULTS.md"
+    ],
+    "post_application_change_scope": "Adoption provenance, state, and verification evidence only; code, test code, and sealed example bytes remain approved version 2",
+    "post_adoption_verification": {
+      "full_suite_runs": [
+        {
+          "scope": "Adopted original cloud worktree",
+          "python": "3.12.14",
+          "tests": 123,
+          "seconds": 14.842,
+          "result": "OK",
+          "command": "python3 -B -m unittest discover -s tests -p 'test_*.py' -v",
+          "cwd": "/workspace/auto-research",
+          "log": "adoption-full-python312-tests.log"
+        },
+        {
+          "scope": "Adopted original cloud worktree",
+          "python": "3.13.5",
+          "tests": 123,
+          "seconds": 15.093,
+          "result": "OK",
+          "command": "/usr/bin/python3 -B -m unittest discover -s tests -p 'test_*.py' -v",
+          "cwd": "/workspace/auto-research",
+          "log": "adoption-full-python313-tests.log"
+        }
+      ],
+      "concurrency": "The two full runs ran concurrently in separate temporary fixtures; durations are not performance comparisons.",
+      "independent_numeric": {
+        "cases": 44,
+        "passed": 44,
+        "python": "3.12.14",
+        "manifest_sha256": "858bb850c50708170eb646e860263848e61ba5791afd24369b30fc12d02648ee",
+        "output": "adoption-independent-numeric-results.json",
+        "input_preserved": true,
+        "stderr_and_tracebacks": "none"
+      },
+      "historical_files_unchanged": 49,
+      "approved_example_files_unchanged": 10,
+      "python39_grammar_files": 9,
+      "grammar_file_list": "adoption-grammar-check.json",
+      "implementation_identical_to_approved_candidate": true,
+      "remaining_runtime_limits": "No Python 3.9 or 3.14 interpreter; no hosted CI or real research run."
+    },
+    "W015_gate": "not adopted",
+    "remote_push_pr_merge_release": "none",
+    "commit": "none"
+  },
+  "initial_implementation_sha256": {
+    "skills/research-workflow/scripts/lint_records.py": "5fb3818ea922c5eea58663a3bb37ef80b5b8dbb61cf87a0ebe19c195f3ea0cfc",
+    "skills/research-workflow/scripts/evidence_ledger.py": "75f481053903a02d50e663bfc87ca1e6e0140e98ecf2f25cb42cb1fa8bbb3512",
+    "tests/test_lint_records.py": "040f313855b10fadcf056b7fcbe82248a9fe1818480d45446d02bf90db5e46f4",
+    "tests/test_evidence_ledger.py": "f2f5690efb94fff66579ee46b5783cf8560fdc94ec002ee7bf87941e8cd2bc8f",
+    "tests/test_evidence_example.py": "5add1d9d4836c1e589b5fa8b585ed9da7fd5d91747ed9c5425f0c6084df8b027"
+  },
+  "numeric_correction": {
+    "source": "Parent independent review after Library packet version1",
+    "policy": "Exact Decimal parsing and recursive comparisons; float conversion used only for the pre-existing finite range guard; integer tokens stay exact.",
+    "legacy_linter_changed": false,
+    "new_test_methods": 7,
+    "ledger_tests": 36,
+    "baseline_focused_failures": 16,
+    "independent_baseline": {
+      "cases": 44,
+      "passed": 25,
+      "failed": 19,
+      "false_equalities": 16,
+      "false_inequality": 1,
+      "extreme_exponent_policy_cases": 2
+    },
+    "independent_corrected": {
+      "numeric_cli_cases_passed": 44,
+      "prior_structural_cli_cases_passed": 93,
+      "python": "3.12.14"
+    },
+    "report": "numeric-review-summary.md",
+    "original_failure_output": "numeric-review-baseline-results.json",
+    "fixed_output": "numeric-review-candidate-results.json",
+    "manifest": "numeric-review-manifest.json",
+    "raw_tokens": "1e-400 vs0;9007199254740993.0 vs9007199254740992;0.80000000000000004 vs0.8;method and baseline threshold1e-400 vs ledger threshold0",
+    "serialization": "Diagnostics remain JSON strings; no Decimal values are serialized into the output.",
+    "range_limit": "1e999 is mathematically finite but remains unsupported by the prior float-conversion rule; unsupported Decimal exponents also fail SCHEMA.",
+    "full_test_runs": "Executed concurrently in separate temporary fixtures; duration is not a performance comparison."
+  },
+  "adopted_version": "0.1.9"
+}

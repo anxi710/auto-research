@@ -1,6 +1,6 @@
 # 可迁移的科研工作流
 
-[![版本 0.1.8](https://img.shields.io/badge/version-0.1.8-blue)](skills/research-workflow/SKILL.md)
+[![版本 0.1.9](https://img.shields.io/badge/version-0.1.9-blue)](skills/research-workflow/SKILL.md)
 [![许可证：MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![批量工具所需 Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#环境要求)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
@@ -35,6 +35,10 @@ Python 和工具徽章仅适用于可选的批量文献分析流程。
 请按照[脚本流程指南](skills/research-workflow/references/scripted-bulk-literature.md#prepare-the-tools)单独安装这些工具。
 本仓库不需要 `requirements.txt` 文件。
 可选的[记录检查器](skills/research-workflow/references/collaboration.md#inspect-saved-records)需要 Python 3.9+，且只使用标准库。
+可选的[结论—证据 ledger](skills/research-workflow/references/evidence-ledger.md)将选定主张绑定到固定稿件和结构化证据。
+检查器只验证引用与声明的上下文。
+支持判断保留在 review 中。
+人工批准沿用现有流程。
 
 ## 开始或继续研究
 

@@ -469,6 +469,105 @@ The candidate does not implement execution gates or new agent assignment modes.
 The user approved adoption after reviewing the candidate summary and evidence.
 The adoption preserved unrelated local work and earlier evidence.
 
+## Phase 0 / 1 isolated candidate
+
+Test date: 2026-10-25.
+Baseline: `512f6d4c4b737d57677c47a562d0a6aef7e3d38e`, version `0.1.8`.
+Reviewed candidate: `0.1.9`; later adopted as recorded below.
+The [W017 record](../changes/W017.md) states the scope and decision boundary.
+The [evidence record](evidence/W017.json) records actual commands, counts, code hashes, corrections, and remaining limits.
+
+Run the full offline suite from the repository root:
+
+```bash
+python3 -B -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+| Checked tree | Python | Tests | Result | Seconds |
+| --- | --- | --- | --- | --- |
+| Original baseline | 3.12.14 | 72 | Passed | 5.320 |
+| Phase 0 / 1 candidate | 3.12.14 | 116 | Passed | 12.814 |
+| Phase 0 / 1 candidate | 3.13.5 | 116 | Passed | 12.597 |
+
+The Python 3.13 run used `/usr/bin/python3` with the same arguments.
+The candidate suite contains 23 bulk, 50 record, 29 ledger, eight package, three summation, and three ledger-example tests.
+These counts come from this run, not earlier CI results.
+
+Independent review passed 21 Phase 0 probes and 93 Phase 1 CLI cases on Python 3.12.14.
+The Phase 1 review used a separate forecast fixture and preserved all input bytes and modes.
+The initial Phase 0 candidate mishandled inline-code and escaped comment markers.
+The corrected parser passed the unchanged independent cases.
+The delivery evidence retains the initial failures and the later correction.
+
+The Phase 1 baseline comparison used 24 frozen tests.
+It recorded 74 test/subtest failures because the old checker lacked the new feature.
+The candidate passed the same 24 tests and five additional boundary tests.
+Two independent probe expectations changed only their diagnostic labels after inspection.
+The input fixtures and required acceptance or rejection outcomes stayed fixed.
+
+The checker covers references, file hashes, unique quotes, declared measurement context, and explicit review scope.
+It does not prove scientific support, source authenticity, reading depth, human approval, or complete review history.
+The small review parser is not a complete Markdown implementation.
+Python 3.9 syntax passed an AST grammar check for eight files.
+Python 3.9 and 3.14 runtime tests, hosted CI, and real research integration did not run.
+No external research service, model trial, or paid experiment ran.
+No real research data was uploaded.
+All 49 historical change, test-evidence, and sealed summation files remain unchanged.
+
+## Decimal correction after parent review
+
+The parent reviewer found precision loss in the first delivered Phase 1 candidate.
+The checker accepted four distinct numeric bindings after both files were pinned with correct hashes.
+The earlier 116-test result remains valid for its recorded cases but did not establish exact numeric comparison.
+The correction uses exact decimal parsing and preserves the earlier input-range rejection rule.
+The [format guide](../skills/research-workflow/references/evidence-ledger.md#bind-an-experiment-to-structured-measurements) states that rule and its limits.
+
+Seven added test methods preserve raw JSON number tokens without converting them through Python floats.
+The pre-fix focused run reproduced 16 assertion failures.
+After correction, all 36 ledger tests passed on Python 3.12.14.
+The same full-suite command then produced these results:
+
+| Corrected candidate | Python | Tests | Result | Seconds |
+| --- | --- | --- | --- | --- |
+| Exact decimal parser | 3.12.14 | 123 | Passed | 14.829 |
+| Exact decimal parser | 3.13.5 | 123 | Passed | 15.137 |
+
+These two runs executed concurrently and do not measure performance gains.
+The new total retains all other test counts and increases ledger tests from 29 to 36.
+Independent review passed 44 frozen numeric CLI cases and all 93 earlier structural cases on the corrected implementation.
+The numeric cases cover underflow, adjacent decimals, large integer equality, nested conditions, booleans, range limits, and JSON diagnostics.
+All fixtures remained unchanged.
+The original false acceptance outputs remain in the updated review packet beside the corrected outputs.
+During candidate correction, no original repository file or sealed example changed.
+
+## W017 adoption verification
+
+The user approved the final Phase 0 / 1 candidate for the original cloud worktree.
+The approved source is Library file `libfile_742990423cf48191bf128045570867aa`, version `2`.
+The [W017 decision](../changes/W017.md#adoption-and-recovery) records the exact approval source and limits.
+Package `0.1.9` is now applied in `/workspace/auto-research` without a commit.
+The original HEAD and clean worktree were checked before application.
+All 25 candidate files matched the approved hashes before adoption records were updated.
+
+The full offline command above ran again in the adopted worktree.
+The Python 3.13 run again used `/usr/bin/python3`.
+
+| Adopted worktree | Python | Tests | Result | Seconds |
+| --- | --- | --- | --- | --- |
+| Phase 0 / 1 | 3.12.14 | 123 | Passed | 14.842 |
+| Phase 0 / 1 | 3.13.5 | 123 | Passed | 15.093 |
+
+The two runs executed concurrently in separate temporary fixtures.
+The durations do not establish a performance change.
+The independent reviewer reran the same 44 frozen numeric CLI cases; all passed.
+Their inputs and scoring stayed unchanged, and all outputs remained valid JSON without stderr or traceback.
+The implementation and test code match the approved candidate byte for byte.
+Only W017, its evidence record, and this summary gained adoption updates.
+All 49 historical files and all 10 approved example files retain their hashes.
+All nine Python files in the three-script and six-test scan passed the Python 3.9 grammar check.
+Python 3.9 and 3.14 runtime tests remain unrun.
+No commit, push, pull request, merge, publication, or external research run occurred.
+
 ## Additional source documentation
 
 Test date: 2026-10-26.
@@ -482,7 +581,34 @@ Only the source map and this required test record changed.
 No third-party project execution, behavior trial, or native harness integration ran.
 Hosted CI results are reported separately on the pull request.
 
-## Limits
+## Version 0.1.9 draft PR integration
+
+Test date: 2026-10-26.
+[W018](../changes/W018.md) records the later authorization to integrate the adopted package into draft PR 1.
+The source is Library version 3, not a new implementation of the earlier proposal.
+Its complete patch reconstructed all 25 adopted files with matching manifest hashes in a temporary baseline tree.
+The integrated tree preserves 24 files byte for byte; this file combines both histories and adds this entry.
+All 93 baseline files outside the adopted patch and source map remain unchanged.
+The source map now links implemented ideas to their local procedures and checker while retaining deferred candidates.
+
+The full offline command ran on the integrated tree with separate temporary fixtures:
+
+| Python | Tests | Result | Seconds |
+| --- | --- | --- | --- |
+| 3.12.14 | 123 | Passed | 10.606 |
+| 3.13.5 | 123 | Passed | 10.753 |
+
+These concurrent runs do not measure a performance gain.
+The suite includes the HTML-comment, exact Decimal binding, review scope, legacy compatibility, and sealed-example checks.
+Final package checks passed all eight tests after this entry was added.
+All 21 newly introduced external URLs returned HTTP 200.
+The complete diff passed whitespace and scope inspection.
+Historical W017 approval limits and all earlier test records remain intact.
+No new independent behavior trial, external research service, or native harness integration ran.
+The earlier 44-case numeric replay remains historical evidence and was not rerun in this integration.
+Hosted CI results are reported on the updated draft PR after push.
+
+## General limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.
 The two referenced automated research repositories were read but not executed.
