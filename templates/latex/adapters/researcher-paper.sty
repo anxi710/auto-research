@@ -1,0 +1,20 @@
+% Copyright 2026 auto-research contributors. MIT; see repository LICENSE.
+% New optional adapter, based on unchanged ElegantPaper 0.12.
+% Packaging changes and full sources: ../vendor/elegantpaper/auto-research-NOTICE.md.
+% Design references: restrained heading color in ElegantNote 2.70; navigable
+% hierarchy in ElegantBook 4.7. No code is copied from either class.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{researcher-paper}[2026/10/27 v0.1 Optional auto-research Paper style]
+\makeatletter
+\@ifclassloaded{elegantpaper}{}{\PackageError{researcher-paper}{Use the elegantpaper class}{This adapter supports ElegantPaper 0.12.}}
+\makeatother
+\RequirePackage{titlesec}
+\RequirePackage{bookmark}
+\definecolor{ResearchBlue}{HTML}{254C63}
+\titleformat{\section}{\Large\bfseries\color{ResearchBlue}}{\thesection}{0.75em}{}
+\titleformat{\subsection}{\large\bfseries\color{ResearchBlue}}{\thesubsection}{0.75em}{}
+\titlespacing*{\section}{0pt}{2.0ex plus .5ex minus .2ex}{1.0ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{1.6ex plus .4ex minus .2ex}{.7ex plus .2ex}
+\hypersetup{linkcolor=ResearchBlue,citecolor=ResearchBlue,urlcolor=ResearchBlue,bookmarksopen=true,bookmarksnumbered=true}
+\setcounter{tocdepth}{2}
+\PackageInfo{researcher-paper}{auto-research curated subset; ElegantPaper source unchanged; see vendor/elegantpaper/auto-research-NOTICE.md}

@@ -1,0 +1,33 @@
+% Copyright 2026 auto-research contributors. MIT; see repository LICENSE.
+\section{研究问题与阅读路径}
+这是一份用于选择版式的中文排版样例，不是科研报告，也不包含实验结果。
+三种模板共享相同的示例段落，以便比较字号、留白、层次与证据表格。
+先看摘要和正文段落，再检查公式与表格，最后阅读证据边界及待审核项。
+
+\subsection{把问题写成可审核的陈述}
+正式报告应当说明要解释的现象、适用条件和可能推翻判断的证据。
+这里仅用一个示意评分函数检验数学排版：
+\begin{equation}\label{eq:layout}
+ Q = \alpha L + (1-\alpha)N, \qquad 0\leq\alpha\leq1 .
+\end{equation}
+其中 $L$ 表示阅读便利，$N$ 表示导航清晰；它们都是排版占位符，未经测量。
+式\eqref{eq:layout} 不应被解释为经过验证的评估方法。
+
+\subsection{本页展示什么}
+\begin{table}[htbp]
+\centering
+\caption{排版检查项目；无实验数据}\label{tab:checks}
+\begin{tabular}{lll}
+\toprule
+元素 & 读者应能找到 & 本样例的含义\\
+\midrule
+摘要 & 问题、边界与阅读路径 & 查看行距与段落\\
+公式 & 符号及其解释 & 查看数学字体\\
+证据 & 来源与未排除因素 & 查看比较结构\\
+审核 & 需要判断的具体事项 & 查看操作清晰度\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+表\ref{tab:checks} 的各行用于检验对齐和层次，不是事实性研究发现。
+模板的官方项目文档可作为格式来源示例\cite{elegantpaper,elegantnote,elegantbook}。

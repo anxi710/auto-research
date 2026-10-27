@@ -1,6 +1,6 @@
 # 可迁移的科研工作流
 
-[![版本 0.1.9](https://img.shields.io/badge/version-0.1.9-blue)](skills/research-workflow/SKILL.md)
+[![版本 0.1.10-dual-delivery.2](https://img.shields.io/badge/version-0.1.10-dual-delivery.2-blue)](skills/research-workflow/SKILL.md)
 [![许可证：MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![批量工具所需 Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#环境要求)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
@@ -8,6 +8,8 @@
 [![rclone CLI](https://img.shields.io/badge/rclone-CLI-3F79AD)](skills/research-workflow/references/scripted-bulk-literature.md)
 
 [English](README.md) | 简体中文
+
+此隔离预发布版本用于 [W019 交付试用](changes/W019.md)，尚未正式采用为默认规则。
 
 这套工具为 AI 助手提供统一的科研流程，涵盖学习、提问、实验、分析、写作和评审。
 Harness 是运行助手及其工具的应用程序。
@@ -100,6 +102,10 @@ AI 审查通过或执行完成均不等于人工批准。
 你可以直接使用它，无需创建偏好文件。
 如果需要保存可复用的选择，请使用[偏好指南](skills/research-workflow/references/preferences.md)及其[模板](skills/research-workflow/templates/PREFERENCES.md)。
 [Zotero 与 Git 示例](skills/research-workflow/references/zotero-git-example.md)仅在你主动选择时适用。
+
+可选的中文 LaTeX 排版模板见[模板指南](docs/latex-templates.md)和[模板目录](templates/latex/README.md)。
+面向研究者的论证、综述、摘要与审核路径，可选用独立的 [research-report 写作技能](skills/research-report/SKILL.md)。
+它仍是 trial 候选，与研究流程和 LaTeX 模板分别维护。
 
 对于几十篇或几百篇论文，请使用[批量文献分析流程](skills/research-workflow/references/bulk-literature.md)。
 它介绍了一套可选的 Zotero、zpm、rclone、Google Drive 和 NotebookLM 方案。

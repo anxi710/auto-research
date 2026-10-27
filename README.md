@@ -1,6 +1,6 @@
 # A portable research workflow
 
-[![Version 0.1.9](https://img.shields.io/badge/version-0.1.9-blue)](skills/research-workflow/SKILL.md)
+[![Version 0.1.10-dual-delivery.2](https://img.shields.io/badge/version-0.1.10-dual-delivery.2-blue)](skills/research-workflow/SKILL.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Python 3.11+ for bulk tools](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#requirements)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
@@ -8,6 +8,8 @@
 [![rclone CLI](https://img.shields.io/badge/rclone-CLI-3F79AD)](skills/research-workflow/references/scripted-bulk-literature.md)
 
 English | [简体中文](README.zh-CN.md)
+
+This isolated prerelease is the [W019 delivery trial](changes/W019.md), not an adopted default.
 
 This toolkit gives AI assistants a shared procedure for study, questions, experiments, analysis, writing, and review.
 A harness is the application that runs an assistant and its tools.
@@ -100,6 +102,10 @@ The shared skill contains no personal defaults.
 You can use it without a preferences file.
 For reusable choices, follow the [preferences guide](skills/research-workflow/references/preferences.md) and its [template](skills/research-workflow/templates/PREFERENCES.md).
 The [Zotero and Git example](skills/research-workflow/references/zotero-git-example.md) applies only when you select it.
+
+For optional Chinese LaTeX layouts, see the [template guide](docs/latex-templates.md) and [catalog](templates/latex/README.md).
+For researcher-facing argument, synthesis, summaries, and review paths, try the separate [research-report skill](skills/research-report/SKILL.md).
+It is an optional writing companion in this isolated trial, not a replacement for the workflow or a LaTeX template.
 
 For dozens or hundreds of papers, use the [bulk literature procedure](skills/research-workflow/references/bulk-literature.md).
 It describes an optional Zotero, zpm, rclone, Google Drive, and NotebookLM setup.

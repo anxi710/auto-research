@@ -1,0 +1,35 @@
+% Copyright 2026 auto-research contributors. MIT; see repository LICENSE.
+% New adapter document. Upstream class files are unmodified.
+% Packaging changes and upstream license scope:
+% ../../vendor/elegantbook/auto-research-NOTICE.md
+\documentclass[lang=cn,chinesefont=nofont,bibend=bibtex,a4paper,11pt,device=normal]{elegantbook}
+\typeout{auto-research curated subset; see ../../vendor/elegantbook/auto-research-NOTICE.md}
+\input{../shared/fonts.tex}
+\usepackage{xurl}
+\addbibresource{references.bib}
+\hypersetup{pdftitle={中文研究报告排版样例},pdfauthor={auto-research}}
+\title{中文研究报告排版样例}
+\author{auto-research}
+\date{2026年10月27日}
+% Restore visible chapter-opening folios in this local short example.
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+\subtitle{章节式报告 · 仅供视觉选择}
+\version{排版样例}
+\cover{cover-geometric.pdf}
+\extrainfo{本文件不包含研究结果；模板选择与科学审核均未完成。}
+\begin{document}
+\maketitle
+\frontmatter
+\chapter*{摘要与阅读路径}
+这是 ElegantBook 的极简中文研究报告示例。
+封面图形由本仓库独立绘制，不使用上游照片、标识或商业字体。
+请先比较章节与留白，再查看正文中的公式、表格、引用与审核项。
+本样例不包含科研结论，也不代表正式采纳此模板。
+\tableofcontents
+\mainmatter
+\chapter{问题驱动的专题综述}
+\input{../shared/overview.tex}
+\chapter{证据、局限与审核}
+\input{../shared/evidence.tex}
+\printbibliography[heading=bibintoc,title={参考文献}]
+\end{document}

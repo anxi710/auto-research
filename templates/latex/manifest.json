@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-10-27",
+  "scope": "Optional curated template sources and separate local examples; no research content migration.",
+  "projects": [
+    {
+      "name": "ElegantPaper",
+      "version": "0.12",
+      "upstream_url": "https://github.com/ElegantLaTeX/ElegantPaper",
+      "commit": "40275032d6e3073e658038de30a98e1b4785f052",
+      "immutable_source_archive": "https://github.com/ElegantLaTeX/ElegantPaper/archive/40275032d6e3073e658038de30a98e1b4785f052.zip",
+      "ctan_url": "https://ctan.org/pkg/elegantpaper",
+      "license": "LPPL-1.3c-or-later",
+      "copyright_and_maintenance": "Preserved verbatim in the vendored class and README; not replaced by this repository license.",
+      "release_archive": {
+        "url": "https://ctan.math.illinois.edu/macros/latex/contrib/elegantpaper.zip",
+        "sha256": "5979e15024baf8d5c7e322fa48a65f325feaaae0afc1d915872770f4f7b1cf56"
+      },
+      "files": [
+        {
+          "path": "vendor/elegantpaper/elegantpaper.cls",
+          "sha256": "29370455a0cdf0af94039a6483ba1433f5b067666771b0f96c4cca0159830173",
+          "size_bytes": 10679,
+          "source_url": "https://ctan.math.illinois.edu/macros/latex/contrib/elegantpaper.zip",
+          "archive_member": "elegantpaper/elegantpaper.cls",
+          "upstream_bytes_unchanged": true
+        },
+        {
+          "path": "vendor/elegantpaper/README.md",
+          "sha256": "58aa89440e6fc19e0a8e77c75a8c7c9caeea95f25573a06cd777a74e00dde6d5",
+          "size_bytes": 2506,
+          "source_url": "https://ctan.math.illinois.edu/macros/latex/contrib/elegantpaper.zip",
+          "archive_member": "elegantpaper/README.md",
+          "upstream_bytes_unchanged": true
+        },
+        {
+          "path": "vendor/elegantpaper/License",
+          "sha256": "5f05fcf6ef25a6c31bccd2df7c0c46b23107bbeb2ce5cdba74efb5cc357f4dbb",
+          "size_bytes": 19106,
+          "source_url": "https://ctan.math.illinois.edu/macros/latex/contrib/elegantpaper.zip",
+          "archive_member": "elegantpaper/License",
+          "upstream_bytes_unchanged": true
+        }
+      ],
+      "omitted_archive_members": [
+        "elegantpaper/elegantpaper-cn.tex",
+        "elegantpaper/reference.bib",
+        "elegantpaper/elegantpaper-en.pdf",
+        "elegantpaper/elegantpaper-en.tex",
+        "elegantpaper/image/founder.png",
+        "elegantpaper/elegantpaper-cn.pdf"
+      ],
+      "notice": "vendor/elegantpaper/auto-research-NOTICE.md"
+    },
+    {
+      "name": "ElegantNote",
+      "version": "2.70",
+      "upstream_url": "https://github.com/ElegantLaTeX/ElegantNote",
+      "commit": "e45cde75e4d265f72042097cd10be03a961440c3",
+      "immutable_source_archive": "https://github.com/ElegantLaTeX/ElegantNote/archive/e45cde75e4d265f72042097cd10be03a961440c3.zip",
+      "ctan_url": "https://ctan.org/pkg/elegantnote",
+      "license": "LPPL-1.3c-or-later",
+      "copyright_and_maintenance": "Preserved verbatim in the vendored class and README; not replaced by this repository license.",
+      "release_archive": {
+        "url": "https://ctan.math.illinois.edu/macros/latex/contrib/elegantnote.zip",
+        "sha256": "61609b0cb3f78c5adca105a3e677a224ab5fc25242cb1596c6fdbcfeeae85b54"
+      },
+      "files": [
+        {
+          "path": "vendor/elegantnote/elegantnote.cls",
+          "sha256": "ee2e6ec4769a12abd424906a9f207854645d8048c4b13e6ecc17590044520ab2",
+          "size_bytes": 14728,
+          "source_url": "https://ctan.math.illinois.edu/macros/latex/contrib/elegantnote.zip",
+          "archive_member": "elegantnote/elegantnote.cls",
+          "upstream_bytes_unchanged": true
+        },
+        {
+          "path": "vendor/elegantnote/README.md",
+          "sha256": "99a4e1855f3a222f67d7cb2e5f659eccccb65f549eeeaf55a424dcf50ae9756e",
+          "size_bytes": 1794,
+          "source_url": "https://ctan.math.illinois.edu/macros/latex/contrib/elegantnote.zip",
+          "archive_member": "elegantnote/README.md",
+          "upstream_bytes_unchanged": true
+        },
+        {
+          "path": "vendor/elegantnote/License",
+          "sha256": "5f05fcf6ef25a6c31bccd2df7c0c46b23107bbeb2ce5cdba74efb5cc357f4dbb",
+          "size_bytes": 19106,
+          "source_url": "https://raw.githubusercontent.com/ElegantLaTeX/ElegantNote/e45cde75e4d265f72042097cd10be03a961440c3/License",
+          "archive_member": null,
+          "upstream_bytes_unchanged": true
+        }
+      ],
+      "omitted_archive_members": [
+        "elegantnote/elegantnote-en.tex",
+        "elegantnote/elegantnote-cn.tex",
+        "elegantnote/elegantnote-cn.pdf",
+        "elegantnote/elegantnote-en.pdf",
+        "elegantnote/build.lua",
+        "elegantnote/image/logo-blue.png",
+        "elegantnote/image/scatter.pdf",
+        "elegantnote/image/scatter.py",
+        "elegantnote/image/logo.png",
+        "elegantnote/image/founder.png"
+      ],
+      "notice": "vendor/elegantnote/auto-research-NOTICE.md"
+    },
+    {
+      "name": "ElegantBook",
+      "version": "4.7",
+      "upstream_url": "https://github.com/ElegantLaTeX/ElegantBook",
+      "commit": "8b90c11e4a5ffd9d1e07174011303c133093d09c",
+      "immutable_source_archive": "https://github.com/ElegantLaTeX/ElegantBook/archive/8b90c11e4a5ffd9d1e07174011303c133093d09c.zip",
+      "ctan_url": "https://ctan.org/pkg/elegantbook",
+      "license": "LPPL-1.3c-or-later",
+      "copyright_and_maintenance": "Preserved verbatim in the vendored class and README; not replaced by this repository license.",
+      "release_archive": {
+        "url": "https://ctan.math.illinois.edu/macros/latex/contrib/elegantbook.zip",
+        "sha256": "481a8fe07ba8a9da44b0907e98972e6712de139a5bdbb89281d3335c006e187f"
+      },
+      "files": [
+        {
+          "path": "vendor/elegantbook/elegantbook.cls",
+          "sha256": "d2cdb802b3de46b1d659d1a8eb36979aecd761402d3e95296936f433f97549eb",
+          "size_bytes": 50671,
+          "source_url": "https://ctan.math.illinois.edu/macros/latex/contrib/elegantbook.zip",
+          "archive_member": "elegantbook/elegantbook.cls",
+          "upstream_bytes_unchanged": true
+        },
+        {
+          "path": "vendor/elegantbook/README.md",
+          "sha256": "1787f8f3147e2f020a66be7462d9f19b3e15e501f2d29849faafcdc023e6d97c",
+          "size_bytes": 3800,
+          "source_url": "https://ctan.math.illinois.edu/macros/latex/contrib/elegantbook.zip",
+          "archive_member": "elegantbook/README.md",
+          "upstream_bytes_unchanged": true
+        },
+        {
+          "path": "vendor/elegantbook/LICENSE",
+          "sha256": "5f05fcf6ef25a6c31bccd2df7c0c46b23107bbeb2ce5cdba74efb5cc357f4dbb",
+          "size_bytes": 19106,
+          "source_url": "https://ctan.math.illinois.edu/macros/latex/contrib/elegantbook.zip",
+          "archive_member": "elegantbook/LICENSE",
+          "upstream_bytes_unchanged": true
+        }
+      ],
+      "omitted_archive_members": [
+        "elegantbook/elegantbook-cn.tex",
+        "elegantbook/logo-blue.png",
+        "elegantbook/scatter.jpg",
+        "elegantbook/cover.jpg",
+        "elegantbook/elegantbook-en.tex",
+        "elegantbook/elegantbook-en.pdf",
+        "elegantbook/elegantbook-cn.pdf",
+        "elegantbook/reference.bib",
+        "elegantbook/build.lua",
+        "elegantbook/founder.png"
+      ],
+      "notice": "vendor/elegantbook/auto-research-NOTICE.md"
+    }
+  ]
+}
