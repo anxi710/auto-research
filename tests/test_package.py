@@ -134,9 +134,10 @@ def check_metadata(root):
     for name, label in (("README.md", "Version"), ("README.zh-CN.md", "版本")):
         text = prose(read(root, root / name, errors))
         badges = re.findall(rf"!\[{label} ([^\]]+)\]\((https://img\.shields\.io/badge/version-[^\s)]+)\)", text)
-        expected = (version, f"https://img.shields.io/badge/version-{version}-blue")
+        display_version = version.split("-", 1)[0].split("+", 1)[0]
+        expected = (display_version, f"https://img.shields.io/badge/version-{display_version}-blue")
         if badges != [expected]:
-            errors.append(f"{name}: version badge label and image must match metadata.version {version}")
+            errors.append(f"{name}: version badge label and image must display metadata.version core {display_version}")
     return errors
 
 
@@ -253,6 +254,29 @@ class PackageCheckTests(unittest.TestCase):
                     self.write(name, original.replace(old, new))
                     self.check(f"{name}: version badge")
             self.write(name, original)
+
+    def test_prerelease_badges_display_only_the_core_version(self):
+        skill = (self.root / SKILL).read_text(encoding="utf-8")
+        image = "https://img.shields.io/badge/version-0.1.10-blue"
+        for version in ("0.1.10-dual-delivery.2", "0.1.10-rc.1+build.7", "0.1.10+build.7"):
+            with self.subTest(version=version):
+                self.write(SKILL, skill.replace('"0.1.6"', f'"{version}"'))
+                for name, label in (("README.md", "Version"), ("README.zh-CN.md", "版本")):
+                    self.write(name, f"[![{label} 0.1.10]({image})]({SKILL})\n")
+                self.check()
+        for name in ("README.md", "README.zh-CN.md"):
+            original = (self.root / name).read_text(encoding="utf-8")
+            for old, new in (
+                (" 0.1.10]", " 0.1.10-dual-delivery.2]"),
+                ("version-0.1.10-blue", "version-0.1.10--dual--delivery.2-blue"),
+                ("version-0.1.10-blue", "version-0.1.10-dual-delivery.2-blue"),
+                (" 0.1.10]", " 0.1.9]"),
+                ("version-0.1.10-blue", "version-0.1.9-blue"),
+            ):
+                with self.subTest(name=name, old=old, new=new):
+                    self.write(name, original.replace(old, new))
+                    self.check(f"{name}: version badge")
+                self.write(name, original)
 
     def test_license_bytes_and_required_files(self):
         self.write("skills/research-workflow/LICENSE", "Different license.\n")
