@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Report"
+  short_description: "Build clear research arguments for human readers"
+  default_prompt: "Use $research-report to turn the supplied evidence into a research report for the stated reader and decision."

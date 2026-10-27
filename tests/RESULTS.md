@@ -638,6 +638,26 @@ The five matched model cases remain unrun.
 Native harness loading, PDF generation, remote CI, and global installation were not exercised here.
 Status remains trial; adoption is not authorized by these checks.
 
+## W021 report-writing companion trial
+
+Test date: 2026-10-27.
+The [change record](../changes/W021.md) fixes one synthetic writing case before the candidate edit.
+The prior W019/W020 working snapshot is the baseline.
+The optional companion is `research-report` version `0.1.0-trial.1`.
+The workflow entry and matching README badges use candidate `0.1.10-dual-delivery.2`.
+
+The baseline snapshot had passed 126 offline tests in W020.
+The candidate passed 129 offline tests on Python 3.12.14 in 17.333 test-runner seconds.
+The three new tests cover companion metadata/UI consistency, self-contained copy links, and the included license.
+Skill Creator's `quick_validate.py` accepted the candidate.
+These checks do not assess argument quality, comprehension, scientific support, or human permission.
+The existing human-review, stage, delivery, and collaboration procedures retain their baseline bytes.
+All vendored template files retain their W020 bytes.
+The bounded writing comparison and its limits are recorded in W021 separately from these mechanical checks.
+Draft pull request integration repeated all 129 tests on Python 3.12.14 in 19.125 test-runner seconds.
+That integration did not repeat the writing comparison.
+Native automatic discovery, personal skill installation, and remote publication remain unrun.
+
 ## General limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.

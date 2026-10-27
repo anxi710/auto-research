@@ -1,6 +1,6 @@
 # 可迁移的科研工作流
 
-[![版本 0.1.10-dual-delivery.1](https://img.shields.io/badge/version-0.1.10-dual-delivery.1-blue)](skills/research-workflow/SKILL.md)
+[![版本 0.1.10-dual-delivery.2](https://img.shields.io/badge/version-0.1.10-dual-delivery.2-blue)](skills/research-workflow/SKILL.md)
 [![许可证：MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![批量工具所需 Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#环境要求)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
@@ -104,6 +104,8 @@ AI 审查通过或执行完成均不等于人工批准。
 [Zotero 与 Git 示例](skills/research-workflow/references/zotero-git-example.md)仅在你主动选择时适用。
 
 可选的中文 LaTeX 排版模板见[模板指南](docs/latex-templates.md)和[模板目录](templates/latex/README.md)。
+面向研究者的论证、综述、摘要与审核路径，可选用独立的 [research-report 写作技能](skills/research-report/SKILL.md)。
+它仍是 trial 候选，与研究流程和 LaTeX 模板分别维护。
 
 对于几十篇或几百篇论文，请使用[批量文献分析流程](skills/research-workflow/references/bulk-literature.md)。
 它介绍了一套可选的 Zotero、zpm、rclone、Google Drive 和 NotebookLM 方案。

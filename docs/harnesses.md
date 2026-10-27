@@ -38,6 +38,10 @@ If an entry file is absent, create it.
 If an import exists, keep one copy.
 Preserve existing project rules and local changes.
 Keep the package's references, templates, scripts, and license together.
+For optional report-writing support, copy the complete [research-report companion](../skills/research-report/SKILL.md) directory separately.
+Read its `SKILL.md` explicitly when the harness does not discover it.
+A workflow-only copy remains supported; the companion is not a required dependency.
+The companion also works alone with supplied text and evidence; it does not create research stages or approval records.
 If you move the package, update its path in the project rules.
 
 Research records stay in the target repository.
