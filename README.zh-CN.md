@@ -1,6 +1,6 @@
 # 可迁移的科研工作流
 
-[![版本 0.1.10-dual-delivery.2](https://img.shields.io/badge/version-0.1.10--dual--delivery.2-blue)](skills/research-workflow/SKILL.md)
+[![版本 0.1.10](https://img.shields.io/badge/version-0.1.10-blue)](skills/research-workflow/SKILL.md)
 [![许可证：MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![批量工具所需 Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#环境要求)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
