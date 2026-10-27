@@ -608,6 +608,36 @@ No new independent behavior trial, external research service, or native harness 
 The earlier 44-case numeric replay remains historical evidence and was not rerun in this integration.
 Hosted CI results are reported on the updated draft PR after push.
 
+## W019 isolated dual-delivery trial
+
+Test date: 2026-10-27.
+Baseline: `06e6c0fb82037ffa95be3d22480c6fe182761324`, package `0.1.9`.
+Candidate: `0.1.10-dual-delivery.1` in the isolated trial clone.
+The [change record](../changes/W019.md) fixes five behavior cases and the allowed scope before candidate edits.
+
+Both versions ran the existing offline command on Python 3.12.14:
+
+```bash
+python3 -B -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+| Version | Tests | Result | Test runner seconds |
+| --- | --- | --- | --- |
+| Baseline | 123 | Passed | 20.540 |
+| Candidate | 123 | Passed | 21.280 |
+
+These results check package links, metadata, record formats, ledger behavior, and sealed examples.
+They do not compare model behavior or measure a research improvement.
+No new checker, record schema, or mirrored instruction-string test was added.
+The human-review and stage rules retain their baseline bytes.
+An independent read-only context inspected the delivery instructions and template.
+It identified an ambiguity about sealed result artifacts, which the candidate now explicitly preserves.
+Final package and patch checks were recorded in a local implementation packet that retains command output and exact file hashes.
+That private packet is not included in the public repository.
+The five matched model cases remain unrun.
+Native harness loading, PDF generation, remote CI, and global installation were not exercised here.
+Status remains trial; adoption is not authorized by these checks.
+
 ## General limits
 
 Native skill discovery and full research cycles remain untested in Codex, Claude Code, Gemini CLI, and OpenCode.

@@ -1,6 +1,6 @@
 # A portable research workflow
 
-[![Version 0.1.9](https://img.shields.io/badge/version-0.1.9-blue)](skills/research-workflow/SKILL.md)
+[![Version 0.1.10-dual-delivery.1](https://img.shields.io/badge/version-0.1.10-dual-delivery.1-blue)](skills/research-workflow/SKILL.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Python 3.11+ for bulk tools](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#requirements)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
@@ -8,6 +8,8 @@
 [![rclone CLI](https://img.shields.io/badge/rclone-CLI-3F79AD)](skills/research-workflow/references/scripted-bulk-literature.md)
 
 English | [简体中文](README.zh-CN.md)
+
+This isolated prerelease is the [W019 delivery trial](changes/W019.md), not an adopted default.
 
 This toolkit gives AI assistants a shared procedure for study, questions, experiments, analysis, writing, and review.
 A harness is the application that runs an assistant and its tools.

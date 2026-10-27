@@ -1,6 +1,6 @@
 # 可迁移的科研工作流
 
-[![版本 0.1.9](https://img.shields.io/badge/version-0.1.9-blue)](skills/research-workflow/SKILL.md)
+[![版本 0.1.10-dual-delivery.1](https://img.shields.io/badge/version-0.1.10-dual-delivery.1-blue)](skills/research-workflow/SKILL.md)
 [![许可证：MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![批量工具所需 Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#环境要求)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
@@ -8,6 +8,8 @@
 [![rclone CLI](https://img.shields.io/badge/rclone-CLI-3F79AD)](skills/research-workflow/references/scripted-bulk-literature.md)
 
 [English](README.md) | 简体中文
+
+此隔离预发布版本用于 [W019 交付试用](changes/W019.md)，尚未正式采用为默认规则。
 
 这套工具为 AI 助手提供统一的科研流程，涵盖学习、提问、实验、分析、写作和评审。
 Harness 是运行助手及其工具的应用程序。

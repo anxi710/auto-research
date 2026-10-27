@@ -2,7 +2,7 @@
 name: research-workflow
 description: Run research through literature study, questions, experiments, analysis, writing, and review. Resume from file records across AI assistants. Capture workflow feedback and test scoped improvements when requested.
 metadata:
-  version: "0.1.9"
+  version: "0.1.10-dual-delivery.1"
 ---
 
 # Research workflow
@@ -136,6 +136,8 @@ Read it when resuming a task that already uses those records.
 Keep simple standalone work in one context when that meets the request.
 
 ## Finish a work session
+
+Use the [delivery guide](references/delivery.md) to present the requested output to researchers and agents at the appropriate scale.
 
 1. Save the requested output with evidence links and the status of its stage conditions.
 2. Preserve active job records before considering replacement runs.
