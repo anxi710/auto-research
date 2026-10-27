@@ -134,7 +134,8 @@ def check_metadata(root):
     for name, label in (("README.md", "Version"), ("README.zh-CN.md", "版本")):
         text = prose(read(root, root / name, errors))
         badges = re.findall(rf"!\[{label} ([^\]]+)\]\((https://img\.shields\.io/badge/version-[^\s)]+)\)", text)
-        expected = (version, f"https://img.shields.io/badge/version-{version}-blue")
+        badge_version = version.replace("-", "--")
+        expected = (version, f"https://img.shields.io/badge/version-{badge_version}-blue")
         if badges != [expected]:
             errors.append(f"{name}: version badge label and image must match metadata.version {version}")
     return errors
@@ -253,6 +254,23 @@ class PackageCheckTests(unittest.TestCase):
                     self.write(name, original.replace(old, new))
                     self.check(f"{name}: version badge")
             self.write(name, original)
+
+    def test_prerelease_badges_escape_url_dashes_only(self):
+        self.replace(SKILL, '"0.1.6"', '"0.1.10-dual-delivery.2"')
+        image = "https://img.shields.io/badge/version-0.1.10--dual--delivery.2-blue"
+        for name, label in (("README.md", "Version"), ("README.zh-CN.md", "版本")):
+            self.write(name, f"[![{label} 0.1.10-dual-delivery.2]({image})]({SKILL})\n")
+        self.check()
+        for name in ("README.md", "README.zh-CN.md"):
+            original = (self.root / name).read_text(encoding="utf-8")
+            for old, new in (
+                ("version-0.1.10--dual--delivery.2-blue", "version-0.1.10-dual-delivery.2-blue"),
+                (" 0.1.10-dual-delivery.2]", " 0.1.10--dual--delivery.2]"),
+            ):
+                with self.subTest(name=name, old=old):
+                    self.write(name, original.replace(old, new))
+                    self.check(f"{name}: version badge")
+                self.write(name, original)
 
     def test_license_bytes_and_required_files(self):
         self.write("skills/research-workflow/LICENSE", "Different license.\n")

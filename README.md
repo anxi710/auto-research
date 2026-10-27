@@ -1,6 +1,6 @@
 # A portable research workflow
 
-[![Version 0.1.10-dual-delivery.2](https://img.shields.io/badge/version-0.1.10-dual-delivery.2-blue)](skills/research-workflow/SKILL.md)
+[![Version 0.1.10-dual-delivery.2](https://img.shields.io/badge/version-0.1.10--dual--delivery.2-blue)](skills/research-workflow/SKILL.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Python 3.11+ for bulk tools](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#requirements)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
