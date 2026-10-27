@@ -1,0 +1,26 @@
+% Copyright 2026 auto-research contributors. MIT; see repository LICENSE.
+% New adapter document. Upstream class files are unmodified.
+% Packaging changes and upstream license scope:
+% ../../vendor/elegantpaper/auto-research-NOTICE.md
+\documentclass[lang=cn,chinesefont=nofont,bibend=bibtex,a4paper,11pt]{elegantpaper}
+\typeout{auto-research curated subset; see ../../vendor/elegantpaper/auto-research-NOTICE.md}
+\input{../shared/fonts.tex}
+\usepackage{xurl}
+\usepackage{researcher-paper}
+\addbibresource{references.bib}
+\hypersetup{pdftitle={中文研究报告排版样例},pdfauthor={auto-research}}
+\title{中文研究报告排版样例}
+\author{auto-research}
+\date{2026年10月27日}
+\begin{document}
+\maketitle
+\begin{abstract}
+这是一份真实模板生成的中文排版预览，用于比较正文、层次、公式、表格与引用。
+所有示例陈述均为版式说明，不包含实验结果或新增科学结论。
+请先看摘要与正文，再核对证据表和具体待审核项；模板选择仍由用户决定。
+\end{abstract}
+\input{../shared/overview.tex}
+\clearpage
+\input{../shared/evidence.tex}
+\printbibliography[title={参考文献}]
+\end{document}

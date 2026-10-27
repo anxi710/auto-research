@@ -1,0 +1,16 @@
+% Copyright 2026 auto-research contributors. MIT; see repository LICENSE.
+% Original vector geometry. No third-party artwork or fonts.
+\documentclass{article}
+\usepackage[paperwidth=210mm,paperheight=83mm,margin=0mm]{geometry}
+\usepackage{tikz}
+\pagestyle{empty}
+\begin{document}
+\begin{tikzpicture}[remember picture,overlay]
+\fill[blue!65!black] (current page.south west) rectangle (current page.north east);
+\fill[cyan!35!white,opacity=.35] ([xshift=-35mm]current page.north east) circle (65mm);
+\fill[white,opacity=.12] ([xshift=40mm,yshift=20mm]current page.south west) circle (50mm);
+\draw[white,opacity=.55,line width=1pt] ([xshift=20mm,yshift=15mm]current page.south west) -- ([xshift=-25mm,yshift=-18mm]current page.north east);
+\draw[white,opacity=.35,line width=.5pt] ([xshift=5mm,yshift=20mm]current page.south west) -- ([xshift=-15mm,yshift=-10mm]current page.north east);
+\end{tikzpicture}
+\mbox{}
+\end{document}

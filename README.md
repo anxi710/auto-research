@@ -103,6 +103,8 @@ You can use it without a preferences file.
 For reusable choices, follow the [preferences guide](skills/research-workflow/references/preferences.md) and its [template](skills/research-workflow/templates/PREFERENCES.md).
 The [Zotero and Git example](skills/research-workflow/references/zotero-git-example.md) applies only when you select it.
 
+For optional Chinese LaTeX layouts, see the [template guide](docs/latex-templates.md) and [catalog](templates/latex/README.md).
+
 For dozens or hundreds of papers, use the [bulk literature procedure](skills/research-workflow/references/bulk-literature.md).
 It describes an optional Zotero, zpm, rclone, Google Drive, and NotebookLM setup.
 The [scripted pipeline guide](skills/research-workflow/references/scripted-bulk-literature.md) covers installation, execution, recovery, and output inspection.

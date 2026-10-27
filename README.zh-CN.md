@@ -103,6 +103,8 @@ AI 审查通过或执行完成均不等于人工批准。
 如果需要保存可复用的选择，请使用[偏好指南](skills/research-workflow/references/preferences.md)及其[模板](skills/research-workflow/templates/PREFERENCES.md)。
 [Zotero 与 Git 示例](skills/research-workflow/references/zotero-git-example.md)仅在你主动选择时适用。
 
+可选的中文 LaTeX 排版模板见[模板指南](docs/latex-templates.md)和[模板目录](templates/latex/README.md)。
+
 对于几十篇或几百篇论文，请使用[批量文献分析流程](skills/research-workflow/references/bulk-literature.md)。
 它介绍了一套可选的 Zotero、zpm、rclone、Google Drive 和 NotebookLM 方案。
 [脚本流程指南](skills/research-workflow/references/scripted-bulk-literature.md)说明了安装、执行、恢复和输出检查方法。
