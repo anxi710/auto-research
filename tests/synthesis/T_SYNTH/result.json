@@ -1,0 +1,30 @@
+{
+  "task_id": "T_SYNTH",
+  "task_revision": 1,
+  "attempt_id": "A001",
+  "task_path": "T_SYNTH/snapshot.json",
+  "task_sha256": "3bd1482a077dd068d4b003f0260c91e3a25e2d1e5c304e9ffc25eca7f7779194",
+  "execution_status": "completed",
+  "artifacts": [
+    {
+      "path": "synthesis-artifact.json",
+      "sha256": "78f9f88fa34a61104c284729c723a498f059de23516e5a5a036d28bc56ca973b",
+      "kind": "synthesis"
+    },
+    {
+      "path": "synthesis.md",
+      "sha256": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8"
+    },
+    {
+      "path": "synthesis-ledger.json",
+      "sha256": "b0420a558d0c1b2b1de43eb936f226fee5963eaeae4c9c02a0454446b46dbbf7",
+      "kind": "claim_evidence_ledger"
+    }
+  ],
+  "unresolved": [],
+  "resource_usage": {
+    "tokens": null,
+    "measurement": "synthetic fixture"
+  },
+  "next_action": "Present for independent content review."
+}

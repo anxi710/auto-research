@@ -1,0 +1,21 @@
+{
+  "task_id": "T_B",
+  "task_revision": 1,
+  "attempt_id": "A001",
+  "task_path": "T_B/snapshot.json",
+  "task_sha256": "f0179d675df89f277da871eabc514c5d0cb004ac8e7105668f8bbcc06c0c45d2",
+  "execution_status": "completed",
+  "artifacts": [
+    {
+      "path": "T_B/response.json",
+      "sha256": "6700173c9f78856cf33c40c4eb97d29bb2dfb472da7718e6d8fc9879b8c7e5b4",
+      "kind": "worker_response"
+    }
+  ],
+  "unresolved": [],
+  "resource_usage": {
+    "tokens": null,
+    "measurement": "synthetic fixture"
+  },
+  "next_action": "Present for independent content review."
+}

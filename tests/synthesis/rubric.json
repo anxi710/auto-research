@@ -1,0 +1,122 @@
+{
+  "schema_version": "1",
+  "scope": "Frozen synthetic relations. Independent prose assessment is separate.",
+  "checks": [
+    {
+      "finding_id": "quality_A0",
+      "dimension": "source_quality",
+      "kind": "source_status",
+      "source_ids": [
+        "A0"
+      ]
+    },
+    {
+      "finding_id": "quality_A1",
+      "dimension": "source_quality",
+      "kind": "source_status",
+      "source_ids": [
+        "A1"
+      ]
+    },
+    {
+      "finding_id": "quality_B1",
+      "dimension": "source_quality",
+      "kind": "source_status",
+      "source_ids": [
+        "B1"
+      ]
+    },
+    {
+      "finding_id": "quality_A2",
+      "dimension": "source_quality",
+      "kind": "source_status",
+      "source_ids": [
+        "A2"
+      ]
+    },
+    {
+      "finding_id": "quality_B2",
+      "dimension": "source_quality",
+      "kind": "source_status",
+      "source_ids": [
+        "B2"
+      ]
+    },
+    {
+      "finding_id": "quality_H1",
+      "dimension": "source_quality",
+      "kind": "source_status",
+      "source_ids": [
+        "H1"
+      ]
+    },
+    {
+      "finding_id": "outcome_delta",
+      "dimension": "claim_support",
+      "kind": "difference",
+      "source_ids": [
+        "A1"
+      ]
+    },
+    {
+      "finding_id": "cost_delta",
+      "dimension": "claim_support",
+      "kind": "difference",
+      "source_ids": [
+        "B1"
+      ]
+    },
+    {
+      "finding_id": "utility",
+      "dimension": "cross_branch_inference",
+      "kind": "weighted_difference",
+      "source_ids": [
+        "A1",
+        "B1"
+      ],
+      "cost_weight": 0.05
+    },
+    {
+      "finding_id": "conditions",
+      "dimension": "cross_branch_inference",
+      "kind": "condition_difference",
+      "source_ids": [
+        "A1",
+        "A2"
+      ]
+    },
+    {
+      "finding_id": "opposition",
+      "dimension": "cross_branch_inference",
+      "kind": "dispute",
+      "source_ids": [
+        "A1",
+        "B2"
+      ]
+    },
+    {
+      "finding_id": "transfer",
+      "dimension": "claim_support",
+      "kind": "evidence_gap",
+      "source_ids": [
+        "H1"
+      ]
+    },
+    {
+      "finding_id": "answer",
+      "dimension": "question_coverage",
+      "kind": "answer",
+      "source_ids": [
+        "A1",
+        "B1",
+        "B2",
+        "H1"
+      ],
+      "expected": {
+        "recommendation": "withhold_general_adoption",
+        "alternative": "repeat_matched_runs",
+        "boundary": "human_transfer_unknown"
+      }
+    }
+  ]
+}

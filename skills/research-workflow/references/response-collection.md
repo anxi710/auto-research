@@ -112,6 +112,7 @@ Changing the scope requires a new contract revision and attempt.
 ## Connect a synthesis to evidence
 
 Use a separate manuscript for the argument.
+Follow the [synthesis guide](synthesis-revision.md) for reasoning across branches.
 Save its selected claims in the existing ledger.
 Add the exact aggregate reference to the synthesis task `inputs`.
 Set the task `synthesis` field to its planned synthesis artifact path.

@@ -3,7 +3,11 @@
   "baseline_commit": "b0306c681bf93a250294f3e800634d9dcfd0f9b6",
   "candidate_version": "0.1.11-synthesis.1",
   "python": "3.12.14",
-  "baseline": {"tests": 130, "seconds": 15.134, "exit_code": 0},
+  "baseline": {
+    "tests": 130,
+    "seconds": 15.134,
+    "exit_code": 0
+  },
   "stage1": {
     "scope": "Isolated baseline archive plus stage 1 staged changes only.",
     "command": "python3 -B -m unittest discover -s tests -p 'test_*.py'",
@@ -22,5 +26,16 @@
     "A structurally valid partial collection does not accept missing branches.",
     "Scientific quality and human permission remain outside these mechanical checks.",
     "The old external pilot, including P07, was not rescored or modified."
-  ]
+  ],
+  "stage2": {
+    "scope": "Isolated stage 1 archive plus stage 2 staged changes only.",
+    "tests": 157,
+    "seconds": 18.377,
+    "exit_code": 0,
+    "new_tests": 10,
+    "mechanical_results": "tests/evidence/W022-synthesis.json",
+    "independent_content_review": "tests/evidence/W022-synthesis-review.json",
+    "interpretation": "The authored synthesis supplies the selected joint reasoning. Controls retain correct facts. Structured matches do not measure model or scientific quality.",
+    "preserved_development_history": "tests/synthesis/history/technical-binding-correction.json"
+  }
 }

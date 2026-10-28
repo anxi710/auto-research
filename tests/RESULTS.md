@@ -677,3 +677,10 @@ Its seventeen new tests run collection through the existing record consumer.
 They cover missing branches, truncated JSON, unfinished execution, duplicate submissions, stale sources, and existing review history.
 The candidate preserves partial coverage instead of inferring acceptance for missing branches.
 The [run evidence](evidence/W022.json) records observed results and limits.
+
+The isolated synthesis stage passed 157 tests in 18.377 seconds.
+Its fixed bundle covers five evidence problems and includes literal and wording-only controls.
+The [content review](evidence/W022-synthesis-review.json) distinguishes correct retained facts from missing joint reasoning.
+The [mechanical comparison](evidence/W022-synthesis.json) measures declared finding matches, not scientific quality.
+The controls' missing findings are not zero factual accuracy.
+The original reviewed snapshot remains in the fixture history after technical binding corrections.

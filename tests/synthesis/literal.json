@@ -1,0 +1,15 @@
+{
+  "artifact": {
+    "path": "literal-aggregate.json",
+    "sha256": "5e1f017347321e8580152e2852e66e6e93d3b963a47f5ee502b4fef4fcd08421"
+  },
+  "task": {
+    "path": "T_COLLECT/task.json",
+    "sha256": "d27982d685c48701fc40ebcf8a3a50af011248c2d6c85aaa535991ff35db920a"
+  },
+  "result": {
+    "path": "T_COLLECT/result.json",
+    "sha256": "c696fb7ab2bc6a2f70a38fdf82a09585a07086c929f35de62743198b05297427"
+  },
+  "findings": []
+}

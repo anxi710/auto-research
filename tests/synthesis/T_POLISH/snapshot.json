@@ -1,0 +1,23 @@
+{
+  "task_id": "T_POLISH",
+  "revision": 1,
+  "goal": "Preserve the frozen synthetic content.",
+  "owner": "synthetic-fixture",
+  "inputs": [
+    {
+      "path": "literal-aggregate.json",
+      "sha256": "5e1f017347321e8580152e2852e66e6e93d3b963a47f5ee502b4fef4fcd08421"
+    }
+  ],
+  "dependencies": [],
+  "write_paths": [
+    "."
+  ],
+  "budget_ref": "budget.txt",
+  "acceptance": [
+    "Preserve evidence and conditions."
+  ],
+  "stop_condition": "Stop after this fixture.",
+  "synthesis": "polished-artifact.json",
+  "evidence_ledger": "polished-ledger.json"
+}

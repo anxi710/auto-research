@@ -1,0 +1,14 @@
+{
+  "case_id": "SYNTH-001",
+  "synthetic": true,
+  "question": "Does M justify adoption over N on short tasks, and does the benefit transfer to long tasks or human users?",
+  "sources": {
+    "path": "sources.json",
+    "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768"
+  },
+  "rubric": {
+    "path": "rubric.json",
+    "sha256": "9a09dd7e3b11aa4ace17e4f4299bbabaefc759fa54a12e81c799e993d9971982"
+  },
+  "limit": "This case tests declared relations. It does not measure agent performance."
+}
