@@ -28,8 +28,8 @@ class ResponseCollectionTests(unittest.TestCase):
     def write(self, path, value):
         target = self.root / path
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(json.dumps(value, indent=2) + "\n" if isinstance(value, dict) else value,
-                          encoding="utf-8", newline="")
+        text = json.dumps(value, indent=2) + "\n" if isinstance(value, dict) else value
+        target.write_bytes(text.encode("utf-8"))
 
     def read(self, path):
         return json.loads((self.root / path).read_text())
