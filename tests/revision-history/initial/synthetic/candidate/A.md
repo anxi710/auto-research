@@ -1,0 +1,1 @@
+With executor E1 fixed, P scored 72 and Q scored 60 on ten synthetic tasks. The measurements compare each planner together with E1. They do not identify a quality ranking that holds across executors. Source: initial/source.json, planner_p and planner_q.

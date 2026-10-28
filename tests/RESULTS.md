@@ -684,3 +684,13 @@ The [content review](evidence/W022-synthesis-review.json) distinguishes correct 
 The [mechanical comparison](evidence/W022-synthesis.json) measures declared finding matches, not scientific quality.
 The controls' missing findings are not zero factual accuracy.
 The original reviewed snapshot remains in the fixture history after technical binding corrections.
+
+The isolated revision stage passed 169 tests in 18.793 seconds.
+Four actual CLI replays compare full and local-only corrections for two frozen cases.
+Both full corrections passed, while both local-only controls reported stale downstream content.
+The initial preservation-criteria gap and the corrected comparison remain in the development history.
+A fresh native actor also revised both initial cases without the authored candidates or rubric.
+Both native results passed the record checker after copying into the repository.
+An independent reader found substantive corrections and preserved useful content in both cases.
+The [native evidence](../evaluations/native-revision/README.md) retains drafts, dependency plans, failures, unknown resource use, and the content review.
+One native invocation across two cases does not establish general revision reliability.

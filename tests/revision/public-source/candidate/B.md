@@ -1,0 +1,1 @@
+Inspect the requested correction and the content that was already useful before revision. Treat loss of useful content and introduction of unwanted content as possible damage. Appendix B.4 handles desirable and undesirable criteria separately. This local procedure is an inference from those definitions.

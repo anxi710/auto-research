@@ -1,0 +1,1 @@
+This finite fixture replay runs locally without new experiments or external writes.

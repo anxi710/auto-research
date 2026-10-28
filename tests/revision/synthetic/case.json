@@ -1,0 +1,89 @@
+{
+  "case_id": "synthetic",
+  "initial_task": {
+    "path": "synthetic/task.json",
+    "sha256": "79390984cf8ff87507299b35fdd2ae3667228c99b7a4c39f687fa4194747a27b"
+  },
+  "initial_result": {
+    "path": "synthetic/initial/result.json",
+    "sha256": "930d2a0b0542aa2ed57850fd83d19517ec33ab18af709555f5c25d9f9e21b2d3"
+  },
+  "feedback": {
+    "path": "synthetic/feedback.json",
+    "sha256": "fd48e2442fa42e60fa81b8007c64351a8855f735a9187d2a3a9d66d8079754af"
+  },
+  "rubric": {
+    "path": "synthetic/rubric.json",
+    "sha256": "27f3e206fb26986acac53e9c1c91d9cc7b84bf47c052da5584716442c0dd795a"
+  },
+  "nodes": [
+    {
+      "id": "source",
+      "branch": "evidence",
+      "artifact": {
+        "path": "synthetic/initial/source.json",
+        "sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "A",
+      "branch": "A",
+      "artifact": {
+        "path": "synthetic/initial/A.md",
+        "sha256": "2e73ee2b6e366b4fce2e27b1b278cd242a05d31a921fe36d285f6fb32e110a68"
+      },
+      "depends_on": [
+        "source"
+      ]
+    },
+    {
+      "id": "B",
+      "branch": "B",
+      "artifact": {
+        "path": "synthetic/initial/B.md",
+        "sha256": "7dd9834bcc454bfbb357d5a5560adafd45e120f2b0bdd1c95d69817b6dd512ed"
+      },
+      "depends_on": [
+        "A"
+      ]
+    },
+    {
+      "id": "C",
+      "branch": "C",
+      "artifact": {
+        "path": "synthetic/initial/C.md",
+        "sha256": "980fda7afa9b3eaf9b94a763beabf9996ffae794fec9c269bead2d898e288642"
+      },
+      "depends_on": [
+        "source"
+      ]
+    },
+    {
+      "id": "report",
+      "branch": "report",
+      "artifact": {
+        "path": "synthetic/initial/report.md",
+        "sha256": "8ec09d2b03e66f6eaeaf525f721247bc7ddd78fbdf5391cd12047a6c2d17a73e"
+      },
+      "depends_on": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "id": "ledger",
+      "branch": "report",
+      "artifact": {
+        "path": "synthetic/initial/ledger.json",
+        "sha256": "0bf53880ecbf2c5a501a963698e5bb718f11eb56c210c39e9b80ee596121a657"
+      },
+      "depends_on": [
+        "report",
+        "source"
+      ]
+    }
+  ],
+  "ledger_node": "ledger"
+}

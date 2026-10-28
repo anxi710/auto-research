@@ -1,0 +1,1 @@
+Branch A supports P as the higher-scoring choice only for E1 and these synthetic tasks. An executor can follow one planner more effectively than another. A comparison across executors can distinguish that interaction from a stable planner advantage. No such comparison ran.

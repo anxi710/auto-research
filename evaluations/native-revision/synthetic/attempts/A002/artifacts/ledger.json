@@ -1,0 +1,103 @@
+{
+  "schema_version": "1",
+  "task_id": "TR001",
+  "attempt_id": "A002",
+  "claims": [
+    {
+      "claim_id": "C001",
+      "text": "With executor E1, planner P scored 72 and Q scored 60 on the same ten synthetic tasks.",
+      "location": {
+        "artifact": "attempts/A002/artifacts/report.md",
+        "sha256": "ad916c392fe4b4946f3bb1f370ba078bb8b46a7857af4dec1db6115044e73d66",
+        "exact_quote": "With executor E1, planner P scored 72 and Q scored 60 on the same ten synthetic tasks."
+      },
+      "evidence": [
+        {
+          "evidence_id": "E001",
+          "kind": "experiment",
+          "availability": "available",
+          "scope": "Ten synthetic tasks with one fixed executor.",
+          "limitations": [
+            "Synthetic practice data.",
+            "No comparison across executors."
+          ],
+          "artifact": "initial/source.json",
+          "sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f",
+          "locator": {
+            "type": "json_pointer",
+            "value": "/planner_p/value"
+          },
+          "value": 72,
+          "unit": "score",
+          "context": {
+            "dataset": "synthetic-10",
+            "split": "fixed-v1",
+            "method": "P",
+            "baseline": "Q",
+            "conditions": {
+              "executor": "E1"
+            }
+          },
+          "baseline_locator": "/planner_q/value",
+          "baseline_value": 60
+        }
+      ],
+      "verification_request": {
+        "question": "Does this wording preserve the fixed E1 scores and avoid claims about isolated plan quality or untested executors?",
+        "limitations": [
+          "Human scientific approval is pending.",
+          "The evidence is reused without a new experiment or new source reading.",
+          "This native revision is not an independent content review."
+        ]
+      }
+    },
+    {
+      "claim_id": "C002",
+      "text": "The saved comparison supports a higher score for P with E1, but it does not establish which planner to choose with other executors.",
+      "location": {
+        "artifact": "attempts/A002/artifacts/report.md",
+        "sha256": "ad916c392fe4b4946f3bb1f370ba078bb8b46a7857af4dec1db6115044e73d66",
+        "exact_quote": "The saved comparison supports a higher score for P with E1, but it does not establish which planner to choose with other executors."
+      },
+      "evidence": [
+        {
+          "evidence_id": "E002",
+          "kind": "experiment",
+          "availability": "available",
+          "scope": "Ten synthetic tasks with one fixed executor.",
+          "limitations": [
+            "Synthetic practice data.",
+            "No comparison across executors."
+          ],
+          "artifact": "initial/source.json",
+          "sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f",
+          "locator": {
+            "type": "json_pointer",
+            "value": "/planner_p/value"
+          },
+          "value": 72,
+          "unit": "score",
+          "context": {
+            "dataset": "synthetic-10",
+            "split": "fixed-v1",
+            "method": "P",
+            "baseline": "Q",
+            "conditions": {
+              "executor": "E1"
+            }
+          },
+          "baseline_locator": "/planner_q/value",
+          "baseline_value": 60
+        }
+      ],
+      "verification_request": {
+        "question": "Does this wording preserve the fixed E1 scores and avoid claims about isolated plan quality or untested executors?",
+        "limitations": [
+          "Human scientific approval is pending.",
+          "The evidence is reused without a new experiment or new source reading.",
+          "This native revision is not an independent content review."
+        ]
+      }
+    }
+  ]
+}

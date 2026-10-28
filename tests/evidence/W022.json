@@ -37,5 +37,32 @@
     "independent_content_review": "tests/evidence/W022-synthesis-review.json",
     "interpretation": "The authored synthesis supplies the selected joint reasoning. Controls retain correct facts. Structured matches do not measure model or scientific quality.",
     "preserved_development_history": "tests/synthesis/history/technical-binding-correction.json"
+  },
+  "stage3": {
+    "scope": "Isolated stage 2 archive plus stage 3 implementation and fixed fixtures. Native artifacts also inspected separately after copying.",
+    "tests": 169,
+    "seconds": 18.793,
+    "exit_code": 0,
+    "new_tests": 12,
+    "replays": "tests/evidence/W022-revision.json",
+    "independent_fixed_content_review": "tests/evidence/W022-revision-review.json",
+    "preserved_correction_history": "tests/revision-history/correction.json",
+    "native_revision": {
+      "actor_invocations": 1,
+      "cases": 2,
+      "independent_reviewer_contexts": 1,
+      "fresh_actor": true,
+      "reviewer_previously_knew_fixtures": true,
+      "artifact_directory": "evaluations/native-revision",
+      "content_review": "evaluations/native-revision/content-review.json",
+      "copied_record_consumer_exit_codes": [
+        0,
+        0
+      ],
+      "tokens": null,
+      "cost": null,
+      "fast_tier": "unverified",
+      "preparation_failure": "Incorrect graph key assumption, corrected before revision."
+    }
   }
 }

@@ -1,0 +1,21 @@
+{
+  "attempt_id": "A002",
+  "replacements": {
+    "A": {
+      "path": "synthetic/candidate/A.md",
+      "sha256": "dd99a8dcb1daec0f80b645b8ca5cef364a8cb857bbca467efe8e145454c98251"
+    },
+    "B": {
+      "path": "synthetic/candidate/B.md",
+      "sha256": "7a24b76026e5449dd9cc7c1a4b5a14ceb0b6386732f3623ea11995438fd13e85"
+    },
+    "report": {
+      "path": "synthetic/candidate/report.md",
+      "sha256": "7764d628c9668578d5a3d3d932de7385a9ec989f73fe455a33724d91ce161433"
+    },
+    "ledger": {
+      "path": "synthetic/candidate/ledger.json",
+      "sha256": "a1d32fd7a68ac5b312cbabd40dd188b32af616c4253aa21a4678f00417fef407"
+    }
+  }
+}

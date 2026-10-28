@@ -1,0 +1,9 @@
+{
+  "attempt_id": "A003",
+  "replacements": {
+    "A": {
+      "path": "public-source/candidate/A.md",
+      "sha256": "9345b70cda970038eb3b189ebbf432ed9bf896d784bef874efe1cd55cffd0e9d"
+    }
+  }
+}
