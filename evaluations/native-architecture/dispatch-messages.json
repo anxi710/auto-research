@@ -1,0 +1,156 @@
+[
+  {
+    "call_id": "r1-single",
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "r1_single",
+      "fork_turns": "none",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "message": "Work in /workspace/auto-research. Read and execute exactly evaluations/native-architecture/frozen/r1-single.md. Write only the output file named there. Do not inspect other evaluation files beyond that prompt's listed inputs. Do not delegate."
+    }
+  },
+  {
+    "call_id": "r1-quality",
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "r1_quality",
+      "fork_turns": "none",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "message": "Work in /workspace/auto-research. Read and execute exactly evaluations/native-architecture/frozen/r1-quality.md. Write only the output file named there. Do not inspect other evaluation files beyond that prompt's listed inputs. Do not delegate."
+    }
+  },
+  {
+    "call_id": "r1-operations",
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "r1_operations",
+      "fork_turns": "none",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "message": "Work in /workspace/auto-research. Read and execute exactly evaluations/native-architecture/frozen/r1-operations.md. Write only the output file named there. Do not inspect other evaluation files beyond that prompt's listed inputs. Do not delegate."
+    }
+  },
+  {
+    "call_id": "r1-synthesis",
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "r1_synthesis",
+      "fork_turns": "none",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "message": "Work in /workspace/auto-research. Read and execute exactly evaluations/native-architecture/frozen/r1-synthesis.md. Write only the output file named there. Do not inspect other evaluation files beyond that prompt's listed inputs. Do not delegate."
+    }
+  },
+  {
+    "call_id": "r1-feedback",
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "r1_feedback",
+      "fork_turns": "none",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "message": "Work in /workspace/auto-research. Read and execute exactly evaluations/native-architecture/frozen/r1-feedback.md. Write only the output file named there. Do not inspect other evaluation files beyond that prompt's listed inputs. Do not delegate."
+    }
+  },
+  {
+    "call_id": "r1-revision",
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "r1_revision",
+      "fork_turns": "none",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "message": "Work in /workspace/auto-research. Read and execute exactly evaluations/native-architecture/frozen/r1-revision.md. Write only the output file named there. Do not inspect other evaluation files beyond that prompt's listed inputs. Do not delegate."
+    }
+  },
+  {
+    "call_id": "r1-evaluate",
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "r1_evaluate",
+      "fork_turns": "none",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "message": "Work in /workspace/auto-research. Read and execute exactly evaluations/native-architecture/frozen/r1-evaluate.md. Write only the output file named there. Do not inspect other evaluation files beyond that prompt's listed inputs. Do not delegate."
+    }
+  },
+  {
+    "call_id": "r2-single",
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "r2_single",
+      "fork_turns": "none",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "message": "Work in /workspace/auto-research. Read and execute exactly evaluations/native-architecture/frozen/r2-single.md. Write only the output file named there. Do not inspect other evaluation files beyond that prompt's listed inputs. Do not delegate."
+    }
+  },
+  {
+    "call_id": "r2-quality",
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "r2_quality",
+      "fork_turns": "none",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "message": "Work in /workspace/auto-research. Read and execute exactly evaluations/native-architecture/frozen/r2-quality.md. Write only the output file named there. Do not inspect other evaluation files beyond that prompt's listed inputs. Do not delegate."
+    }
+  },
+  {
+    "call_id": "r2-operations",
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "r2_operations",
+      "fork_turns": "none",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "message": "Work in /workspace/auto-research. Read and execute exactly evaluations/native-architecture/frozen/r2-operations.md. Write only the output file named there. Do not inspect other evaluation files beyond that prompt's listed inputs. Do not delegate."
+    }
+  },
+  {
+    "call_id": "r2-synthesis",
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "r2_synthesis",
+      "fork_turns": "none",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "message": "Work in /workspace/auto-research. Read and execute exactly evaluations/native-architecture/frozen/r2-synthesis.md. Write only the output file named there. Do not inspect other evaluation files beyond that prompt's listed inputs. Do not delegate."
+    }
+  },
+  {
+    "call_id": "r2-feedback",
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "r2_feedback",
+      "fork_turns": "none",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "message": "Work in /workspace/auto-research. Read and execute exactly evaluations/native-architecture/frozen/r2-feedback.md. Write only the output file named there. Do not inspect other evaluation files beyond that prompt's listed inputs. Do not delegate."
+    }
+  },
+  {
+    "call_id": "r2-revision",
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "r2_revision",
+      "fork_turns": "none",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "message": "Work in /workspace/auto-research. Read and execute exactly evaluations/native-architecture/frozen/r2-revision.md. Write only the output file named there. Do not inspect other evaluation files beyond that prompt's listed inputs. Do not delegate."
+    }
+  },
+  {
+    "call_id": "r2-evaluate",
+    "tool": "collaboration.spawn_agent",
+    "arguments": {
+      "task_name": "r2_evaluate",
+      "fork_turns": "none",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "ultra",
+      "message": "Work in /workspace/auto-research. Read and execute exactly evaluations/native-architecture/frozen/r2-evaluate.md. Write only the output file named there. Do not inspect other evaluation files beyond that prompt's listed inputs. Do not delegate."
+    }
+  }
+]

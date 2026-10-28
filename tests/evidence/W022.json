@@ -64,5 +64,32 @@
       "fast_tier": "unverified",
       "preparation_failure": "Incorrect graph key assumption, corrected before revision."
     }
+  },
+  "stage4": {
+    "scope": "Isolated stage 3 archive plus stage 4 staged changes only.",
+    "tests": 171,
+    "seconds": 19.143,
+    "exit_code": 0,
+    "new_harness_tests": 2,
+    "report": "evaluations/native-architecture/REPORT.md",
+    "resources": "evaluations/native-architecture/resources.json",
+    "scores": "evaluations/native-architecture/scores.json",
+    "unique_native_calls": 14,
+    "repeats": 2,
+    "heldout_cases": 1,
+    "denied_before_execution": 1,
+    "open_or_failed_model_calls": 0,
+    "result": "Strong single and synthesis tied on each content dimension in both repeats. Literal merge retained facts but omitted explicit combined inference.",
+    "parallel_scheduling": "not_run",
+    "tokens": null,
+    "cost": null,
+    "fast_tier": "unverified",
+    "instruction_context_limit": "Prescribed core files stayed fixed; other repository references changed and file-access traces were unavailable."
+  },
+  "historical_preservation": {
+    "prior_tracked_files_checked": 65,
+    "changed": [],
+    "external_pilot": "Not rescored or modified; old P07 remains historical failure.",
+    "external_attachment_hashes": "Not rechecked in this environment."
   }
 }

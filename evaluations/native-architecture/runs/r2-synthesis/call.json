@@ -1,0 +1,27 @@
+{
+  "id": "r2-synthesis",
+  "repeat": 2,
+  "role": "synthesis",
+  "prompt": "frozen/r2-synthesis.md",
+  "charged_to": [
+    "synthesis_revision"
+  ],
+  "status": "completed",
+  "started_at": "2026-10-28T03:27:36.760267+00:00",
+  "model_requested": "gpt-6-astra",
+  "reasoning_requested": "ultra",
+  "model_actual": null,
+  "fast_tier_actual": null,
+  "runtime_reason": "The native tool confirms requested model and reasoning, but supplies no actual model or Fast-tier receipt.",
+  "tokens": null,
+  "cost": null,
+  "usage_reason": "Native collaboration tools do not expose token or billing counters.",
+  "prompt_sha256": "3e71ef0c7df1e783f18827dcadbd09e0816dabc0b02a04a9396fc0aa7b4d392e",
+  "agent_id": "/root/architecture_eval/r2_synthesis",
+  "successful_dispatch_observed_at": "2026-10-28T03:27:42.827518+00:00",
+  "finished_at": "2026-10-28T03:28:47.050826+00:00",
+  "elapsed_seconds": 70.290559,
+  "timing_scope": "Before native dispatch through parent-observed completion. Includes orchestration and observation delay.",
+  "output_sha256": "81d5121e8b232354a95c830a2056f872e3e6be2a0333e49ca10249a6a731a7d2",
+  "output_bytes": 3038
+}

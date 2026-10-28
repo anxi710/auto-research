@@ -1,0 +1,12 @@
+{
+  "files": {
+    "/tmp/auto-research-writing-skills/simple-english/SKILL.md": "be0ebfbf2dd563ca7d51999d4e2dfeb77b46b38ee39f271efbdc402bd4931494",
+    "/tmp/auto-research-writing-skills/ponytail/SKILL.md": "4adb5e97f7b3f5f606b42875bca2b1e9d10183a58b66e74c5c7889bc1669062b",
+    "/tmp/auto-research-writing-skills/stop-that-shit/SKILL.md": "3896dc93b118d176333b9092b5274e204101db371cdc7c5e08085f9534db6fc6",
+    "AGENTS.md": "0c29f64bae49c5100bd07d44b69728896a605bd6e1e43c95016b3aa75f4dc515",
+    "skills/research-workflow/SKILL.md": "964f45841576af713af2f139e1667b59cc244eaa672a8a575436a3cecdf11379",
+    "skills/research-report/SKILL.md": "04f2c53aac885616f3ba0f960634466fc07adffc91ae6fe1c30b62782e2af839"
+  },
+  "matches_before": true,
+  "limits": "Other repository references changed during the study, including synthesis-revision.md and W022/evidence documents. Actual actor read traces were not captured. Full instruction-context isolation is not established."
+}

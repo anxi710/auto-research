@@ -1,0 +1,27 @@
+{
+  "id": "r2-feedback",
+  "repeat": 2,
+  "role": "delegated_ai_feedback",
+  "prompt": "frozen/r2-feedback.md",
+  "charged_to": [
+    "synthesis_revision"
+  ],
+  "status": "completed",
+  "started_at": "2026-10-28T03:28:47.079735+00:00",
+  "model_requested": "gpt-6-astra",
+  "reasoning_requested": "ultra",
+  "model_actual": null,
+  "fast_tier_actual": null,
+  "runtime_reason": "The native tool confirms requested model and reasoning, but supplies no actual model or Fast-tier receipt.",
+  "tokens": null,
+  "cost": null,
+  "usage_reason": "Native collaboration tools do not expose token or billing counters.",
+  "prompt_sha256": "9405280ba43172b4e60424dd6a4ef348a08c6e919e9b0b14f31b24d261aeddcb",
+  "agent_id": "/root/architecture_eval/r2_feedback",
+  "successful_dispatch_observed_at": "2026-10-28T03:28:52.823571+00:00",
+  "finished_at": "2026-10-28T03:29:49.896545+00:00",
+  "elapsed_seconds": 62.81681,
+  "timing_scope": "Before native dispatch through parent-observed completion. Includes orchestration and observation delay.",
+  "output_sha256": "1e51afafee17d263bc963473a5f98efded88d7562126d3f10f56acd5d8f6f5eb",
+  "output_bytes": 2692
+}

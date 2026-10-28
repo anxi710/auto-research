@@ -694,3 +694,10 @@ Both native results passed the record checker after copying into the repository.
 An independent reader found substantive corrections and preserved useful content in both cases.
 The [native evidence](../evaluations/native-revision/README.md) retains drafts, dependency plans, failures, unknown resource use, and the content review.
 One native invocation across two cases does not establish general revision reliability.
+
+The isolated architecture stage passed 171 tests in 19.143 seconds.
+The [native comparison](../evaluations/native-architecture/REPORT.md) completed fourteen model calls over two repeats of one heldout synthetic case.
+Strong single-agent and synthesis outputs tied across the four content dimensions in both repeats.
+Literal collection retained correct evidence but lacked some explicit joint reasoning.
+The report preserves variation, evaluator uncertainty, a resolved capacity denial, and resource measurement limits.
+Sequential scheduling ran. Parallel scheduling, equal-token comparison, and complete efficiency measurement did not run.

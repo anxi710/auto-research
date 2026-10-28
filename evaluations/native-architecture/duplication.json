@@ -1,0 +1,54 @@
+{
+  "exact_text_counted": "Alpha is ready for full service because its pooled accuracy is 98.18% and its p95 is 480 ms.",
+  "scope": "Literal repeated text and file size only. Bytes and repetitions are not token or cost estimates.",
+  "outputs": [
+    {
+      "repeat": 1,
+      "arm": "single",
+      "path": "runs/r1-single/output.md",
+      "sha256": "cec15bb488f6b29e84e63ec2463ceebfe8a59015282616366511f80daf850b5d",
+      "inherited_claim_occurrences": 1,
+      "output_bytes": 2767
+    },
+    {
+      "repeat": 1,
+      "arm": "merge",
+      "path": "runs/r1-merge.md",
+      "sha256": "5805c92578da3c0d601c3b259f282ba9a957577988601f13cfd1f7b326c98edd",
+      "inherited_claim_occurrences": 2,
+      "output_bytes": 5088
+    },
+    {
+      "repeat": 1,
+      "arm": "synthesis_revision",
+      "path": "runs/r1-revision/output.md",
+      "sha256": "510cdcbf8e95c060a31ac0cc28f6c4fe0c3f7a09067aa3ab1f4eceb068beb8da",
+      "inherited_claim_occurrences": 1,
+      "output_bytes": 3085
+    },
+    {
+      "repeat": 2,
+      "arm": "single",
+      "path": "runs/r2-single/output.md",
+      "sha256": "f8f95aa1945164d0fb4b8825b416ed48cbb0c1cc8e4e1ffc207a105ac6fbab32",
+      "inherited_claim_occurrences": 1,
+      "output_bytes": 2592
+    },
+    {
+      "repeat": 2,
+      "arm": "merge",
+      "path": "runs/r2-merge.md",
+      "sha256": "53998799f482cece16ee60f27c091590c320d36c3e65a585a297cc63499be32f",
+      "inherited_claim_occurrences": 2,
+      "output_bytes": 5268
+    },
+    {
+      "repeat": 2,
+      "arm": "synthesis_revision",
+      "path": "runs/r2-revision/output.md",
+      "sha256": "32e77f72af32890ca7972b5ebff5df0ace21046a0f5492cb12453b2470128f85",
+      "inherited_claim_occurrences": 1,
+      "output_bytes": 3069
+    }
+  ]
+}
