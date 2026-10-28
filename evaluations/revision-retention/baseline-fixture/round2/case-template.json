@@ -1,0 +1,84 @@
+{
+  "case_id": "retention-round2",
+  "initial_task": null,
+  "initial_result": null,
+  "feedback": {
+    "path": "round2/feedback.json",
+    "sha256": "2c2d4e0a961a33cd74d98bf7aef6acb7eb30847830615026a4619dd39b9c5380"
+  },
+  "rubric": {
+    "path": "round2/rubric.json",
+    "sha256": "6088b5bca1170bb917741e295198dec4fcc32b5c7deb6ea4090c5a89f30b9317"
+  },
+  "nodes": [
+    {
+      "id": "source",
+      "branch": "evidence",
+      "artifact": {
+        "path": "evidence/source.json",
+        "sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "counterevidence",
+      "branch": "evidence",
+      "artifact": {
+        "path": "evidence/counterevidence.json",
+        "sha256": "cea611df93510866ed51bfe90a2e0561df067fdd067a52520481cc9c7a2d33dc"
+      },
+      "depends_on": []
+    },
+    {
+      "id": "A",
+      "branch": "A",
+      "artifact": null,
+      "depends_on": [
+        "source",
+        "counterevidence"
+      ]
+    },
+    {
+      "id": "B",
+      "branch": "B",
+      "artifact": null,
+      "depends_on": [
+        "A",
+        "counterevidence"
+      ]
+    },
+    {
+      "id": "C",
+      "branch": "C",
+      "artifact": {
+        "path": "initial/C.md",
+        "sha256": "7a3d359e5773033f9a075911914d35972e0ba565766aee2d05c20c3c3dd53578"
+      },
+      "depends_on": [
+        "source",
+        "counterevidence"
+      ]
+    },
+    {
+      "id": "report",
+      "branch": "report",
+      "artifact": null,
+      "depends_on": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "id": "ledger",
+      "branch": "report",
+      "artifact": null,
+      "depends_on": [
+        "report",
+        "source",
+        "counterevidence"
+      ]
+    }
+  ],
+  "ledger_node": "ledger"
+}

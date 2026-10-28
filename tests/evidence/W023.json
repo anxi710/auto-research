@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-28",
+  "baseline_package": "0.1.11-synthesis.1",
+  "candidate_package": "0.1.11-synthesis.2",
+  "set_kind": "new development and regression cases; not the architecture holdout",
+  "baseline_miss": "evaluations/revision-retention/baseline-miss.json",
+  "before_after_diff": "evaluations/revision-retention/baseline-before-after.diff",
+  "patched_results": "evaluations/revision-retention/patched-results.json",
+  "content_review": "evaluations/revision-retention/content-review.json",
+  "new_regression_tests": 8,
+  "tests": [
+    {
+      "python": "3.12.14",
+      "tests": 179,
+      "seconds": 20.624,
+      "result": "passed"
+    },
+    {
+      "python": "3.13.5",
+      "tests": 179,
+      "seconds": 20.749,
+      "result": "passed"
+    }
+  ],
+  "test_timing_limit": "Concurrent runs in separate temporary fixtures. Durations are not performance comparisons.",
+  "inspection": {
+    "python39_grammar_files": 22,
+    "historical_files_checked": 65,
+    "historical_files_changed": [],
+    "protected_procedures_unchanged": [
+      "skills/research-workflow/references/human-review.md",
+      "skills/research-workflow/references/workflow.md",
+      "skills/research-workflow/references/evidence-ledger.md",
+      "skills/research-report/SKILL.md",
+      "AGENTS.md"
+    ],
+    "documented_reproduction": {
+      "baseline": {
+        "exit_code": 0,
+        "feedback_matches": true,
+        "history_preserved": true
+      },
+      "patched": {
+        "exit_code": 1,
+        "feedback_matches": true,
+        "history_preserved": true
+      }
+    },
+    "python39_runtime": "not_run: interpreter unavailable",
+    "python314_runtime": "not_run: interpreter unavailable",
+    "remote_ci": "not_run"
+  },
+  "known_limits": [
+    "An unsupported paraphrase remains mechanically completed and requires independent content review.",
+    "A legitimate historical quotation triggers the exact-text guard; its block is not a scientific failure.",
+    "The negative candidates are authored counterexamples, not observed native-agent forgetting.",
+    "No long-horizon real research revision study or human reviewer cost measurement ran."
+  ]
+}

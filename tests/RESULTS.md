@@ -701,3 +701,18 @@ Strong single-agent and synthesis outputs tied across the four content dimension
 Literal collection retained correct evidence but lacked some explicit joint reasoning.
 The report preserves variation, evaluator uncertainty, a resolved capacity denial, and resource measurement limits.
 Sequential scheduling ran. Parallel scheduling, equal-token comparison, and complete efficiency measurement did not run.
+
+## W023 revision retention follow-up
+
+Test date: 2026-10-28.
+The [case study](../changes/W023.md) preserves an authored two-round regression and the baseline checker's exact miss.
+The patched checker blocks the same restored unsupported assertion while keeping latest-feedback success separate.
+Other controls cover deleted counterevidence, a lost condition, broken evidence, and stale downstream content.
+Declared equivalent wording passes, while an unsupported paraphrase miss and a historical-quotation false positive remain explicit.
+These are development regressions, not model-generated forgetting events or replacements for the architecture holdout.
+
+All 179 tests passed on Python 3.12.14 in 20.624 seconds and Python 3.13.5 in 20.749 seconds.
+The two runs used separate temporary fixtures and ran concurrently.
+All 22 Python files passed a Python 3.9 grammar inspection.
+The [evidence record](evidence/W023.json) includes the exact baseline and patched outcomes, independent content review, and runtime limits.
+Python 3.9 and 3.14 execution, remote CI, long-horizon revision reliability, and human review costs remain untested.

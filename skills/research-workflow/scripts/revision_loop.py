@@ -9,7 +9,7 @@ from pathlib import Path
 import sys
 
 sys.dont_write_bytecode = True
-from evidence_ledger import finite_decimal
+from evidence_ledger import finite_decimal, text, texts
 from lint_records import Linter, cycle_members, finite_number, unique_object, valid_id
 
 
@@ -70,6 +70,13 @@ def inspect_records(root, task_path, result_path):
     return lint.output()["diagnostics"]
 
 
+def statement_options(item):
+    alternatives = item.get("equivalent_texts", [])
+    if not text(item.get("text")) or not texts(alternatives):
+        raise ValueError("A retained statement needs text and a list of declared equivalent texts.")
+    return [item["text"], *alternatives]
+
+
 def run_revision(root, case_path, candidate_path, output_dir):
     """Copy supplied revisions, repin their ledger, and report separate checks.
 
@@ -92,6 +99,17 @@ def run_revision(root, case_path, candidate_path, output_dir):
     rubric = read_json(originals[case["rubric"]["path"]])
     affected = affected_closure(case["nodes"], feedback["changed_nodes"])
     nodes = {node["id"]: node for node in case["nodes"]}
+    retained = rubric["preserved_statements"]
+    withdrawn = rubric.get("withdrawn_statements", [])
+    for item in retained + withdrawn:
+        if item["node_id"] not in nodes:
+            raise ValueError("A statement rule names an unknown node.")
+        statement_options(item)
+        for entry in item.get("evidence", []):
+            originals[entry["path"]] = reference(root, entry)
+    for item in withdrawn:
+        if not text(item.get("reason")) or not item.get("evidence"):
+            raise ValueError("A withdrawn statement needs a frozen reason and evidence references.")
     replacements = candidate["replacements"]
     if not isinstance(replacements, dict) or not replacements.keys() <= set(affected):
         raise ValueError("Replacements must name affected nodes only.")
@@ -109,6 +127,16 @@ def run_revision(root, case_path, candidate_path, output_dir):
     stale = [key for key in affected if key not in content
              or content[key] == originals[nodes[key]["artifact"]["path"]]]
     (root / output / "artifacts").mkdir(parents=True)
+    plan = {
+        "initial_result": case["initial_result"], "rubric": case["rubric"],
+        "affected_nodes": affected,
+        "preserved_statements": [dict(item, present_before=any(
+            value in originals[nodes[item["node_id"]]["artifact"]["path"]].decode("utf-8")
+            for value in statement_options(item))) for item in retained],
+        "withdrawn_statements": withdrawn,
+    }
+    plan_path = output + "/revision-plan.json"
+    write_json(root / plan_path, plan)
     current = {key: dict(node["artifact"]) for key, node in nodes.items()}
     for key, raw in content.items():
         suffix = Path(replacements[key]["path"]).suffix
@@ -163,12 +191,21 @@ def run_revision(root, case_path, candidate_path, output_dir):
                        == sorted(expected["evidence_ids"])})
     failures = [item["claim_id"] for item in checks
                 if not item["matches_frozen_finding"] or not item["evidence_ids_match"]]
-    preservation = [{"node_id": item["node_id"], "text": item["text"],
-                     "preserved": item["text"] in (root / current[item["node_id"]]["path"]).read_text(encoding="utf-8")}
-                    for item in rubric["preserved_statements"]]
+    preservation = []
+    for item in retained:
+        prose = (root / current[item["node_id"]]["path"]).read_text(encoding="utf-8")
+        match = next((value for value in statement_options(item) if value in prose), None)
+        preservation.append({"node_id": item["node_id"], "text": item["text"],
+                             "matched_text": match, "preserved": match is not None})
+    withdrawals = [{"node_id": item["node_id"], "text": item["text"], "reason": item["reason"],
+                    "evidence": item["evidence"], "match_scope": "exact_text_in_selected_node",
+                    "withdrawn": item["text"] not in (root / current[item["node_id"]]["path"]).read_text(encoding="utf-8")}
+                   for item in withdrawn]
     result["unresolved"] += ["Feedback finding differs: " + key for key in failures]
     result["unresolved"] += ["Prior content is missing: " + item["node_id"]
                              for item in preservation if not item["preserved"]]
+    result["unresolved"] += ["Withdrawn exact text recurs: " + item["node_id"]
+                             for item in withdrawals if not item["withdrawn"]]
     if diagnostics:
         result["unresolved"].append("Record or evidence bindings need correction.")
     if result["unresolved"]:
@@ -180,6 +217,8 @@ def run_revision(root, case_path, candidate_path, output_dir):
         "affected_nodes": affected, "revised_nodes": sorted(content), "stale_nodes": stale,
         "feedback_implementation": checks,
         "prior_content_preservation": preservation,
+        "withdrawn_conclusions": withdrawals, "revision_plan": file_ref(root, plan_path),
+        "retention_scope": "Frozen exact texts and declared equivalents. A withdrawal match cannot distinguish a historical quotation from an assertion.",
         "unaffected_content": [{"node_id": key, "artifact": current[key], "reused_original": True}
                                for key in sorted(set(nodes) - set(affected))],
         "citation_support": {"record_diagnostics": diagnostics,
@@ -207,6 +246,7 @@ def main():
     print(json.dumps(report, ensure_ascii=False, indent=2))
     return 1 if report["stale_nodes"] or report["citation_support"]["record_diagnostics"] or any(
         not item["preserved"] for item in report["prior_content_preservation"]) or any(
+        not item["withdrawn"] for item in report["withdrawn_conclusions"]) or any(
         not item["matches_frozen_finding"] or not item["evidence_ids_match"]
         for item in report["feedback_implementation"]) else 0
 

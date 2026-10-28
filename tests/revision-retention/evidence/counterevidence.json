@@ -1,0 +1,27 @@
+{
+  "kind": "synthetic",
+  "fixture_note": "Saved invented values for a separate low-memory case. No experiment ran.",
+  "planner_p": {
+    "value": 55,
+    "dataset": "synthetic-low-memory",
+    "split": "fixed-v1",
+    "method": "P",
+    "baseline": "Q",
+    "unit": "score",
+    "conditions": {
+      "executor": "E1",
+      "memory_limit_mb": 64
+    }
+  },
+  "planner_q": {
+    "value": 60,
+    "dataset": "synthetic-low-memory",
+    "split": "fixed-v1",
+    "method": "Q",
+    "unit": "score",
+    "conditions": {
+      "executor": "E1",
+      "memory_limit_mb": 64
+    }
+  }
+}

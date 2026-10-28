@@ -1,0 +1,21 @@
+{
+  "attempt_id": "R2",
+  "replacements": {
+    "A": {
+      "path": "round2/artifacts/A.md",
+      "sha256": "7d448c792e682ad2b3869de05a79e7532481844b41f1ef60f09342b3402031c8"
+    },
+    "B": {
+      "path": "round2/artifacts/B.md",
+      "sha256": "e74f9eb1d8c21b31a9accb60a05f5151ac742f595d067af223058e434524058b"
+    },
+    "report": {
+      "path": "round2/artifacts/broken-citation/report.md",
+      "sha256": "5100eba6485686970b5d138004addad67c166ed270952305bfd8d2d34f96d425"
+    },
+    "ledger": {
+      "path": "round2/artifacts/broken-citation/ledger.json",
+      "sha256": "490cedada56ec453c8278ca33e478ec86f142dfaf514dafb1613acf2cd7e0c7d"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{"attempt_id": "R2",
+"replacements": {"A": {"path": "round2/artifacts/A.md",
+"sha256": "7d448c792e682ad2b3869de05a79e7532481844b41f1ef60f09342b3402031c8"},
+"B": {"path": "round2/artifacts/B.md",
+"sha256": "e74f9eb1d8c21b31a9accb60a05f5151ac742f595d067af223058e434524058b"},
+"report": {"path": "paraphrase-probe/report.md",
+"sha256": "ba1838333959cb7ecfda1fc5151a0d56b38b082b07b791c89e750f3632ced896"},
+"ledger": {"path": "paraphrase-probe/ledger.json",
+"sha256": "ecd0cc35ccbc69c4320479dfeb8d4fc92a7a047518cbf1fdebfe1cf9d81ee7fe"}}}

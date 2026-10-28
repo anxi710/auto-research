@@ -1,2 +1,4 @@
 # Keep third-party source bytes and original license whitespace intact.
 templates/latex/vendor/** -text whitespace=-blank-at-eol,-blank-at-eof
+# Keep the blank context lines in the captured unified diff.
+evaluations/revision-retention/baseline-before-after.diff -text whitespace=-blank-at-eol

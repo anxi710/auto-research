@@ -50,12 +50,13 @@ Keep the feedback's actual source visible, including synthetic or delegated AI f
 Use the existing human-review boundary before dependent research.
 
 1. Locate each requested scientific correction and the claim that it changes.
-2. Save the affected dependency closure before drafting replacements.
-3. Include other branches, recommendations, summaries, and ledger claims that use the changed premise.
+2. List correct facts, counterevidence, and conditions to retain, plus evidence-based reasons for withdrawing earlier conclusions.
+3. Save the affected dependency closure before drafting replacements, including other branches, summaries, and ledger claims.
 4. Write revisions in a new attempt and reuse unaffected original files by reference.
 5. Assess feedback implementation separately from damage to previously correct content.
 6. Make sure that citations support the revised strength, conditions, and source versions.
-7. Mark unrevised dependent conclusions as stale and keep the earlier revision available.
+7. If a revision loses correct content, record the failure and preserve the earlier version for recovery.
+8. Mark unrevised dependent conclusions as stale and keep detected failures out of passing content assessments.
 
 The [revision helper](../scripts/revision_loop.py) replays supplied replacements for frozen examples.
 It computes the affected closure before writing the new attempt.
@@ -63,6 +64,14 @@ It checks selected findings, preserved statements, file history, and existing le
 It does not generate replacement prose or decide scientific support.
 Changed bytes alone do not prove that feedback was implemented.
 An unchanged selected statement alone does not prove that the full draft survived.
+
+The helper saves retained items and the closure in `revision-plan.json` before writing replacement artifacts.
+A fixed rubric can list equivalent wording for a retained statement.
+It can also name withdrawn text with its evidence and reason.
+These are bounded text checks, not a semantic model of the draft.
+An unsupported paraphrase can escape a literal guard, while an accurate historical quotation can trigger it.
+Use independent content assessment to distinguish those cases.
+The [retention case study](../../../changes/W023.md) preserves both limits and the initial miss.
 
 Run a replay in a temporary copy from the toolkit root:
 

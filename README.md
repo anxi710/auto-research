@@ -10,6 +10,7 @@
 English | [简体中文](README.zh-CN.md)
 
 This local candidate extends the delivery trial with [W022 synthesis and revision](changes/W022.md).
+The [W023 retention regressions](changes/W023.md) test loss of earlier correct content separately from new feedback.
 It is not a published release or a globally installed default.
 
 This toolkit gives AI assistants a shared procedure for study, questions, experiments, analysis, writing, and review.

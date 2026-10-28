@@ -1,0 +1,9 @@
+{"attempt_id": "R2",
+"replacements": {"A": {"path": "round2/artifacts/A.md",
+"sha256": "7d448c792e682ad2b3869de05a79e7532481844b41f1ef60f09342b3402031c8"},
+"B": {"path": "round2/artifacts/B.md",
+"sha256": "e74f9eb1d8c21b31a9accb60a05f5151ac742f595d067af223058e434524058b"},
+"report": {"path": "quotation-probe/report.md",
+"sha256": "70430926854029f8f5c53148bea3313c1689c16e80dfc7aa08a417df3810873b"},
+"ledger": {"path": "quotation-probe/ledger.json",
+"sha256": "4fb1dbc6ebe68b6602d4373b299694793274afa620bc57cd475a15e55fdfeb35"}}}
