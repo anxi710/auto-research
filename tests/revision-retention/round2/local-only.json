@@ -1,0 +1,9 @@
+{
+  "attempt_id": "R2",
+  "replacements": {
+    "A": {
+      "path": "round2/artifacts/A.md",
+      "sha256": "7d448c792e682ad2b3869de05a79e7532481844b41f1ef60f09342b3402031c8"
+    }
+  }
+}

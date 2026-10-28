@@ -1,0 +1,288 @@
+{
+  "synthetic-full": {
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "report": {
+      "case_id": "synthetic",
+      "run_kind": "deterministic_fixture_replay",
+      "affected_nodes": [
+        "A",
+        "B",
+        "ledger",
+        "report"
+      ],
+      "revised_nodes": [
+        "A",
+        "B",
+        "ledger",
+        "report"
+      ],
+      "stale_nodes": [],
+      "feedback_implementation": [
+        {
+          "claim_id": "C001",
+          "matches_frozen_finding": true,
+          "evidence_ids_match": true
+        },
+        {
+          "claim_id": "C002",
+          "matches_frozen_finding": true,
+          "evidence_ids_match": true
+        }
+      ],
+      "prior_content_preservation": [
+        {
+          "node_id": "report",
+          "text": "The saved source contains no run with another executor.",
+          "preserved": true
+        }
+      ],
+      "unaffected_content": [
+        {
+          "node_id": "C",
+          "artifact": {
+            "path": "synthetic/initial/C.md",
+            "sha256": "980fda7afa9b3eaf9b94a763beabf9996ffae794fec9c269bead2d898e288642"
+          },
+          "reused_original": true
+        },
+        {
+          "node_id": "source",
+          "artifact": {
+            "path": "synthetic/initial/source.json",
+            "sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f"
+          },
+          "reused_original": true
+        }
+      ],
+      "citation_support": {
+        "record_diagnostics": [],
+        "ledger_current": true,
+        "scope": "Declared locations, evidence values, and file versions only."
+      },
+      "history_preserved": true,
+      "new_experiment_run": false,
+      "independent_content_assessment": "required_not_run",
+      "assessment_limit": "Structured findings do not prove that the prose is sound or that agent performance improved.",
+      "result": {
+        "path": "runs/synthetic-full/result.json",
+        "sha256": "55e174e9dc0f81a38d0039e0d9999809716549874e5765566db6af4b1e956793"
+      }
+    }
+  },
+  "synthetic-local-only": {
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "report": {
+      "case_id": "synthetic",
+      "run_kind": "deterministic_fixture_replay",
+      "affected_nodes": [
+        "A",
+        "B",
+        "ledger",
+        "report"
+      ],
+      "revised_nodes": [
+        "A"
+      ],
+      "stale_nodes": [
+        "B",
+        "ledger",
+        "report"
+      ],
+      "feedback_implementation": [
+        {
+          "claim_id": "C001",
+          "matches_frozen_finding": false,
+          "evidence_ids_match": true
+        },
+        {
+          "claim_id": "C002",
+          "matches_frozen_finding": false,
+          "evidence_ids_match": true
+        }
+      ],
+      "prior_content_preservation": [
+        {
+          "node_id": "report",
+          "text": "The saved source contains no run with another executor.",
+          "preserved": true
+        }
+      ],
+      "unaffected_content": [
+        {
+          "node_id": "C",
+          "artifact": {
+            "path": "synthetic/initial/C.md",
+            "sha256": "980fda7afa9b3eaf9b94a763beabf9996ffae794fec9c269bead2d898e288642"
+          },
+          "reused_original": true
+        },
+        {
+          "node_id": "source",
+          "artifact": {
+            "path": "synthetic/initial/source.json",
+            "sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f"
+          },
+          "reused_original": true
+        }
+      ],
+      "citation_support": {
+        "record_diagnostics": [],
+        "ledger_current": false,
+        "scope": "Declared locations, evidence values, and file versions only."
+      },
+      "history_preserved": true,
+      "new_experiment_run": false,
+      "independent_content_assessment": "required_not_run",
+      "assessment_limit": "Structured findings do not prove that the prose is sound or that agent performance improved.",
+      "result": {
+        "path": "runs/synthetic-local-only/result.json",
+        "sha256": "3596a41fceb5358b4135673a541f48185cf221e0e38a15cdef67ce75f6d183bf"
+      }
+    }
+  },
+  "public-source-full": {
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "report": {
+      "case_id": "public-source",
+      "run_kind": "deterministic_fixture_replay",
+      "affected_nodes": [
+        "A",
+        "B",
+        "ledger",
+        "report"
+      ],
+      "revised_nodes": [
+        "A",
+        "B",
+        "ledger",
+        "report"
+      ],
+      "stale_nodes": [],
+      "feedback_implementation": [
+        {
+          "claim_id": "C001",
+          "matches_frozen_finding": true,
+          "evidence_ids_match": true
+        },
+        {
+          "claim_id": "C002",
+          "matches_frozen_finding": true,
+          "evidence_ids_match": true
+        }
+      ],
+      "prior_content_preservation": [
+        {
+          "node_id": "report",
+          "text": "This exercise measures no agent performance.",
+          "preserved": true
+        }
+      ],
+      "unaffected_content": [
+        {
+          "node_id": "C",
+          "artifact": {
+            "path": "public-source/initial/C.md",
+            "sha256": "f706030c5afe8df06da1ad7998ed9a6fc9ad53e9c2e51bc9e0cc9f3a2e530fe0"
+          },
+          "reused_original": true
+        },
+        {
+          "node_id": "source",
+          "artifact": {
+            "path": "public-source/initial/source.json",
+            "sha256": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004"
+          },
+          "reused_original": true
+        }
+      ],
+      "citation_support": {
+        "record_diagnostics": [],
+        "ledger_current": true,
+        "scope": "Declared locations, evidence values, and file versions only."
+      },
+      "history_preserved": true,
+      "new_experiment_run": false,
+      "independent_content_assessment": "required_not_run",
+      "assessment_limit": "Structured findings do not prove that the prose is sound or that agent performance improved.",
+      "result": {
+        "path": "runs/public-source-full/result.json",
+        "sha256": "fefbd917ff837a852c80f8cb2c997187093c72d6abfc32aab6336fa8f5b6f0c6"
+      }
+    }
+  },
+  "public-source-local-only": {
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "report": {
+      "case_id": "public-source",
+      "run_kind": "deterministic_fixture_replay",
+      "affected_nodes": [
+        "A",
+        "B",
+        "ledger",
+        "report"
+      ],
+      "revised_nodes": [
+        "A"
+      ],
+      "stale_nodes": [
+        "B",
+        "ledger",
+        "report"
+      ],
+      "feedback_implementation": [
+        {
+          "claim_id": "C001",
+          "matches_frozen_finding": false,
+          "evidence_ids_match": true
+        },
+        {
+          "claim_id": "C002",
+          "matches_frozen_finding": false,
+          "evidence_ids_match": true
+        }
+      ],
+      "prior_content_preservation": [
+        {
+          "node_id": "report",
+          "text": "This exercise measures no agent performance.",
+          "preserved": true
+        }
+      ],
+      "unaffected_content": [
+        {
+          "node_id": "C",
+          "artifact": {
+            "path": "public-source/initial/C.md",
+            "sha256": "f706030c5afe8df06da1ad7998ed9a6fc9ad53e9c2e51bc9e0cc9f3a2e530fe0"
+          },
+          "reused_original": true
+        },
+        {
+          "node_id": "source",
+          "artifact": {
+            "path": "public-source/initial/source.json",
+            "sha256": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004"
+          },
+          "reused_original": true
+        }
+      ],
+      "citation_support": {
+        "record_diagnostics": [],
+        "ledger_current": false,
+        "scope": "Declared locations, evidence values, and file versions only."
+      },
+      "history_preserved": true,
+      "new_experiment_run": false,
+      "independent_content_assessment": "required_not_run",
+      "assessment_limit": "Structured findings do not prove that the prose is sound or that agent performance improved.",
+      "result": {
+        "path": "runs/public-source-local-only/result.json",
+        "sha256": "2ff507d6e87be2b9fdf25c04d04837b2f721afb0d765d989af4fc19f207400b1"
+      }
+    }
+  }
+}

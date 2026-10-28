@@ -1,0 +1,222 @@
+{
+  "record_kind": "fixture_correction_history",
+  "scope": "Phase 3 finite revision fixtures only.",
+  "reason": "The first rubric checked requested findings and unchanged files. It did not detect loss of useful content inside a revised report.",
+  "initial_archive": {
+    "path": "tests/revision-history/initial",
+    "freeze_sha256": "11bdf6ff54431d16fccf4b62fb032d6c1bf561eab49d93dc890825f09c7d08b1",
+    "synthetic_rubric_sha256": "a362bd69d167b57f6c72f1aa22f14ca5b43569fd3c3b4dd12271b3351cd2b61d",
+    "reconstruction": "Reconstructed from the saved fixture generator by reversing the later recorded edits. The synthetic rubric digest matches the independently observed a362bd69d167b57f6c72f1aa22f14ca5b43569fd3c3b4dd12271b3351cd2b61d."
+  },
+  "corrected_fixture": {
+    "path": "tests/revision",
+    "freeze_sha256": "576d8b9288d8d2dd879b67f4f1c2ad1767655e554bc199ce521a47d6ab1d0b8d",
+    "synthetic_rubric_sha256": "27f3e206fb26986acac53e9c1c91d9cc7b84bf47c052da5584716442c0dd795a"
+  },
+  "chronology": [
+    "The first fixture set passed 10 focused tests after a separate current contract and fixed snapshot were saved.",
+    "After that pass, code inspection found that the rubric could not detect a lost prior statement inside the changed report.",
+    "The correction added explicit preserved statements to both initial and revised drafts, added the preservation rubric, and repaired ambiguous local source paths.",
+    "The expected corrected scientific claims and source evidence stayed unchanged. The initial drafts, revised drafts, rubric, and dependent hashes changed.",
+    "The corrected set passed 11 focused tests, including a control that implements feedback but drops prior content.",
+    "A later precision repair preserved exact decimal evidence during ledger repinning. The set then passed 12 focused tests.",
+    "Both full and local-only candidates were replayed for both corrected cases after these repairs. These are the four saved runs below."
+  ],
+  "earlier_test_outcome": {
+    "command": "python -B -m unittest discover -s tests -p 'test_revision_loop.py' -v",
+    "tests": 10,
+    "outcome": "passed",
+    "evidence": "Session tool output chunk 329ba6. This record summarizes that observed output and is not the original captured log."
+  },
+  "later_test_outcome": {
+    "revision_tests": 12,
+    "evidence_ledger_tests": 36,
+    "outcome": "passed",
+    "evidence": "Session tool output chunks ab7948 and 0383ef."
+  },
+  "baseline_rerun": "The local-only candidate is the fixed partial-revision control. It updates A and leaves B, the report, and the ledger stale. Both this control and the full candidate ran with the corrected frozen materials.",
+  "unchanged_scientific_expectations": {
+    "synthetic": true,
+    "public-source": true
+  },
+  "unchanged_source_evidence": {
+    "synthetic": true,
+    "public-source": true
+  },
+  "changed_files": [
+    {
+      "path": "frozen-sha256.json",
+      "initial_sha256": "11bdf6ff54431d16fccf4b62fb032d6c1bf561eab49d93dc890825f09c7d08b1",
+      "corrected_sha256": "576d8b9288d8d2dd879b67f4f1c2ad1767655e554bc199ce521a47d6ab1d0b8d"
+    },
+    {
+      "path": "public-source/candidate/ledger.json",
+      "initial_sha256": "e5ccc09ffff22323b8a51d584cdddb144905d6ac2570156858ed3c77aafeb6ea",
+      "corrected_sha256": "4c609b3466c3a54d8cd7849ef7d1f2826a0b5a63f69e9516e01354c5bf1c51b2"
+    },
+    {
+      "path": "public-source/candidate/report.md",
+      "initial_sha256": "f8d5589ae5b58ac976e4b61b9bc439af39c4e03d7a60a1a887964ec25aca3b64",
+      "corrected_sha256": "2b6142d36b291812ba50f80013cc10e6a50432633642dd35d030af3116179765"
+    },
+    {
+      "path": "public-source/case.json",
+      "initial_sha256": "22aa25a853a06f26678f44d0d20e4270a611b917f96a34d31c8c7683438e9943",
+      "corrected_sha256": "e0edead5330df340160fea436e41c6b02a8cbff9bd375773b794e4c560c634df"
+    },
+    {
+      "path": "public-source/full.json",
+      "initial_sha256": "7117cf9c7e8ad179b603aa8f3377428959e014a6be583869f6f4757032a6c639",
+      "corrected_sha256": "6afb92b4a014eb6d2be3baa85787357dd435174ec437f2ed47321bca8d056980"
+    },
+    {
+      "path": "public-source/initial/ledger.json",
+      "initial_sha256": "36485ad1e8d30dbfc1f49ff3b88383f7b0a99cf8351d5d4131e46797002c340e",
+      "corrected_sha256": "636b9ed1f9e7e431a575a01aee27dbe0966cc2162ff43ce5e104643e61a7dd35"
+    },
+    {
+      "path": "public-source/initial/report.md",
+      "initial_sha256": "93787bf1596c3bc860b594ad9e7200e1be2b754a28f079d3586424be3339e83a",
+      "corrected_sha256": "74721bbd3644222866cec31418d79ffe62de5cca9ebacb70d1f8eb52e5d2b018"
+    },
+    {
+      "path": "public-source/initial/result.json",
+      "initial_sha256": "9df919bd3555bd9fd93864f998d2b3f67d3c82a694ab8dfa1fc54cabd8b053de",
+      "corrected_sha256": "4f110526aa9740e101eeb378061b4abd24c6d632bec96aa93bfc2823bc3b1be9"
+    },
+    {
+      "path": "public-source/rubric.json",
+      "initial_sha256": "41903fb625e6b1ca8968bdf01fe07055b6dde914c8b639549fbf6eaeedc920f2",
+      "corrected_sha256": "d164f2e2dfa23432d0ba4fcde72a052a331277d3ae34b725073ca4e3d9a1796b"
+    },
+    {
+      "path": "synthetic/candidate/A.md",
+      "initial_sha256": "dd99a8dcb1daec0f80b645b8ca5cef364a8cb857bbca467efe8e145454c98251",
+      "corrected_sha256": "23f94852e8d89a7e6bf4cdaa61f228d340d6b2be2cdb90cd15e91f5615a015bb"
+    },
+    {
+      "path": "synthetic/candidate/ledger.json",
+      "initial_sha256": "a1d32fd7a68ac5b312cbabd40dd188b32af616c4253aa21a4678f00417fef407",
+      "corrected_sha256": "809adc1e205d9905bad188c27359d9750c50ca8cdde15232c26d6ac70236b48f"
+    },
+    {
+      "path": "synthetic/candidate/report.md",
+      "initial_sha256": "7764d628c9668578d5a3d3d932de7385a9ec989f73fe455a33724d91ce161433",
+      "corrected_sha256": "099e9d9ea3fea7ecb4c676d43253960ea401619dea04899ee8996d2e64a1775f"
+    },
+    {
+      "path": "synthetic/case.json",
+      "initial_sha256": "a4c3023903b4c45b77c8acc85b96a2bc7e927dd700bf831c86b23b83e5499cd1",
+      "corrected_sha256": "b22818f62f459449804bc146620641fbc7d949c09e43e809e4d2f4f6d1edd3a5"
+    },
+    {
+      "path": "synthetic/full.json",
+      "initial_sha256": "f2363b9c8ea2d785eb125b17ad3a39626002abaf7141336b64ec16ff9bcd9e40",
+      "corrected_sha256": "6b8d1ca94e24c08054bbfd3241fff40bb681acf9e73881e6e68c7826592e326f"
+    },
+    {
+      "path": "synthetic/initial/ledger.json",
+      "initial_sha256": "17de414690940667685b955d8444c6a192a78dac77bf4e7543186b54d124ec85",
+      "corrected_sha256": "0bf53880ecbf2c5a501a963698e5bb718f11eb56c210c39e9b80ee596121a657"
+    },
+    {
+      "path": "synthetic/initial/report.md",
+      "initial_sha256": "8eddd8a893819e2ce41437d9bbd09434b719d2beed853e3d95865329b5363587",
+      "corrected_sha256": "8ec09d2b03e66f6eaeaf525f721247bc7ddd78fbdf5391cd12047a6c2d17a73e"
+    },
+    {
+      "path": "synthetic/initial/result.json",
+      "initial_sha256": "be4c8138b8c27395f08161f112e4d94a33ed5927e05e1931e44ffa606f0e1e8c",
+      "corrected_sha256": "930d2a0b0542aa2ed57850fd83d19517ec33ab18af709555f5c25d9f9e21b2d3"
+    },
+    {
+      "path": "synthetic/local-only.json",
+      "initial_sha256": "0053e11c4943563ccff04492fe494899f678027631711d35b6e3db71c2f6a1d0",
+      "corrected_sha256": "d238a6e79580dd73d9d135a8c1a63cd5f7802130b998d5f85ac6b942a19bde8d"
+    },
+    {
+      "path": "synthetic/rubric.json",
+      "initial_sha256": "a362bd69d167b57f6c72f1aa22f14ca5b43569fd3c3b4dd12271b3351cd2b61d",
+      "corrected_sha256": "27f3e206fb26986acac53e9c1c91d9cc7b84bf47c052da5584716442c0dd795a"
+    }
+  ],
+  "corrected_reruns": [
+    {
+      "name": "synthetic-full",
+      "report_path": "/tmp/auto-research-revision-233id3qu/fixtures/runs/synthetic-full/revision-checks.json",
+      "report_sha256": "b9211aa0e901afa1c25cea726b8e751cca0dbd374842c532820b2d7138165bcd",
+      "affected_nodes": [
+        "A",
+        "B",
+        "ledger",
+        "report"
+      ],
+      "stale_nodes": [],
+      "feedback_findings_match": true,
+      "prior_content_preserved": true,
+      "history_preserved": true,
+      "record_diagnostics": [],
+      "independent_content_assessment": "required_not_run"
+    },
+    {
+      "name": "synthetic-local-only",
+      "report_path": "/tmp/auto-research-revision-233id3qu/fixtures/runs/synthetic-local-only/revision-checks.json",
+      "report_sha256": "62630ba5e2f832cb47db51ed73dd6365c77b919ecd8a2f5b0b38a07dd90a1b7a",
+      "affected_nodes": [
+        "A",
+        "B",
+        "ledger",
+        "report"
+      ],
+      "stale_nodes": [
+        "B",
+        "ledger",
+        "report"
+      ],
+      "feedback_findings_match": false,
+      "prior_content_preserved": true,
+      "history_preserved": true,
+      "record_diagnostics": [],
+      "independent_content_assessment": "required_not_run"
+    },
+    {
+      "name": "public-source-full",
+      "report_path": "/tmp/auto-research-revision-233id3qu/fixtures/runs/public-source-full/revision-checks.json",
+      "report_sha256": "25f83b3a9ec86094847b34ef17fba455aced3471b6261903a8138d2936b4bd09",
+      "affected_nodes": [
+        "A",
+        "B",
+        "ledger",
+        "report"
+      ],
+      "stale_nodes": [],
+      "feedback_findings_match": true,
+      "prior_content_preserved": true,
+      "history_preserved": true,
+      "record_diagnostics": [],
+      "independent_content_assessment": "required_not_run"
+    },
+    {
+      "name": "public-source-local-only",
+      "report_path": "/tmp/auto-research-revision-233id3qu/fixtures/runs/public-source-local-only/revision-checks.json",
+      "report_sha256": "c5f57b9931348e29240826d0d355a8a1e484003730767c761724be56899e6f0a",
+      "affected_nodes": [
+        "A",
+        "B",
+        "ledger",
+        "report"
+      ],
+      "stale_nodes": [
+        "B",
+        "ledger",
+        "report"
+      ],
+      "feedback_findings_match": false,
+      "prior_content_preserved": true,
+      "history_preserved": true,
+      "record_diagnostics": [],
+      "independent_content_assessment": "required_not_run"
+    }
+  ],
+  "limit": "This correction and its tests do not measure agent improvement or human review. Independent scientific assessment remains separate."
+}

@@ -1,0 +1,247 @@
+{
+  "reviewer": "/root/sources_skills",
+  "scope": "Targeted independent content review of authored development regressions, saved baseline/patched results, and the current W023 explanation. No fixture, rubric, output, or repository document was changed.",
+  "review_context": "The reviewer knows the fixtures and prior review history. This is not a blinded trial or an independent measurement of model forgetting.",
+  "fixed_inputs": {
+    "freeze_sha256": "a7db4cb886c2870d2857e1e0f7b760864dbaf3e2db7ef9f090b91b5b5a7178ce",
+    "freeze_matches_requested": true,
+    "round2_rubric_sha256": "6088b5bca1170bb917741e295198dec4fcc32b5c7deb6ea4090c5a89f30b9317",
+    "rubric_matches_requested": true,
+    "frozen_file_count": 44,
+    "frozen_mismatches": []
+  },
+  "scientific_scope": {
+    "main_source": "Invented scores 72 and 60 for P and Q with E1 on the fixed ten-task dataset. The difference is 12 score points.",
+    "counterevidence": "Invented scores 55 and 60 on a separate low-memory dataset with E1 and a 64 MB limit. This is true within the fixture, not a real empirical finding.",
+    "inference_limit": "The different dataset and conditions do not form a matched replication or isolate a memory effect. Neither source tests another executor or measures isolated plan quality.",
+    "retention_vs_withdrawal": "Keep valid values, conditions, counterevidence, and scope limits. Withdraw the unsupported universal ranking. Removing that unsupported claim is a justified correction, not harmful forgetting."
+  },
+  "baseline_miss": {
+    "baseline_commit": "fe52cbf",
+    "script_snapshot_sha256": "d89131e69ea56cc18848b251e9c57226d89095acb91ddb6bb1253b6811edb3fe",
+    "recorded_exit_code": 0,
+    "actual_saved_status": "completed",
+    "classification": "semantic_false_negative_of_mechanical_checker",
+    "finding": "The authored rollback implements the new 12-point request and keeps all selected preservation sentences, yet appends the unsupported old universal ranking. Mechanical completion still leaves independent content review required.",
+    "native_forgetting_observed": false
+  },
+  "comparison_binding": {
+    "same_first_result": true,
+    "first_result_sha256": "f84a5bc94a75d359129cd76f7ea491c08a9c3deaa34842a9fc0d65e57ce01021",
+    "same_bound_second_case": true,
+    "bound_second_case_sha256": "ddd4f28b887103ef93b374f70bc2d5d034547898863ae7c8e46a291276d4895e",
+    "patched_script_sha256": "e189bcba899db03d5a3c579554485a185eadf289e43af45804b177de02c8189e",
+    "runs_independently_reexecuted_in_this_review": false
+  },
+  "candidate_assessments": [
+    {
+      "candidate": "full",
+      "content_status": "no_defect_found",
+      "classification": "correct_non_block",
+      "assessment": "Adds 72 minus 60 = 12 for the main ten-task E1 setup in A, B, and report. It retains the earlier plan-quality correction, the low-memory values, and all selected limits. The declared equivalent for E1-only coverage preserves meaning.",
+      "recorded_exit_code": 0,
+      "actual_saved_status": "completed",
+      "actual_unresolved": [],
+      "independent_review_was_required": "required_not_run",
+      "result_hash_matches_checks": true
+    },
+    {
+      "candidate": "reintroduced-ranking",
+      "content_status": "unsupported_reintroduced_claim",
+      "classification": "correct_block_after_baseline_false_negative",
+      "assessment": "The extra final sentence restores the withdrawn universal plan-quality ranking despite the correct new difference and preserved caveats. It conflicts with the fixed evidence scope. The baseline missed it; the patch blocks its exact text.",
+      "recorded_exit_code": 1,
+      "actual_saved_status": "blocked",
+      "actual_unresolved": [
+        "Withdrawn exact text recurs: report"
+      ],
+      "independent_review_was_required": "required_not_run",
+      "result_hash_matches_checks": true
+    },
+    {
+      "candidate": "deleted-counterevidence",
+      "content_status": "loss_of_correct_selected_content",
+      "classification": "correct_block",
+      "assessment": "The report removes the still-correct synthetic low-memory values 55 and 60. A source link and a statement that conditions differ do not state the omitted opposing result. This is an omission, not justified withdrawal or a real empirical result.",
+      "recorded_exit_code": 1,
+      "actual_saved_status": "blocked",
+      "actual_unresolved": [
+        "Prior content is missing: report"
+      ],
+      "independent_review_was_required": "required_not_run",
+      "result_hash_matches_checks": true
+    },
+    {
+      "candidate": "deleted-qualifier",
+      "content_status": "loss_of_prior_methodological_qualification",
+      "classification": "correct_block",
+      "assessment": "The report removes the explicit point that the scores compare planner-executor pairs and do not isolate plan quality. Other E1 and generalization limits remain, so this is loss of the requested prior correction, not a newly asserted universal ranking.",
+      "recorded_exit_code": 1,
+      "actual_saved_status": "blocked",
+      "actual_unresolved": [
+        "Prior content is missing: report"
+      ],
+      "independent_review_was_required": "required_not_run",
+      "result_hash_matches_checks": true
+    },
+    {
+      "candidate": "broken-numeric",
+      "content_status": "numeric_evidence_binding_error",
+      "classification": "correct_block",
+      "assessment": "The prose still gives the correct 12-point difference. C004 evidence records method value 73 although the pinned source value is 72. This is a ledger binding defect rather than an incorrect arithmetic sentence.",
+      "recorded_exit_code": 1,
+      "actual_saved_status": "blocked",
+      "actual_unresolved": [
+        "Record or evidence bindings need correction."
+      ],
+      "independent_review_was_required": "required_not_run",
+      "result_hash_matches_checks": true
+    },
+    {
+      "candidate": "broken-citation",
+      "content_status": "manuscript_location_binding_error",
+      "classification": "correct_block",
+      "assessment": "The prose and source values remain correct. C004 pins an all-zero manuscript hash. The reproduced failure concerns the claim location version, not a fabricated source or false prose claim.",
+      "recorded_exit_code": 1,
+      "actual_saved_status": "blocked",
+      "actual_unresolved": [
+        "Record or evidence bindings need correction."
+      ],
+      "independent_review_was_required": "required_not_run",
+      "result_hash_matches_checks": true
+    },
+    {
+      "candidate": "local-only",
+      "content_status": "incomplete_propagation",
+      "classification": "correct_block",
+      "assessment": "A implements the new difference, but B, report, and ledger retain round-one content. The prior correction survives; the new request is incomplete downstream. This is stale dependent work, not forgetting.",
+      "recorded_exit_code": 1,
+      "actual_saved_status": "blocked",
+      "actual_unresolved": [
+        "Stale affected node: B",
+        "Stale affected node: ledger",
+        "Stale affected node: report",
+        "Feedback finding differs: C004"
+      ],
+      "independent_review_was_required": "required_not_run",
+      "result_hash_matches_checks": true
+    },
+    {
+      "candidate": "known-semantic-miss",
+      "content_status": "unsupported_paraphrased_claim",
+      "classification": "semantic_false_negative",
+      "assessment": "The added assertion that P produces superior plans with every possible executor restates the withdrawn overclaim in new words. The checker completes with no diagnostics. Independent content review rejects this inference.",
+      "recorded_exit_code": 0,
+      "actual_saved_status": "completed",
+      "actual_unresolved": [],
+      "independent_review_was_required": "required_not_run",
+      "result_hash_matches_checks": true
+    },
+    {
+      "candidate": "known-quotation-false-positive",
+      "content_status": "no_semantic_reintroduction",
+      "classification": "semantic_false_positive_conservative_block",
+      "assessment": "The final sentence quotes the old claim, explicitly calls it incorrect, and withdraws it. The report does not endorse it. Exact-text blocking is conservative here and is not evidence of scientific content failure.",
+      "recorded_exit_code": 1,
+      "actual_saved_status": "blocked",
+      "actual_unresolved": [
+        "Withdrawn exact text recurs: report"
+      ],
+      "independent_review_was_required": "required_not_run",
+      "result_hash_matches_checks": true
+    }
+  ],
+  "w023_review": {
+    "path": "/workspace/auto-research/changes/W023.md",
+    "sha256": "58ed9609518b92e290e0c35887811f948590c9de9e30893fc424f4665d742f63",
+    "finding": "The inspected text separates the development rubric omission, the checker miss, and the successful native revision. It explicitly calls the new negatives authored counterexamples and makes no claim that the native actor forgot content.",
+    "writing_review": "Simple English Plain, Ponytail, and Stop That Shit were applied. The current explanation is direct, scoped, and does not propose a new auditor.",
+    "errors": []
+  },
+  "unexpected_errors": [],
+  "limits": [
+    "Exact and declared-equivalent text checks do not understand arbitrary paraphrases or quotation context.",
+    "The known semantic miss is not a scientific pass. The historical quotation block is not a semantic failure.",
+    "These are development regressions, not held-out generalization evidence or actual model-generated forgetting.",
+    "This review grants no scientific approval or authority to advance research."
+  ],
+  "inspected_hashes": {
+    "/tmp/auto-research-retention-q6bafbxi/baseline-before-after.diff": "46d055005bddd0c2c5afa983905aee4103b766ccfc67e0c617d7f38564c1f58c",
+    "/tmp/auto-research-retention-q6bafbxi/baseline-fixture/round2-bound-case.json": "ddd4f28b887103ef93b374f70bc2d5d034547898863ae7c8e46a291276d4895e",
+    "/tmp/auto-research-retention-q6bafbxi/baseline-fixture/runs/R1/result.json": "f84a5bc94a75d359129cd76f7ea491c08a9c3deaa34842a9fc0d65e57ce01021",
+    "/tmp/auto-research-retention-q6bafbxi/baseline-miss.json": "036f6af0e13709eb6abe106e286cfe835c92b6afe4594a0401478f1f2a5dc629",
+    "/tmp/auto-research-retention-q6bafbxi/baseline-negative-stdout.json": "0ed2b4775ee46820571be4734427fb211d870e7411248534807833aa58f560f8",
+    "/tmp/auto-research-retention-q6bafbxi/baseline-revision_loop.py": "d89131e69ea56cc18848b251e9c57226d89095acb91ddb6bb1253b6811edb3fe",
+    "/tmp/auto-research-retention-q6bafbxi/baseline.json": "a155f410800de0e19a0710ae0dbc524f1686663b7cbf6e296da809fe9bc6d302",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/paraphrase-probe/report.md": "ba1838333959cb7ecfda1fc5151a0d56b38b082b07b791c89e750f3632ced896",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/quotation-probe/report.md": "70430926854029f8f5c53148bea3313c1689c16e80dfc7aa08a417df3810873b",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/round2-bound-case.json": "ddd4f28b887103ef93b374f70bc2d5d034547898863ae7c8e46a291276d4895e",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/R1/result.json": "f84a5bc94a75d359129cd76f7ea491c08a9c3deaa34842a9fc0d65e57ce01021",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/broken-citation/result.json": "abdceaff04b44507c5c3ceb191441d6cb8df8fab2a4486b24ecbc7508de8126b",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/broken-citation/revision-checks.json": "e30ef84e86302fd8f01c7e2723321b617dd408d1b9b61766b9db128dd8a2fa1b",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/broken-numeric/result.json": "b23cd0ce8269d4589a297b0db79a4a4705cf606f7a10b5c3ccb14809c40083de",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/broken-numeric/revision-checks.json": "6539d04c9341e275d437fdaee7019e58f6ab5c01d66c943798ebcb8eeb0e89c8",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/deleted-counterevidence/result.json": "12263fc732921a0f70e845927f5d4cefce63de1b2776e9c359b3ef40025ca956",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/deleted-counterevidence/revision-checks.json": "24aed1a41750c6eefa20e5ad980c4176e53c848d43fdd8f6d577938a0fc12c31",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/deleted-qualifier/result.json": "f0def457bb9dd08f71785bc45ce12653342c889f657163428a1ef348977e93ef",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/deleted-qualifier/revision-checks.json": "3a5c8278a32b095b22d511b97331ef7474b1fb84c1af3068c15a43c23e661941",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/full/result.json": "cb8a61360cce27c39b95b21d50d3500b722bfe9e39c25fed5435181443fc27c3",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/full/revision-checks.json": "f9cf25265206aa9aba369416537faed552d10ae91b7b101db79c9c4bc96a0617",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/local-only/result.json": "92a738c571e5e1a50eb3617b2d5660ed215d4f11e611478539a04446a4180e93",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/local-only/revision-checks.json": "aa98982b80bd5ba11a6b55cbc298106c58d4de88901cb6f853366870207f228d",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/paraphrase-probe/result.json": "cf51f47580056e30488eda86ff170d13a62e8d99121289c9612f04cd2d62be5c",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/paraphrase-probe/revision-checks.json": "9c4f10350178e4bdf1bd5550d5eef1c0d8049a8b4a95d4383758bdf32f5c22ed",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/quotation-probe/result.json": "14771bf2101ae7116db3feaab4363625f2bbf01cc47ba382a7bda023d3f8ec51",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/quotation-probe/revision-checks.json": "77d94535f28782a28916253eefc77385e0386bb53584edb47fdf715f2127546a",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/rollback/result.json": "7fe16ec4e2d92d87ecdad6203742cb9fa1c7f26577d98c3fa97b3e1b15611eda",
+    "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/rollback/revision-checks.json": "428f6ed5567f094b5c5fdd2e2d2b32bc0da3e33323e9ed1de081d873ad2fcddf",
+    "/tmp/auto-research-retention-q6bafbxi/patched-results.json": "0f76156d7e127832dac9a1e659fd11c7b5f809d7ad319d9e26483c7603c3b69d",
+    "/tmp/auto-research-retention-q6bafbxi/patched-revision_loop.py": "e189bcba899db03d5a3c579554485a185eadf289e43af45804b177de02c8189e",
+    "/workspace/auto-research/changes/W023.md": "58ed9609518b92e290e0c35887811f948590c9de9e30893fc424f4665d742f63",
+    "/workspace/auto-research/tests/revision-retention/dataset.json": "2d8ffd86079d9139e38cf48c7a2e7a07e1f87932813300aed91a66fc0f14a612",
+    "/workspace/auto-research/tests/revision-retention/evidence/counterevidence.json": "cea611df93510866ed51bfe90a2e0561df067fdd067a52520481cc9c7a2d33dc",
+    "/workspace/auto-research/tests/revision-retention/evidence/source.json": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f",
+    "/workspace/auto-research/tests/revision-retention/frozen-sha256.json": "a7db4cb886c2870d2857e1e0f7b760864dbaf3e2db7ef9f090b91b5b5a7178ce",
+    "/workspace/auto-research/tests/revision-retention/initial/A.md": "f0026348b873e2daa1e9126674166267a85aa6a8155ff2a4d2ac1888dff38bbb",
+    "/workspace/auto-research/tests/revision-retention/initial/B.md": "a37f10db1f637b60708d7a3cc1ab851cd6abfd1960d0712fe058757a1082984a",
+    "/workspace/auto-research/tests/revision-retention/initial/C.md": "7a3d359e5773033f9a075911914d35972e0ba565766aee2d05c20c3c3dd53578",
+    "/workspace/auto-research/tests/revision-retention/initial/budget.txt": "8bbae9901c9d16ac6c59088341b5fb9f2903d8468be239c7a1eca9505cc93274",
+    "/workspace/auto-research/tests/revision-retention/initial/ledger.json": "ca472c36e066d675cb8f015beb02880c5e7c5a660deb722a7b99230721e3d27f",
+    "/workspace/auto-research/tests/revision-retention/initial/report.md": "7b162e5a48729bb6d57c9c1af8830ae31d192dfff59af38303f93a40a1e9d8af",
+    "/workspace/auto-research/tests/revision-retention/initial/result.json": "2d3e963626770c053faa1ae44399108bb9c08cf912f553af8aa76585afc391eb",
+    "/workspace/auto-research/tests/revision-retention/initial/task.json": "204333168c931e2aef06dc4bc476159348dbfdca7da602a9c09970b8c3d28bbe",
+    "/workspace/auto-research/tests/revision-retention/round1/artifacts/A.md": "d9d840485b9706e5b50f249b8d2ed4dfe5f843fcd5f19b90b6beda99d88858c0",
+    "/workspace/auto-research/tests/revision-retention/round1/artifacts/B.md": "398d303eed72b98ae1753581fe8c38040ff67d2aa2db18d7e461a81a94f26452",
+    "/workspace/auto-research/tests/revision-retention/round1/artifacts/ledger.json": "e5fedad1ac8559b0d2e8f0e254e3afe59a0fe85e4884665a92c200493c5795dc",
+    "/workspace/auto-research/tests/revision-retention/round1/artifacts/report.md": "f23042d5d3cad597aed1d132c57e7e37d06f85c5379079c21d8aae06dd469a92",
+    "/workspace/auto-research/tests/revision-retention/round1/case.json": "4abf0f1a3249642213c3d3badabe0740d0c416cb15a9765060cea41e007d2da8",
+    "/workspace/auto-research/tests/revision-retention/round1/feedback.json": "b11055baedcfbf54e26365575d02bebb9ea66c06d9a24d668c754e43a87fdcb6",
+    "/workspace/auto-research/tests/revision-retention/round1/full.json": "8bacdbd3e0ecc13e9832284d998a172b9dbc0d8ca54d46d2a468ebb2c4dcf22e",
+    "/workspace/auto-research/tests/revision-retention/round1/rubric.json": "da72e48acd33123a6649c33a139b46bfadcb1b7ada4a91cbd39047a4cc3993bc",
+    "/workspace/auto-research/tests/revision-retention/round2/artifacts/A.md": "7d448c792e682ad2b3869de05a79e7532481844b41f1ef60f09342b3402031c8",
+    "/workspace/auto-research/tests/revision-retention/round2/artifacts/B.md": "e74f9eb1d8c21b31a9accb60a05f5151ac742f595d067af223058e434524058b",
+    "/workspace/auto-research/tests/revision-retention/round2/artifacts/broken-citation/ledger.json": "490cedada56ec453c8278ca33e478ec86f142dfaf514dafb1613acf2cd7e0c7d",
+    "/workspace/auto-research/tests/revision-retention/round2/artifacts/broken-citation/report.md": "5100eba6485686970b5d138004addad67c166ed270952305bfd8d2d34f96d425",
+    "/workspace/auto-research/tests/revision-retention/round2/artifacts/broken-numeric/ledger.json": "62d0860e8e690208f75758730d0584be8f06f98135ff55ad82816d04fdbc7622",
+    "/workspace/auto-research/tests/revision-retention/round2/artifacts/broken-numeric/report.md": "5100eba6485686970b5d138004addad67c166ed270952305bfd8d2d34f96d425",
+    "/workspace/auto-research/tests/revision-retention/round2/artifacts/deleted-counterevidence/ledger.json": "50c4c300f6e8979b8d0234ff8d82f57dfb121274b9faf4d678c6bdb130b6476b",
+    "/workspace/auto-research/tests/revision-retention/round2/artifacts/deleted-counterevidence/report.md": "af4793384441a1ba35a82b672e9f8622687e08f6906a4e53f9b4c24b72e43afd",
+    "/workspace/auto-research/tests/revision-retention/round2/artifacts/deleted-qualifier/ledger.json": "55a9a191b949a4492f9b7ca0ec738a756adee362d80ecf9fd247b80b5dae6b29",
+    "/workspace/auto-research/tests/revision-retention/round2/artifacts/deleted-qualifier/report.md": "c4184dc378a4c7e91ef05e28d19a367904090e781d7bf4b0b6ab76d974378fdf",
+    "/workspace/auto-research/tests/revision-retention/round2/artifacts/full/ledger.json": "b222b7864939f1c8269bccca714b83bf1e86e354f2bc224a0d77ad3ea565d101",
+    "/workspace/auto-research/tests/revision-retention/round2/artifacts/full/report.md": "cf8b96c9235e353a6aab5e5c9363232533598961211075fd1c86e79c084e59d1",
+    "/workspace/auto-research/tests/revision-retention/round2/artifacts/reintroduced-ranking/ledger.json": "63fe1e2ede65f5d876f40d30a2033081dcd6674375428e211c91db81cb526e9a",
+    "/workspace/auto-research/tests/revision-retention/round2/artifacts/reintroduced-ranking/report.md": "98be82832840edf7791afd5498bad4ee01ed507121112bfec86651e26b8791bd",
+    "/workspace/auto-research/tests/revision-retention/round2/broken-citation.json": "632a71e807b0c3248653a78dffb0f1a08887ef1fd2bf7d310fe05e55a0a95879",
+    "/workspace/auto-research/tests/revision-retention/round2/broken-numeric.json": "2a36402d2b65302b26f3916c5252cae33081bb2bb9a827277793e857c9df399b",
+    "/workspace/auto-research/tests/revision-retention/round2/case-template.json": "3949011b1e556ce155d39b6b1a29993c7a97c225b4df55abe60beed0fa3c9671",
+    "/workspace/auto-research/tests/revision-retention/round2/deleted-counterevidence.json": "a21c0a493010e7043a41ca38885a29679d3ba021075bc193fdabb9089d1dd4e3",
+    "/workspace/auto-research/tests/revision-retention/round2/deleted-qualifier.json": "c08b38f79311de71827727746eabbc6e316ce1c60042d0f0239c053ee433a35e",
+    "/workspace/auto-research/tests/revision-retention/round2/feedback.json": "2c2d4e0a961a33cd74d98bf7aef6acb7eb30847830615026a4619dd39b9c5380",
+    "/workspace/auto-research/tests/revision-retention/round2/full.json": "5b142570fff34dea5e40a69acabf356e01adf4d7ff6121416ad455d283571fb9",
+    "/workspace/auto-research/tests/revision-retention/round2/local-only.json": "9fd2e99297bfdd8b3f7d3810a6511e3c9b40ab0620da4a10498c3b70ef074efc",
+    "/workspace/auto-research/tests/revision-retention/round2/reintroduced-ranking.json": "b38787077817ac69279a320e5892cd828088cd8d7180c52e7d0d12e81e59823e",
+    "/workspace/auto-research/tests/revision-retention/round2/rubric.json": "6088b5bca1170bb917741e295198dec4fcc32b5c7deb6ea4090c5a89f30b9317",
+    "/workspace/auto-research/tests/revision-retention/task.json": "204333168c931e2aef06dc4bc476159348dbfdca7da602a9c09970b8c3d28bbe"
+  }
+}

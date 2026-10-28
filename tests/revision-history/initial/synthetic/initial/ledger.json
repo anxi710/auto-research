@@ -1,0 +1,99 @@
+{
+  "schema_version": "1",
+  "task_id": "TR001",
+  "attempt_id": "A001",
+  "claims": [
+    {
+      "claim_id": "C001",
+      "text": "Planner P has better isolated plan quality than Q.",
+      "location": {
+        "artifact": "synthetic/initial/report.md",
+        "sha256": "8eddd8a893819e2ce41437d9bbd09434b719d2beed853e3d95865329b5363587",
+        "exact_quote": "Planner P has better isolated plan quality than Q."
+      },
+      "evidence": [
+        {
+          "evidence_id": "E001",
+          "kind": "experiment",
+          "availability": "available",
+          "scope": "Ten synthetic tasks with one fixed executor.",
+          "limitations": [
+            "Synthetic practice data.",
+            "No comparison across executors."
+          ],
+          "artifact": "synthetic/initial/source.json",
+          "sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f",
+          "locator": {
+            "type": "json_pointer",
+            "value": "/planner_p/value"
+          },
+          "value": 72,
+          "unit": "score",
+          "context": {
+            "dataset": "synthetic-10",
+            "split": "fixed-v1",
+            "method": "P",
+            "baseline": "Q",
+            "conditions": {
+              "executor": "E1"
+            }
+          },
+          "baseline_locator": "/planner_q/value",
+          "baseline_value": 60
+        }
+      ],
+      "verification_request": {
+        "question": "Does the fixed evidence support the stated scope?",
+        "limitations": [
+          "This fixture does not establish scientific acceptance."
+        ]
+      }
+    },
+    {
+      "claim_id": "C002",
+      "text": "Use P with any executor because this experiment proves a general advantage.",
+      "location": {
+        "artifact": "synthetic/initial/report.md",
+        "sha256": "8eddd8a893819e2ce41437d9bbd09434b719d2beed853e3d95865329b5363587",
+        "exact_quote": "Use P with any executor because this experiment proves a general advantage."
+      },
+      "evidence": [
+        {
+          "evidence_id": "E002",
+          "kind": "experiment",
+          "availability": "available",
+          "scope": "Ten synthetic tasks with one fixed executor.",
+          "limitations": [
+            "Synthetic practice data.",
+            "No comparison across executors."
+          ],
+          "artifact": "synthetic/initial/source.json",
+          "sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f",
+          "locator": {
+            "type": "json_pointer",
+            "value": "/planner_p/value"
+          },
+          "value": 72,
+          "unit": "score",
+          "context": {
+            "dataset": "synthetic-10",
+            "split": "fixed-v1",
+            "method": "P",
+            "baseline": "Q",
+            "conditions": {
+              "executor": "E1"
+            }
+          },
+          "baseline_locator": "/planner_q/value",
+          "baseline_value": 60
+        }
+      ],
+      "verification_request": {
+        "question": "Does the fixed evidence support the stated scope?",
+        "limitations": [
+          "This fixture does not establish scientific acceptance."
+        ]
+      }
+    }
+  ]
+}

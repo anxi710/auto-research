@@ -2,7 +2,7 @@
 name: research-workflow
 description: Run research through literature study, questions, experiments, analysis, writing, and review. Resume from file records across AI assistants. Capture workflow feedback and test scoped improvements when requested.
 metadata:
-  version: "0.1.10-dual-delivery.2"
+  version: "0.1.11-synthesis.3"
 ---
 
 # Research workflow
@@ -138,6 +138,7 @@ Keep simple standalone work in one context when that meets the request.
 ## Finish a work session
 
 Use the [delivery guide](references/delivery.md) to present the requested output to researchers and agents at the appropriate scale.
+Use Markdown as the standard format unless the user explicitly requests another format.
 For researcher-facing argument and narrative, use the optional `research-report` skill when it is available.
 It complements S6/S7 and does not change this workflow's evidence or permission rules.
 A workflow-only copy can continue with the stage and delivery guides without the companion skill.

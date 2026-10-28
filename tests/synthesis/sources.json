@@ -1,0 +1,90 @@
+{
+  "A0": {
+    "branch_id": "A",
+    "statement": "An obsolete synthetic short-task run reported M=0.90 and N=0.70. A1 replaces this record.",
+    "availability": "available",
+    "reading_depth": "excerpt",
+    "version": "synthetic-v1",
+    "conditions": {
+      "task_length": "short",
+      "budget": 10
+    },
+    "unit": "probability",
+    "method_value": 0.9,
+    "baseline_value": 0.7,
+    "superseded_by": "A1",
+    "identifier": "https://example.invalid/synthetic/A0"
+  },
+  "A1": {
+    "branch_id": "A",
+    "statement": "In synthetic short tasks with budget 10, M succeeded on 0.80 of tasks and N on 0.70.",
+    "availability": "available",
+    "reading_depth": "excerpt",
+    "version": "synthetic-v1",
+    "conditions": {
+      "task_length": "short",
+      "budget": 10
+    },
+    "unit": "probability",
+    "method_value": 0.8,
+    "baseline_value": 0.7,
+    "identifier": "https://example.invalid/synthetic/A1"
+  },
+  "B1": {
+    "branch_id": "B",
+    "statement": "In the same synthetic short tasks with budget 10, M took 4 seconds and N took 2 seconds.",
+    "availability": "available",
+    "reading_depth": "excerpt",
+    "version": "synthetic-v1",
+    "conditions": {
+      "task_length": "short",
+      "budget": 10
+    },
+    "unit": "seconds",
+    "method_value": 4,
+    "baseline_value": 2,
+    "identifier": "https://example.invalid/synthetic/B1"
+  },
+  "A2": {
+    "branch_id": "A",
+    "statement": "In synthetic long tasks with budget 20, M succeeded on 0.61 of tasks and N on 0.60.",
+    "availability": "available",
+    "reading_depth": "excerpt",
+    "version": "synthetic-v1",
+    "conditions": {
+      "task_length": "long",
+      "budget": 20
+    },
+    "unit": "probability",
+    "method_value": 0.61,
+    "baseline_value": 0.6,
+    "identifier": "https://example.invalid/synthetic/A2"
+  },
+  "B2": {
+    "branch_id": "B",
+    "statement": "A separate synthetic short-task run with budget 10 gave success rates M=0.66 and N=0.70.",
+    "availability": "available",
+    "reading_depth": "excerpt",
+    "version": "synthetic-v1",
+    "conditions": {
+      "task_length": "short",
+      "budget": 10
+    },
+    "unit": "probability",
+    "method_value": 0.66,
+    "baseline_value": 0.7,
+    "identifier": "https://example.invalid/synthetic/B2"
+  },
+  "H1": {
+    "branch_id": "B",
+    "statement": "No human-user transfer measurements are available in this frozen case.",
+    "availability": "missing",
+    "reading_depth": "metadata",
+    "version": "synthetic-v1",
+    "conditions": {
+      "population": "human_users"
+    },
+    "unit": "probability",
+    "identifier": "https://example.invalid/synthetic/H1"
+  }
+}

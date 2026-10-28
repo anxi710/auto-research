@@ -1,0 +1,67 @@
+{
+  "index_version": 1,
+  "scientific_version": "v1",
+  "input": {
+    "path": "evidence.json",
+    "original_path": "/workspace/auto-research-markdown-delivery/tests/evidence/W024-delivery/inputs/evidence.json",
+    "version": "fixture-v1",
+    "sha256": "96245d1dacbbffad1116b8c50e8ea50e1214102e59c0bfba882ecd30d90cf287",
+    "reading_depth": "Complete supplied JSON input"
+  },
+  "draft": {
+    "path": "report.tex",
+    "revision": "draft-1",
+    "sha256": "361c487d86a08ffdca1b33d45438f12785033a1e4f97793c51e409c203f4d83d"
+  },
+  "decision_source": {
+    "path": "evidence.json",
+    "pointers": [
+      "/human_decision",
+      "/approved_dependent_actions"
+    ]
+  },
+  "bindings": [
+    {
+      "report_location": "sec:summary",
+      "source_pointers": [
+        "/question",
+        "/provenance",
+        "/rows",
+        "/limitations"
+      ]
+    },
+    {
+      "report_location": "sec:comparison; tab:comparison",
+      "source_pointers": [
+        "/rows/0",
+        "/rows/1",
+        "/provenance"
+      ],
+      "source_ids": [
+        "E1",
+        "E2"
+      ]
+    },
+    {
+      "report_location": "sec:limitations",
+      "source_pointers": [
+        "/provenance",
+        "/limitations",
+        "/rows"
+      ]
+    },
+    {
+      "report_location": "sec:review",
+      "source_pointers": [
+        "/question",
+        "/human_decision",
+        "/approved_dependent_actions"
+      ]
+    }
+  ],
+  "support_limit": "Invented input only. No experiment ran. The comparison does not establish real method performance.",
+  "guides": {
+    "research-workflow": "0.1.11-markdown.1",
+    "research-report": "0.1.1-markdown.1"
+  }
+}

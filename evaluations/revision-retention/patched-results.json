@@ -1,0 +1,166 @@
+{
+  "baseline_commit": "fe52cbf",
+  "patched_script_sha256": "e189bcba899db03d5a3c579554485a185eadf289e43af45804b177de02c8189e",
+  "dataset_freeze_sha256": "a7db4cb886c2870d2857e1e0f7b760864dbaf3e2db7ef9f090b91b5b5a7178ce",
+  "same_first_result_as_baseline": true,
+  "same_second_round_bound_case_as_baseline": true,
+  "shared_rubric": {
+    "path": "round2/rubric.json",
+    "sha256": "6088b5bca1170bb917741e295198dec4fcc32b5c7deb6ea4090c5a89f30b9317"
+  },
+  "candidate_results": [
+    {
+      "candidate": "full",
+      "exit_code": 0,
+      "status": "completed",
+      "task_revision": 3,
+      "feedback_matches": true,
+      "preservation": true,
+      "withdrawn_text_absent": true,
+      "stale_nodes": [],
+      "citation_diagnostics": [],
+      "history_preserved": true,
+      "independent_content_assessment": "required_not_run",
+      "report": "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/full/revision-checks.json"
+    },
+    {
+      "candidate": "reintroduced-ranking",
+      "exit_code": 1,
+      "status": "blocked",
+      "task_revision": 3,
+      "feedback_matches": true,
+      "preservation": true,
+      "withdrawn_text_absent": false,
+      "stale_nodes": [],
+      "citation_diagnostics": [],
+      "history_preserved": true,
+      "independent_content_assessment": "required_not_run",
+      "report": "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/rollback/revision-checks.json"
+    },
+    {
+      "candidate": "deleted-counterevidence",
+      "exit_code": 1,
+      "status": "blocked",
+      "task_revision": 3,
+      "feedback_matches": true,
+      "preservation": false,
+      "withdrawn_text_absent": true,
+      "stale_nodes": [],
+      "citation_diagnostics": [],
+      "history_preserved": true,
+      "independent_content_assessment": "required_not_run",
+      "report": "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/deleted-counterevidence/revision-checks.json"
+    },
+    {
+      "candidate": "deleted-qualifier",
+      "exit_code": 1,
+      "status": "blocked",
+      "task_revision": 3,
+      "feedback_matches": true,
+      "preservation": false,
+      "withdrawn_text_absent": true,
+      "stale_nodes": [],
+      "citation_diagnostics": [],
+      "history_preserved": true,
+      "independent_content_assessment": "required_not_run",
+      "report": "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/deleted-qualifier/revision-checks.json"
+    },
+    {
+      "candidate": "broken-numeric",
+      "exit_code": 1,
+      "status": "blocked",
+      "task_revision": 3,
+      "feedback_matches": true,
+      "preservation": true,
+      "withdrawn_text_absent": true,
+      "stale_nodes": [],
+      "citation_diagnostics": [
+        {
+          "code": "BINDING",
+          "path": "runs/broken-numeric/result.json",
+          "message": "claims[3].evidence[0]: method JSON Pointer must bind the exact normalized measurement and context: '/planner_p/value'."
+        }
+      ],
+      "history_preserved": true,
+      "independent_content_assessment": "required_not_run",
+      "report": "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/broken-numeric/revision-checks.json"
+    },
+    {
+      "candidate": "broken-citation",
+      "exit_code": 1,
+      "status": "blocked",
+      "task_revision": 3,
+      "feedback_matches": true,
+      "preservation": true,
+      "withdrawn_text_absent": true,
+      "stale_nodes": [],
+      "citation_diagnostics": [
+        {
+          "code": "HASH",
+          "path": "runs/broken-citation/result.json",
+          "message": "SHA256 mismatch: round2/artifacts/broken-citation/report.md."
+        }
+      ],
+      "history_preserved": true,
+      "independent_content_assessment": "required_not_run",
+      "report": "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/broken-citation/revision-checks.json"
+    },
+    {
+      "candidate": "local-only",
+      "exit_code": 1,
+      "status": "blocked",
+      "task_revision": 3,
+      "feedback_matches": false,
+      "preservation": true,
+      "withdrawn_text_absent": true,
+      "stale_nodes": [
+        "B",
+        "ledger",
+        "report"
+      ],
+      "citation_diagnostics": [],
+      "history_preserved": true,
+      "independent_content_assessment": "required_not_run",
+      "report": "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/local-only/revision-checks.json"
+    },
+    {
+      "candidate": "known-semantic-miss",
+      "exit_code": 0,
+      "status": "completed",
+      "task_revision": 3,
+      "feedback_matches": true,
+      "preservation": true,
+      "withdrawn_text_absent": true,
+      "stale_nodes": [],
+      "citation_diagnostics": [],
+      "history_preserved": true,
+      "independent_content_assessment": "required_not_run",
+      "report": "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/paraphrase-probe/revision-checks.json"
+    },
+    {
+      "candidate": "known-quotation-false-positive",
+      "exit_code": 1,
+      "status": "blocked",
+      "task_revision": 3,
+      "feedback_matches": true,
+      "preservation": true,
+      "withdrawn_text_absent": false,
+      "stale_nodes": [],
+      "citation_diagnostics": [],
+      "history_preserved": true,
+      "independent_content_assessment": "required_not_run",
+      "report": "/tmp/auto-research-retention-q6bafbxi/patched-fixture/runs/quotation-probe/revision-checks.json"
+    }
+  ],
+  "test_results": {
+    "new_retention_tests": 8,
+    "existing_revision_tests": 12,
+    "result": "passed"
+  },
+  "limits": [
+    "These are authored development regression inputs, not measured model forgetting.",
+    "The unknown-paraphrase probe is a known semantic miss, not a scientific pass.",
+    "The historical quotation probe is a known false positive of exact-text matching.",
+    "Every run still requires independent content assessment."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-10-28T03:31:09.465460+00:00",
+  "scope": "Deterministic record handling and frozen input integrity only. No model performance score comes from these tests.",
+  "checks": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_native_architecture_eval.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.006s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "evaluations/native-architecture/run.py",
+        "verify"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

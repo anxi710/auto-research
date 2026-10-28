@@ -1,0 +1,34 @@
+{
+  "task_id": "T_COLLECT",
+  "revision": 1,
+  "goal": "Preserve the frozen synthetic content.",
+  "owner": "synthetic-fixture",
+  "inputs": [],
+  "dependencies": [],
+  "write_paths": [
+    "."
+  ],
+  "budget_ref": "budget.txt",
+  "acceptance": [
+    "Preserve evidence and conditions."
+  ],
+  "stop_condition": "Stop after this fixture.",
+  "response_branches": [
+    {
+      "branch_id": "A",
+      "task_path": "T_A/task.json",
+      "task_revision": 1,
+      "task_sha256": "f806ed222cb4a93fff833d4b03df666ee7678358d2d14baf97683027655f0da9",
+      "result_path": "T_A/result.json",
+      "response_path": "T_A/response.json"
+    },
+    {
+      "branch_id": "B",
+      "task_path": "T_B/task.json",
+      "task_revision": 1,
+      "task_sha256": "f0179d675df89f277da871eabc514c5d0cb004ac8e7105668f8bbcc06c0c45d2",
+      "result_path": "T_B/result.json",
+      "response_path": "T_B/response.json"
+    }
+  ]
+}

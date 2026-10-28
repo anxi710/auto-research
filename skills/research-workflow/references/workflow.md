@@ -287,6 +287,7 @@ If the baseline or comparison is invalid, correct that problem before judging th
 Input: An existing manuscript, a requested section or figure, or evidence for a new draft.
 Required information: The requested deliverable and enough text or evidence for that level of work.
 Output: The requested outline, section, figure, revision, or complete draft, with its evidence gaps.
+Use Markdown by default and follow the [delivery guide](delivery.md) for explicitly requested rendered formats.
 Use `MANUSCRIPT.md` to organize a project manuscript when that record is needed.
 Human decision: Review each writing output and any proposed changes to the argument or research scope.
 Next choices: End the writing task, continue approved S6 work, or propose S1, S3, S5, or S7 for a specific gap.

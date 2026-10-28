@@ -1,0 +1,26 @@
+{
+  "task_id": "TRRET001",
+  "revision": 1,
+  "goal": "Correct the unsupported ranking while retaining supported findings and limits across two revisions.",
+  "owner": "fixture-author",
+  "inputs": [
+    {
+      "path": "evidence/source.json",
+      "sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f"
+    },
+    {
+      "path": "evidence/counterevidence.json",
+      "sha256": "cea611df93510866ed51bfe90a2e0561df067fdd067a52520481cc9c7a2d33dc"
+    }
+  ],
+  "dependencies": [],
+  "write_paths": [
+    "initial/"
+  ],
+  "budget_ref": "initial/budget.txt",
+  "acceptance": [
+    "Assess the requested edit, retained content, withdrawn statements, and evidence bindings separately."
+  ],
+  "stop_condition": "Stop after the fixed two-round fixture replay.",
+  "evidence_ledger": "initial/ledger.json"
+}

@@ -9,7 +9,7 @@ Output version: Not recorded.
 Authoritative scientific text and evidence versions: Not recorded.
 Human decision record and current status: Not recorded.
 Agent evidence index: Not linked.
-Editable source and build instructions, if applicable: Not linked.
+Markdown report location: Not recorded.
 
 ## Summary
 

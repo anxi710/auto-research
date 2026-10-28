@@ -1,0 +1,30 @@
+{
+  "task_id": "T_POLISH",
+  "task_revision": 1,
+  "attempt_id": "A001",
+  "task_path": "T_POLISH/snapshot.json",
+  "task_sha256": "f04c05889ac76c3ba9fbdf5d1410224b5b365ba9e077dcce62e7957804dab8db",
+  "execution_status": "completed",
+  "artifacts": [
+    {
+      "path": "polished-artifact.json",
+      "sha256": "dab76efc629c014bd02ecf684b179f0208cfd074df108a4285772f9ccf712f12",
+      "kind": "synthesis"
+    },
+    {
+      "path": "polished.md",
+      "sha256": "518d9fca31c607bc1aee31b7a450e5f3a7e061ecf5d875553539963290c7d3a6"
+    },
+    {
+      "path": "polished-ledger.json",
+      "sha256": "4fbef2b0a0ecbc1ffb0300a602b9b734c66c4e39f7717e250c5fe4bc8c938e12",
+      "kind": "claim_evidence_ledger"
+    }
+  ],
+  "unresolved": [],
+  "resource_usage": {
+    "tokens": null,
+    "measurement": "synthetic fixture"
+  },
+  "next_action": "Present for independent content review."
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1",
+  "artifact_type": "synthesis",
+  "task_id": "T_SYNTH",
+  "task_revision": 1,
+  "attempt_id": "A001",
+  "aggregate": {
+    "path": "literal-aggregate.json",
+    "sha256": "345dfba9847ea0ddeeaa85f4c2bd73405d83037d6dd52e8e63f2f3148bff541e"
+  },
+  "coverage": {
+    "expected": [
+      "A",
+      "B"
+    ],
+    "collected": [
+      "A",
+      "B"
+    ],
+    "gaps": []
+  },
+  "manuscript": {
+    "path": "synthesis.md",
+    "sha256": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8"
+  },
+  "evidence_ledger": {
+    "path": "synthesis-ledger.json",
+    "sha256": "b0420a558d0c1b2b1de43eb936f226fee5963eaeae4c9c02a0454446b46dbbf7"
+  }
+}

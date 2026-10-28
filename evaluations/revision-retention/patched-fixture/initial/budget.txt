@@ -1,0 +1,1 @@
+This finite fixture uses saved synthetic values. The two revisions do not run experiments or contact external services.

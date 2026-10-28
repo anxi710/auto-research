@@ -666,3 +666,86 @@ The workflow relies on each harness to supply tools, enforce permissions, and fo
 No unattended improvement loop or native Hermes or Pi integration ran.
 The evolution tests did not repeat every initial research case.
 Automatic adoption of a passing generated candidate remains untested as a complete cycle.
+
+## W022 collection, synthesis, and revision trial
+
+Test date: 2026-10-28.
+The [change record](../changes/W022.md) defines the local candidate scope.
+The baseline `b0306c6` passed 130 tests on Python 3.12.14 in 15.134 seconds.
+The isolated collection stage passed 147 tests in 19.663 seconds.
+Its seventeen new tests run collection through the existing record consumer.
+They cover missing branches, truncated JSON, unfinished execution, duplicate submissions, stale sources, and existing review history.
+The candidate preserves partial coverage instead of inferring acceptance for missing branches.
+The [run evidence](evidence/W022.json) records observed results and limits.
+
+The isolated synthesis stage passed 157 tests in 18.377 seconds.
+Its fixed bundle covers five evidence problems and includes literal and wording-only controls.
+The [content review](evidence/W022-synthesis-review.json) distinguishes correct retained facts from missing joint reasoning.
+The [mechanical comparison](evidence/W022-synthesis.json) measures declared finding matches, not scientific quality.
+The controls' missing findings are not zero factual accuracy.
+The original reviewed snapshot remains in the fixture history after technical binding corrections.
+
+The isolated revision stage passed 169 tests in 18.793 seconds.
+Four actual CLI replays compare full and local-only corrections for two frozen cases.
+Both full corrections passed, while both local-only controls reported stale downstream content.
+The initial preservation-criteria gap and the corrected comparison remain in the development history.
+A fresh native actor also revised both initial cases without the authored candidates or rubric.
+Both native results passed the record checker after copying into the repository.
+An independent reader found substantive corrections and preserved useful content in both cases.
+The [native evidence](../evaluations/native-revision/README.md) retains drafts, dependency plans, failures, unknown resource use, and the content review.
+One native invocation across two cases does not establish general revision reliability.
+
+The isolated architecture stage passed 171 tests in 19.143 seconds.
+The [native comparison](../evaluations/native-architecture/REPORT.md) completed fourteen model calls over two repeats of one heldout synthetic case.
+Strong single-agent and synthesis outputs tied across the four content dimensions in both repeats.
+Literal collection retained correct evidence but lacked some explicit joint reasoning.
+The report preserves variation, evaluator uncertainty, a resolved capacity denial, and resource measurement limits.
+Sequential scheduling ran. Parallel scheduling, equal-token comparison, and complete efficiency measurement did not run.
+
+## W023 revision retention follow-up
+
+Test date: 2026-10-28.
+The [case study](../changes/W023.md) preserves an authored two-round regression and the baseline checker's exact miss.
+The patched checker blocks the same restored unsupported assertion while keeping latest-feedback success separate.
+Other controls cover deleted counterevidence, a lost condition, broken evidence, and stale downstream content.
+Declared equivalent wording passes, while an unsupported paraphrase miss and a historical-quotation false positive remain explicit.
+These are development regressions, not model-generated forgetting events or replacements for the architecture holdout.
+
+All 179 tests passed on Python 3.12.14 in 20.624 seconds and Python 3.13.5 in 20.749 seconds.
+The two runs used separate temporary fixtures and ran concurrently.
+All 22 Python files passed a Python 3.9 grammar inspection.
+The [evidence record](evidence/W023.json) includes the exact baseline and patched outcomes, independent content review, and runtime limits.
+Python 3.9 and 3.14 execution, remote CI, long-horizon revision reliability, and human review costs remain untested.
+
+## W024 Markdown delivery default
+
+Test date: 2026-10-28.
+The [change record](../changes/W024.md) narrows format selection while retaining the writing and review standards.
+The format candidate starts from main `b0306c6`, separate from the open synthesis PR #4.
+The baseline passed 130 tests on Python 3.12.14 in 17.592 seconds.
+The format candidate passed 133 tests on the same interpreter in 17.195 seconds.
+Three added regressions exercise Markdown record consumption, evidence drift, and optional template prerequisites.
+The checker accepts a complete Markdown report and ledger without TeX or PDF files.
+It preserves a pending human decision and still rejects changed bound evidence.
+The build helper requires an explicit template choice and stops without output when its compiler is absent.
+That absence is controlled in the test environment.
+
+Two native writing tasks used fixed invented inputs in fresh contexts, with one delegated inspection each.
+The [default output](evidence/W024-delivery/default/report.md) supplies a summary, full account, readable evidence links, and a fixed source index.
+It creates no TeX or PDF and reports no missing rendering work.
+The explicit LaTeX task supplies source and build instructions but cannot produce its requested PDF.
+The repository helper reports missing `ctex.sty`.
+The local English-report preflight reports missing BibLaTeX, Logreq, and TeX Gyre font files.
+No compilation or PDF inspection ran, and no dependency installation was reported.
+The [inspection record](evidence/W024-delivery/inspection.json) preserves the distinction between delivered source and unfinished PDF.
+These are bounded delivery observations, not a model comparison or general compliance guarantee.
+They do not measure comprehension, human review cost, or scientific correctness.
+The separate W022 architecture study is outside this format candidate.
+
+Integration into PR #4 preserved its earlier six commits and recorded evidence.
+The integrated candidate passed 182 tests on Python 3.12.14 in 22.386 seconds and Python 3.13.5 in 22.342 seconds.
+Those runs used separate temporary fixtures and ran concurrently.
+All 451 selected previous files and the earlier test-results text remained unchanged.
+The [integration record](evidence/W024-integration.json) separates these checks from the standalone native cases.
+Native delivery cases were not repeated after the entry version and return-to-Markdown wording changes.
+Remote CI for this integrated head remains pending at this recording point.

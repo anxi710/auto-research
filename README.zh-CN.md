@@ -1,6 +1,6 @@
 # 可迁移的科研工作流
 
-[![版本 0.1.10](https://img.shields.io/badge/version-0.1.10-blue)](skills/research-workflow/SKILL.md)
+[![版本 0.1.11](https://img.shields.io/badge/version-0.1.11-blue)](skills/research-workflow/SKILL.md)
 [![许可证：MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![批量工具所需 Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#环境要求)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
@@ -9,7 +9,10 @@
 
 [English](README.md) | 简体中文
 
-此隔离预发布版本用于 [W019 交付试用](changes/W019.md)，尚未正式采用为默认规则。
+此本地候选在交付试用基础上增加 [W022 综合与修订](changes/W022.md)。
+[W023 保留回归](changes/W023.md)分别检查新反馈落实与原有正确内容的丢失。
+[W024 格式更新](changes/W024.md)将 Markdown 设为标准交付格式。
+它尚未发布，也未安装为全局默认版本。
 
 这套工具为 AI 助手提供统一的科研流程，涵盖学习、提问、实验、分析、写作和评审。
 Harness 是运行助手及其工具的应用程序。
@@ -41,6 +44,8 @@ Python 和工具徽章仅适用于可选的批量文献分析流程。
 检查器只验证引用与声明的上下文。
 支持判断保留在 review 中。
 人工批准沿用现有流程。
+可选的[响应收集器](skills/research-workflow/references/response-collection.md)区分字面汇集与综合判断。
+它记录分支缺口和固定版本，再由现有记录检查器检查结果。
 
 ## 开始或继续研究
 
@@ -103,7 +108,10 @@ AI 审查通过或执行完成均不等于人工批准。
 如果需要保存可复用的选择，请使用[偏好指南](skills/research-workflow/references/preferences.md)及其[模板](skills/research-workflow/templates/PREFERENCES.md)。
 [Zotero 与 Git 示例](skills/research-workflow/references/zotero-git-example.md)仅在你主动选择时适用。
 
-可选的中文 LaTeX 排版模板见[模板指南](docs/latex-templates.md)和[模板目录](templates/latex/README.md)。
+研究报告默认使用 Markdown，保留可读的证据链接以及相同的写作和审核标准。
+只有明确要求对应格式时，才需要 LaTeX 源文件、PDF 编译和 PDF 版面检查。
+选择中文 LaTeX 模板或恢复 Markdown 默认，请阅读[模板指南](docs/latex-templates.md)。
+[模板目录](templates/latex/README.md)列出现有模板和依赖。
 面向研究者的论证、综述、摘要与审核路径，可选用独立的 [research-report 写作技能](skills/research-report/SKILL.md)。
 它仍是 trial 候选，与研究流程和 LaTeX 模板分别维护。
 

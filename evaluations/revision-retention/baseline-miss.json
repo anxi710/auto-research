@@ -1,0 +1,39 @@
+{
+  "baseline_commit": "fe52cbf",
+  "script_sha256": "d89131e69ea56cc18848b251e9c57226d89095acb91ddb6bb1253b6811edb3fe",
+  "dataset_freeze_sha256": "a7db4cb886c2870d2857e1e0f7b760864dbaf3e2db7ef9f090b91b5b5a7178ce",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/tmp/auto-research-retention-q6bafbxi/baseline-revision_loop.py",
+    "--root",
+    "/tmp/auto-research-retention-q6bafbxi/baseline-fixture",
+    "--case",
+    "round2-bound-case.json",
+    "--candidate",
+    "round2/reintroduced-ranking.json",
+    "--output",
+    "runs/rollback"
+  ],
+  "exit_code": 0,
+  "result_status": "completed",
+  "first_result": {
+    "path": "runs/R1/result.json",
+    "sha256": "f84a5bc94a75d359129cd76f7ea491c08a9c3deaa34842a9fc0d65e57ce01021"
+  },
+  "second_case": {
+    "path": "round2-bound-case.json",
+    "sha256": "ddd4f28b887103ef93b374f70bc2d5d034547898863ae7c8e46a291276d4895e"
+  },
+  "candidate": {
+    "path": "round2/reintroduced-ranking.json",
+    "sha256": "b38787077817ac69279a320e5892cd828088cd8d7180c52e7d0d12e81e59823e"
+  },
+  "feedback_matches": true,
+  "prior_selected_content_preserved": true,
+  "record_diagnostics": [],
+  "old_unsupported_text_present": true,
+  "independent_content_assessment": "required_not_run",
+  "provenance": "Authored deterministic counterexample. This does not show that a language model forgot prior content.",
+  "limit": "The old checker required independent review and did not grant scientific acceptance."
+}

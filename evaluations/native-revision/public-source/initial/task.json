@@ -1,0 +1,22 @@
+{
+  "task_id": "TR002",
+  "revision": 1,
+  "goal": "Revise the interpretation and its dependent conclusions from fixed evidence.",
+  "owner": "fixture-author",
+  "inputs": [
+    {
+      "path": "public-source/initial/source.json",
+      "sha256": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004"
+    }
+  ],
+  "dependencies": [],
+  "write_paths": [
+    "public-source/initial/"
+  ],
+  "budget_ref": "public-source/initial/budget.txt",
+  "acceptance": [
+    "Preserve source versions and assess the scientific scope independently."
+  ],
+  "stop_condition": "Stop after the finite revision candidate.",
+  "evidence_ledger": "public-source/initial/ledger.json"
+}

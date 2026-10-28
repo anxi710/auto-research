@@ -1,9 +1,9 @@
 # Optional Chinese LaTeX templates
 
 The [template catalog](../templates/latex/README.md) provides three official ElegantLaTeX templates as optional starting points.
-Choose a template for each document.
-The user subsequently authorized aesthetic selection.
-The recommended starting point is the Paper example with the separate local researcher adapter.
+Markdown is the standard report format, and these templates are inactive by default.
+Only an explicit user request selects LaTeX or PDF delivery.
+Within that choice, the recommended starting point is the Paper example with the separate local researcher adapter.
 The build helper still requires an explicit choice.
 
 | Choice | Template version | Starting document |
@@ -20,6 +20,19 @@ Read the catalog for dependencies, upstream notices, and asset limits.
 
 ## Select and build
 
+To select LaTeX for one report, request it explicitly:
+
+```text
+Deliver this report as LaTeX and PDF using the Paper example.
+Preserve the evidence links, scientific version, and current human-review status.
+Report missing dependencies before installing anything.
+```
+
+Read the catalog's dependency list before building.
+If a dependency is missing, report the missing tool or package and the unbuilt output.
+Install dependencies only with explicit user authorization.
+Do not mark a build or PDF inspection as complete when it did not run.
+
 Run the build helper from the repository root with one explicit choice:
 
 ```bash
@@ -33,6 +46,14 @@ Running the helper without a choice does not select a template.
 Use the example for the chosen layout as the starting point for a document.
 Keep local content changes outside `vendor/`.
 Follow the catalog for build requirements and output locations.
+For a compiled PDF, inspect its pages, citations, and evidence links.
+Deliver the report's editable sources and build instructions with the requested PDF.
+
+A one-report LaTeX request leaves later reports on the Markdown default.
+To change the current report back, explicitly request Markdown.
+If you saved a LaTeX choice in existing local preferences, change that preference to Markdown.
+No new configuration file is required.
+The Markdown path does not run the build helper or require a PDF.
 
 ## Scope and evidence
 

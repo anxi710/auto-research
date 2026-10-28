@@ -1,0 +1,27 @@
+{
+  "method": "Literal byte concatenation. No model inference.",
+  "shared_workers": [
+    "runs/r1-quality/output.md",
+    "runs/r1-operations/output.md"
+  ],
+  "candidates": {
+    "A": {
+      "role": "revision",
+      "path": "runs/r1-candidate-a.md",
+      "sha256": "510cdcbf8e95c060a31ac0cc28f6c4fe0c3f7a09067aa3ab1f4eceb068beb8da",
+      "source": "runs/r1-revision/output.md"
+    },
+    "B": {
+      "role": "single",
+      "path": "runs/r1-candidate-b.md",
+      "sha256": "cec15bb488f6b29e84e63ec2463ceebfe8a59015282616366511f80daf850b5d",
+      "source": "runs/r1-single/output.md"
+    },
+    "C": {
+      "role": "merge",
+      "path": "runs/r1-candidate-c.md",
+      "sha256": "5805c92578da3c0d601c3b259f282ba9a957577988601f13cfd1f7b326c98edd",
+      "source": "runs/r1-merge.md"
+    }
+  }
+}

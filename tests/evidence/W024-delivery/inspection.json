@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-28",
+  "baseline": "b0306c681bf93a250294f3e800634d9dcfd0f9b6",
+  "scope": "Two native delivery smoke cases on one invented input; not the W022 architecture study.",
+  "writing_actors": [
+    "/root/markdown_default_delivery",
+    "/root/latex_optin_delivery"
+  ],
+  "delegated_helpers": [
+    "/root/markdown_default_delivery/check_markdown_delivery",
+    "/root/latex_optin_delivery/latex_setup"
+  ],
+  "default": {
+    "delivery": "completed Markdown draft",
+    "report": "default/report.md",
+    "source_index": "default/evidence-index.json",
+    "tex_pdf_files": [],
+    "review_status": "pending in unchanged evidence.json",
+    "content_inspection": "Summary and full account retain invented 8/10 and 7/10 values, source locations, reading limits, no real experiment, and no approved dependent actions."
+  },
+  "latex": {
+    "delivery": "source delivered; requested PDF incomplete",
+    "report": "latex/report.tex",
+    "source_index": "latex/evidence-index.json",
+    "repository_helper": {
+      "exit_code": 1,
+      "missing": "ctex.sty",
+      "evidence": "latex/status.txt (actor command record)"
+    },
+    "local_report_preflight": {
+      "exit_code": 1,
+      "log": "latex/build.log",
+      "missing": [
+        "biblatex.sty",
+        "logreq.sty",
+        "texgyretermes-regular.otf",
+        "texgyreheros-regular.otf"
+      ]
+    },
+    "compilation": "not_run",
+    "pdf_inspection": "not_run",
+    "installation": "none reported by actor",
+    "content_inspection": "The LaTeX source retains the same question, invented counts, source limits, and pending human decision. No rendered view exists to inspect."
+  },
+  "guidance_freeze_matches_before_copy": true,
+  "copied_output_sha256": {
+    "default": {
+      "evidence-index.json": "f0d16ab5e323528ccca657ccc5018621e8e3d1f0a806e6667765535fc2695748",
+      "evidence.json": "96245d1dacbbffad1116b8c50e8ea50e1214102e59c0bfba882ecd30d90cf287",
+      "report.md": "5fb3f72a04c93ade1367d344e15daf0b72a026451d39cd9765075b492bae6c30",
+      "status.txt": "82158591fa669bd7bcc3d201b475daf00ec61fb44bb6d96692f0471fab78f61a"
+    },
+    "latex": {
+      "BUILD.txt": "1ade31e930e59d8e082537b4aeddb110bd597778d1981650385efba32fdb099b",
+      "build.log": "adac56db981bc350126430ec10fc2a7042cd1a00fc2af723652ae624b56633b7",
+      "build.sh": "fd5e552915cb08e72a14ba05a4177804b59edb78b7fba39202ab48d055b3c443",
+      "evidence-index.json": "98378e7c2894b2b11f8c16924b1557d0c4a38a7e2a4cf4be241898379b82ecc5",
+      "evidence.json": "96245d1dacbbffad1116b8c50e8ea50e1214102e59c0bfba882ecd30d90cf287",
+      "report.tex": "361c487d86a08ffdca1b33d45438f12785033a1e4f97793c51e409c203f4d83d",
+      "status.txt": "524b62318a937f339c8510e2cb156a4c76d575b91744f70bb987c8e25368d4d1"
+    }
+  },
+  "limits": [
+    "No baseline model run or general behavior guarantee.",
+    "Fresh contexts shared a filesystem; no complete access trace or enforced context isolation.",
+    "The tasks explicitly prohibited installation; no inference about behavior without that instruction.",
+    "Default actor delegated a prose inspection; LaTeX actor delegated a dependency inspection.",
+    "Source indices are scoped case outputs, not a new toolkit schema or approval system.",
+    "The saved local LaTeX build script is a native case artifact, not a toolkit build entry.",
+    "Native model receipts, tokens, cost, and service tier were not supplied."
+  ]
+}

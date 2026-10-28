@@ -1,0 +1,32 @@
+{
+  "version": "fixture-v1",
+  "provenance": "Invented inputs for a document-delivery smoke case. No experiment ran.",
+  "question": "Do these inputs justify choosing method A for wider use?",
+  "rows": [
+    {
+      "id": "E1",
+      "method": "A",
+      "successes": 8,
+      "total": 10,
+      "dataset": "D1",
+      "split": "test",
+      "seed": 7
+    },
+    {
+      "id": "E2",
+      "method": "B",
+      "successes": 7,
+      "total": 10,
+      "dataset": "D1",
+      "split": "test",
+      "seed": 7
+    }
+  ],
+  "limitations": [
+    "One invented ten-item comparison.",
+    "No repeat runs, uncertainty estimate, or external validation."
+  ],
+  "scientific_version": "v1",
+  "human_decision": "pending",
+  "approved_dependent_actions": []
+}

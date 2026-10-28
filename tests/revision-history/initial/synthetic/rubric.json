@@ -1,0 +1,24 @@
+{
+  "expected_claims": [
+    {
+      "claim_id": "C001",
+      "text": "With executor E1 fixed, P scored 72 and Q scored 60 on ten synthetic tasks.",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "claim_id": "C002",
+      "text": "These scores measure each planner with E1 and do not isolate plan quality.",
+      "evidence_ids": [
+        "E002"
+      ]
+    }
+  ],
+  "independent_assessment": [
+    "Read A, B, and the report for scientific agreement.",
+    "Assess whether the evidence supports each conclusion.",
+    "Make sure that unrelated useful content survives."
+  ],
+  "limit": "Exact statement and citation checks cannot judge arbitrary prose."
+}

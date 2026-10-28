@@ -1,0 +1,8 @@
+{
+  "changed_nodes": [
+    "A"
+  ],
+  "feedback_kind": "scientific",
+  "reviewer_kind": "AI-authored synthetic fixture, not a human review",
+  "text": "Withdraw the claim that P has better plan quality than Q for every executor. Correct A and its dependent recommendation. Preserve the 72 and 60 scores, E1 and ten-task scope, low-memory counterevidence, and absence of another executor or a new experiment."
+}

@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-28",
+  "baseline_commit": "b0306c681bf93a250294f3e800634d9dcfd0f9b6",
+  "candidate_version": "0.1.11-synthesis.1",
+  "python": "3.12.14",
+  "baseline": {
+    "tests": 130,
+    "seconds": 15.134,
+    "exit_code": 0
+  },
+  "stage1": {
+    "scope": "Isolated baseline archive plus stage 1 staged changes only.",
+    "command": "python3 -B -m unittest discover -s tests -p 'test_*.py'",
+    "tests": 147,
+    "seconds": 19.663,
+    "exit_code": 0,
+    "new_collector_consumer_tests": 17,
+    "corrected_development_failures": [
+      "A smaller collection contract could substitute for the result contract.",
+      "A malformed non-string legacy artifact kind caused an exception.",
+      "Synthesis lacked complete task-input and manuscript bindings.",
+      "An existing test copied too few modules for its isolated checker fixture."
+    ]
+  },
+  "limits": [
+    "A structurally valid partial collection does not accept missing branches.",
+    "Scientific quality and human permission remain outside these mechanical checks.",
+    "The old external pilot, including P07, was not rescored or modified."
+  ],
+  "stage2": {
+    "scope": "Isolated stage 1 archive plus stage 2 staged changes only.",
+    "tests": 157,
+    "seconds": 18.377,
+    "exit_code": 0,
+    "new_tests": 10,
+    "mechanical_results": "tests/evidence/W022-synthesis.json",
+    "independent_content_review": "tests/evidence/W022-synthesis-review.json",
+    "interpretation": "The authored synthesis supplies the selected joint reasoning. Controls retain correct facts. Structured matches do not measure model or scientific quality.",
+    "preserved_development_history": "tests/synthesis/history/technical-binding-correction.json"
+  },
+  "stage3": {
+    "scope": "Isolated stage 2 archive plus stage 3 implementation and fixed fixtures. Native artifacts also inspected separately after copying.",
+    "tests": 169,
+    "seconds": 18.793,
+    "exit_code": 0,
+    "new_tests": 12,
+    "replays": "tests/evidence/W022-revision.json",
+    "independent_fixed_content_review": "tests/evidence/W022-revision-review.json",
+    "preserved_correction_history": "tests/revision-history/correction.json",
+    "native_revision": {
+      "actor_invocations": 1,
+      "cases": 2,
+      "independent_reviewer_contexts": 1,
+      "fresh_actor": true,
+      "reviewer_previously_knew_fixtures": true,
+      "artifact_directory": "evaluations/native-revision",
+      "content_review": "evaluations/native-revision/content-review.json",
+      "copied_record_consumer_exit_codes": [
+        0,
+        0
+      ],
+      "tokens": null,
+      "cost": null,
+      "fast_tier": "unverified",
+      "preparation_failure": "Incorrect graph key assumption, corrected before revision."
+    }
+  },
+  "stage4": {
+    "scope": "Isolated stage 3 archive plus stage 4 staged changes only.",
+    "tests": 171,
+    "seconds": 19.143,
+    "exit_code": 0,
+    "new_harness_tests": 2,
+    "report": "evaluations/native-architecture/REPORT.md",
+    "resources": "evaluations/native-architecture/resources.json",
+    "scores": "evaluations/native-architecture/scores.json",
+    "unique_native_calls": 14,
+    "repeats": 2,
+    "heldout_cases": 1,
+    "denied_before_execution": 1,
+    "open_or_failed_model_calls": 0,
+    "result": "Strong single and synthesis tied on each content dimension in both repeats. Literal merge retained facts but omitted explicit combined inference.",
+    "parallel_scheduling": "not_run",
+    "tokens": null,
+    "cost": null,
+    "fast_tier": "unverified",
+    "instruction_context_limit": "Prescribed core files stayed fixed; other repository references changed and file-access traces were unavailable."
+  },
+  "historical_preservation": {
+    "prior_tracked_files_checked": 65,
+    "changed": [],
+    "external_pilot": "Not rescored or modified; old P07 remains historical failure.",
+    "external_attachment_hashes": "Not rechecked in this environment."
+  }
+}

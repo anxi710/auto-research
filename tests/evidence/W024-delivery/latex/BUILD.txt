@@ -1,0 +1,38 @@
+The editable report uses ElegantPaper 0.12 and the repository's researcher-paper adapter.
+It adapts the Paper example to English with lang=en.
+The class and adapter are loaded from their existing repository paths.
+No vendor files are copied into this output directory.
+
+From any directory, run:
+bash /tmp/auto-research-markdown-smoke-latex/build.sh
+
+The local script uses the documented XeLaTeX setup with -no-shell-escape.
+It selects the local report by its absolute path and writes all build output here.
+Two passes resolve internal references.
+This report uses direct local evidence links and has no bibliography or figure sources.
+It therefore needs no BibTeX pass or bibliography file.
+ElegantPaper still requires the BibLaTeX package.
+
+The repository build helper was also tested:
+cd /workspace/auto-research-markdown-delivery
+./templates/latex/build.sh paper /tmp/auto-research-markdown-smoke-latex
+It stopped before compilation because ctex.sty was missing.
+That helper targets the original Chinese example and requires CJK packages.
+The English report does not use CJK fonts or ctex.
+
+The local report build also stopped before compilation.
+Missing English-report dependencies: biblatex.sty, logreq.sty,
+texgyretermes-regular.otf, and texgyreheros-regular.otf.
+XeLaTeX and kpsewhich exist. No tool or package was installed.
+The intended PDF is report.pdf. It was not created or inspected.
+
+Read the dependency catalog at:
+/workspace/auto-research-markdown-delivery/templates/latex/README.md
+Use an existing compatible TEXMFHOME if one becomes available.
+Any installation requires separate authorization.
+
+After a successful build, inspect page layout, table content, references, and evidence links.
+Keep evidence.json and evidence-index.json beside report.pdf and report.tex.
+The report uses relative run: links to those files.
+PDF viewers can restrict local file links, so use the named sibling files if a link is unavailable.
+Compilation and layout inspection do not establish scientific correctness or human approval.

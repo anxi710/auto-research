@@ -1,0 +1,70 @@
+{
+  "task_id": "TR002",
+  "revision": 2,
+  "goal": "Correct A and its affected conclusions from the supplied AI-authored feedback while preserving frozen evidence and useful content.",
+  "owner": "native-revision-worker",
+  "inputs": [
+    {
+      "path": "initial/A.md",
+      "sha256": "d20538a48adb8126babefef6d1c7b912dcb7a63c9f5c0c6b9bfe4295a8aeed98"
+    },
+    {
+      "path": "initial/B.md",
+      "sha256": "54330c5a03abb4af2cbb4cc68399cc900cdfef948101739ef90e409275c51d94"
+    },
+    {
+      "path": "initial/C.md",
+      "sha256": "f706030c5afe8df06da1ad7998ed9a6fc9ad53e9c2e51bc9e0cc9f3a2e530fe0"
+    },
+    {
+      "path": "initial/budget.txt",
+      "sha256": "84873069ef11482c0956bca9084473889fed2a50a36747a43e04aa831e7192b2"
+    },
+    {
+      "path": "initial/ledger.json",
+      "sha256": "636b9ed1f9e7e431a575a01aee27dbe0966cc2162ff43ce5e104643e61a7dd35"
+    },
+    {
+      "path": "initial/report.md",
+      "sha256": "74721bbd3644222866cec31418d79ffe62de5cca9ebacb70d1f8eb52e5d2b018"
+    },
+    {
+      "path": "initial/result.json",
+      "sha256": "4f110526aa9740e101eeb378061b4abd24c6d632bec96aa93bfc2823bc3b1be9"
+    },
+    {
+      "path": "initial/source.json",
+      "sha256": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004"
+    },
+    {
+      "path": "initial/task.json",
+      "sha256": "3eb1cb10fca9ed2e4869044270f2504c5ec5a77cdfbb182594ee3e92df4446f4"
+    },
+    {
+      "path": "feedback.json",
+      "sha256": "1e1a47681efe152f8ca155056e81aa04e649f0a35c63fe62575eb0b17ffe0f26"
+    },
+    {
+      "path": "graph.json",
+      "sha256": "757c708165b4ad48553a24f6d27662a2b2584774eda2dba510c6bc2f98f9a261"
+    },
+    {
+      "path": "dependency-plan.json",
+      "sha256": "6cfbdd7d0014efcc3ff85f4fca02fcab481346844ec0e40f1d86e1d9529b84d2"
+    }
+  ],
+  "dependencies": [],
+  "write_paths": [
+    "attempts/A002/"
+  ],
+  "budget_ref": "budget.txt",
+  "acceptance": [
+    "Revise A, B, report, and ledger according to the computed affected closure.",
+    "Preserve C, source, initial artifacts, and history byte for byte. Reuse the original evidence references with paths rebased to this case directory.",
+    "Retain C001 and C002, exact new report quotes, original evidence versions, and source access limits.",
+    "Run the existing structural record linter and retain its output. Lint does not establish scientific support.",
+    "Human scientific approval is pending. This scoped workflow exercise does not create an approval event."
+  ],
+  "stop_condition": "Stop after the bounded revision and structural lint. Deliver exact outputs for independent content review and pending human review. Do not advance scientific work.",
+  "evidence_ledger": "attempts/A002/artifacts/ledger.json"
+}

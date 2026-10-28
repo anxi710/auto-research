@@ -170,6 +170,48 @@ class EvidenceLedgerTests(unittest.TestCase):
         self.save(typed=False)
         self.lint()
 
+    def test_markdown_report_preserves_evidence_and_pending_human_review(self):
+        self.write("draft.md", "# Synthetic method comparison\n\n"
+                   "Version: report-v1.\n\n"
+                   "## Summary\n\nA leads B in this single synthetic comparison.\n\n"
+                   "## Research question\n\nHow do A and B compare on D1 test?\n\n"
+                   "## Method and evidence\n\n"
+                   "[Frozen measurements](metrics.json) use seed 7 and flags [true].\n"
+                   "Both methods use the same dataset, split, and conditions.\n\n"
+                   "## Results\n\n" + self.claim["text"] + "\n\n"
+                   "Claim C001 is bound to these measurements in [the ledger](ledger.json).\n\n"
+                   "## Limitations\n\nOne synthetic fixture cannot establish general performance.\n\n"
+                   "## Conclusion and next action\n\n"
+                   "The comparison supports only the stated scope. Present report-v1 for human review.\n")
+        self.claim["location"]["sha256"] = self.digest("draft.md")
+        self.result["next_action"] = "Present report-v1 for human review before dependent work."
+        self.review["reviewer"] = "AI simulation"
+        self.review["basis"] = ["draft.md", "ledger.json"]
+        self.save()
+        self.result["artifacts"].append({"path": "draft.md", "sha256": self.digest("draft.md")})
+        self.save_result()
+        review = (self.root / "review.md").read_text(encoding="utf-8")
+        self.write("review.md", review + "\n## Full review\n\n"
+                   "AI simulation: the reported values and scope match the synthetic fixture.\n"
+                   "The report identifies the shared conditions and the single-fixture limit.\n"
+                   "No external validity or additional experiment has been established.\n\n"
+                   "## Human decision\n\n"
+                   "Presented output: draft.md, report-v1, SHA256 " + self.digest("draft.md") + ".\n"
+                   "Requested next actions: assess the report before dependent work.\n"
+                   "Decision status: pending.\n"
+                   "Researcher and decision source: Not recorded.\n"
+                   "Approved next actions and limits: None.\n")
+
+        self.assertFalse(any(path.suffix.lower() in {".tex", ".pdf"} for path in self.root.rglob("*")))
+        self.lint()
+        # Technical acceptance and a clean mechanical check do not record human permission.
+        preserved_review = (self.root / "review.md").read_text(encoding="utf-8")
+        self.assertIn("Decision status: pending.\n", preserved_review)
+        self.assertIn("Approved next actions and limits: None.\n", preserved_review)
+        self.metrics["runs"][0]["value"] = .9
+        self.write("metrics.json", self.metrics)
+        self.lint("HASH")
+
     def test_optional_typed_ledger_still_checked(self):
         del self.task["evidence_ledger"]
         self.evidence["value"] = .1
@@ -436,7 +478,7 @@ class EvidenceLedgerTests(unittest.TestCase):
     def test_cli_import_does_not_write_bytecode_without_b_flag(self):
         scripts = self.root / "scripts"
         scripts.mkdir()
-        for name in ("lint_records.py", "evidence_ledger.py"):
+        for name in ("lint_records.py", "evidence_ledger.py", "collection_artifacts.py"):
             source = SCRIPT.parent / name
             if source.exists():
                 (scripts / name).write_bytes(source.read_bytes())

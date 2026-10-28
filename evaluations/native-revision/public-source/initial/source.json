@@ -1,0 +1,18 @@
+{
+  "identifier": "https://arxiv.org/html/2601.13217v1",
+  "version": "arXiv:2601.13217v1",
+  "reading_depth": "excerpt",
+  "locations": [
+    "Section 4.2",
+    "Appendix B.4"
+  ],
+  "retained_content": "metadata and paraphrased notes",
+  "notes": [
+    "Section 4.2 measures requested changes separately from losses in prior coverage.",
+    "Appendix B.4 distinguishes desirable content from unwanted content when measuring revision effects."
+  ],
+  "limits": [
+    "No full-text reading is claimed.",
+    "No paper results are treated as measurements of this workflow."
+  ]
+}

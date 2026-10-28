@@ -1,0 +1,27 @@
+{
+  "id": "r2-single",
+  "repeat": 2,
+  "role": "single",
+  "prompt": "frozen/r2-single.md",
+  "charged_to": [
+    "single"
+  ],
+  "status": "completed",
+  "started_at": "2026-10-28T03:24:19.134000+00:00",
+  "model_requested": "gpt-6-astra",
+  "reasoning_requested": "ultra",
+  "model_actual": null,
+  "fast_tier_actual": null,
+  "runtime_reason": "The native tool confirms requested model and reasoning, but supplies no actual model or Fast-tier receipt.",
+  "tokens": null,
+  "cost": null,
+  "usage_reason": "Native collaboration tools do not expose token or billing counters.",
+  "prompt_sha256": "042ee5fd216250b195e20033bf4935006f7de2470ddfdde6660e1c5321fa7075",
+  "agent_id": "/root/architecture_eval/r2_single",
+  "successful_dispatch_observed_at": "2026-10-28T03:24:26.430148+00:00",
+  "finished_at": "2026-10-28T03:25:23.035880+00:00",
+  "elapsed_seconds": 63.90188,
+  "timing_scope": "Before native dispatch through parent-observed completion. Includes orchestration and observation delay.",
+  "output_sha256": "f8f95aa1945164d0fb4b8825b416ed48cbb0c1cc8e4e1ffc207a105ac6fbab32",
+  "output_bytes": 2592
+}

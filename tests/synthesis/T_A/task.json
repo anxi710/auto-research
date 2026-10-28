@@ -1,0 +1,16 @@
+{
+  "task_id": "T_A",
+  "revision": 1,
+  "goal": "Preserve the frozen synthetic content.",
+  "owner": "synthetic-fixture",
+  "inputs": [],
+  "dependencies": [],
+  "write_paths": [
+    "."
+  ],
+  "budget_ref": "budget.txt",
+  "acceptance": [
+    "Preserve evidence and conditions."
+  ],
+  "stop_condition": "Stop after this fixture."
+}

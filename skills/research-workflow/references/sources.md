@@ -238,6 +238,21 @@ It imports no code, templates, or instruction text from that project.
 
 ## Adaptations and limits
 
+The [W022 trial](../../../changes/W022.md) uses selected passages from five primary sources.
+These sources inform the checks, not a claim that this toolkit improves research.
+
+| Source | Inspected scope | Use in this trial |
+| --- | --- | --- |
+| [Mr Dre v1](https://arxiv.org/html/2601.13217v1) | Section 4.2 and Appendix B.4. | Separate feedback implementation from damage to earlier content. |
+| [ResearchRubrics v1](https://arxiv.org/html/2511.07685v1) | Sections 3.3 and 3.4. | Use task-specific criteria and retain partial or negative judgments. |
+| [DRAGged v1](https://arxiv.org/html/2506.08500v1) | Sections 2 and 3. | Distinguish compatible evidence, conflicting views, outdated information, and misinformation. |
+| [Scaling study v3](https://arxiv.org/html/2512.08296v3) | Section 5, version dated 8 April 2026. | Limit architecture conclusions to the tested tasks and systems. |
+| [Claude agent design article](https://claude.com/resources/articles/building-agents-when-to-fold-subagents-into-your-main-agent-loop) | Task-completion evals section. | Compare complete task outcomes before changing the agent structure. |
+
+The reading scope was selected sections, not complete paper inspection.
+The trial copies no reported improvement numbers or source implementation.
+Its fixed examples and small native-agent comparison supply their own limited evidence.
+
 The user approved the literature division from the local `paper-I-love/WORKFLOW.md` as their personal default on 2026-10-23.
 The source defines Zotero as the primary library and Git as the home for selected notes and summaries.
 The [optional example](zotero-git-example.md) shares that convention without activating it for every user.
