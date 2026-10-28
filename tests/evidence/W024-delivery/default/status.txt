@@ -1,0 +1,34 @@
+Outcome: Complete Markdown draft using the supplied four-section outline.
+Scientific version: v1. Evidence version: fixture-v1. Text revision: report-v1.
+Human decision: Still pending in evidence.json. No approval is claimed.
+Approved dependent actions: None in the supplied input. None performed.
+Missing tools: None encountered. Markdown delivery required no rendered-format tools.
+Unfinished output: None. The human review question remains open.
+
+Commands actually run (Python heredoc bodies are summarized):
+1. cat /workspace/auto-research-markdown-delivery/tests/evidence/W024-delivery/inputs/default-request.txt
+2. cat /workspace/auto-research-markdown-delivery/skills/research-workflow/SKILL.md
+3. cat /workspace/auto-research-markdown-delivery/skills/research-report/SKILL.md
+4. cat /workspace/auto-research-markdown-delivery/tests/evidence/W024-delivery/inputs/evidence.json
+5. cat /tmp/auto-research-writing-skills/simple-english/SKILL.md /tmp/auto-research-writing-skills/ponytail/SKILL.md /tmp/auto-research-writing-skills/stop-that-shit/SKILL.md
+6. cat /workspace/auto-research-markdown-delivery/skills/research-workflow/references/preferences.md /workspace/auto-research-markdown-delivery/skills/research-workflow/references/human-review.md /workspace/auto-research-markdown-delivery/skills/research-workflow/references/workflow.md
+7. cat /workspace/auto-research-markdown-delivery/skills/research-workflow/references/delivery.md /workspace/auto-research-markdown-delivery/skills/research-report/references/argument-design.md /workspace/auto-research-markdown-delivery/skills/research-report/references/reader-review.md /workspace/auto-research-markdown-delivery/skills/research-workflow/references/collaboration.md
+8. cat /workspace/auto-research-markdown-delivery/skills/research-workflow/references/delivery.md
+9. cat /workspace/auto-research-markdown-delivery/skills/research-report/references/argument-design.md
+10. sed -n '/^## S6:/,/^## S7:/p' /workspace/auto-research-markdown-delivery/skills/research-workflow/references/workflow.md
+11. cat /workspace/auto-research-markdown-delivery/skills/research-workflow/templates/MANUSCRIPT.md /workspace/auto-research-markdown-delivery/skills/research-workflow/templates/RESEARCHER-REPORT.md
+12. python3 - <<'PY' [create report.md and evidence-index.json; copy evidence.json byte for byte; compute SHA256 hashes]
+13. python3 - <<'PY' [assert fixed input identity, hashes, outline, local links, JSON pointers, decision references, and plain-language limits]
+14. python3 - <<'PY' [split one paragraph; refresh report hash; assert at most six sentences per prose paragraph]
+15. python3 - <<'PY' [write this status.txt; inspect final files and confirm report hash, fixed input identity, outline, local links, and paragraph limits]
+
+Technical checks: Passed. The copied evidence matches the input bytes. Index hashes match the report and evidence. Local links, section anchors, and evidence pointers resolve. The four sections match the supplied outline. The longest prose sentence contains 24 words. Prose paragraphs contain at most six sentences.
+AI reader inspection: A separate agent reported one paragraph-length issue and no evidence or traceability issue. The paragraph split resolves that issue. This inspection is not human approval.
+Guidance used: research-workflow 0.1.11-markdown.1; research-report 0.1.1-markdown.1; Simple English 2.1.1 Plain; Ponytail full; Stop That Shit advisory. The supplied outline and request govern scope and format.
+Scope: Only the named request, evidence, skill guides, and template instructions supplied content. No research, installation, publication, commit, repository edit, approval record, vendor copy, or credential copy was performed.
+
+Files:
+report.md - Complete researcher-facing draft and review question.
+evidence-index.json - Fixed report and input identities, evidence locations, and references to existing decision fields.
+evidence.json - Byte-identical local copy of the supplied invented evidence.
+status.txt - Execution status, actual command summary, checks, limits, and file list.

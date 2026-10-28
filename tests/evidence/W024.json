@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-28",
+  "baseline": "b0306c681bf93a250294f3e800634d9dcfd0f9b6",
+  "standalone_branch": "fix/markdown-delivery-default-20261028",
+  "tests": {
+    "baseline": {
+      "python": "3.12.14",
+      "count": 130,
+      "seconds": 17.592,
+      "status": "passed"
+    },
+    "format_candidate": {
+      "python": "3.12.14",
+      "count": 133,
+      "seconds": 17.195,
+      "status": "passed"
+    },
+    "skill_creator_validation": {
+      "research-workflow": "passed",
+      "research-report": "passed"
+    }
+  },
+  "protected_baseline_files": {
+    "count": 83,
+    "changed": []
+  },
+  "native_delivery_evidence": "W024-delivery/inspection.json",
+  "integration": "not_run in this standalone record",
+  "remote_ci": "not_run in this standalone record"
+}

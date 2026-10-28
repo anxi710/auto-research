@@ -2,7 +2,7 @@
 name: research-report
 description: Build and revise researcher-facing arguments from supplied evidence for thematic reviews, experimental designs, result analyses, and progress reports. Use when the task needs synthesis, explanation, a faithful summary, or a clear reading and decision path; not for a layout-only conversion.
 metadata:
-  version: 0.1.0-trial.1
+  version: 0.1.1-markdown.1
 ---
 
 # Research Report
@@ -15,6 +15,8 @@ Let document tools and visual assets govern rendering.
 
 Read the request, supplied scientific text, available evidence, and existing decisions.
 Identify the reader, intended use or decision, report type, editing scope, and output destination.
+Use Markdown unless the user explicitly requests another format.
+Apply the same argument, evidence, and review standards to every format.
 Infer routine presentation choices from that context.
 Ask only for missing information that changes the argument or permitted action.
 Keep a short question at its requested scale.
@@ -79,4 +81,6 @@ Choose a figure or table only when it answers a reader's question more clearly t
 Give its comparison, take-away, and support limits in a readable caption or nearby explanation.
 Check headings, citations, evidence links, and the path from the summary to the fuller account at the final delivery location.
 Let the argument determine the visual choice, rather than filling a template's available slots.
-Treat formatting, LaTeX compilation, and hashes as technical checks rather than writing acceptance.
+For Markdown, inspect headings, citations, and evidence links without requiring LaTeX sources, a PDF, or compilation.
+If the user explicitly selects a rendered format, inspect that output and report missing build tools without installing them automatically.
+Treat compilation, layout inspection, and hashes as technical checks rather than writing acceptance.

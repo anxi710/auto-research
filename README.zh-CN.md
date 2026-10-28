@@ -11,6 +11,7 @@
 
 此本地候选在交付试用基础上增加 [W022 综合与修订](changes/W022.md)。
 [W023 保留回归](changes/W023.md)分别检查新反馈落实与原有正确内容的丢失。
+[W024 格式更新](changes/W024.md)将 Markdown 设为标准交付格式。
 它尚未发布，也未安装为全局默认版本。
 
 这套工具为 AI 助手提供统一的科研流程，涵盖学习、提问、实验、分析、写作和评审。
@@ -107,7 +108,10 @@ AI 审查通过或执行完成均不等于人工批准。
 如果需要保存可复用的选择，请使用[偏好指南](skills/research-workflow/references/preferences.md)及其[模板](skills/research-workflow/templates/PREFERENCES.md)。
 [Zotero 与 Git 示例](skills/research-workflow/references/zotero-git-example.md)仅在你主动选择时适用。
 
-可选的中文 LaTeX 排版模板见[模板指南](docs/latex-templates.md)和[模板目录](templates/latex/README.md)。
+研究报告默认使用 Markdown，保留可读的证据链接以及相同的写作和审核标准。
+只有明确要求对应格式时，才需要 LaTeX 源文件、PDF 编译和 PDF 版面检查。
+选择中文 LaTeX 模板或恢复 Markdown 默认，请阅读[模板指南](docs/latex-templates.md)。
+[模板目录](templates/latex/README.md)列出现有模板和依赖。
 面向研究者的论证、综述、摘要与审核路径，可选用独立的 [research-report 写作技能](skills/research-report/SKILL.md)。
 它仍是 trial 候选，与研究流程和 LaTeX 模板分别维护。
 

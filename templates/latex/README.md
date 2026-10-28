@@ -1,12 +1,16 @@
 # Chinese research report templates
 
+Use this catalog only when the user explicitly requests LaTeX or PDF.
+Research reports use Markdown by default without these templates or a TeX installation.
+The [template guide](../../docs/latex-templates.md) explains how to select a layout and return to Markdown.
+
 Start with the Paper example for a conventional research report.
 Compare Note for short thematic notes and Book for a chapter-length review.
 These are optional presentation choices in an isolated trial.
 No existing research document is migrated.
 
-The user authorized aesthetic selection after the initial catalog request.
-The recommended starting style is [the Paper example](examples/paper/report.tex), with [a separate local adapter](adapters/researcher-paper.sty).
+Within an explicit LaTeX request, the recommended starting style is [the Paper example](examples/paper/report.tex).
+It uses [a separate local adapter](adapters/researcher-paper.sty).
 The build helper still requires an explicit choice.
 This recommendation does not approve research claims or adopt the separate delivery protocol trial.
 
@@ -42,7 +46,7 @@ The examples select the supported `chinesefont=nofont` option, then set CJK font
 They still require ctex and xeCJK.
 They do not replace those packages with a custom CJK engine.
 
-Install or provide these dependencies through your trusted TeX distribution:
+If the user authorizes setup, provide these dependencies through a trusted TeX distribution:
 
 - `ctex`, `xecjk`, `zhnumber`, `biblatex`, and `logreq`.
 - TeX Gyre Termes and Heros fonts from `tex-gyre`.

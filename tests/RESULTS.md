@@ -716,3 +716,36 @@ The two runs used separate temporary fixtures and ran concurrently.
 All 22 Python files passed a Python 3.9 grammar inspection.
 The [evidence record](evidence/W023.json) includes the exact baseline and patched outcomes, independent content review, and runtime limits.
 Python 3.9 and 3.14 execution, remote CI, long-horizon revision reliability, and human review costs remain untested.
+
+## W024 Markdown delivery default
+
+Test date: 2026-10-28.
+The [change record](../changes/W024.md) narrows format selection while retaining the writing and review standards.
+The format candidate starts from main `b0306c6`, separate from the open synthesis PR #4.
+The baseline passed 130 tests on Python 3.12.14 in 17.592 seconds.
+The format candidate passed 133 tests on the same interpreter in 17.195 seconds.
+Three added regressions exercise Markdown record consumption, evidence drift, and optional template prerequisites.
+The checker accepts a complete Markdown report and ledger without TeX or PDF files.
+It preserves a pending human decision and still rejects changed bound evidence.
+The build helper requires an explicit template choice and stops without output when its compiler is absent.
+That absence is controlled in the test environment.
+
+Two native writing tasks used fixed invented inputs in fresh contexts, with one delegated inspection each.
+The [default output](evidence/W024-delivery/default/report.md) supplies a summary, full account, readable evidence links, and a fixed source index.
+It creates no TeX or PDF and reports no missing rendering work.
+The explicit LaTeX task supplies source and build instructions but cannot produce its requested PDF.
+The repository helper reports missing `ctex.sty`.
+The local English-report preflight reports missing BibLaTeX, Logreq, and TeX Gyre font files.
+No compilation or PDF inspection ran, and no dependency installation was reported.
+The [inspection record](evidence/W024-delivery/inspection.json) preserves the distinction between delivered source and unfinished PDF.
+These are bounded delivery observations, not a model comparison or general compliance guarantee.
+They do not measure comprehension, human review cost, or scientific correctness.
+The separate W022 architecture study is outside this format candidate.
+
+Integration into PR #4 preserved its earlier six commits and recorded evidence.
+The integrated candidate passed 182 tests on Python 3.12.14 in 22.386 seconds and Python 3.13.5 in 22.342 seconds.
+Those runs used separate temporary fixtures and ran concurrently.
+All 451 selected previous files and the earlier test-results text remained unchanged.
+The [integration record](evidence/W024-integration.json) separates these checks from the standalone native cases.
+Native delivery cases were not repeated after the entry version and return-to-Markdown wording changes.
+Remote CI for this integrated head remains pending at this recording point.
