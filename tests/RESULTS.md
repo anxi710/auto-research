@@ -666,3 +666,14 @@ The workflow relies on each harness to supply tools, enforce permissions, and fo
 No unattended improvement loop or native Hermes or Pi integration ran.
 The evolution tests did not repeat every initial research case.
 Automatic adoption of a passing generated candidate remains untested as a complete cycle.
+
+## W022 collection, synthesis, and revision trial
+
+Test date: 2026-10-28.
+The [change record](../changes/W022.md) defines the local candidate scope.
+The baseline `b0306c6` passed 130 tests on Python 3.12.14 in 15.134 seconds.
+The isolated collection stage passed 147 tests in 19.663 seconds.
+Its seventeen new tests run collection through the existing record consumer.
+They cover missing branches, truncated JSON, unfinished execution, duplicate submissions, stale sources, and existing review history.
+The candidate preserves partial coverage instead of inferring acceptance for missing branches.
+The [run evidence](evidence/W022.json) records observed results and limits.

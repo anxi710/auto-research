@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-28",
+  "baseline_commit": "b0306c681bf93a250294f3e800634d9dcfd0f9b6",
+  "candidate_version": "0.1.11-synthesis.1",
+  "python": "3.12.14",
+  "baseline": {"tests": 130, "seconds": 15.134, "exit_code": 0},
+  "stage1": {
+    "scope": "Isolated baseline archive plus stage 1 staged changes only.",
+    "command": "python3 -B -m unittest discover -s tests -p 'test_*.py'",
+    "tests": 147,
+    "seconds": 19.663,
+    "exit_code": 0,
+    "new_collector_consumer_tests": 17,
+    "corrected_development_failures": [
+      "A smaller collection contract could substitute for the result contract.",
+      "A malformed non-string legacy artifact kind caused an exception.",
+      "Synthesis lacked complete task-input and manuscript bindings.",
+      "An existing test copied too few modules for its isolated checker fixture."
+    ]
+  },
+  "limits": [
+    "A structurally valid partial collection does not accept missing branches.",
+    "Scientific quality and human permission remain outside these mechanical checks.",
+    "The old external pilot, including P07, was not rescored or modified."
+  ]
+}

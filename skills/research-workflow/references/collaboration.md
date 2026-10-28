@@ -102,6 +102,8 @@ The result identifies its own fixed contract copy.
 The review must accept that exact result and remain valid under the rules below.
 Before dependent dispatch, also establish the required human approval or matching waiver for its inputs and next action.
 Keep optional background sources in `inputs` instead of treating an unfinished branch as accepted work.
+For typed worker responses, use the optional [response collection contract](response-collection.md).
+It records literal coverage without replacing task acceptance or human decisions.
 
 ## Submit an attempt
 

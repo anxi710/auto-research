@@ -436,7 +436,7 @@ class EvidenceLedgerTests(unittest.TestCase):
     def test_cli_import_does_not_write_bytecode_without_b_flag(self):
         scripts = self.root / "scripts"
         scripts.mkdir()
-        for name in ("lint_records.py", "evidence_ledger.py"):
+        for name in ("lint_records.py", "evidence_ledger.py", "collection_artifacts.py"):
             source = SCRIPT.parent / name
             if source.exists():
                 (scripts / name).write_bytes(source.read_bytes())
