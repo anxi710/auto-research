@@ -1,0 +1,316 @@
+{
+  "exercise": "One bounded real native AI revision invocation covering two frozen cases. These are not independent replicates.",
+  "model_requested": "gpt-6-astra",
+  "model_actual": "unverified from this worker context",
+  "reasoning": "ultra",
+  "reasoning_actual": "unverified from this worker context",
+  "service_tier_requested": "Fast",
+  "service_tier_status": "unverified",
+  "tokens": null,
+  "cost": null,
+  "started_utc": "2026-10-28T03:22:50.885501+00:00",
+  "start_scope": "Timestamp captured at completion of permitted input copy, after one failed graph-key assumption; native invocation started earlier and precise start is unavailable.",
+  "ended_utc": "2026-10-28T03:25:22.988243+00:00",
+  "actual_tool_count": {
+    "functions_exec_calls": 9,
+    "nested_exec_command_calls": 10,
+    "combined_wrapper_and_nested_calls": 19,
+    "count_includes_this_final_recording_call": true,
+    "lint_cli_processes": 2,
+    "external_api_calls": 0,
+    "agent_spawns": 0
+  },
+  "tool_actions": [
+    "Discover paths for required instructions and scripts.",
+    "Read required workflow and writing instructions.",
+    "Attempt allowed input copy. Partial copy succeeded before KeyError on graph field.",
+    "Inspect allowed case field names and graph, and read ledger and collaboration instructions.",
+    "Complete allowed copy and metadata, read writing and preferences instructions; independently read copied synthetic inputs. Two exec_command calls in this wrapper.",
+    "Read copied public-source inputs and initial records; inspect affected_closure source.",
+    "Import affected_closure, write both dependency plans before drafting, and prepare revision 2 contracts.",
+    "Author A/B/report and ledgers, seal A002 results, and run both existing lint CLI commands.",
+    "Read delivery instructions, compare initial bytes with originals, and record this run."
+  ],
+  "initial_fingerprints": {
+    "synthetic": {
+      "feedback.json": "fd48e2442fa42e60fa81b8007c64351a8855f735a9187d2a3a9d66d8079754af",
+      "graph.json": "798b3a179588e5fdc910be45d666257cb9832fc200bd0b4d699421955e135cfd",
+      "initial/A.md": "2e73ee2b6e366b4fce2e27b1b278cd242a05d31a921fe36d285f6fb32e110a68",
+      "initial/B.md": "7dd9834bcc454bfbb357d5a5560adafd45e120f2b0bdd1c95d69817b6dd512ed",
+      "initial/C.md": "980fda7afa9b3eaf9b94a763beabf9996ffae794fec9c269bead2d898e288642",
+      "initial/budget.txt": "84873069ef11482c0956bca9084473889fed2a50a36747a43e04aa831e7192b2",
+      "initial/ledger.json": "0bf53880ecbf2c5a501a963698e5bb718f11eb56c210c39e9b80ee596121a657",
+      "initial/report.md": "8ec09d2b03e66f6eaeaf525f721247bc7ddd78fbdf5391cd12047a6c2d17a73e",
+      "initial/result.json": "930d2a0b0542aa2ed57850fd83d19517ec33ab18af709555f5c25d9f9e21b2d3",
+      "initial/source.json": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f",
+      "initial/task.json": "79390984cf8ff87507299b35fdd2ae3667228c99b7a4c39f687fa4194747a27b"
+    },
+    "public-source": {
+      "feedback.json": "1e1a47681efe152f8ca155056e81aa04e649f0a35c63fe62575eb0b17ffe0f26",
+      "graph.json": "757c708165b4ad48553a24f6d27662a2b2584774eda2dba510c6bc2f98f9a261",
+      "initial/A.md": "d20538a48adb8126babefef6d1c7b912dcb7a63c9f5c0c6b9bfe4295a8aeed98",
+      "initial/B.md": "54330c5a03abb4af2cbb4cc68399cc900cdfef948101739ef90e409275c51d94",
+      "initial/C.md": "f706030c5afe8df06da1ad7998ed9a6fc9ad53e9c2e51bc9e0cc9f3a2e530fe0",
+      "initial/budget.txt": "84873069ef11482c0956bca9084473889fed2a50a36747a43e04aa831e7192b2",
+      "initial/ledger.json": "636b9ed1f9e7e431a575a01aee27dbe0966cc2162ff43ce5e104643e61a7dd35",
+      "initial/report.md": "74721bbd3644222866cec31418d79ffe62de5cca9ebacb70d1f8eb52e5d2b018",
+      "initial/result.json": "4f110526aa9740e101eeb378061b4abd24c6d632bec96aa93bfc2823bc3b1be9",
+      "initial/source.json": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004",
+      "initial/task.json": "3eb1cb10fca9ed2e4869044270f2504c5ec5a77cdfbb182594ee3e92df4446f4"
+    }
+  },
+  "unchanged_checks": {
+    "synthetic": {
+      "feedback.json": {
+        "before_sha256": "fd48e2442fa42e60fa81b8007c64351a8855f735a9187d2a3a9d66d8079754af",
+        "after_sha256": "fd48e2442fa42e60fa81b8007c64351a8855f735a9187d2a3a9d66d8079754af",
+        "unchanged": true,
+        "original_repository_sha256": "fd48e2442fa42e60fa81b8007c64351a8855f735a9187d2a3a9d66d8079754af",
+        "matches_original_repository_bytes": true
+      },
+      "graph.json": {
+        "before_sha256": "798b3a179588e5fdc910be45d666257cb9832fc200bd0b4d699421955e135cfd",
+        "after_sha256": "798b3a179588e5fdc910be45d666257cb9832fc200bd0b4d699421955e135cfd",
+        "unchanged": true
+      },
+      "initial/A.md": {
+        "before_sha256": "2e73ee2b6e366b4fce2e27b1b278cd242a05d31a921fe36d285f6fb32e110a68",
+        "after_sha256": "2e73ee2b6e366b4fce2e27b1b278cd242a05d31a921fe36d285f6fb32e110a68",
+        "unchanged": true,
+        "original_repository_sha256": "2e73ee2b6e366b4fce2e27b1b278cd242a05d31a921fe36d285f6fb32e110a68",
+        "matches_original_repository_bytes": true
+      },
+      "initial/B.md": {
+        "before_sha256": "7dd9834bcc454bfbb357d5a5560adafd45e120f2b0bdd1c95d69817b6dd512ed",
+        "after_sha256": "7dd9834bcc454bfbb357d5a5560adafd45e120f2b0bdd1c95d69817b6dd512ed",
+        "unchanged": true,
+        "original_repository_sha256": "7dd9834bcc454bfbb357d5a5560adafd45e120f2b0bdd1c95d69817b6dd512ed",
+        "matches_original_repository_bytes": true
+      },
+      "initial/C.md": {
+        "before_sha256": "980fda7afa9b3eaf9b94a763beabf9996ffae794fec9c269bead2d898e288642",
+        "after_sha256": "980fda7afa9b3eaf9b94a763beabf9996ffae794fec9c269bead2d898e288642",
+        "unchanged": true,
+        "original_repository_sha256": "980fda7afa9b3eaf9b94a763beabf9996ffae794fec9c269bead2d898e288642",
+        "matches_original_repository_bytes": true
+      },
+      "initial/budget.txt": {
+        "before_sha256": "84873069ef11482c0956bca9084473889fed2a50a36747a43e04aa831e7192b2",
+        "after_sha256": "84873069ef11482c0956bca9084473889fed2a50a36747a43e04aa831e7192b2",
+        "unchanged": true,
+        "original_repository_sha256": "84873069ef11482c0956bca9084473889fed2a50a36747a43e04aa831e7192b2",
+        "matches_original_repository_bytes": true
+      },
+      "initial/ledger.json": {
+        "before_sha256": "0bf53880ecbf2c5a501a963698e5bb718f11eb56c210c39e9b80ee596121a657",
+        "after_sha256": "0bf53880ecbf2c5a501a963698e5bb718f11eb56c210c39e9b80ee596121a657",
+        "unchanged": true,
+        "original_repository_sha256": "0bf53880ecbf2c5a501a963698e5bb718f11eb56c210c39e9b80ee596121a657",
+        "matches_original_repository_bytes": true
+      },
+      "initial/report.md": {
+        "before_sha256": "8ec09d2b03e66f6eaeaf525f721247bc7ddd78fbdf5391cd12047a6c2d17a73e",
+        "after_sha256": "8ec09d2b03e66f6eaeaf525f721247bc7ddd78fbdf5391cd12047a6c2d17a73e",
+        "unchanged": true,
+        "original_repository_sha256": "8ec09d2b03e66f6eaeaf525f721247bc7ddd78fbdf5391cd12047a6c2d17a73e",
+        "matches_original_repository_bytes": true
+      },
+      "initial/result.json": {
+        "before_sha256": "930d2a0b0542aa2ed57850fd83d19517ec33ab18af709555f5c25d9f9e21b2d3",
+        "after_sha256": "930d2a0b0542aa2ed57850fd83d19517ec33ab18af709555f5c25d9f9e21b2d3",
+        "unchanged": true,
+        "original_repository_sha256": "930d2a0b0542aa2ed57850fd83d19517ec33ab18af709555f5c25d9f9e21b2d3",
+        "matches_original_repository_bytes": true
+      },
+      "initial/source.json": {
+        "before_sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f",
+        "after_sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f",
+        "unchanged": true,
+        "original_repository_sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f",
+        "matches_original_repository_bytes": true
+      },
+      "initial/task.json": {
+        "before_sha256": "79390984cf8ff87507299b35fdd2ae3667228c99b7a4c39f687fa4194747a27b",
+        "after_sha256": "79390984cf8ff87507299b35fdd2ae3667228c99b7a4c39f687fa4194747a27b",
+        "unchanged": true,
+        "original_repository_sha256": "79390984cf8ff87507299b35fdd2ae3667228c99b7a4c39f687fa4194747a27b",
+        "matches_original_repository_bytes": true
+      }
+    },
+    "public-source": {
+      "feedback.json": {
+        "before_sha256": "1e1a47681efe152f8ca155056e81aa04e649f0a35c63fe62575eb0b17ffe0f26",
+        "after_sha256": "1e1a47681efe152f8ca155056e81aa04e649f0a35c63fe62575eb0b17ffe0f26",
+        "unchanged": true,
+        "original_repository_sha256": "1e1a47681efe152f8ca155056e81aa04e649f0a35c63fe62575eb0b17ffe0f26",
+        "matches_original_repository_bytes": true
+      },
+      "graph.json": {
+        "before_sha256": "757c708165b4ad48553a24f6d27662a2b2584774eda2dba510c6bc2f98f9a261",
+        "after_sha256": "757c708165b4ad48553a24f6d27662a2b2584774eda2dba510c6bc2f98f9a261",
+        "unchanged": true
+      },
+      "initial/A.md": {
+        "before_sha256": "d20538a48adb8126babefef6d1c7b912dcb7a63c9f5c0c6b9bfe4295a8aeed98",
+        "after_sha256": "d20538a48adb8126babefef6d1c7b912dcb7a63c9f5c0c6b9bfe4295a8aeed98",
+        "unchanged": true,
+        "original_repository_sha256": "d20538a48adb8126babefef6d1c7b912dcb7a63c9f5c0c6b9bfe4295a8aeed98",
+        "matches_original_repository_bytes": true
+      },
+      "initial/B.md": {
+        "before_sha256": "54330c5a03abb4af2cbb4cc68399cc900cdfef948101739ef90e409275c51d94",
+        "after_sha256": "54330c5a03abb4af2cbb4cc68399cc900cdfef948101739ef90e409275c51d94",
+        "unchanged": true,
+        "original_repository_sha256": "54330c5a03abb4af2cbb4cc68399cc900cdfef948101739ef90e409275c51d94",
+        "matches_original_repository_bytes": true
+      },
+      "initial/C.md": {
+        "before_sha256": "f706030c5afe8df06da1ad7998ed9a6fc9ad53e9c2e51bc9e0cc9f3a2e530fe0",
+        "after_sha256": "f706030c5afe8df06da1ad7998ed9a6fc9ad53e9c2e51bc9e0cc9f3a2e530fe0",
+        "unchanged": true,
+        "original_repository_sha256": "f706030c5afe8df06da1ad7998ed9a6fc9ad53e9c2e51bc9e0cc9f3a2e530fe0",
+        "matches_original_repository_bytes": true
+      },
+      "initial/budget.txt": {
+        "before_sha256": "84873069ef11482c0956bca9084473889fed2a50a36747a43e04aa831e7192b2",
+        "after_sha256": "84873069ef11482c0956bca9084473889fed2a50a36747a43e04aa831e7192b2",
+        "unchanged": true,
+        "original_repository_sha256": "84873069ef11482c0956bca9084473889fed2a50a36747a43e04aa831e7192b2",
+        "matches_original_repository_bytes": true
+      },
+      "initial/ledger.json": {
+        "before_sha256": "636b9ed1f9e7e431a575a01aee27dbe0966cc2162ff43ce5e104643e61a7dd35",
+        "after_sha256": "636b9ed1f9e7e431a575a01aee27dbe0966cc2162ff43ce5e104643e61a7dd35",
+        "unchanged": true,
+        "original_repository_sha256": "636b9ed1f9e7e431a575a01aee27dbe0966cc2162ff43ce5e104643e61a7dd35",
+        "matches_original_repository_bytes": true
+      },
+      "initial/report.md": {
+        "before_sha256": "74721bbd3644222866cec31418d79ffe62de5cca9ebacb70d1f8eb52e5d2b018",
+        "after_sha256": "74721bbd3644222866cec31418d79ffe62de5cca9ebacb70d1f8eb52e5d2b018",
+        "unchanged": true,
+        "original_repository_sha256": "74721bbd3644222866cec31418d79ffe62de5cca9ebacb70d1f8eb52e5d2b018",
+        "matches_original_repository_bytes": true
+      },
+      "initial/result.json": {
+        "before_sha256": "4f110526aa9740e101eeb378061b4abd24c6d632bec96aa93bfc2823bc3b1be9",
+        "after_sha256": "4f110526aa9740e101eeb378061b4abd24c6d632bec96aa93bfc2823bc3b1be9",
+        "unchanged": true,
+        "original_repository_sha256": "4f110526aa9740e101eeb378061b4abd24c6d632bec96aa93bfc2823bc3b1be9",
+        "matches_original_repository_bytes": true
+      },
+      "initial/source.json": {
+        "before_sha256": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004",
+        "after_sha256": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004",
+        "unchanged": true,
+        "original_repository_sha256": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004",
+        "matches_original_repository_bytes": true
+      },
+      "initial/task.json": {
+        "before_sha256": "3eb1cb10fca9ed2e4869044270f2504c5ec5a77cdfbb182594ee3e92df4446f4",
+        "after_sha256": "3eb1cb10fca9ed2e4869044270f2504c5ec5a77cdfbb182594ee3e92df4446f4",
+        "unchanged": true,
+        "original_repository_sha256": "3eb1cb10fca9ed2e4869044270f2504c5ec5a77cdfbb182594ee3e92df4446f4",
+        "matches_original_repository_bytes": true
+      }
+    }
+  },
+  "dependency_plans": {
+    "synthetic": "synthetic/dependency-plan.json",
+    "public-source": "public-source/dependency-plan.json"
+  },
+  "results": {
+    "synthetic": {
+      "task": "synthetic/task.json",
+      "result": "synthetic/attempts/A002/result.json",
+      "report": "synthetic/attempts/A002/artifacts/report.md",
+      "ledger": "synthetic/attempts/A002/artifacts/ledger.json",
+      "lint": "synthetic/lint-run.json",
+      "lint_exit_code": 0,
+      "lint_diagnostics": [],
+      "human_approval": "pending"
+    },
+    "public-source": {
+      "task": "public-source/task.json",
+      "result": "public-source/attempts/A002/result.json",
+      "report": "public-source/attempts/A002/artifacts/report.md",
+      "ledger": "public-source/attempts/A002/artifacts/ledger.json",
+      "lint": "public-source/lint-run.json",
+      "lint_exit_code": 0,
+      "lint_diagnostics": [],
+      "human_approval": "pending"
+    }
+  },
+  "writes": [
+    "RUN-start.json",
+    "public-source/attempts/A002/artifacts/A.md",
+    "public-source/attempts/A002/artifacts/B.md",
+    "public-source/attempts/A002/artifacts/ledger.json",
+    "public-source/attempts/A002/artifacts/report.md",
+    "public-source/attempts/A002/result.json",
+    "public-source/attempts/A002/task.json",
+    "public-source/budget.txt",
+    "public-source/dependency-plan.json",
+    "public-source/feedback.json",
+    "public-source/graph.json",
+    "public-source/initial/A.md",
+    "public-source/initial/B.md",
+    "public-source/initial/C.md",
+    "public-source/initial/budget.txt",
+    "public-source/initial/ledger.json",
+    "public-source/initial/report.md",
+    "public-source/initial/result.json",
+    "public-source/initial/source.json",
+    "public-source/initial/task.json",
+    "public-source/lint-run.json",
+    "public-source/lint.stderr.txt",
+    "public-source/lint.stdout.json",
+    "public-source/task.json",
+    "synthetic/attempts/A002/artifacts/A.md",
+    "synthetic/attempts/A002/artifacts/B.md",
+    "synthetic/attempts/A002/artifacts/ledger.json",
+    "synthetic/attempts/A002/artifacts/report.md",
+    "synthetic/attempts/A002/result.json",
+    "synthetic/attempts/A002/task.json",
+    "synthetic/budget.txt",
+    "synthetic/dependency-plan.json",
+    "synthetic/feedback.json",
+    "synthetic/graph.json",
+    "synthetic/initial/A.md",
+    "synthetic/initial/B.md",
+    "synthetic/initial/C.md",
+    "synthetic/initial/budget.txt",
+    "synthetic/initial/ledger.json",
+    "synthetic/initial/report.md",
+    "synthetic/initial/result.json",
+    "synthetic/initial/source.json",
+    "synthetic/initial/task.json",
+    "synthetic/lint-run.json",
+    "synthetic/lint.stderr.txt",
+    "synthetic/lint.stdout.json",
+    "synthetic/task.json",
+    "RUN.json"
+  ],
+  "write_scope": "All requested artifacts and records are under /tmp/auto-research-native-revision. No source repository files were edited.",
+  "failures": [
+    {
+      "operation": "copy graph from case.json",
+      "error": "KeyError: graph",
+      "outcome": "Synthetic initial files and feedback copied; corrected to read top-level nodes; no source changed."
+    }
+  ],
+  "substantive_correction": {
+    "assessment_kind": "Author description of the actual text changes, not an independent scientific verdict.",
+    "synthetic": "A now interprets 72 versus 60 as planner-executor scores for the ten fixed synthetic tasks with E1. B and the report withdraw the general executor recommendation.",
+    "public-source": "A now distinguishes requested changes from lost coverage. B and the report propose separate inspection of useful content preservation and feedback incorporation."
+  },
+  "limitations": [
+    "One native invocation covers both cases and is not an independent replicate or a model performance measurement.",
+    "Only the initial files, supplied AI-authored feedback, and extracted graph supplied case content. No candidate, full.json, local-only.json, rubric.json, sibling output, or prior independent review was read.",
+    "Frozen evidence was reused. No new experiment, source reading, browsing, external API, credentials, installation, commit, push, or delegation occurred.",
+    "No exact-string fixture evaluator ran. The existing linter establishes structural consistency only, not semantic correctness.",
+    "Human scientific approval and independent content review remain pending. No approval or acceptance record was invented.",
+    "Tokens, cost, actual model routing, reasoning configuration, and Fast service tier were not measured by this worker.",
+    "The copied initial history and extracted graph retain their original case-prefixed path convention. New task/result and ledger references are relative to each case directory."
+  ]
+}

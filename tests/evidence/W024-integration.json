@@ -1,0 +1,30 @@
+{
+  "integration_parent": "643532d64014753aca1794ec31d6f4c7743c6b3e",
+  "standalone_format_commit": "6dd356669f7859a01e13aaf16f993f1dc7568160",
+  "protected_existing_files": 451,
+  "changed_protected_files": [],
+  "previous_results_preserved_as_exact_prefix": true,
+  "frozen_guidance_changes": {
+    "skills/research-workflow/SKILL.md": "Version metadata only: 0.1.11-markdown.1 to 0.1.11-synthesis.3.",
+    "docs/latex-templates.md": "Clarifies that a one-report LaTeX request leaves later reports on the Markdown default, and how to change the current report back."
+  },
+  "native_cases_repeated_after_integration": false,
+  "new_runtime_code": false,
+  "new_configuration_system": false,
+  "tests": [
+    {
+      "python": "3.12.14",
+      "count": 182,
+      "seconds": 22.386,
+      "status": "passed"
+    },
+    {
+      "python": "3.13.5",
+      "count": 182,
+      "seconds": 22.342,
+      "status": "passed"
+    }
+  ],
+  "test_timing": "Concurrent runs with separate temporary fixtures, not a speed comparison.",
+  "remote_ci": "pending for the new head at this recording point; the PR records subsequent remote outcomes"
+}

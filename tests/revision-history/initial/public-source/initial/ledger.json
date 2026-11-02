@@ -1,0 +1,91 @@
+{
+  "schema_version": "1",
+  "task_id": "TR002",
+  "attempt_id": "A001",
+  "claims": [
+    {
+      "claim_id": "C001",
+      "text": "Feedback incorporation proves that earlier content survived.",
+      "location": {
+        "artifact": "public-source/initial/report.md",
+        "sha256": "93787bf1596c3bc860b594ad9e7200e1be2b754a28f079d3586424be3339e83a",
+        "exact_quote": "Feedback incorporation proves that earlier content survived."
+      },
+      "evidence": [
+        {
+          "evidence_id": "E001",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "The paper defines separate revision measurements.",
+          "limitations": [
+            "Only the named sections were read.",
+            "The local file contains source metadata and paraphrased notes."
+          ],
+          "artifact": "public-source/initial/source.json",
+          "sha256": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004",
+          "source": {
+            "version": "arXiv:2601.13217v1",
+            "identifier": "https://arxiv.org/html/2601.13217v1",
+            "reading_depth": "excerpt",
+            "content_kind": "metadata",
+            "access_limitations": [
+              "Reading was limited to Section 4.2 and Appendix B.4."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "Section 4.2"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does the fixed evidence support the stated scope?",
+        "limitations": [
+          "This fixture does not establish scientific acceptance."
+        ]
+      }
+    },
+    {
+      "claim_id": "C002",
+      "text": "A revision can pass once it includes every requested change.",
+      "location": {
+        "artifact": "public-source/initial/report.md",
+        "sha256": "93787bf1596c3bc860b594ad9e7200e1be2b754a28f079d3586424be3339e83a",
+        "exact_quote": "A revision can pass once it includes every requested change."
+      },
+      "evidence": [
+        {
+          "evidence_id": "E002",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "The paper defines separate revision measurements.",
+          "limitations": [
+            "Only the named sections were read.",
+            "The local file contains source metadata and paraphrased notes."
+          ],
+          "artifact": "public-source/initial/source.json",
+          "sha256": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004",
+          "source": {
+            "version": "arXiv:2601.13217v1",
+            "identifier": "https://arxiv.org/html/2601.13217v1",
+            "reading_depth": "excerpt",
+            "content_kind": "metadata",
+            "access_limitations": [
+              "Reading was limited to Section 4.2 and Appendix B.4."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "Appendix B.4"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does the fixed evidence support the stated scope?",
+        "limitations": [
+          "This fixture does not establish scientific acceptance."
+        ]
+      }
+    }
+  ]
+}

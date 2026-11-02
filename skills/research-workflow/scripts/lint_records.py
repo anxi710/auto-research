@@ -14,6 +14,7 @@ import unicodedata
 # Keep direct CLI use read-only even when scripts live inside the research root.
 sys.dont_write_bytecode = True
 from evidence_ledger import LedgerValidator
+from collection_artifacts import CollectionValidator
 
 
 def text(value):
@@ -84,7 +85,7 @@ def cycle_members(edges):
 
 
 class Linter:
-    def __init__(self, root):
+    def __init__(self, root, artifact_stack=None):
         self.root = root
         self.diagnostics = set()
         self.bad = set()
@@ -96,6 +97,8 @@ class Linter:
         self.hashes = {}
         self.contents = {}
         self.ledger_validator = LedgerValidator(self)
+        self.artifact_stack = artifact_stack if artifact_stack is not None else set()
+        self.collection_validator = CollectionValidator(self)
 
     def issue(self, code, path, message):
         self.diagnostics.add((path, code, message))
@@ -199,6 +202,8 @@ class Linter:
         if kind == "task" and "evidence_ledger" in value and not text(value["evidence_ledger"]):
             self.issue("SCHEMA", path, "task.evidence_ledger must be a research-relative path.")
             valid = False
+        if kind == "task":
+            valid = self.collection_validator.task_schema(value, path) and valid
         if kind == "result" and isinstance(value.get("artifacts"), list):
             ledgers = [entry for entry in value["artifacts"] if isinstance(entry, dict)
                        and entry.get("kind") == "claim_evidence_ledger"]
@@ -312,6 +317,8 @@ class Linter:
                 self.reference(value["budget_ref"], path)
                 if "evidence_ledger" in value:
                     self.path(value["evidence_ledger"], path, required=False)
+                if "synthesis" in value:
+                    self.path(value["synthesis"], path, required=False)
                 for entry in value["inputs"]:
                     self.reference(entry["path"], path, entry["sha256"])
                 for target in value["write_paths"]:
@@ -379,6 +386,7 @@ class Linter:
                 edges[path].add(snapshot)
             task = tasks.get(snapshot)
             self.result_ledger(path, result, task, refs)
+            self.collection_validator.result(path, result, task)
             if task is not None and (result["task_id"], result["task_revision"]) != (task["task_id"], task["revision"]):
                 self.issue("BINDING", path, "Result identity does not match its fixed contract.")
             matches = current.get((result["task_id"],), [])

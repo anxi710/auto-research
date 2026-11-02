@@ -1,0 +1,21 @@
+{
+  "attempt_id": "R2",
+  "replacements": {
+    "A": {
+      "path": "round2/artifacts/A.md",
+      "sha256": "7d448c792e682ad2b3869de05a79e7532481844b41f1ef60f09342b3402031c8"
+    },
+    "B": {
+      "path": "round2/artifacts/B.md",
+      "sha256": "e74f9eb1d8c21b31a9accb60a05f5151ac742f595d067af223058e434524058b"
+    },
+    "report": {
+      "path": "round2/artifacts/reintroduced-ranking/report.md",
+      "sha256": "98be82832840edf7791afd5498bad4ee01ed507121112bfec86651e26b8791bd"
+    },
+    "ledger": {
+      "path": "round2/artifacts/reintroduced-ranking/ledger.json",
+      "sha256": "63fe1e2ede65f5d876f40d30a2033081dcd6674375428e211c91db81cb526e9a"
+    }
+  }
+}

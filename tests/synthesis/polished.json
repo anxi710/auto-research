@@ -1,0 +1,15 @@
+{
+  "artifact": {
+    "path": "polished-artifact.json",
+    "sha256": "dab76efc629c014bd02ecf684b179f0208cfd074df108a4285772f9ccf712f12"
+  },
+  "findings": [],
+  "task": {
+    "path": "T_POLISH/task.json",
+    "sha256": "f04c05889ac76c3ba9fbdf5d1410224b5b365ba9e077dcce62e7957804dab8db"
+  },
+  "result": {
+    "path": "T_POLISH/result.json",
+    "sha256": "2e598c051dc2c004d403742d862d0c6af8167b79037189320f29e33cc731521b"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "r1-quality",
+  "repeat": 1,
+  "role": "worker",
+  "prompt": "frozen/r1-quality.md",
+  "charged_to": [
+    "merge",
+    "synthesis_revision"
+  ],
+  "status": "completed",
+  "started_at": "2026-10-28T03:16:53.501777+00:00",
+  "model_requested": "gpt-6-astra",
+  "reasoning_requested": "ultra",
+  "model_actual": null,
+  "fast_tier_actual": null,
+  "runtime_reason": "The native tool confirms requested model and reasoning, but supplies no actual model or Fast-tier receipt.",
+  "tokens": null,
+  "cost": null,
+  "usage_reason": "Native collaboration tools do not expose token or billing counters.",
+  "prompt_sha256": "fd25cf94364b144e5de76d869d8f42bae8513aa582a93bcb4ee0caff4d613bb1",
+  "agent_id": "/root/architecture_eval/r1_quality",
+  "finished_at": "2026-10-28T03:17:48.034678+00:00",
+  "elapsed_seconds": 54.532901,
+  "timing_scope": "Before native dispatch through parent-observed completion. Includes orchestration and observation delay.",
+  "output_sha256": "e3e8d17b23a5a1d58e9f875ef0a04d11f48fa52ac182cb723cc3868c372b04c9",
+  "output_bytes": 2561
+}

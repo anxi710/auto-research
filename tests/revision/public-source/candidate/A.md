@@ -1,0 +1,1 @@
+Feedback incorporation and damage to earlier content need separate checks. Section 4.2 defines a measure for requested changes and a separate measure for losses in earlier coverage. Reading covered these sections only.

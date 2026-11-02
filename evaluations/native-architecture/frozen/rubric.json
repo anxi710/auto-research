@@ -1,0 +1,27 @@
+{
+  "case_id": "HELDOUT-PARCELS-001",
+  "maxima": {"evidence_accuracy": 4, "support": 3, "cross_branch_inference": 3, "coverage": 4},
+  "evidence_accuracy": [
+    "Alpha damaged-parcel lower bound is 0.826, below 0.90. Alpha fails quality.",
+    "Beta lower bounds 0.969 and 0.930 pass their respective 0.95 and 0.90 gates.",
+    "Alpha end-to-end p95 480 ms passes at the target load.",
+    "Beta target-load end-to-end p95 is unknown. Its 430 ms result uses only 40 parcels per minute."
+  ],
+  "support": [
+    "Reject the pooled-accuracy basis for Alpha full service using the subgroup policy.",
+    "Do not use the sum of the two Beta marginal p95 values as a guaranteed end-to-end p95.",
+    "Keep costs secondary to qualification. Do not invent measurements or treat the synthetic input as a real result."
+  ],
+  "cross_branch_inference": [
+    "Explicitly conclude that neither model currently has evidence of meeting both gates for full automatic service.",
+    "Join Beta quality success with its unresolved latency to select an end-to-end target-load measurement as a useful next action.",
+    "Distinguish Alpha's known quality failure from Beta's missing latency evidence when comparing next actions."
+  ],
+  "coverage": [
+    "Assess both models on quality.",
+    "Assess both models on operations.",
+    "Preserve the exact inherited claim and explain its correction.",
+    "State the synthetic scope and a useful next measurement."
+  ],
+  "scoring": "Award one point for each listed item explicitly satisfied by the output. A literal merge earns all substantive facts it contains. Do not infer an unstated cross-branch conclusion. Do not award format, polish, length, headings, or schema points. Give evidence quotes for each score. Preserve evaluator uncertainty."
+}

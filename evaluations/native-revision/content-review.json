@@ -1,0 +1,564 @@
+{
+  "reviewer": "/root/sources_skills",
+  "scope": "Independent content and saved-record review of the sealed native revision output. The review wrote only this external JSON file.",
+  "review_context": "The reviewer is separate from the native author but already knew the original fixtures and rubrics. This is not a blinded scientific trial.",
+  "native_design": "One native actor invocation handled both cases. The cases are not independent repeats or replication.",
+  "criteria_changed": false,
+  "sealed_outputs_changed": false,
+  "inspected_hashes": {
+    "/tmp/auto-research-native-revision/RUN-start.json": "35cb644960690d610480b8350a8cd6f5d70dac23f6a9dd1d2019cd3f3d636685",
+    "/tmp/auto-research-native-revision/RUN.json": "116272c6d62a2bfc29176a86a0de7eb59d8f84f9b2471b494b7bc362e457dcbc",
+    "/tmp/auto-research-native-revision/public-source/attempts/A002/artifacts/A.md": "9ca9a523f4c1573c7fe170bdb096be3e0c9594136f72047097988e3853ffa142",
+    "/tmp/auto-research-native-revision/public-source/attempts/A002/artifacts/B.md": "23e5849d0e41d2b09dc574fc8a9e980b84059095b953b8099ac6d28f935d0cf5",
+    "/tmp/auto-research-native-revision/public-source/attempts/A002/artifacts/ledger.json": "4e9cdcceb1943780499d80e0d144d60462d066c3758705825d85a94749df9d23",
+    "/tmp/auto-research-native-revision/public-source/attempts/A002/artifacts/report.md": "d40acc3e2925c9e554879b11289707679e5995f2b9925d32c24904b4739ba6d8",
+    "/tmp/auto-research-native-revision/public-source/attempts/A002/result.json": "282601f1729cab557e85de7c0d30033045dac5872f38790e6acb5bf53d24c63d",
+    "/tmp/auto-research-native-revision/public-source/attempts/A002/task.json": "6bc8e7093d316a2b71bea20e185bbaa4c9ab8edaadf89651230774b5a79e6b9b",
+    "/tmp/auto-research-native-revision/public-source/budget.txt": "860d51b26358bea38380916f2f26602b225d267ee3e9077b840c61f0f012b3fa",
+    "/tmp/auto-research-native-revision/public-source/dependency-plan.json": "6cfbdd7d0014efcc3ff85f4fca02fcab481346844ec0e40f1d86e1d9529b84d2",
+    "/tmp/auto-research-native-revision/public-source/feedback.json": "1e1a47681efe152f8ca155056e81aa04e649f0a35c63fe62575eb0b17ffe0f26",
+    "/tmp/auto-research-native-revision/public-source/graph.json": "757c708165b4ad48553a24f6d27662a2b2584774eda2dba510c6bc2f98f9a261",
+    "/tmp/auto-research-native-revision/public-source/initial/A.md": "d20538a48adb8126babefef6d1c7b912dcb7a63c9f5c0c6b9bfe4295a8aeed98",
+    "/tmp/auto-research-native-revision/public-source/initial/B.md": "54330c5a03abb4af2cbb4cc68399cc900cdfef948101739ef90e409275c51d94",
+    "/tmp/auto-research-native-revision/public-source/initial/C.md": "f706030c5afe8df06da1ad7998ed9a6fc9ad53e9c2e51bc9e0cc9f3a2e530fe0",
+    "/tmp/auto-research-native-revision/public-source/initial/budget.txt": "84873069ef11482c0956bca9084473889fed2a50a36747a43e04aa831e7192b2",
+    "/tmp/auto-research-native-revision/public-source/initial/ledger.json": "636b9ed1f9e7e431a575a01aee27dbe0966cc2162ff43ce5e104643e61a7dd35",
+    "/tmp/auto-research-native-revision/public-source/initial/report.md": "74721bbd3644222866cec31418d79ffe62de5cca9ebacb70d1f8eb52e5d2b018",
+    "/tmp/auto-research-native-revision/public-source/initial/result.json": "4f110526aa9740e101eeb378061b4abd24c6d632bec96aa93bfc2823bc3b1be9",
+    "/tmp/auto-research-native-revision/public-source/initial/source.json": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004",
+    "/tmp/auto-research-native-revision/public-source/initial/task.json": "3eb1cb10fca9ed2e4869044270f2504c5ec5a77cdfbb182594ee3e92df4446f4",
+    "/tmp/auto-research-native-revision/public-source/lint-run.json": "385fdf9eb9f8af80879455fe398e9442b0e81da888d2a668bc86db922cb6612d",
+    "/tmp/auto-research-native-revision/public-source/lint.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/tmp/auto-research-native-revision/public-source/lint.stdout.json": "6a433a9fa8b2f0e1086630be475634181285c41b0357b9bf34cbe0dcbe62a881",
+    "/tmp/auto-research-native-revision/public-source/task.json": "6bc8e7093d316a2b71bea20e185bbaa4c9ab8edaadf89651230774b5a79e6b9b",
+    "/tmp/auto-research-native-revision/synthetic/attempts/A002/artifacts/A.md": "8fd8c9a9b3d1dfeb77b601533ba000cae088f470d0304e6524936a9d3ba09d6f",
+    "/tmp/auto-research-native-revision/synthetic/attempts/A002/artifacts/B.md": "9cfd84ddf879ac7c1af5277c021f9113879bd1bcc8e5c377d0dd9467fc30f5b3",
+    "/tmp/auto-research-native-revision/synthetic/attempts/A002/artifacts/ledger.json": "35027ca4e311e57cf3e77822096361bb003c3cb89335182386d67fb0192e8f85",
+    "/tmp/auto-research-native-revision/synthetic/attempts/A002/artifacts/report.md": "ad916c392fe4b4946f3bb1f370ba078bb8b46a7857af4dec1db6115044e73d66",
+    "/tmp/auto-research-native-revision/synthetic/attempts/A002/result.json": "96c901fa00e2f16a754377273e7e2fec92e3b4bab99082acb9d30e8433c2094d",
+    "/tmp/auto-research-native-revision/synthetic/attempts/A002/task.json": "413b2a6eb59b344925aad64de17ea766a3b57f4d6e6f4842ea00a3edd6688197",
+    "/tmp/auto-research-native-revision/synthetic/budget.txt": "860d51b26358bea38380916f2f26602b225d267ee3e9077b840c61f0f012b3fa",
+    "/tmp/auto-research-native-revision/synthetic/dependency-plan.json": "47bbfa602a77c2c7989fd76cdcce9555ff04b0c679e7afbbb97da787f7d5c7f8",
+    "/tmp/auto-research-native-revision/synthetic/feedback.json": "fd48e2442fa42e60fa81b8007c64351a8855f735a9187d2a3a9d66d8079754af",
+    "/tmp/auto-research-native-revision/synthetic/graph.json": "798b3a179588e5fdc910be45d666257cb9832fc200bd0b4d699421955e135cfd",
+    "/tmp/auto-research-native-revision/synthetic/initial/A.md": "2e73ee2b6e366b4fce2e27b1b278cd242a05d31a921fe36d285f6fb32e110a68",
+    "/tmp/auto-research-native-revision/synthetic/initial/B.md": "7dd9834bcc454bfbb357d5a5560adafd45e120f2b0bdd1c95d69817b6dd512ed",
+    "/tmp/auto-research-native-revision/synthetic/initial/C.md": "980fda7afa9b3eaf9b94a763beabf9996ffae794fec9c269bead2d898e288642",
+    "/tmp/auto-research-native-revision/synthetic/initial/budget.txt": "84873069ef11482c0956bca9084473889fed2a50a36747a43e04aa831e7192b2",
+    "/tmp/auto-research-native-revision/synthetic/initial/ledger.json": "0bf53880ecbf2c5a501a963698e5bb718f11eb56c210c39e9b80ee596121a657",
+    "/tmp/auto-research-native-revision/synthetic/initial/report.md": "8ec09d2b03e66f6eaeaf525f721247bc7ddd78fbdf5391cd12047a6c2d17a73e",
+    "/tmp/auto-research-native-revision/synthetic/initial/result.json": "930d2a0b0542aa2ed57850fd83d19517ec33ab18af709555f5c25d9f9e21b2d3",
+    "/tmp/auto-research-native-revision/synthetic/initial/source.json": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f",
+    "/tmp/auto-research-native-revision/synthetic/initial/task.json": "79390984cf8ff87507299b35fdd2ae3667228c99b7a4c39f687fa4194747a27b",
+    "/tmp/auto-research-native-revision/synthetic/lint-run.json": "aa6200fa0720353be6e01b1cc2bcbf2f8937c0e092c3b350da3ecb818c068605",
+    "/tmp/auto-research-native-revision/synthetic/lint.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/tmp/auto-research-native-revision/synthetic/lint.stdout.json": "6a433a9fa8b2f0e1086630be475634181285c41b0357b9bf34cbe0dcbe62a881",
+    "/tmp/auto-research-native-revision/synthetic/task.json": "413b2a6eb59b344925aad64de17ea766a3b57f4d6e6f4842ea00a3edd6688197"
+  },
+  "cases": {
+    "synthetic": {
+      "rubric_path": "/workspace/auto-research/tests/revision/synthetic/rubric.json",
+      "rubric_sha256": "27f3e206fb26986acac53e9c1c91d9cc7b84bf47c052da5584716442c0dd795a",
+      "feedback_sha256": "fd48e2442fa42e60fa81b8007c64351a8855f735a9187d2a3a9d66d8079754af",
+      "expected_affected_nodes": [
+        "A",
+        "B",
+        "ledger",
+        "report"
+      ],
+      "recorded_affected_nodes": [
+        "A",
+        "B",
+        "ledger",
+        "report"
+      ],
+      "closure_matches": true,
+      "pre_revision_plan_evidence": {
+        "plan_created_utc": "2026-10-28T03:23:24.912342+00:00",
+        "drafting_started": false,
+        "run_action_order": "RUN.json places dependency-plan creation in action 7 and revision authoring in action 8.",
+        "plan_mtime_precedes_all_revised_artifacts": true,
+        "limit": "The saved run record and filesystem times support this order. This review did not inspect the complete native tool transcript."
+      },
+      "history_checks": [
+        {
+          "path": "feedback.json",
+          "sha256": "fd48e2442fa42e60fa81b8007c64351a8855f735a9187d2a3a9d66d8079754af",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "graph.json",
+          "sha256": "798b3a179588e5fdc910be45d666257cb9832fc200bd0b4d699421955e135cfd",
+          "matches_run_start": true
+        },
+        {
+          "path": "initial/A.md",
+          "sha256": "2e73ee2b6e366b4fce2e27b1b278cd242a05d31a921fe36d285f6fb32e110a68",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/B.md",
+          "sha256": "7dd9834bcc454bfbb357d5a5560adafd45e120f2b0bdd1c95d69817b6dd512ed",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/C.md",
+          "sha256": "980fda7afa9b3eaf9b94a763beabf9996ffae794fec9c269bead2d898e288642",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/budget.txt",
+          "sha256": "84873069ef11482c0956bca9084473889fed2a50a36747a43e04aa831e7192b2",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/ledger.json",
+          "sha256": "0bf53880ecbf2c5a501a963698e5bb718f11eb56c210c39e9b80ee596121a657",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/report.md",
+          "sha256": "8ec09d2b03e66f6eaeaf525f721247bc7ddd78fbdf5391cd12047a6c2d17a73e",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/result.json",
+          "sha256": "930d2a0b0542aa2ed57850fd83d19517ec33ab18af709555f5c25d9f9e21b2d3",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/source.json",
+          "sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/task.json",
+          "sha256": "79390984cf8ff87507299b35fdd2ae3667228c99b7a4c39f687fa4194747a27b",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        }
+      ],
+      "current_task_matches_attempt_task": true,
+      "reference_checks": [
+        {
+          "path": "initial/A.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/B.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/C.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/budget.txt",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/ledger.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/report.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/result.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/source.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/task.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "feedback.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "graph.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "dependency-plan.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/source.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/C.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "attempts/A002/artifacts/A.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "attempts/A002/artifacts/B.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "attempts/A002/artifacts/report.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "attempts/A002/artifacts/ledger.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "attempts/A002/task.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "graph.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "feedback.json",
+          "sha256_matches": true
+        }
+      ],
+      "ledger_checks": [
+        {
+          "claim_id": "C001",
+          "quote_occurrences": 1,
+          "claim_matches_quote": true,
+          "report_hash_matches": true,
+          "evidence_ids": [
+            "E001"
+          ],
+          "evidence_hashes_match": true
+        },
+        {
+          "claim_id": "C002",
+          "quote_occurrences": 1,
+          "claim_matches_quote": true,
+          "report_hash_matches": true,
+          "evidence_ids": [
+            "E002"
+          ],
+          "evidence_hashes_match": true
+        }
+      ],
+      "preservation_checks": [
+        {
+          "original_statement": "The saved source contains no run with another executor.",
+          "in_initial_report": true,
+          "exact_text_in_revised_report": true,
+          "semantic_content_retained": true,
+          "basis": "The synthetic report retains the exact no-other-executor statement."
+        }
+      ],
+      "unchanged_artifacts_reused": [
+        "initial/source.json",
+        "initial/C.md"
+      ],
+      "lint_record": {
+        "exit_code": 0,
+        "diagnostics": [],
+        "stderr_empty": true,
+        "independently_rerun_in_this_review": false
+      },
+      "human_approval": "Pending in task, result, run, and verification-request records. No human approval was inferred from execution completion.",
+      "content_verdict": {
+        "status": "Meets the frozen substantive correction and preservation criteria for this case.",
+        "A": "Preserves P=72, Q=60, ten synthetic tasks, E1, dataset and split. It changes the interpretation to planner-executor scores and rejects isolated plan quality and an across-executor ranking.",
+        "B": "Withdraws the general recommendation and restricts it to the fixed synthetic setting. It keeps the missing cross-executor comparison unresolved.",
+        "report": "States the fixed-setting result, rejects isolated plan quality, preserves the absence of another executor run, and states that no new experiment ran.",
+        "ledger": "C001 and C002 retain E001 and E002 and exact current report locations. Numeric evidence and source context agree. The scope restriction is a methodological inference, not a newly measured effect.",
+        "break_assessment": "No loss of the selected useful content was found. Correct source facts remain while the initial overclaims are removed.",
+        "exact_string_limit": "The native author uses different wording from the rubric. This verdict compares meaning and evidence rather than requiring the canned sentences."
+      }
+    },
+    "public-source": {
+      "rubric_path": "/workspace/auto-research/tests/revision/public-source/rubric.json",
+      "rubric_sha256": "d164f2e2dfa23432d0ba4fcde72a052a331277d3ae34b725073ca4e3d9a1796b",
+      "feedback_sha256": "1e1a47681efe152f8ca155056e81aa04e649f0a35c63fe62575eb0b17ffe0f26",
+      "expected_affected_nodes": [
+        "A",
+        "B",
+        "ledger",
+        "report"
+      ],
+      "recorded_affected_nodes": [
+        "A",
+        "B",
+        "ledger",
+        "report"
+      ],
+      "closure_matches": true,
+      "pre_revision_plan_evidence": {
+        "plan_created_utc": "2026-10-28T03:23:24.913394+00:00",
+        "drafting_started": false,
+        "run_action_order": "RUN.json places dependency-plan creation in action 7 and revision authoring in action 8.",
+        "plan_mtime_precedes_all_revised_artifacts": true,
+        "limit": "The saved run record and filesystem times support this order. This review did not inspect the complete native tool transcript."
+      },
+      "history_checks": [
+        {
+          "path": "feedback.json",
+          "sha256": "1e1a47681efe152f8ca155056e81aa04e649f0a35c63fe62575eb0b17ffe0f26",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "graph.json",
+          "sha256": "757c708165b4ad48553a24f6d27662a2b2584774eda2dba510c6bc2f98f9a261",
+          "matches_run_start": true
+        },
+        {
+          "path": "initial/A.md",
+          "sha256": "d20538a48adb8126babefef6d1c7b912dcb7a63c9f5c0c6b9bfe4295a8aeed98",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/B.md",
+          "sha256": "54330c5a03abb4af2cbb4cc68399cc900cdfef948101739ef90e409275c51d94",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/C.md",
+          "sha256": "f706030c5afe8df06da1ad7998ed9a6fc9ad53e9c2e51bc9e0cc9f3a2e530fe0",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/budget.txt",
+          "sha256": "84873069ef11482c0956bca9084473889fed2a50a36747a43e04aa831e7192b2",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/ledger.json",
+          "sha256": "636b9ed1f9e7e431a575a01aee27dbe0966cc2162ff43ce5e104643e61a7dd35",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/report.md",
+          "sha256": "74721bbd3644222866cec31418d79ffe62de5cca9ebacb70d1f8eb52e5d2b018",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/result.json",
+          "sha256": "4f110526aa9740e101eeb378061b4abd24c6d632bec96aa93bfc2823bc3b1be9",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/source.json",
+          "sha256": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        },
+        {
+          "path": "initial/task.json",
+          "sha256": "3eb1cb10fca9ed2e4869044270f2504c5ec5a77cdfbb182594ee3e92df4446f4",
+          "matches_run_start": true,
+          "matches_frozen_repository_input": true
+        }
+      ],
+      "current_task_matches_attempt_task": true,
+      "reference_checks": [
+        {
+          "path": "initial/A.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/B.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/C.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/budget.txt",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/ledger.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/report.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/result.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/source.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/task.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "feedback.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "graph.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "dependency-plan.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/source.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "initial/C.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "attempts/A002/artifacts/A.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "attempts/A002/artifacts/B.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "attempts/A002/artifacts/report.md",
+          "sha256_matches": true
+        },
+        {
+          "path": "attempts/A002/artifacts/ledger.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "attempts/A002/task.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "graph.json",
+          "sha256_matches": true
+        },
+        {
+          "path": "feedback.json",
+          "sha256_matches": true
+        }
+      ],
+      "ledger_checks": [
+        {
+          "claim_id": "C001",
+          "quote_occurrences": 1,
+          "claim_matches_quote": true,
+          "report_hash_matches": true,
+          "evidence_ids": [
+            "E001"
+          ],
+          "evidence_hashes_match": true
+        },
+        {
+          "claim_id": "C002",
+          "quote_occurrences": 1,
+          "claim_matches_quote": true,
+          "report_hash_matches": true,
+          "evidence_ids": [
+            "E002"
+          ],
+          "evidence_hashes_match": true
+        }
+      ],
+      "preservation_checks": [
+        {
+          "original_statement": "This exercise measures no agent performance.",
+          "in_initial_report": true,
+          "exact_text_in_revised_report": false,
+          "semantic_content_retained": true,
+          "basis": "The final paragraph states that the exercise uses selected sections and measures no agent performance. It also preserves absence of a human reviewer study."
+        }
+      ],
+      "unchanged_artifacts_reused": [
+        "initial/source.json",
+        "initial/C.md"
+      ],
+      "lint_record": {
+        "exit_code": 0,
+        "diagnostics": [],
+        "stderr_empty": true,
+        "independently_rerun_in_this_review": false
+      },
+      "human_approval": "Pending in task, result, run, and verification-request records. No human approval was inferred from execution completion.",
+      "content_verdict": {
+        "status": "Meets the frozen substantive correction and preservation criteria for this case.",
+        "A": "Replaces the false preservation claim with separate incorporation and content-loss measurements. It cites v1, Section 4.2 and Appendix B.4, and discloses reuse of metadata and paraphrased notes.",
+        "B": "Replaces automatic acceptance after incorporation with separate inspection of useful prior content. It allows correction of unwanted content and does not confuse error removal with a harmful break.",
+        "report": "Presents the procedure as a proposed review rule, preserves the exact paper version and section scope, and claims no full-text reading, workflow performance gain, or human reviewer study.",
+        "source_support": {
+          "url": "https://arxiv.org/html/2601.13217v1",
+          "version": "arXiv:2601.13217v1",
+          "locations": [
+            "Section 4.2",
+            "Appendix B.4.2",
+            "Appendix B.4.3"
+          ],
+          "basis": "The reviewer read these primary passages earlier in this task. They define incorporation separately from break and treat undesirable content according to criterion sign. No new browsing was needed."
+        },
+        "ledger": "C001 and C002 retain E001 and E002 and exact current report locations. The local evidence file is correctly labeled metadata; the proposed procedural rule is not presented as a measured workflow result.",
+        "break_assessment": "No loss of the selected useful content was found. The actor paraphrases the preserved no-agent-performance statement and also retains the absence of a human reviewer study.",
+        "exact_string_limit": "The preserved sentence uses It as its subject after naming the exercise. Its meaning is retained even though the exact frozen sentence is absent."
+      }
+    }
+  },
+  "run_record_assessment": {
+    "recorded_failure": [
+      {
+        "operation": "copy graph from case.json",
+        "error": "KeyError: graph",
+        "outcome": "Synthetic initial files and feedback copied; corrected to read top-level nodes; no source changed."
+      }
+    ],
+    "failure_effect": "The preparation assumed a nonexistent graph key. The actor corrected this to top-level nodes before drafting. The copied initial files and feedback still match their recorded starting bytes and repository inputs.",
+    "metrics": {
+      "tokens": null,
+      "cost": null,
+      "actual_model": "unverified from this worker context",
+      "actual_reasoning": "unverified from this worker context",
+      "service_tier": "unverified",
+      "exact_native_invocation_start": "unavailable"
+    },
+    "timing_limit": "The reported start follows input preparation and its failure. The start-to-end interval is not total native invocation latency.",
+    "tool_count_limit": "Counts distinguish wrapper calls, nested commands, and lint processes. They are actor-recorded counts, not independently reconstructed provider telemetry.",
+    "input_visibility_limit": "RUN records that the actor read no canned candidates, rubrics, sibling outputs, or prior reviews. This artifact review did not inspect the complete native transcript.",
+    "approval": "RUN leaves human approval pending. Completed execution and empty lint diagnostics do not grant approval."
+  },
+  "errors": [],
+  "overall_verdict": "No content or binding error found in the two inspected native revisions. Both correct the planted reasoning error across the declared affected outputs and preserve the selected useful content.",
+  "limits": [
+    "The structural linter cannot establish semantic support. This review separately read the actual prose.",
+    "This review establishes only the bounded examples. It does not establish general model improvement, cost savings, reliability, or scientific acceptance.",
+    "No new source study, experiment, model call, or broad audit ran during this review."
+  ],
+  "writing_skills": [
+    "Simple English 2.1.1 Plain",
+    "Ponytail full",
+    "Stop That Shit advisory review"
+  ]
+}

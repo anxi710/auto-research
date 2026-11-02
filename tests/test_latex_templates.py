@@ -2,6 +2,9 @@
 from pathlib import Path
 import hashlib
 import json
+import shutil
+import subprocess
+import tempfile
 import unittest
 
 CATALOG = Path(__file__).resolve().parents[1] / 'templates' / 'latex'
@@ -44,6 +47,42 @@ class LatexTemplateIntegrity(unittest.TestCase):
                 self.assertIn(project['immutable_source_archive'], notice)
                 for omitted in project['omitted_archive_members']:
                     self.assertIn(omitted, notice)
+
+
+class LatexBuildPrerequisites(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.script = self.root / 'build.sh'
+        shutil.copyfile(CATALOG / 'build.sh', self.script)
+        self.bash = shutil.which('bash')
+        dirname = shutil.which('dirname')
+        self.assertIsNotNone(self.bash, 'The build helper requires bash.')
+        self.assertIsNotNone(dirname, 'The build helper requires dirname.')
+        tools = self.root / 'bin'
+        tools.mkdir()
+        (tools / 'dirname').symlink_to(dirname)
+        self.environment = {'PATH': str(tools), 'LC_ALL': 'C'}
+
+    def test_build_requires_explicit_style(self):
+        run = subprocess.run([self.bash, str(self.script)], cwd=self.root,
+                             env=self.environment, capture_output=True, text=True, timeout=10)
+        self.assertEqual(run.returncode, 2, run.stdout + run.stderr)
+        self.assertIn('{paper|note|book}', run.stderr)
+        self.assertEqual(run.stdout, '')
+        self.assertFalse((self.root / 'build').exists())
+
+    def test_missing_xelatex_does_not_create_output(self):
+        for style in ('paper', 'note', 'book'):
+            with self.subTest(style=style):
+                output = self.root / style
+                run = subprocess.run([self.bash, str(self.script), style, str(output)], cwd=self.root,
+                                     env=self.environment, capture_output=True, text=True, timeout=10)
+                self.assertEqual(run.returncode, 1, run.stdout + run.stderr)
+                self.assertIn('Missing executable: xelatex', run.stderr)
+                self.assertEqual(run.stdout, '')
+                self.assertFalse(output.exists())
 
 
 if __name__ == '__main__':

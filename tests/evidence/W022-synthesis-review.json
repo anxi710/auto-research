@@ -1,0 +1,109 @@
+{
+  "reviewer": "/root/sources_skills",
+  "criteria_changed": false,
+  "repository_files_changed": false,
+  "frozen_versions": {
+    "case.json": "bfb65775e5b4a699400c04cd9265f2a6138cf25902e5c23a682fa8707edeeae8",
+    "literal-aggregate.json": "345dfba9847ea0ddeeaa85f4c2bd73405d83037d6dd52e8e63f2f3148bff541e",
+    "literal.json": "94b5633e6e124bf7dc1acdd9e2347b75ce9bb3923466fcc0554def2f609de169",
+    "polished-artifact.json": "7bddc628f270cb172c5200c1def14b979c18e8978ff4b418ee29d6aeef67a6b4",
+    "polished-ledger.json": "0813407c6b245f1cfb600bb5adf0e3073cc65c8a834a3b3ac4e5010ee4534069",
+    "polished.json": "71b31d561b8143439b158bfd162fde0d349014af4a206f770eae4cc177f1b846",
+    "polished.md": "518d9fca31c607bc1aee31b7a450e5f3a7e061ecf5d875553539963290c7d3a6",
+    "rubric.json": "9a09dd7e3b11aa4ace17e4f4299bbabaefc759fa54a12e81c799e993d9971982",
+    "sources.json": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+    "synthesis-artifact.json": "1b87c8b241a52b836b28b175271a2d60aa1dca82b8493f15788b4ae0eee9ef5c",
+    "synthesis-ledger.json": "b0420a558d0c1b2b1de43eb936f226fee5963eaeae4c9c02a0454446b46dbbf7",
+    "synthesis.json": "034b76b9b5577cb4806d1a29fe550679160c8c81584d2930aeee6b59181e1098",
+    "synthesis.md": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8"
+  },
+  "frozen_mismatches": [],
+  "content_assessment": "No false substantive claim found in the synthesis for the frozen synthetic inputs. The assessment does not cover independent experimental validity.",
+  "observations": [
+    {
+      "id": "P2-01",
+      "topic": "Claim support",
+      "finding": "The prose correctly derives a success difference of 0.10 from A1 and a two-second cost difference from B1. These are synthetic fixture values."
+    },
+    {
+      "id": "P2-02",
+      "topic": "Cross-branch inference",
+      "finding": "The conditional weight of 0.05 success-probability units per second gives equal utility. The prose states this assumption and cites both A1 and B1."
+    },
+    {
+      "id": "P2-03",
+      "topic": "Conditions and dispute",
+      "finding": "The prose distinguishes changed length and budget in A2 from opposing outcome signs in B2 under the recorded short-task conditions. It leaves the reason for opposition unresolved."
+    },
+    {
+      "id": "P2-04",
+      "topic": "Source scope",
+      "finding": "A0 is treated as superseded. H1 remains missing evidence with unknown human transfer. A0 availability and excerpt depth appear in the ledger and structured finding, not its prose sentence."
+    },
+    {
+      "id": "P2-05",
+      "topic": "Question response",
+      "finding": "The synthesis withholds general adoption and proposes matched repeats. It does not assert statistical significance, general transfer, or human approval."
+    },
+    {
+      "id": "P2-06",
+      "topic": "Comparison limit",
+      "finding": "Literal and polished candidates contain correct input facts but no structured findings. Their unmatched counts measure absent contracts, not zero factual accuracy or zero question coverage."
+    },
+    {
+      "id": "P2-07",
+      "topic": "Script versus science",
+      "finding": "The script checks fixed values, source IDs, hashes, and exact claim locations. It cannot establish that the prose entails the structured facts, that sources are scientifically reliable, or that this workflow improves agent performance."
+    },
+    {
+      "id": "P2-08",
+      "topic": "Fixture provenance",
+      "finding": "These are authored synthetic artifacts. The comparison does not constitute a matched live model experiment."
+    }
+  ],
+  "failures": [],
+  "writing_skills_applied": [
+    "Simple English 2.1.1 Plain",
+    "Ponytail full",
+    "Stop That Shit advisory review"
+  ],
+  "scope": "Independent content review of the original reviewed-v1 phase 2 snapshot and unchanged scientific prose.",
+  "manual_controls": {
+    "scope": "Manual prose assessment under the existing four frozen dimensions. No criteria, fixtures, or scores were changed.",
+    "rubric_sha256": "9a09dd7e3b11aa4ace17e4f4299bbabaefc759fa54a12e81c799e993d9971982",
+    "control_prose_sha256": {
+      "literal-aggregate.json": "5e1f017347321e8580152e2852e66e6e93d3b963a47f5ee502b4fef4fcd08421",
+      "polished.md": "518d9fca31c607bc1aee31b7a450e5f3a7e061ecf5d875553539963290c7d3a6"
+    },
+    "applies_to": [
+      "literal",
+      "polished"
+    ],
+    "same_content": "The polished control adds framing sentences but preserves the same branch facts and the same reasoning gaps.",
+    "dimensions": {
+      "source_quality": {
+        "correct_content_retained": "Both controls identify synthetic records, A0 as obsolete and replaced by A1, A1 as current, B2 as a separate run, and H1 as missing human evidence.",
+        "missing_content": "They do not state each source reading depth or distinguish available excerpts from metadata for all six sources. They do not provide a complete assessment of the fixed source-status fields.",
+        "interpretation": "Source-status coverage is partial. Missing structured findings do not erase the correct status information in the prose."
+      },
+      "claim_support": {
+        "correct_content_retained": "All quoted success values, cost values, task lengths, and budgets agree with the frozen source statements. Both controls correctly state that human transfer measurements are missing.",
+        "missing_content": "They do not explicitly derive the 0.10 success difference or the two-second cost difference required by the outcome_delta and cost_delta relations.",
+        "interpretation": "The direct factual claims are supported. Derived comparisons are missing, rather than false. The transfer evidence gap is already visible."
+      },
+      "cross_branch_inference": {
+        "correct_content_retained": "The text retains both the success and cost inputs, the different conditions for long tasks, and the opposing short-task outcome values.",
+        "missing_content": "Neither control combines success and cost under the fixed weight, explains why the long-task conditions prevent a matched contradiction, or describes the opposing matched outcomes as unresolved.",
+        "interpretation": "These are substantive reasoning omissions despite correct input facts. The polished opening and closing add no such inference."
+      },
+      "question_coverage": {
+        "correct_content_retained": "Both controls give short-task and long-task observations and acknowledge the absence of human transfer measurements.",
+        "missing_content": "Neither gives the frozen recommendation to withhold general adoption or the alternative of matched repeats. Neither directly explains what the changed long-task conditions mean for transfer.",
+        "interpretation": "The human-evidence part is addressed. The adoption decision and response to opposing evidence remain incomplete, so zero overall factual or question correctness would be misleading."
+      }
+    },
+    "failures": [],
+    "limit": "These observations concern authored fixture prose. They do not measure model behavior or establish a numerical quality gain."
+  },
+  "binding_correction": "tests/synthesis/history/technical-binding-correction.json"
+}

@@ -1,0 +1,99 @@
+{
+  "schema_version": "1",
+  "task_id": "TR001",
+  "attempt_id": "A002",
+  "claims": [
+    {
+      "claim_id": "C001",
+      "text": "With executor E1 fixed, P scored 72 and Q scored 60 on ten synthetic tasks.",
+      "location": {
+        "artifact": "synthetic/candidate/report.md",
+        "sha256": "7764d628c9668578d5a3d3d932de7385a9ec989f73fe455a33724d91ce161433",
+        "exact_quote": "With executor E1 fixed, P scored 72 and Q scored 60 on ten synthetic tasks."
+      },
+      "evidence": [
+        {
+          "evidence_id": "E001",
+          "kind": "experiment",
+          "availability": "available",
+          "scope": "Ten synthetic tasks with one fixed executor.",
+          "limitations": [
+            "Synthetic practice data.",
+            "No comparison across executors."
+          ],
+          "artifact": "synthetic/initial/source.json",
+          "sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f",
+          "locator": {
+            "type": "json_pointer",
+            "value": "/planner_p/value"
+          },
+          "value": 72,
+          "unit": "score",
+          "context": {
+            "dataset": "synthetic-10",
+            "split": "fixed-v1",
+            "method": "P",
+            "baseline": "Q",
+            "conditions": {
+              "executor": "E1"
+            }
+          },
+          "baseline_locator": "/planner_q/value",
+          "baseline_value": 60
+        }
+      ],
+      "verification_request": {
+        "question": "Does the fixed evidence support the stated scope?",
+        "limitations": [
+          "This fixture does not establish scientific acceptance."
+        ]
+      }
+    },
+    {
+      "claim_id": "C002",
+      "text": "These scores measure each planner with E1 and do not isolate plan quality.",
+      "location": {
+        "artifact": "synthetic/candidate/report.md",
+        "sha256": "7764d628c9668578d5a3d3d932de7385a9ec989f73fe455a33724d91ce161433",
+        "exact_quote": "These scores measure each planner with E1 and do not isolate plan quality."
+      },
+      "evidence": [
+        {
+          "evidence_id": "E002",
+          "kind": "experiment",
+          "availability": "available",
+          "scope": "Ten synthetic tasks with one fixed executor.",
+          "limitations": [
+            "Synthetic practice data.",
+            "No comparison across executors."
+          ],
+          "artifact": "synthetic/initial/source.json",
+          "sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f",
+          "locator": {
+            "type": "json_pointer",
+            "value": "/planner_p/value"
+          },
+          "value": 72,
+          "unit": "score",
+          "context": {
+            "dataset": "synthetic-10",
+            "split": "fixed-v1",
+            "method": "P",
+            "baseline": "Q",
+            "conditions": {
+              "executor": "E1"
+            }
+          },
+          "baseline_locator": "/planner_q/value",
+          "baseline_value": 60
+        }
+      ],
+      "verification_request": {
+        "question": "Does the fixed evidence support the stated scope?",
+        "limitations": [
+          "This fixture does not establish scientific acceptance."
+        ]
+      }
+    }
+  ]
+}

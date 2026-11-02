@@ -1,0 +1,9 @@
+{
+  "schema_version": "1",
+  "artifact_type": "worker_response",
+  "task_id": "T_B",
+  "task_revision": 1,
+  "attempt_id": "A001",
+  "branch_id": "B",
+  "content": "Synthetic branch B. [B1] M takes 4 seconds and N takes 2 seconds on short tasks with budget 10. [B2] A separate run gives success rates M=0.66 and N=0.70 on short tasks with budget 10. [H1] Human-user transfer measurements are missing."
+}

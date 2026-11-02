@@ -1,0 +1,52 @@
+{
+  "schema_version": "1",
+  "artifact_type": "literal_aggregate",
+  "task_id": "T_COLLECT",
+  "task_revision": 1,
+  "attempt_id": "A001",
+  "contract": {
+    "path": "T_COLLECT/task.json",
+    "sha256": "d27982d685c48701fc40ebcf8a3a50af011248c2d6c85aaa535991ff35db920a"
+  },
+  "branches": [
+    {
+      "branch_id": "A",
+      "state": "collected",
+      "result": {
+        "path": "T_A/result.json",
+        "sha256": "8ece7d96ecf07f13753ac34743b3d7a1b4b58aff91a2d12c8fd909a2982afdfe"
+      },
+      "response": {
+        "path": "T_A/response.json",
+        "sha256": "d2a479b65538f05cbf152d7bdbafdeec7a07210887ad42abd1e0a29d0e1d6efd"
+      },
+      "content": "Synthetic branch A. [A0] The obsolete short-task result is M=0.90 and N=0.70. A1 replaces A0. [A1] The current short-task result is M=0.80 and N=0.70, with budget 10. [A2] The long-task result is M=0.61 and N=0.60, with budget 20.",
+      "diagnostics": []
+    },
+    {
+      "branch_id": "B",
+      "state": "collected",
+      "result": {
+        "path": "T_B/result.json",
+        "sha256": "4780357b26becbf5fc18965dac701364864e3afe799f0094ff4f505a65cc735b"
+      },
+      "response": {
+        "path": "T_B/response.json",
+        "sha256": "6700173c9f78856cf33c40c4eb97d29bb2dfb472da7718e6d8fc9879b8c7e5b4"
+      },
+      "content": "Synthetic branch B. [B1] M takes 4 seconds and N takes 2 seconds on short tasks with budget 10. [B2] A separate run gives success rates M=0.66 and N=0.70 on short tasks with budget 10. [H1] Human-user transfer measurements are missing.",
+      "diagnostics": []
+    }
+  ],
+  "coverage": {
+    "expected": [
+      "A",
+      "B"
+    ],
+    "collected": [
+      "A",
+      "B"
+    ],
+    "gaps": []
+  }
+}

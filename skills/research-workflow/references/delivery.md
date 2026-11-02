@@ -22,6 +22,9 @@ Keep them within the current stage and its human-review boundary.
 ## Start with the researcher view
 
 Make the researcher view the default reading entry.
+Use Markdown as the standard format unless the user explicitly requests another format.
+Keep its summary, full account, and evidence links readable at the delivery location.
+Missing LaTeX sources, a PDF, compilation, or PDF layout inspection do not make a Markdown delivery incomplete.
 Lead with the answer, its confidence limits, and the decision needed.
 For a substantial synthesis, include a concise summary and a self-contained review.
 The review should explain the question, closest work, methods, comparisons, and unresolved evidence.
@@ -71,14 +74,20 @@ It does not validate a PDF, translation, paraphrase, or its scientific equivalen
 Bind those files separately and inspect their agreement with the authoritative claims.
 If a fact or evidence version changes, preserve the old views and identify which new views need review.
 
-## Formal reports and editable sources
+## Optional rendered formats
 
-Use LaTeX and PDF when the user requests them or they suit the formal report.
-Provide the editable document, bibliography, figure sources, and build instructions alongside the readable output.
+Use LaTeX or PDF only when the user explicitly requests that format.
+A formal report does not select LaTeX automatically.
+For Markdown delivery, do not generate LaTeX or PDF files, install TeX, or require compilation or PDF layout inspection.
+If the user selects a rendered format, provide its editable sources and relevant build instructions alongside the readable output.
+For LaTeX, include the bibliography and figure sources that the report uses.
 Record missing dependencies or an unrun build without claiming successful compilation.
+Do not install missing tools without explicit user authorization.
 For a compiled report, inspect page layout, citations, references, and reading links.
 Keep a usable text or source entry when a PDF link cannot reach the evidence.
 Compiling and checking layout do not establish scientific support or human approval.
+Selecting a rendered format for one output does not change the Markdown default.
+If the user requests Markdown again, return to that format without requiring a rendered copy.
 
 ## Preserve the review boundary
 

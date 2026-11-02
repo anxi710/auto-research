@@ -1,0 +1,12 @@
+[
+  {
+    "observed_at": "2026-10-28T03:14:36.149425+00:00",
+    "tool": "collaboration.spawn_agent",
+    "task_name": "r1_single",
+    "model_requested": "gpt-6-astra",
+    "reasoning_requested": "ultra",
+    "outcome": "denied_before_execution",
+    "error": "agent thread limit reached",
+    "actor_started": false
+  }
+]

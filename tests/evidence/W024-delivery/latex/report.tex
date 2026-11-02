@@ -1,0 +1,94 @@
+% Local report derived from the repository Paper example.
+% The upstream ElegantPaper class and local adapter remain in the repository.
+\documentclass[lang=en,bibend=bibtex,a4paper,11pt]{elegantpaper}
+\usepackage{xurl}
+\usepackage{researcher-paper}
+\hypersetup{pdftitle={Method A and wider use: an invented comparison}}
+\title{Method A and wider use:\\an invented comparison}
+\author{}
+\date{Scientific version v1 \quad Draft 1}
+
+\begin{document}
+\maketitle
+
+\section{Summary}
+\label{sec:summary}
+Do these inputs justify choosing method A for wider use?
+No. The supplied values are invented, and no experiment ran.
+They describe A with 8 successes out of 10 and B with 7 out of 10 under the same listed conditions.
+That difference describes the example. It does not establish that A performs better in real use.
+
+The input contains one ten-item comparison, with no repeat runs, uncertainty estimate, or external validation.
+Human review remains pending, and no dependent scientific action is approved.
+Section~\ref{sec:review} asks the researcher to choose the next disposition of this draft.
+The source is \href{run:evidence.json}{evidence.json}, version \texttt{fixture-v1}, scientific version \texttt{v1}.
+The linked \href{run:evidence-index.json}{evidence index} identifies the exact input and draft with file digests.
+
+\section{Comparison and its reasoning}
+\label{sec:comparison}
+The question is whether the supplied comparison supports choosing A for wider use.
+The input lists two methods under dataset D1, the test split, and seed 7.
+A test split is a designated subset for evaluation.
+A seed is a number used to initialize randomness.
+These are labels in an invented record, not evidence that an evaluation ran.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lllll}
+\toprule
+Method & Successes / total & Dataset & Split & Seed \\
+\midrule
+A & 8 / 10 & D1 & test & 7 \\
+B & 7 / 10 & D1 & test & 7 \\
+\bottomrule
+\end{tabular}
+\caption{Invented values under the same listed conditions. A has one more listed success. No experiment ran.}
+\label{tab:comparison}
+\end{table}
+
+The table reproduces rows E1 and E2 in \href{run:evidence.json}{evidence.json}, at \texttt{/rows/0} and \texttt{/rows/1}.
+The totals and condition labels match, so the counts can be compared within this example.
+A has one more listed success than B out of the same total of 10.
+This is a descriptive difference in the supplied numbers, not a measured advantage.
+
+The shared labels do not establish a fair real-world comparison because the record describes no executed test.
+The input also gives no item-level outcomes or definition of success.
+The counts therefore supply no supported explanation for the difference.
+They do not establish that either method is better for wider use.
+This judgment concerns the limits of the supplied input, rather than the actual merits of either method.
+
+\section{Limitations}
+\label{sec:limitations}
+The source explicitly describes invented inputs for a document-delivery smoke case, a small exercise that tests document production.
+It states that no experiment ran.
+Only one ten-item comparison appears in the source.
+No repeat runs, uncertainty estimate, or external validation support it.
+The source locations are \texttt{/provenance} and \texttt{/limitations} in \href{run:evidence.json}{evidence.json}.
+
+An uncertainty estimate describes how imprecise an estimate is.
+External validation tests a result beyond its original setting.
+Neither is supplied here, and this report adds neither.
+The inspected material consists of the complete supplied JSON input, not a paper, implementation, or experiment log.
+Real observations under a defined comparison are missing, so the input cannot resolve the choice for wider use.
+The report does not prescribe or carry out further scientific work.
+
+\section{Review question}
+\label{sec:review}
+Does the researcher accept this draft's statement that the invented comparison does not justify choosing A for wider use?
+Review the reasoning in Section~\ref{sec:comparison} and the limits in Section~\ref{sec:limitations}.
+Table~\ref{tab:comparison} points to the exact rows needed to inspect the numerical comparison.
+The review concerns scientific version \texttt{v1}, Draft 1 of \texttt{report.tex}, identified in the \href{run:evidence-index.json}{evidence index}.
+
+The researcher can choose among these dispositions:
+\begin{enumerate}
+\item Accept this draft as a description of invented inputs and end the writing task. This does not authorize wider use of A.
+\item Request changes to the wording or reasoning. The draft remains under review until the researcher decides on its revised version.
+\item Define a separate future research task to address the missing real evidence. Its scope and authorization require a separate researcher decision.
+\end{enumerate}
+
+The authoritative input field \texttt{/human\_decision} remains \texttt{pending}.
+The input field \texttt{/approved\_dependent\_actions} is an empty list.
+These fields remain in the unchanged local \href{run:evidence.json}{evidence copy}, and this report records no new approval.
+Preparing the draft or building a PDF does not resolve that pending decision.
+
+\end{document}

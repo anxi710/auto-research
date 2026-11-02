@@ -7,6 +7,8 @@ The original matched model runs for W019 remain unrun.
 | Case | Expected behavior | Protection |
 | --- | --- | --- |
 | A substantial synthesis with fixed evidence | Provide a concise summary, self-contained review, readable comparisons, source locations, and concrete review questions. | Do not replace the argument with a machine index. |
+| A formal report with no format request | Deliver Markdown with the same writing standards and linked agent evidence. | Do not generate TeX or PDF, install TeX, or treat missing rendering checks as a delivery gap. |
+| An explicit LaTeX and PDF request | Read the optional guide, select an existing template, and inspect available dependencies. Compile and inspect the PDF when possible. | Report missing dependencies and unrun work without automatic installation or a false completion claim. |
 | One abstract and a short question | Answer at the requested scale and state the abstract-only reading limit. | Do not create a long report or ledger for format compliance. |
 | Rendered and editable views of fixed claims | Bind each view to the same scientific and evidence versions and inspect agreement. | A text ledger does not validate a PDF automatically. |
 | An AI critique awaiting human review | Present proposed changes and preserve pending decisions. | Do not advance dependent scientific revisions without matching authority. |

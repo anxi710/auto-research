@@ -1,0 +1,687 @@
+{
+  "schema_version": "1",
+  "task_id": "T_SYNTH",
+  "attempt_id": "A001",
+  "claims": [
+    {
+      "claim_id": "C001",
+      "text": "A0 is a superseded synthetic record. A1 replaces its outcome estimate. [A0]",
+      "location": {
+        "artifact": "synthesis.md",
+        "sha256": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8",
+        "exact_quote": "A0 is a superseded synthetic record. A1 replaces its outcome estimate. [A0]"
+      },
+      "evidence": [
+        {
+          "evidence_id": "C001_A0",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record A0",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/A0",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "A0"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does this statement preserve the source conditions and uncertainty?",
+        "limitations": [
+          "Structured matching does not assess the prose."
+        ]
+      }
+    },
+    {
+      "claim_id": "C002",
+      "text": "A1 is an available current synthetic excerpt about short-task success. [A1]",
+      "location": {
+        "artifact": "synthesis.md",
+        "sha256": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8",
+        "exact_quote": "A1 is an available current synthetic excerpt about short-task success. [A1]"
+      },
+      "evidence": [
+        {
+          "evidence_id": "C002_A1",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record A1",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/A1",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "A1"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does this statement preserve the source conditions and uncertainty?",
+        "limitations": [
+          "Structured matching does not assess the prose."
+        ]
+      }
+    },
+    {
+      "claim_id": "C003",
+      "text": "B1 is an available current synthetic excerpt about short-task cost. [B1]",
+      "location": {
+        "artifact": "synthesis.md",
+        "sha256": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8",
+        "exact_quote": "B1 is an available current synthetic excerpt about short-task cost. [B1]"
+      },
+      "evidence": [
+        {
+          "evidence_id": "C003_B1",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record B1",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/B1",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "B1"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does this statement preserve the source conditions and uncertainty?",
+        "limitations": [
+          "Structured matching does not assess the prose."
+        ]
+      }
+    },
+    {
+      "claim_id": "C004",
+      "text": "A2 is an available current synthetic excerpt about long-task success. [A2]",
+      "location": {
+        "artifact": "synthesis.md",
+        "sha256": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8",
+        "exact_quote": "A2 is an available current synthetic excerpt about long-task success. [A2]"
+      },
+      "evidence": [
+        {
+          "evidence_id": "C004_A2",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record A2",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/A2",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "A2"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does this statement preserve the source conditions and uncertainty?",
+        "limitations": [
+          "Structured matching does not assess the prose."
+        ]
+      }
+    },
+    {
+      "claim_id": "C005",
+      "text": "B2 is an available current synthetic excerpt from a separate short-task run. [B2]",
+      "location": {
+        "artifact": "synthesis.md",
+        "sha256": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8",
+        "exact_quote": "B2 is an available current synthetic excerpt from a separate short-task run. [B2]"
+      },
+      "evidence": [
+        {
+          "evidence_id": "C005_B2",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record B2",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/B2",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "B2"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does this statement preserve the source conditions and uncertainty?",
+        "limitations": [
+          "Structured matching does not assess the prose."
+        ]
+      }
+    },
+    {
+      "claim_id": "C006",
+      "text": "H1 records missing human-user evidence. It contains metadata and no transfer result. [H1]",
+      "location": {
+        "artifact": "synthesis.md",
+        "sha256": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8",
+        "exact_quote": "H1 records missing human-user evidence. It contains metadata and no transfer result. [H1]"
+      },
+      "evidence": [
+        {
+          "evidence_id": "C006_H1",
+          "kind": "literature",
+          "availability": "missing",
+          "scope": "Synthetic fixture record H1",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/H1",
+            "reading_depth": "metadata",
+            "content_kind": "metadata",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "H1"
+          },
+          "reason": "The case contains no human-user measurements."
+        }
+      ],
+      "verification_request": {
+        "question": "Does this statement preserve the source conditions and uncertainty?",
+        "limitations": [
+          "Structured matching does not assess the prose."
+        ]
+      }
+    },
+    {
+      "claim_id": "C007",
+      "text": "In the first short-task run, M exceeds N by 0.10 in success probability. [A1]",
+      "location": {
+        "artifact": "synthesis.md",
+        "sha256": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8",
+        "exact_quote": "In the first short-task run, M exceeds N by 0.10 in success probability. [A1]"
+      },
+      "evidence": [
+        {
+          "evidence_id": "C007_A1",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record A1",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/A1",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "A1"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does this statement preserve the source conditions and uncertainty?",
+        "limitations": [
+          "Structured matching does not assess the prose."
+        ]
+      }
+    },
+    {
+      "claim_id": "C008",
+      "text": "In the matching cost record, M takes 2 seconds more than N. [B1]",
+      "location": {
+        "artifact": "synthesis.md",
+        "sha256": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8",
+        "exact_quote": "In the matching cost record, M takes 2 seconds more than N. [B1]"
+      },
+      "evidence": [
+        {
+          "evidence_id": "C008_B1",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record B1",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/B1",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "B1"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does this statement preserve the source conditions and uncertainty?",
+        "limitations": [
+          "Structured matching does not assess the prose."
+        ]
+      }
+    },
+    {
+      "claim_id": "C009",
+      "text": "If one second costs 0.05 units of success probability, the first run gives M and N equal utility. This combines success and cost. [A1, B1]",
+      "location": {
+        "artifact": "synthesis.md",
+        "sha256": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8",
+        "exact_quote": "If one second costs 0.05 units of success probability, the first run gives M and N equal utility. This combines success and cost. [A1, B1]"
+      },
+      "evidence": [
+        {
+          "evidence_id": "C009_A1",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record A1",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/A1",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "A1"
+          }
+        },
+        {
+          "evidence_id": "C009_B1",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record B1",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/B1",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "B1"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does this statement preserve the source conditions and uncertainty?",
+        "limitations": [
+          "Structured matching does not assess the prose."
+        ]
+      }
+    },
+    {
+      "claim_id": "C010",
+      "text": "The long-task record changes task length and budget. Its smaller gap does not establish a contradiction under matched conditions. [A1, A2]",
+      "location": {
+        "artifact": "synthesis.md",
+        "sha256": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8",
+        "exact_quote": "The long-task record changes task length and budget. Its smaller gap does not establish a contradiction under matched conditions. [A1, A2]"
+      },
+      "evidence": [
+        {
+          "evidence_id": "C010_A1",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record A1",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/A1",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "A1"
+          }
+        },
+        {
+          "evidence_id": "C010_A2",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record A2",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/A2",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "A2"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does this statement preserve the source conditions and uncertainty?",
+        "limitations": [
+          "Structured matching does not assess the prose."
+        ]
+      }
+    },
+    {
+      "claim_id": "C011",
+      "text": "The separate short-task run reverses the outcome advantage under the recorded conditions. The records leave the reason for that disagreement unresolved. [A1, B2]",
+      "location": {
+        "artifact": "synthesis.md",
+        "sha256": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8",
+        "exact_quote": "The separate short-task run reverses the outcome advantage under the recorded conditions. The records leave the reason for that disagreement unresolved. [A1, B2]"
+      },
+      "evidence": [
+        {
+          "evidence_id": "C011_A1",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record A1",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/A1",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "A1"
+          }
+        },
+        {
+          "evidence_id": "C011_B2",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record B2",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/B2",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "B2"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does this statement preserve the source conditions and uncertainty?",
+        "limitations": [
+          "Structured matching does not assess the prose."
+        ]
+      }
+    },
+    {
+      "claim_id": "C012",
+      "text": "The case provides no human-user transfer result. Transfer remains unresolved. [H1]",
+      "location": {
+        "artifact": "synthesis.md",
+        "sha256": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8",
+        "exact_quote": "The case provides no human-user transfer result. Transfer remains unresolved. [H1]"
+      },
+      "evidence": [
+        {
+          "evidence_id": "C012_H1",
+          "kind": "literature",
+          "availability": "missing",
+          "scope": "Synthetic fixture record H1",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/H1",
+            "reading_depth": "metadata",
+            "content_kind": "metadata",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "H1"
+          },
+          "reason": "The case contains no human-user measurements."
+        }
+      ],
+      "verification_request": {
+        "question": "Does this statement preserve the source conditions and uncertainty?",
+        "limitations": [
+          "Structured matching does not assess the prose."
+        ]
+      }
+    },
+    {
+      "claim_id": "C013",
+      "text": "Withhold general adoption from these records. Repeat matched short-task runs to examine the opposing outcomes. Human-user transfer remains unknown. [A1, B1, B2, H1]",
+      "location": {
+        "artifact": "synthesis.md",
+        "sha256": "4b6e6e25eab0ace7183a697ea3121fee8f2e3b57f257d9ebd2879f07d65e12c8",
+        "exact_quote": "Withhold general adoption from these records. Repeat matched short-task runs to examine the opposing outcomes. Human-user transfer remains unknown. [A1, B1, B2, H1]"
+      },
+      "evidence": [
+        {
+          "evidence_id": "C013_A1",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record A1",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/A1",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "A1"
+          }
+        },
+        {
+          "evidence_id": "C013_B1",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record B1",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/B1",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "B1"
+          }
+        },
+        {
+          "evidence_id": "C013_B2",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record B2",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/B2",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "B2"
+          }
+        },
+        {
+          "evidence_id": "C013_H1",
+          "kind": "literature",
+          "availability": "missing",
+          "scope": "Synthetic fixture record H1",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/H1",
+            "reading_depth": "metadata",
+            "content_kind": "metadata",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "H1"
+          },
+          "reason": "The case contains no human-user measurements."
+        }
+      ],
+      "verification_request": {
+        "question": "Does this statement preserve the source conditions and uncertainty?",
+        "limitations": [
+          "Structured matching does not assess the prose."
+        ]
+      }
+    }
+  ]
+}

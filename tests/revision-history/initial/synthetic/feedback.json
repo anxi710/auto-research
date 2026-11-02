@@ -1,0 +1,8 @@
+{
+  "changed_nodes": [
+    "A"
+  ],
+  "text": "A confuses a planner-executor score with isolated plan quality. Narrow A to the fixed E1 comparison. Revise B and the final recommendation that depend on A. Preserve the measurements, ten-task condition, and unresolved comparison across executors.",
+  "feedback_kind": "scientific",
+  "reviewer_kind": "AI-authored fixture, not a human review"
+}

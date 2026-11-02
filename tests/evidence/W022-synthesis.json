@@ -1,0 +1,330 @@
+{
+  "literal": {
+    "exit_code": 0,
+    "output": {
+      "case_id": "SYNTH-001",
+      "synthetic": true,
+      "case_sha256": "bfb65775e5b4a699400c04cd9265f2a6138cf25902e5c23a682fa8707edeeae8",
+      "candidate_sha256": "5a37ec230d532e53beefb9c926b6d0e142f93e07ff5ec4d7cc27c6c6351d3f8f",
+      "dimensions": {
+        "source_quality": [
+          {
+            "finding_id": "quality_A0",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "quality_A1",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "quality_B1",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "quality_A2",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "quality_B2",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "quality_H1",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          }
+        ],
+        "claim_support": [
+          {
+            "finding_id": "outcome_delta",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "cost_delta",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "transfer",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          }
+        ],
+        "cross_branch_inference": [
+          {
+            "finding_id": "utility",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "conditions",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "opposition",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          }
+        ],
+        "question_coverage": [
+          {
+            "finding_id": "answer",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          }
+        ]
+      },
+      "annotation_scope": "declared_findings_only",
+      "independent_content_assessment": "required_not_run_by_this_script",
+      "limits": [
+        "The checks compare fixed structured findings and exact source references.",
+        "An independent reader must assess whether the prose follows from those sources.",
+        "Absent findings in a control do not show that its source summaries are false.",
+        "These results do not measure agent improvement or grant human approval."
+      ]
+    }
+  },
+  "polished": {
+    "exit_code": 0,
+    "output": {
+      "case_id": "SYNTH-001",
+      "synthetic": true,
+      "case_sha256": "bfb65775e5b4a699400c04cd9265f2a6138cf25902e5c23a682fa8707edeeae8",
+      "candidate_sha256": "acc86491a80070f80f492a04770aa621d6ab071b3396baa58fa86d833785c3cc",
+      "dimensions": {
+        "source_quality": [
+          {
+            "finding_id": "quality_A0",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "quality_A1",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "quality_B1",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "quality_A2",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "quality_B2",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "quality_H1",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          }
+        ],
+        "claim_support": [
+          {
+            "finding_id": "outcome_delta",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "cost_delta",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "transfer",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          }
+        ],
+        "cross_branch_inference": [
+          {
+            "finding_id": "utility",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "conditions",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          },
+          {
+            "finding_id": "opposition",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          }
+        ],
+        "question_coverage": [
+          {
+            "finding_id": "answer",
+            "matched": false,
+            "reasons": [
+              "The structured finding is absent."
+            ]
+          }
+        ]
+      },
+      "annotation_scope": "declared_findings_only",
+      "independent_content_assessment": "required_not_run_by_this_script",
+      "limits": [
+        "The checks compare fixed structured findings and exact source references.",
+        "An independent reader must assess whether the prose follows from those sources.",
+        "Absent findings in a control do not show that its source summaries are false.",
+        "These results do not measure agent improvement or grant human approval."
+      ]
+    }
+  },
+  "synthesis": {
+    "exit_code": 0,
+    "output": {
+      "case_id": "SYNTH-001",
+      "synthetic": true,
+      "case_sha256": "bfb65775e5b4a699400c04cd9265f2a6138cf25902e5c23a682fa8707edeeae8",
+      "candidate_sha256": "92f252fa2ec04dd14665a790a7db58e1dc0c8ab7e9b487a46d8fd572ebcc67eb",
+      "dimensions": {
+        "source_quality": [
+          {
+            "finding_id": "quality_A0",
+            "matched": true,
+            "reasons": []
+          },
+          {
+            "finding_id": "quality_A1",
+            "matched": true,
+            "reasons": []
+          },
+          {
+            "finding_id": "quality_B1",
+            "matched": true,
+            "reasons": []
+          },
+          {
+            "finding_id": "quality_A2",
+            "matched": true,
+            "reasons": []
+          },
+          {
+            "finding_id": "quality_B2",
+            "matched": true,
+            "reasons": []
+          },
+          {
+            "finding_id": "quality_H1",
+            "matched": true,
+            "reasons": []
+          }
+        ],
+        "claim_support": [
+          {
+            "finding_id": "outcome_delta",
+            "matched": true,
+            "reasons": []
+          },
+          {
+            "finding_id": "cost_delta",
+            "matched": true,
+            "reasons": []
+          },
+          {
+            "finding_id": "transfer",
+            "matched": true,
+            "reasons": []
+          }
+        ],
+        "cross_branch_inference": [
+          {
+            "finding_id": "utility",
+            "matched": true,
+            "reasons": []
+          },
+          {
+            "finding_id": "conditions",
+            "matched": true,
+            "reasons": []
+          },
+          {
+            "finding_id": "opposition",
+            "matched": true,
+            "reasons": []
+          }
+        ],
+        "question_coverage": [
+          {
+            "finding_id": "answer",
+            "matched": true,
+            "reasons": []
+          }
+        ]
+      },
+      "annotation_scope": "declared_findings_only",
+      "independent_content_assessment": "required_not_run_by_this_script",
+      "limits": [
+        "The checks compare fixed structured findings and exact source references.",
+        "An independent reader must assess whether the prose follows from those sources.",
+        "Absent findings in a control do not show that its source summaries are false.",
+        "These results do not measure agent improvement or grant human approval."
+      ]
+    }
+  }
+}

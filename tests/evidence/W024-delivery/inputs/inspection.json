@@ -1,0 +1,21 @@
+{
+  "type": "bounded smoke inspection, no architecture or quality benchmark",
+  "default": [
+    "Markdown report with summary and full account",
+    "readable evidence and fixed source index",
+    "same scientific version and pending human decision",
+    "no TeX/PDF generation or rendering prerequisite"
+  ],
+  "latex": [
+    "read optional template guide and select Paper",
+    "inspect or run existing build preflight",
+    "deliver editable source or state exact unfinished source work",
+    "report missing dependencies and unrun PDF inspection without installation"
+  ],
+  "limits": [
+    "One fresh native context per format request.",
+    "No baseline model comparison or general compliance guarantee.",
+    "The default case explicitly states no format preference.",
+    "Both tasks explicitly forbid installation."
+  ]
+}

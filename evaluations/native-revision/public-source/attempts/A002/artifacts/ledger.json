@@ -1,0 +1,95 @@
+{
+  "schema_version": "1",
+  "task_id": "TR002",
+  "attempt_id": "A002",
+  "claims": [
+    {
+      "claim_id": "C001",
+      "text": "Section 4.2 measures requested changes separately from losses in prior coverage, so feedback incorporation alone does not establish preservation.",
+      "location": {
+        "artifact": "attempts/A002/artifacts/report.md",
+        "sha256": "d40acc3e2925c9e554879b11289707679e5995f2b9925d32c24904b4739ba6d8",
+        "exact_quote": "Section 4.2 measures requested changes separately from losses in prior coverage, so feedback incorporation alone does not establish preservation."
+      },
+      "evidence": [
+        {
+          "evidence_id": "E001",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "The paper defines separate revision measurements.",
+          "limitations": [
+            "Only the named sections were read.",
+            "The local file contains source metadata and paraphrased notes."
+          ],
+          "artifact": "initial/source.json",
+          "sha256": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004",
+          "source": {
+            "version": "arXiv:2601.13217v1",
+            "identifier": "https://arxiv.org/html/2601.13217v1",
+            "reading_depth": "excerpt",
+            "content_kind": "metadata",
+            "access_limitations": [
+              "Reading was limited to Section 4.2 and Appendix B.4."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "Section 4.2"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does this wording distinguish change incorporation from preservation and keep the proposed review rule separate from measured workflow results?",
+        "limitations": [
+          "Human scientific approval is pending.",
+          "The evidence is reused without a new experiment or new source reading.",
+          "This native revision is not an independent content review."
+        ]
+      }
+    },
+    {
+      "claim_id": "C002",
+      "text": "Assess both requested changes and preservation of useful, correct earlier content before deciding whether a revision meets its requirements.",
+      "location": {
+        "artifact": "attempts/A002/artifacts/report.md",
+        "sha256": "d40acc3e2925c9e554879b11289707679e5995f2b9925d32c24904b4739ba6d8",
+        "exact_quote": "Assess both requested changes and preservation of useful, correct earlier content before deciding whether a revision meets its requirements."
+      },
+      "evidence": [
+        {
+          "evidence_id": "E002",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "The paper defines separate revision measurements.",
+          "limitations": [
+            "Only the named sections were read.",
+            "The local file contains source metadata and paraphrased notes."
+          ],
+          "artifact": "initial/source.json",
+          "sha256": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004",
+          "source": {
+            "version": "arXiv:2601.13217v1",
+            "identifier": "https://arxiv.org/html/2601.13217v1",
+            "reading_depth": "excerpt",
+            "content_kind": "metadata",
+            "access_limitations": [
+              "Reading was limited to Section 4.2 and Appendix B.4."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "Appendix B.4"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does this wording distinguish change incorporation from preservation and keep the proposed review rule separate from measured workflow results?",
+        "limitations": [
+          "Human scientific approval is pending.",
+          "The evidence is reused without a new experiment or new source reading.",
+          "This native revision is not an independent content review."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "source": "/tmp/auto-research-native-revision",
+  "copied_without_editing_native_outputs": true,
+  "consumer_results": {
+    "synthetic": {
+      "exit_code": 0,
+      "diagnostics": []
+    },
+    "public-source": {
+      "exit_code": 0,
+      "diagnostics": []
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "task_id": "TR001",
+  "task_revision": 1,
+  "attempt_id": "A001",
+  "task_path": "synthetic/initial/task.json",
+  "task_sha256": "79390984cf8ff87507299b35fdd2ae3667228c99b7a4c39f687fa4194747a27b",
+  "execution_status": "completed",
+  "artifacts": [
+    {
+      "path": "synthetic/initial/source.json",
+      "sha256": "79d7efc40c8212c9b2efee13232ea0d3604f33ec7d7fd0610ba215e4c376d56f"
+    },
+    {
+      "path": "synthetic/initial/A.md",
+      "sha256": "2e73ee2b6e366b4fce2e27b1b278cd242a05d31a921fe36d285f6fb32e110a68"
+    },
+    {
+      "path": "synthetic/initial/B.md",
+      "sha256": "7dd9834bcc454bfbb357d5a5560adafd45e120f2b0bdd1c95d69817b6dd512ed"
+    },
+    {
+      "path": "synthetic/initial/C.md",
+      "sha256": "980fda7afa9b3eaf9b94a763beabf9996ffae794fec9c269bead2d898e288642"
+    },
+    {
+      "path": "synthetic/initial/report.md",
+      "sha256": "8ec09d2b03e66f6eaeaf525f721247bc7ddd78fbdf5391cd12047a6c2d17a73e"
+    },
+    {
+      "path": "synthetic/initial/ledger.json",
+      "sha256": "0bf53880ecbf2c5a501a963698e5bb718f11eb56c210c39e9b80ee596121a657",
+      "kind": "claim_evidence_ledger"
+    }
+  ],
+  "unresolved": [
+    "The draft includes a planted scientific error."
+  ],
+  "resource_usage": {
+    "tokens": null,
+    "measurement": "unavailable"
+  },
+  "next_action": "Read the fixed feedback before preparing a separate revision."
+}

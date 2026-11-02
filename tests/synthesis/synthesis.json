@@ -1,0 +1,203 @@
+{
+  "artifact": {
+    "path": "synthesis-artifact.json",
+    "sha256": "78f9f88fa34a61104c284729c723a498f059de23516e5a5a036d28bc56ca973b"
+  },
+  "findings": [
+    {
+      "finding_id": "quality_A0",
+      "claim_id": "C001",
+      "facts": {
+        "relation": "source_status",
+        "source_ids": [
+          "A0"
+        ],
+        "availability": "available",
+        "reading_depth": "excerpt",
+        "freshness": "superseded"
+      }
+    },
+    {
+      "finding_id": "quality_A1",
+      "claim_id": "C002",
+      "facts": {
+        "relation": "source_status",
+        "source_ids": [
+          "A1"
+        ],
+        "availability": "available",
+        "reading_depth": "excerpt",
+        "freshness": "current"
+      }
+    },
+    {
+      "finding_id": "quality_B1",
+      "claim_id": "C003",
+      "facts": {
+        "relation": "source_status",
+        "source_ids": [
+          "B1"
+        ],
+        "availability": "available",
+        "reading_depth": "excerpt",
+        "freshness": "current"
+      }
+    },
+    {
+      "finding_id": "quality_A2",
+      "claim_id": "C004",
+      "facts": {
+        "relation": "source_status",
+        "source_ids": [
+          "A2"
+        ],
+        "availability": "available",
+        "reading_depth": "excerpt",
+        "freshness": "current"
+      }
+    },
+    {
+      "finding_id": "quality_B2",
+      "claim_id": "C005",
+      "facts": {
+        "relation": "source_status",
+        "source_ids": [
+          "B2"
+        ],
+        "availability": "available",
+        "reading_depth": "excerpt",
+        "freshness": "current"
+      }
+    },
+    {
+      "finding_id": "quality_H1",
+      "claim_id": "C006",
+      "facts": {
+        "relation": "source_status",
+        "source_ids": [
+          "H1"
+        ],
+        "availability": "missing",
+        "reading_depth": "metadata",
+        "freshness": "current"
+      }
+    },
+    {
+      "finding_id": "outcome_delta",
+      "claim_id": "C007",
+      "facts": {
+        "relation": "difference",
+        "source_ids": [
+          "A1"
+        ],
+        "delta": 0.1,
+        "unit": "probability",
+        "conditions": {
+          "task_length": "short",
+          "budget": 10
+        }
+      }
+    },
+    {
+      "finding_id": "cost_delta",
+      "claim_id": "C008",
+      "facts": {
+        "relation": "difference",
+        "source_ids": [
+          "B1"
+        ],
+        "delta": 2,
+        "unit": "seconds",
+        "conditions": {
+          "task_length": "short",
+          "budget": 10
+        }
+      }
+    },
+    {
+      "finding_id": "utility",
+      "claim_id": "C009",
+      "facts": {
+        "relation": "weighted_difference",
+        "source_ids": [
+          "A1",
+          "B1"
+        ],
+        "cost_weight": 0.05,
+        "delta": 0.0,
+        "conditions": {
+          "task_length": "short",
+          "budget": 10
+        },
+        "preference": "tie"
+      }
+    },
+    {
+      "finding_id": "conditions",
+      "claim_id": "C010",
+      "facts": {
+        "relation": "condition_difference",
+        "source_ids": [
+          "A1",
+          "A2"
+        ],
+        "different_fields": [
+          "budget",
+          "task_length"
+        ]
+      }
+    },
+    {
+      "finding_id": "opposition",
+      "claim_id": "C011",
+      "facts": {
+        "relation": "dispute",
+        "source_ids": [
+          "A1",
+          "B2"
+        ],
+        "opposing_signs": true,
+        "conditions": {
+          "task_length": "short",
+          "budget": 10
+        }
+      }
+    },
+    {
+      "finding_id": "transfer",
+      "claim_id": "C012",
+      "facts": {
+        "relation": "evidence_gap",
+        "source_ids": [
+          "H1"
+        ],
+        "availability": "missing",
+        "judgment": "unresolved"
+      }
+    },
+    {
+      "finding_id": "answer",
+      "claim_id": "C013",
+      "facts": {
+        "relation": "answer",
+        "source_ids": [
+          "A1",
+          "B1",
+          "B2",
+          "H1"
+        ],
+        "recommendation": "withhold_general_adoption",
+        "alternative": "repeat_matched_runs",
+        "boundary": "human_transfer_unknown"
+      }
+    }
+  ],
+  "task": {
+    "path": "T_SYNTH/task.json",
+    "sha256": "3bd1482a077dd068d4b003f0260c91e3a25e2d1e5c304e9ffc25eca7f7779194"
+  },
+  "result": {
+    "path": "T_SYNTH/result.json",
+    "sha256": "f32f006e63637708671df67f867e242b086d5c2cef4472b1ca1a90536bd01e69"
+  }
+}

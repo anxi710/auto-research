@@ -1,0 +1,17 @@
+{
+  "tests/evidence/W024-delivery/inputs/default-request.txt": "34f6560b8f17ac11d38f3c910b1a546f1e21fc4eb8c811cb7ca31e043747795e",
+  "tests/evidence/W024-delivery/inputs/latex-request.txt": "5a5e96cc64f3dd6d4ef8163cb33b35e3fb63f601924475c0aa33b9b59f2cf6e5",
+  "tests/evidence/W024-delivery/inputs/evidence.json": "96245d1dacbbffad1116b8c50e8ea50e1214102e59c0bfba882ecd30d90cf287",
+  "tests/evidence/W024-delivery/inputs/inspection.json": "6fbeb8c43b741226560c9a3c79658f9824ab2843ea71c81c838faccf61b7d344",
+  "skills/research-workflow/SKILL.md": "ce1beb18841c142464e95a15ee3d592d03d5d1ce51786da603894bdfcdf04deb",
+  "skills/research-workflow/references/delivery.md": "fac6f5c0028ef04dd00f4ea237a26e879e7bb97969ee12fa37f4d96f35c2d37e",
+  "skills/research-workflow/references/workflow.md": "375ca6fc873b365ae365ac4496cf177aaeabab057dcca343944aa157890082dc",
+  "skills/research-workflow/references/human-review.md": "51367f8b3e5e6fb62bb29d864fb0fd20415652cb1e92303131d7a5fcc5672e89",
+  "skills/research-workflow/templates/RESEARCHER-REPORT.md": "ab0d1856c9ab7ebd0263c76baf4a6a7a2a01e3b67060c71a96839b729b780d2a",
+  "skills/research-report/SKILL.md": "fe61dfcd6485c918617b2f3e84e903f78f6f0c9f8e76db58d1628568bbf98258",
+  "skills/research-report/references/argument-design.md": "688fdf8eca5ab2bd071fa02aa9eb3844300b68aed21d726355f9d5cc7f73b459",
+  "skills/research-report/references/reader-review.md": "c65830a9d098a952e6180471f75af707f66c4531e6da4cfef534108679219925",
+  "docs/latex-templates.md": "fef65f14192cc5044fa34f5d4069764c587ad3b4221623c5a6f8f81432c21b73",
+  "templates/latex/README.md": "cd0382166df553aefe9c3925d76a90197180773ca81a039ef294358335e72738",
+  "templates/latex/build.sh": "61f86c10c50c61e845aa72891a8715c093ae4f129a209a393275816c9601d230"
+}

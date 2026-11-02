@@ -1,0 +1,6 @@
+{
+  "baseline_commit": "fe52cbf",
+  "script_sha256": "d89131e69ea56cc18848b251e9c57226d89095acb91ddb6bb1253b6811edb3fe",
+  "script_snapshot": "/tmp/auto-research-retention-q6bafbxi/baseline-revision_loop.py",
+  "limit": "This is the deterministic checker baseline. It is not an observed language-model forgetting event."
+}

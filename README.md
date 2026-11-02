@@ -1,6 +1,6 @@
 # A portable research workflow
 
-[![Version 0.1.10](https://img.shields.io/badge/version-0.1.10-blue)](skills/research-workflow/SKILL.md)
+[![Version 0.1.11](https://img.shields.io/badge/version-0.1.11-blue)](skills/research-workflow/SKILL.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Python 3.11+ for bulk tools](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#requirements)
 [![zpm 1.3.1](https://img.shields.io/badge/zpm-1.3.1-blue)](skills/research-workflow/references/scripted-bulk-literature.md)
@@ -9,7 +9,10 @@
 
 English | [简体中文](README.zh-CN.md)
 
-This isolated prerelease is the [W019 delivery trial](changes/W019.md), not an adopted default.
+This local candidate extends the delivery trial with [W022 synthesis and revision](changes/W022.md).
+The [W023 retention regressions](changes/W023.md) test loss of earlier correct content separately from new feedback.
+The [W024 format update](changes/W024.md) sets Markdown as the standard delivery format.
+It is not a published release or a globally installed default.
 
 This toolkit gives AI assistants a shared procedure for study, questions, experiments, analysis, writing, and review.
 A harness is the application that runs an assistant and its tools.
@@ -41,6 +44,8 @@ An optional [claim-evidence ledger](skills/research-workflow/references/evidence
 The checker validates references and declared context.
 Support judgments remain in reviews.
 Human approval follows the existing procedure.
+The optional [response collector](skills/research-workflow/references/response-collection.md) keeps literal collection separate from synthesis.
+It records branch gaps and fixed versions before the record checker inspects the result.
 
 ## Start or resume research
 
@@ -103,7 +108,10 @@ You can use it without a preferences file.
 For reusable choices, follow the [preferences guide](skills/research-workflow/references/preferences.md) and its [template](skills/research-workflow/templates/PREFERENCES.md).
 The [Zotero and Git example](skills/research-workflow/references/zotero-git-example.md) applies only when you select it.
 
-For optional Chinese LaTeX layouts, see the [template guide](docs/latex-templates.md) and [catalog](templates/latex/README.md).
+Researcher reports use Markdown by default, with readable evidence links and the same writing and review standards.
+LaTeX sources, PDF compilation, and PDF layout inspection apply only when you explicitly request those formats.
+To select a Chinese LaTeX template or return to Markdown, follow the [template guide](docs/latex-templates.md).
+Its [catalog](templates/latex/README.md) lists the existing templates and dependencies.
 For researcher-facing argument, synthesis, summaries, and review paths, try the separate [research-report skill](skills/research-report/SKILL.md).
 It is an optional writing companion in this isolated trial, not a replacement for the workflow or a LaTeX template.
 

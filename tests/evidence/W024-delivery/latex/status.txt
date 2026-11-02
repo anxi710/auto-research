@@ -1,0 +1,43 @@
+Outcome: The complete LaTeX draft is delivered. The PDF is unfinished.
+Scientific version: v1. Draft revision: draft-1.
+Human decision: pending in evidence.json at /human_decision.
+Approved dependent actions: none, from evidence.json at /approved_dependent_actions.
+No approval record was added.
+
+Commands actually run:
+- cat, rg, and sed read the request, fixed input, selected skills, and template instructions.
+- command -v checked xelatex, bibtex, kpsewhich, pdftotext, pdfinfo, pdftoppm, and fc-match.
+- kpsewhich checked the template's package and font dependencies.
+- fc-match 'Noto Serif CJK SC' && fc-match 'Noto Sans CJK SC' && fc-match 'Noto Sans Mono CJK SC'
+- ./templates/latex/build.sh paper /tmp/auto-research-markdown-smoke-latex
+  Ran from /workspace/auto-research-markdown-delivery. Exit 1: ctex.sty missing.
+- python3 with an inline script copied evidence.json byte for byte and wrote evidence-index.json with SHA256 digests.
+- bash -n build.sh && bash build.sh > build.log 2>&1
+  Ran from this output directory. Syntax inspection passed. Build preflight exited 1.
+- cat build.log, then python3 with inline assertions inspected file identity, both digests,
+  JSON pointers, the four-section outline, local links, internal labels, table values,
+  the pending decision, and the absence of report.pdf. All assertions passed.
+Files were written with apply_patch and the inline Python script.
+
+Missing executables: none among those checked.
+Missing dependencies for the English draft: biblatex.sty, logreq.sty,
+texgyretermes-regular.otf, texgyreheros-regular.otf.
+Additional absent packages found for other template configurations:
+ctex.sty, xeCJK.sty, zhnumber.sty, newtxmath.sty.
+The Noto CJK font families resolved, with a Fontconfig cache warning.
+
+Unfinished: report.pdf, compilation, and PDF page, citation/reference, and link inspection.
+Both build attempts stopped before compilation. No dependencies were installed.
+The source was read for scientific consistency and the requested reading path.
+Source inspection does not replace rendered inspection or human review.
+No research, dependent scientific work, publication, commit, or repository edit occurred.
+No vendor trees or credentials were copied.
+
+Files:
+report.tex          Complete editable report using the Paper class and adapter.
+evidence.json       Unchanged local copy of the supplied input.
+evidence-index.json Fixed input and draft identity, evidence locations, decision-source pointers.
+build.sh           Local build script using the existing repository class and adapter.
+BUILD.txt          Build command, setup requirements, and link guidance.
+build.log          Actual failed preflight output for the English report.
+status.txt         This status and file inventory.

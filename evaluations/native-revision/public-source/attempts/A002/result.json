@@ -1,0 +1,47 @@
+{
+  "task_id": "TR002",
+  "task_revision": 2,
+  "attempt_id": "A002",
+  "task_path": "attempts/A002/task.json",
+  "task_sha256": "6bc8e7093d316a2b71bea20e185bbaa4c9ab8edaadf89651230774b5a79e6b9b",
+  "execution_status": "completed",
+  "artifacts": [
+    {
+      "path": "initial/source.json",
+      "sha256": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004"
+    },
+    {
+      "path": "initial/C.md",
+      "sha256": "f706030c5afe8df06da1ad7998ed9a6fc9ad53e9c2e51bc9e0cc9f3a2e530fe0"
+    },
+    {
+      "path": "attempts/A002/artifacts/A.md",
+      "sha256": "9ca9a523f4c1573c7fe170bdb096be3e0c9594136f72047097988e3853ffa142"
+    },
+    {
+      "path": "attempts/A002/artifacts/B.md",
+      "sha256": "23e5849d0e41d2b09dc574fc8a9e980b84059095b953b8099ac6d28f935d0cf5"
+    },
+    {
+      "path": "attempts/A002/artifacts/report.md",
+      "sha256": "d40acc3e2925c9e554879b11289707679e5995f2b9925d32c24904b4739ba6d8"
+    },
+    {
+      "path": "attempts/A002/artifacts/ledger.json",
+      "sha256": "4e9cdcceb1943780499d80e0d144d60462d066c3758705825d85a94749df9d23",
+      "kind": "claim_evidence_ledger"
+    }
+  ],
+  "unresolved": [
+    "Human scientific approval is pending. No approval record is created.",
+    "Independent content assessment remains pending. Structural lint cannot assess scientific support.",
+    "The evidence remains metadata and paraphrased notes for excerpts from arXiv:2601.13217v1. No agent performance or human reviewer measurements exist."
+  ],
+  "resource_usage": {
+    "tokens": null,
+    "cost": null,
+    "measurement": "unavailable",
+    "scope": "One native invocation covers both cases. Reused initial/C.md and initial/source.json unchanged. No new experiment ran."
+  },
+  "next_action": "Provide the initial and revised artifacts, dependency plan, and lint output for independent content assessment and pending human review."
+}

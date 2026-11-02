@@ -1,0 +1,91 @@
+{
+  "schema_version": "1",
+  "task_id": "TR002",
+  "attempt_id": "A002",
+  "claims": [
+    {
+      "claim_id": "C001",
+      "text": "Feedback incorporation and damage to earlier content need separate checks.",
+      "location": {
+        "artifact": "public-source/candidate/report.md",
+        "sha256": "2b6142d36b291812ba50f80013cc10e6a50432633642dd35d030af3116179765",
+        "exact_quote": "Feedback incorporation and damage to earlier content need separate checks."
+      },
+      "evidence": [
+        {
+          "evidence_id": "E001",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "The paper defines separate revision measurements.",
+          "limitations": [
+            "Only the named sections were read.",
+            "The local file contains source metadata and paraphrased notes."
+          ],
+          "artifact": "public-source/initial/source.json",
+          "sha256": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004",
+          "source": {
+            "version": "arXiv:2601.13217v1",
+            "identifier": "https://arxiv.org/html/2601.13217v1",
+            "reading_depth": "excerpt",
+            "content_kind": "metadata",
+            "access_limitations": [
+              "Reading was limited to Section 4.2 and Appendix B.4."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "Section 4.2"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does the fixed evidence support the stated scope?",
+        "limitations": [
+          "This fixture does not establish scientific acceptance."
+        ]
+      }
+    },
+    {
+      "claim_id": "C002",
+      "text": "A revision must preserve prior useful content as well as implement the requested correction.",
+      "location": {
+        "artifact": "public-source/candidate/report.md",
+        "sha256": "2b6142d36b291812ba50f80013cc10e6a50432633642dd35d030af3116179765",
+        "exact_quote": "A revision must preserve prior useful content as well as implement the requested correction."
+      },
+      "evidence": [
+        {
+          "evidence_id": "E002",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "The paper defines separate revision measurements.",
+          "limitations": [
+            "Only the named sections were read.",
+            "The local file contains source metadata and paraphrased notes."
+          ],
+          "artifact": "public-source/initial/source.json",
+          "sha256": "88a76e666f8b825e084ce77add1482e4900a45c760b3a7fd06b0f8100eb7c004",
+          "source": {
+            "version": "arXiv:2601.13217v1",
+            "identifier": "https://arxiv.org/html/2601.13217v1",
+            "reading_depth": "excerpt",
+            "content_kind": "metadata",
+            "access_limitations": [
+              "Reading was limited to Section 4.2 and Appendix B.4."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "Appendix B.4"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does the fixed evidence support the stated scope?",
+        "limitations": [
+          "This fixture does not establish scientific acceptance."
+        ]
+      }
+    }
+  ]
+}

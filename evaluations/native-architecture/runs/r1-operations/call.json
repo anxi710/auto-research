@@ -1,0 +1,28 @@
+{
+  "id": "r1-operations",
+  "repeat": 1,
+  "role": "worker",
+  "prompt": "frozen/r1-operations.md",
+  "charged_to": [
+    "merge",
+    "synthesis_revision"
+  ],
+  "status": "completed",
+  "started_at": "2026-10-28T03:17:48.067653+00:00",
+  "model_requested": "gpt-6-astra",
+  "reasoning_requested": "ultra",
+  "model_actual": null,
+  "fast_tier_actual": null,
+  "runtime_reason": "The native tool confirms requested model and reasoning, but supplies no actual model or Fast-tier receipt.",
+  "tokens": null,
+  "cost": null,
+  "usage_reason": "Native collaboration tools do not expose token or billing counters.",
+  "prompt_sha256": "295021a3a3c2c3587c12aafcd371d9338ea2d208c66621a004945a34891f7e2a",
+  "agent_id": "/root/architecture_eval/r1_operations",
+  "successful_dispatch_observed_at": "2026-10-28T03:18:28.317613+00:00",
+  "finished_at": "2026-10-28T03:18:40.653377+00:00",
+  "elapsed_seconds": 52.585724,
+  "timing_scope": "Before native dispatch through parent-observed completion. Includes orchestration and observation delay.",
+  "output_sha256": "16b3f17158359a01a31f1c826f01981c607bd963defe7f4b3be5d790ac4f591b",
+  "output_bytes": 2486
+}

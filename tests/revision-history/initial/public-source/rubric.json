@@ -1,0 +1,24 @@
+{
+  "expected_claims": [
+    {
+      "claim_id": "C001",
+      "text": "Feedback incorporation and damage to earlier content need separate checks.",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "claim_id": "C002",
+      "text": "A revision must preserve prior useful content as well as implement the requested correction.",
+      "evidence_ids": [
+        "E002"
+      ]
+    }
+  ],
+  "independent_assessment": [
+    "Read A, B, and the report for scientific agreement.",
+    "Assess whether the evidence supports each conclusion.",
+    "Make sure that unrelated useful content survives."
+  ],
+  "limit": "Exact statement and citation checks cannot judge arbitrary prose."
+}

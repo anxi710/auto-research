@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python",
+    "/workspace/auto-research/skills/research-workflow/scripts/lint_records.py",
+    "--root",
+    "/tmp/auto-research-native-revision/public-source",
+    "--task",
+    "task.json",
+    "--result",
+    "attempts/A002/result.json"
+  ],
+  "exit_code": 0,
+  "completed_utc": "2026-10-28T03:24:33.749582+00:00",
+  "stdout": "lint.stdout.json",
+  "stderr": "lint.stderr.txt",
+  "scope": "Structural record, reference, hash, and ledger checks only. No scientific support or approval assessment."
+}

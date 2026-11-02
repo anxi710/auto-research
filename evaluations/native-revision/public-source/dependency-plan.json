@@ -1,0 +1,49 @@
+{
+  "case_id": "public-source",
+  "created_utc": "2026-10-28T03:23:24.913394+00:00",
+  "drafting_started": false,
+  "closure_function": "revision_loop.affected_closure",
+  "changed_nodes": [
+    "A"
+  ],
+  "affected_nodes": [
+    "A",
+    "B",
+    "ledger",
+    "report"
+  ],
+  "downstream_affected_nodes": [
+    "B",
+    "ledger",
+    "report"
+  ],
+  "unaffected_nodes": [
+    "source",
+    "C"
+  ],
+  "why": {
+    "A": "Feedback changes the interpretation of frozen source evidence.",
+    "B": "B depends on A and carries its incorrect interpretation into an acceptance rule or recommendation.",
+    "report": "The report depends on A and B, so its claims and conclusion require revision.",
+    "ledger": "The ledger depends on the report, so its exact claims, report hash, and attempt binding require revision.",
+    "C": "C depends only on the unchanged source and records correct scope limits. Reuse its original bytes.",
+    "source": "The source has no changed dependency. Its facts and bytes remain frozen."
+  },
+  "graph": {
+    "path": "graph.json",
+    "sha256": "757c708165b4ad48553a24f6d27662a2b2584774eda2dba510c6bc2f98f9a261"
+  },
+  "feedback": {
+    "path": "feedback.json",
+    "sha256": "1e1a47681efe152f8ca155056e81aa04e649f0a35c63fe62575eb0b17ffe0f26"
+  },
+  "graph_path_convention": "The extracted graph retains original case-prefixed paths. Local copies use initial/ within this case directory.",
+  "planned_artifacts": {
+    "source": "initial/source.json",
+    "A": "attempts/A002/artifacts/A.md",
+    "B": "attempts/A002/artifacts/B.md",
+    "C": "initial/C.md",
+    "report": "attempts/A002/artifacts/report.md",
+    "ledger": "attempts/A002/artifacts/ledger.json"
+  }
+}

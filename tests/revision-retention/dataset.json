@@ -1,0 +1,20 @@
+{
+  "kind": "frozen_synthetic_development_fixture",
+  "rounds": 2,
+  "initial_case": "round1/case.json",
+  "round1_candidate": "round1/full.json",
+  "round2_case_template": "round2/case-template.json",
+  "round2_candidates": [
+    "round2/full.json",
+    "round2/reintroduced-ranking.json",
+    "round2/deleted-counterevidence.json",
+    "round2/deleted-qualifier.json",
+    "round2/broken-numeric.json",
+    "round2/broken-citation.json",
+    "round2/local-only.json"
+  ],
+  "binding_rule": "Fill the round-two null references from the actual completed round-one task, result, and artifact versions. Preserve the fixed round-two feedback, rubric, and dependency graph.",
+  "scope": "No held-out generalization claim. No agent-performance or human-review measurement.",
+  "baseline_control": "The reintroduced-ranking candidate retains all exact preservation statements and implements the new difference. Its extra obsolete sentence is outside the ledger.",
+  "conditions": "The original source is unchanged. The supplementary values are a separate low-memory case with E1, not a second executor or a new experiment."
+}

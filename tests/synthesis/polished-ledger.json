@@ -1,0 +1,96 @@
+{
+  "schema_version": "1",
+  "task_id": "T_POLISH",
+  "attempt_id": "A001",
+  "claims": [
+    {
+      "claim_id": "C_POLISH",
+      "text": "Synthetic branch A. [A0] The obsolete short-task result is M=0.90 and N=0.70. A1 replaces A0. [A1] The current short-task result is M=0.80 and N=0.70, with budget 10. [A2] The long-task result is M=0.61 and N=0.60, with budget 20.",
+      "location": {
+        "artifact": "polished.md",
+        "sha256": "518d9fca31c607bc1aee31b7a450e5f3a7e061ecf5d875553539963290c7d3a6",
+        "exact_quote": "Synthetic branch A. [A0] The obsolete short-task result is M=0.90 and N=0.70. A1 replaces A0. [A1] The current short-task result is M=0.80 and N=0.70, with budget 10. [A2] The long-task result is M=0.61 and N=0.60, with budget 20."
+      },
+      "evidence": [
+        {
+          "evidence_id": "E_POLISH_0",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record A0",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/A0",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "A0"
+          }
+        },
+        {
+          "evidence_id": "E_POLISH_1",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record A1",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/A1",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "A1"
+          }
+        },
+        {
+          "evidence_id": "E_POLISH_2",
+          "kind": "literature",
+          "availability": "available",
+          "scope": "Synthetic fixture record A2",
+          "limitations": [
+            "Synthetic data. This is not a real literature source."
+          ],
+          "artifact": "sources.json",
+          "sha256": "ab2e88c8341f4ce0e5ea85e51d1ceb4fd5f2c4fbad08a795cb96a45381488768",
+          "source": {
+            "version": "synthetic-v1",
+            "identifier": "https://example.invalid/synthetic/A2",
+            "reading_depth": "excerpt",
+            "content_kind": "excerpt",
+            "access_limitations": [
+              "Only the frozen synthetic record is available."
+            ]
+          },
+          "locator": {
+            "type": "section",
+            "value": "A2"
+          }
+        }
+      ],
+      "verification_request": {
+        "question": "Does this statement preserve the source conditions and uncertainty?",
+        "limitations": [
+          "Structured matching does not assess the prose."
+        ]
+      }
+    }
+  ]
+}

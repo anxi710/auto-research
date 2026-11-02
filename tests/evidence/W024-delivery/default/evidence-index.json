@@ -1,0 +1,67 @@
+{
+  "scientific_version": "v1",
+  "report": {
+    "path": "report.md",
+    "revision": "report-v1",
+    "sha256": "5fb3f72a04c93ade1367d344e15daf0b72a026451d39cd9765075b492bae6c30"
+  },
+  "input": {
+    "path": "evidence.json",
+    "version": "fixture-v1",
+    "sha256": "96245d1dacbbffad1116b8c50e8ea50e1214102e59c0bfba882ecd30d90cf287",
+    "reading_depth": "complete supplied JSON"
+  },
+  "bindings": [
+    {
+      "report_section": "summary",
+      "input_pointers": [
+        "/question",
+        "/provenance",
+        "/rows/0",
+        "/rows/1",
+        "/limitations"
+      ]
+    },
+    {
+      "report_section": "comparison-and-its-reasoning",
+      "evidence_ids": [
+        "E1",
+        "E2"
+      ],
+      "input_pointers": [
+        "/question",
+        "/provenance",
+        "/rows/0",
+        "/rows/1",
+        "/limitations"
+      ]
+    },
+    {
+      "report_section": "limitations",
+      "input_pointers": [
+        "/provenance",
+        "/limitations",
+        "/rows"
+      ]
+    },
+    {
+      "report_section": "review-question",
+      "input_pointers": [
+        "/question",
+        "/provenance",
+        "/rows/0",
+        "/rows/1",
+        "/limitations",
+        "/human_decision",
+        "/approved_dependent_actions"
+      ]
+    }
+  ],
+  "decision_source": {
+    "path": "evidence.json",
+    "pointers": [
+      "/human_decision",
+      "/approved_dependent_actions"
+    ]
+  }
+}

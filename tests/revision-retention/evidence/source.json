@@ -1,0 +1,24 @@
+{
+  "kind": "synthetic",
+  "planner_p": {
+    "value": 72,
+    "dataset": "synthetic-10",
+    "split": "fixed-v1",
+    "method": "P",
+    "baseline": "Q",
+    "unit": "score",
+    "conditions": {
+      "executor": "E1"
+    }
+  },
+  "planner_q": {
+    "value": 60,
+    "dataset": "synthetic-10",
+    "split": "fixed-v1",
+    "method": "Q",
+    "unit": "score",
+    "conditions": {
+      "executor": "E1"
+    }
+  }
+}

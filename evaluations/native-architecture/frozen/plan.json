@@ -1,0 +1,166 @@
+{
+  "study_id": "native-architecture-paired-001",
+  "case_id": "HELDOUT-PARCELS-001",
+  "case_status": "Held out from candidate authoring. Frozen before any native actor run. Not used to tune prompts or toolkit changes after outcomes.",
+  "call_limit": 14,
+  "repeats": 2,
+  "calls": [
+    {
+      "id": "r1-single",
+      "repeat": 1,
+      "role": "single",
+      "prompt": "frozen/r1-single.md",
+      "charged_to": [
+        "single"
+      ]
+    },
+    {
+      "id": "r1-quality",
+      "repeat": 1,
+      "role": "worker",
+      "prompt": "frozen/r1-quality.md",
+      "charged_to": [
+        "merge",
+        "synthesis_revision"
+      ]
+    },
+    {
+      "id": "r1-operations",
+      "repeat": 1,
+      "role": "worker",
+      "prompt": "frozen/r1-operations.md",
+      "charged_to": [
+        "merge",
+        "synthesis_revision"
+      ]
+    },
+    {
+      "id": "r1-synthesis",
+      "repeat": 1,
+      "role": "synthesis",
+      "prompt": "frozen/r1-synthesis.md",
+      "charged_to": [
+        "synthesis_revision"
+      ]
+    },
+    {
+      "id": "r1-feedback",
+      "repeat": 1,
+      "role": "delegated_ai_feedback",
+      "prompt": "frozen/r1-feedback.md",
+      "charged_to": [
+        "synthesis_revision"
+      ]
+    },
+    {
+      "id": "r1-revision",
+      "repeat": 1,
+      "role": "revision",
+      "prompt": "frozen/r1-revision.md",
+      "charged_to": [
+        "synthesis_revision"
+      ]
+    },
+    {
+      "id": "r1-evaluate",
+      "repeat": 1,
+      "role": "evaluator",
+      "prompt": "frozen/r1-evaluate.md",
+      "charged_to": [
+        "single",
+        "merge",
+        "synthesis_revision"
+      ]
+    },
+    {
+      "id": "r2-single",
+      "repeat": 2,
+      "role": "single",
+      "prompt": "frozen/r2-single.md",
+      "charged_to": [
+        "single"
+      ]
+    },
+    {
+      "id": "r2-quality",
+      "repeat": 2,
+      "role": "worker",
+      "prompt": "frozen/r2-quality.md",
+      "charged_to": [
+        "merge",
+        "synthesis_revision"
+      ]
+    },
+    {
+      "id": "r2-operations",
+      "repeat": 2,
+      "role": "worker",
+      "prompt": "frozen/r2-operations.md",
+      "charged_to": [
+        "merge",
+        "synthesis_revision"
+      ]
+    },
+    {
+      "id": "r2-synthesis",
+      "repeat": 2,
+      "role": "synthesis",
+      "prompt": "frozen/r2-synthesis.md",
+      "charged_to": [
+        "synthesis_revision"
+      ]
+    },
+    {
+      "id": "r2-feedback",
+      "repeat": 2,
+      "role": "delegated_ai_feedback",
+      "prompt": "frozen/r2-feedback.md",
+      "charged_to": [
+        "synthesis_revision"
+      ]
+    },
+    {
+      "id": "r2-revision",
+      "repeat": 2,
+      "role": "revision",
+      "prompt": "frozen/r2-revision.md",
+      "charged_to": [
+        "synthesis_revision"
+      ]
+    },
+    {
+      "id": "r2-evaluate",
+      "repeat": 2,
+      "role": "evaluator",
+      "prompt": "frozen/r2-evaluate.md",
+      "charged_to": [
+        "single",
+        "merge",
+        "synthesis_revision"
+      ]
+    }
+  ],
+  "dispatch": "All actors run sequentially. Repeat order is single, quality, operations, synthesis, feedback, revision, evaluator.",
+  "design": "Three arms. Strong single with on-demand skills. Two independent workers with literal merge. The same workers with synthesis, delegated AI feedback, and revision.",
+  "paired_limit": "Merge and synthesis arms share worker outputs. Charge those workers fully to both arms. This is not an independent end-to-end comparison.",
+  "budget_limit": "No external paid model API, new key, GPU, push, PR, or release. At most 14 native actor/evaluator calls. The lead and outer coordinator are pre-existing native contexts.",
+  "feedback_scope": "One synthetic inherited wrong claim and one delegated AI feedback step per repeat. No human feedback or scientific approval is claimed.",
+  "authority": "Parent task relay quotes user authorization: 按照你的规划帮我在云端codex上完成下一阶段的优化，使用6astra ultra fast. The approved four-stage toolkit plan includes this minimal native evaluation.",
+  "model_requested": "gpt-6-astra",
+  "reasoning_requested": "ultra",
+  "fast_tier": "Unverified. The native tool has no Fast-tier parameter.",
+  "budget_fairness": "The arms use the same task and model request but different role counts. This study compares complete workflows under a shared study cap, not equal-token budgets.",
+  "candidate_map": {
+    "r1": {
+      "A": "revision",
+      "B": "single",
+      "C": "merge"
+    },
+    "r2": {
+      "A": "merge",
+      "B": "revision",
+      "C": "single"
+    }
+  },
+  "analysis_commitment": "Report all scores and both repeats. Keep negative results. Make no significance, cost, speed, broad superiority, or human-review-cost claim."
+}

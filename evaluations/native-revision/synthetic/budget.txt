@@ -1,0 +1,1 @@
+One bounded native AI revision exercise covers these two cases in one invocation. Use only the copied frozen inputs. No new experiment, external API, network access, installation, repository edit, or delegation. Stop after one revision per case, required structural lint, and run accounting. Tokens and cost are unmeasured. Human scientific approval remains pending.

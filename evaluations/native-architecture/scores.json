@@ -1,0 +1,108 @@
+{
+  "scoring": "Independent native AI scoring against the frozen rubric. No formatting points.",
+  "rows": [
+    {
+      "repeat": 1,
+      "arm": "synthesis_revision",
+      "anonymous_label": "A",
+      "scores": {
+        "evidence_accuracy": 4,
+        "support": 3,
+        "cross_branch_inference": 3,
+        "coverage": 4
+      },
+      "total": 14,
+      "errors": [],
+      "uncertainties": [],
+      "evaluation": "runs/r1-evaluate/output.md"
+    },
+    {
+      "repeat": 1,
+      "arm": "single",
+      "anonymous_label": "B",
+      "scores": {
+        "evidence_accuracy": 4,
+        "support": 3,
+        "cross_branch_inference": 3,
+        "coverage": 4
+      },
+      "total": 14,
+      "errors": [],
+      "uncertainties": [],
+      "evaluation": "runs/r1-evaluate/output.md"
+    },
+    {
+      "repeat": 1,
+      "arm": "merge",
+      "anonymous_label": "C",
+      "scores": {
+        "evidence_accuracy": 4,
+        "support": 3,
+        "cross_branch_inference": 2,
+        "coverage": 4
+      },
+      "total": 13,
+      "errors": [
+        "The combined output omits an explicit conclusion that neither model currently has evidence of meeting both gates for full automatic service."
+      ],
+      "uncertainties": [
+        "Inference item 2 is less explicit than in A or B. Credit rests on the quality section's stated next-evidence recommendation after its quality and eligibility assessment. Its request to consult operations first leaves the measurement conditional. No point is awarded merely because facts occur in separate sections.",
+        "The quality section calls the 480 ms figure unverified within that branch. The operations section expressly supports it. The local qualification is not scored as a false numerical claim."
+      ],
+      "evaluation": "runs/r1-evaluate/output.md"
+    },
+    {
+      "repeat": 2,
+      "arm": "merge",
+      "anonymous_label": "A",
+      "scores": {
+        "evidence_accuracy": 4,
+        "support": 3,
+        "cross_branch_inference": 0,
+        "coverage": 4
+      },
+      "total": 11,
+      "errors": [
+        "Missing explicit conclusion about whether either model meets both gates.",
+        "Missing explicit link between Beta's quality pass and the choice of its next latency measurement.",
+        "Missing explicit comparison of next actions using Alpha's known failure and Beta's missing evidence."
+      ],
+      "uncertainties": [
+        "The separate recommendations permit a reader to infer different next actions. The rubric requires an explicit combined decision, so their coexistence earns no inference point. Branch-specific scope statements do not erase correct facts elsewhere in the candidate."
+      ],
+      "evaluation": "runs/r2-evaluate/output.md"
+    },
+    {
+      "repeat": 2,
+      "arm": "synthesis_revision",
+      "anonymous_label": "B",
+      "scores": {
+        "evidence_accuracy": 4,
+        "support": 3,
+        "cross_branch_inference": 3,
+        "coverage": 4
+      },
+      "total": 14,
+      "errors": [],
+      "uncertainties": [],
+      "evaluation": "runs/r2-evaluate/output.md"
+    },
+    {
+      "repeat": 2,
+      "arm": "single",
+      "anonymous_label": "C",
+      "scores": {
+        "evidence_accuracy": 4,
+        "support": 3,
+        "cross_branch_inference": 3,
+        "coverage": 4
+      },
+      "total": 14,
+      "errors": [],
+      "uncertainties": [
+        "The statement that two 95% stage bounds guarantee only 90% jointly is read as a worst-case lower guarantee for a common workload. It is not an observed joint rate or a claim that the separate logs establish that workload. This interpretation does not change any rubric point."
+      ],
+      "evaluation": "runs/r2-evaluate/output.md"
+    }
+  ]
+}

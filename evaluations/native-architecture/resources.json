@@ -1,0 +1,83 @@
+{
+  "unique_native_calls": 14,
+  "planned_native_calls": 14,
+  "denied_dispatches": 1,
+  "native_calls_by_role": {
+    "evaluator": 2,
+    "delegated_ai_feedback": 2,
+    "worker": 4,
+    "revision": 2,
+    "single": 2,
+    "synthesis": 2
+  },
+  "failed_or_open_calls": [],
+  "arms": {
+    "single": {
+      "native_calls": 4,
+      "call_ids": [
+        "r1-evaluate",
+        "r1-single",
+        "r2-evaluate",
+        "r2-single"
+      ],
+      "measured_call_seconds": 482.06789000000003,
+      "all_calls_completed": true,
+      "tokens": null,
+      "cost": null,
+      "usage_reason": "No native token or billing counters. Shared workers and evaluators are charged in full to each consuming arm."
+    },
+    "merge": {
+      "native_calls": 6,
+      "call_ids": [
+        "r1-evaluate",
+        "r1-operations",
+        "r1-quality",
+        "r2-evaluate",
+        "r2-operations",
+        "r2-quality"
+      ],
+      "measured_call_seconds": 509.89074200000005,
+      "all_calls_completed": true,
+      "tokens": null,
+      "cost": null,
+      "usage_reason": "No native token or billing counters. Shared workers and evaluators are charged in full to each consuming arm."
+    },
+    "synthesis_revision": {
+      "native_calls": 12,
+      "call_ids": [
+        "r1-evaluate",
+        "r1-feedback",
+        "r1-operations",
+        "r1-quality",
+        "r1-revision",
+        "r1-synthesis",
+        "r2-evaluate",
+        "r2-feedback",
+        "r2-operations",
+        "r2-quality",
+        "r2-revision",
+        "r2-synthesis"
+      ],
+      "measured_call_seconds": 894.741888,
+      "all_calls_completed": true,
+      "tokens": null,
+      "cost": null,
+      "usage_reason": "No native token or billing counters. Shared workers and evaluators are charged in full to each consuming arm."
+    }
+  },
+  "tokens": null,
+  "cost": null,
+  "study_started_at": "2026-10-28T03:14:16.812712+00:00",
+  "study_finished_at": "2026-10-28T03:32:52.578215+00:00",
+  "study_wall_seconds": 1115.765503,
+  "study_wall_scope": "Frozen inputs through final observed actor completion. Includes lead orchestration, local processing, and capacity waits after freeze. Excludes preparation before freeze.",
+  "unique_actor_seconds": 1107.673666,
+  "preexisting_coordinator_contexts": 2,
+  "coordinator_model_receipts": null,
+  "coordinator_preparation_seconds": null,
+  "lead_tokens": null,
+  "lead_cost": null,
+  "lead_usage_reason": "The study lead and outer toolkit coordinator also use native contexts. Their token and billing counters are unavailable.",
+  "timing_limit": "Arm seconds exclude unallocated lead preparation and local processing. See study wall time separately. This is not end-to-end latency.",
+  "all_planned_calls_completed": true
+}
